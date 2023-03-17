@@ -63,13 +63,16 @@ namespace Menu_Inicial
 			}
 		}
 		//Método para validar dados antes de efetuar a entrada
-		private void Validacao()
+		private void ValidadorDeCampos()
 		{
 			try
 			{
 				//Pré validação dos campos
 				if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
 				{
+					nomeVisitante = txtNomeVisitante.Text;
+					visitado = txtNomeVisitado.Text;
+					placaVeiculo = txtPlacaVeiculo.Text;
 					cpf = 0;
 					cnpj = 0;
 					pesoEntrada = 0;
@@ -206,7 +209,7 @@ namespace Menu_Inicial
 		//Configuração do botão de cadastro
 		private void btnCadastrar_Click(object sender, EventArgs e)
 		{
-			Validacao();
+			ValidadorDeCampos();
 		}
 		//Configuração do botão de voltar
 		private void btnVoltar_Click(object sender, EventArgs e)

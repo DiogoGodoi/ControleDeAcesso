@@ -18,16 +18,15 @@ namespace Menu_Inicial
 	//TelaDeAlteração
 	public partial class frmAlterar : Form
 	{
+		//Atributos
 		private int referencia;
 		private mdlEntrada _mdlEntrada;
 		private mdlSaida _mdlSaida;
-
 		//Inicialização do formulário
 		public frmAlterar()
 		{
 			InitializeComponent();
 		}
-
 		private void Voltar()
 		{
 			//Thread para voltar ao menu anterior
@@ -80,7 +79,6 @@ namespace Menu_Inicial
 				MessageBox.Show("Busca não localizada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
-
 		private void btnBuscar_Click(object sender, EventArgs e)
 		{
 			Buscar();
