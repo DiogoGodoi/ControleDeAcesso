@@ -163,7 +163,7 @@
 			// 
 			this.btnSair.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnSair.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSair.ForeColor = System.Drawing.Color.White;
 			this.btnSair.Location = new System.Drawing.Point(343, 399);

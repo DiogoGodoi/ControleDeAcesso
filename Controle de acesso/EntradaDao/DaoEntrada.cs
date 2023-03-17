@@ -16,9 +16,9 @@ namespace EntradaDao
 		//Atributos
 		private static int referencia { get; set; }
 		private static string nomeVisitante { get; set; }
-		private static string cpf { get; set; }
-		private static string cnpj { get; set; }
-		private static string pesoEntrada { get; set; }
+		private static long cpf { get; set; }
+		private static long cnpj { get; set; }
+		private static double pesoEntrada { get; set; }
 		private static string visitado { get; set; }
 		private static string placaVeiculo { get; set; }
 		private static string dataEntrada { get; set; }
@@ -72,19 +72,19 @@ namespace EntradaDao
 
 				var pmtCpf = cmd.CreateParameter();
 				pmtCpf.ParameterName = "@cpf";
-				pmtCpf.DbType = DbType.String;
+				pmtCpf.DbType = DbType.Int32;
 				pmtCpf.Value = Entrada.cpf;
 				cmd.Parameters.Add(pmtCpf);
 
 				var pmtCnpj = cmd.CreateParameter();
 				pmtCnpj.ParameterName = "@cnpj";
-				pmtCnpj.DbType = DbType.String;
+				pmtCnpj.DbType = DbType.Int64;
 				pmtCnpj.Value = Entrada.cnpj;
 				cmd.Parameters.Add(pmtCnpj);
 
 				var pmtPesoEntrada = cmd.CreateParameter();
 				pmtPesoEntrada.ParameterName = "@pesoEntrada";
-				pmtPesoEntrada.DbType = DbType.String;
+				pmtPesoEntrada.DbType = DbType.Double;
 				pmtPesoEntrada.Value = Entrada.pesoEntrada;
 				cmd.Parameters.Add(pmtPesoEntrada);
 
@@ -151,12 +151,12 @@ namespace EntradaDao
 				{
 					nomeVisitante = leitura["nomeVisitante"].ToString();
 					visitado = leitura["visitado"].ToString();
-					cpf = leitura["cpf"].ToString();
-					cnpj = leitura["cnpj"].ToString();
+					cpf = Convert.ToInt16(leitura["cpf"]);
+					cnpj = Convert.ToInt64(leitura["cnpj"]);
 					placaVeiculo = leitura["placaVeiculo"].ToString();
 					dataEntrada = leitura["dataEntrada"].ToString();
 					horaEntrada = leitura["horaEntrada"].ToString();
-					pesoEntrada = leitura["pesoEntrada"].ToString();
+					pesoEntrada = Convert.ToDouble(leitura["pesoEntrada"]);
 
 					return true;
 				}
@@ -200,12 +200,12 @@ namespace EntradaDao
 				{
 					nomeVisitante = leitura["nomeVisitante"].ToString();
 					visitado = leitura["visitado"].ToString();
-					cpf = leitura["cpf"].ToString();
-					cnpj = leitura["cnpj"].ToString();
+					cpf = Convert.ToInt64(leitura["cpf"]);
+					cnpj = Convert.ToInt64(leitura["cnpj"]);
 					placaVeiculo = leitura["placaVeiculo"].ToString();
 					dataEntrada = leitura["dataEntrada"].ToString();
 					horaEntrada = leitura["horaEntrada"].ToString();
-					pesoEntrada = leitura["pesoEntrada"].ToString();
+					pesoEntrada = Convert.ToDouble(leitura["pesoEntrada"]);
 					dataSaida = leitura["dataSaida"].ToString();
 					horaSaida = leitura["horaSaida"].ToString();
 					pesoSaida = leitura["pesoSaida"].ToString();
@@ -239,15 +239,15 @@ namespace EntradaDao
 		{
 			return nomeVisitante;
 		}
-		public static string GetCpf()
+		public static long GetCpf()
 		{
 			return cpf;
 		}
-		public static string GetCnpj()
+		public static long GetCnpj()
 		{
 			return cnpj;
 		}
-		public static string GetPesoEntrada()
+		public static double GetPesoEntrada()
 		{
 			return pesoEntrada;
 		}

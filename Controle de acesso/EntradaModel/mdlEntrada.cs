@@ -16,17 +16,17 @@ namespace EntradaModel
 		public string horaEntrada = DateTime.Now.ToString("HH:mm");
 		public int idUsuario = DaoUsuario.idUsuario;
 		public string nomeVisitante { get; set; }
-		public string cpf { get; set; }
-		public string cnpj { get; set; }
-		public string pesoEntrada { get; set; }
+		public long cpf { get; set; }
+		public long cnpj { get; set; }
+		public double pesoEntrada { get; set; }
 		public string visitado { get; set; }
 		public string placaVeiculo { get; set; }
 
 		public mdlEntrada(
 			string nomeVisitante,
-			string cpf,
-			string cnpj,
-			string pesoEntrada,
+			long cpf,
+			long cnpj,
+			double pesoEntrada,
 			string visitado,
 			string placaVeiculo)
 		{

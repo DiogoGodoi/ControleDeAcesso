@@ -46,9 +46,9 @@ namespace Menu_Inicial
 				txtNomeVisitado.Text = DaoEntrada.GetVisitado();
 				txtDataEntrada.Text = DaoEntrada.GetDataEntrada();
 				txtHoraEntrada.Text = DaoEntrada.GetHoraEntrada();
-				txtCpf.Text = DaoEntrada.GetCpf();
-				txtCnpj.Text = DaoEntrada.GetCnpj();
-				txtPesoEntrada.Text = DaoEntrada.GetPesoEntrada();
+				txtCpf.Text = DaoEntrada.GetCpf().ToString();
+				txtCnpj.Text = DaoEntrada.GetCnpj().ToString();
+				txtPesoEntrada.Text = DaoEntrada.GetPesoEntrada().ToString();
 				txtPlacaVeiculo.Text = DaoEntrada.GetPlacaVeiculo();
 				txtDataSaida.Text = DaoEntrada.GetDataSaida();
 				txtHoraSaida.Text = DaoEntrada.GetHoraSaida();
@@ -65,9 +65,9 @@ namespace Menu_Inicial
 					txtNomeVisitado.Text = DaoEntrada.GetVisitado();
 					txtDataEntrada.Text = DaoEntrada.GetDataEntrada();
 					txtHoraEntrada.Text = DaoEntrada.GetHoraEntrada();
-					txtCpf.Text = DaoEntrada.GetCpf();
-					txtCnpj.Text = DaoEntrada.GetCnpj();
-					txtPesoEntrada.Text = DaoEntrada.GetPesoEntrada();
+					txtCpf.Text = DaoEntrada.GetCpf().ToString();
+					txtCnpj.Text = DaoEntrada.GetCnpj().ToString();
+					txtPesoEntrada.Text = DaoEntrada.GetPesoEntrada().ToString();
 					txtPlacaVeiculo.Text = DaoEntrada.GetPlacaVeiculo();
 					txtDataSaida.Text = String.Empty;
 					txtHoraSaida.Text = String.Empty;
@@ -91,10 +91,12 @@ namespace Menu_Inicial
 			_mdlEntrada.visitado = txtNomeVisitado.Text;
 			_mdlEntrada.dataEntrada = txtDataEntrada.Text;
 			_mdlEntrada.horaEntrada = txtHoraEntrada.Text;
-			_mdlEntrada.cpf = txtCpf.Text;
-			_mdlEntrada.cnpj = txtCnpj.Text;
-			_mdlEntrada.pesoEntrada = txtPesoEntrada.Text;
+			_mdlEntrada.cpf = Convert.ToInt32(txtCpf.Text);
+			_mdlEntrada.cnpj = Convert.ToInt64(txtCnpj.Text);
+			_mdlEntrada.pesoEntrada = Convert.ToDouble(txtPesoEntrada.Text);
 			_mdlEntrada.placaVeiculo = txtPlacaVeiculo.Text;
+
+
 		}
 		private void btnVoltar_Click(object sender, EventArgs e)
 		{
