@@ -225,12 +225,65 @@ namespace EntradaDao
 				conn.Close(); 
 			}
 		}
+		//Método para exibir entradas
+		public static List<mdlEntrada> ExibirEntrada()
+		{
+			List<mdlEntrada> entradas = new List<mdlEntrada> ();
+			var builder = new MySqlConnectionStringBuilder
+			{
+				Server = "192.168.0.253",
+				Port = 4550,
+				Database = "Portaria",
+				UserID = "root",
+				Password = "T21nfr@--"
+			};
+			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
+			try
+			{
+				conn.Open();
+				string query = "SELECT * FROM Entrada"; 
+				MySqlCommand cmd = new MySqlCommand(query, conn);
+				cmd.CommandType = CommandType.Text;
+				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
+				DataTable tabela = new DataTable();
+				adaptador.Fill(tabela);
+				var leitura = cmd.ExecuteReader();
 
-		//public static List<mdlEntrada> ExibirEntrada()
-		//{
+				if (leitura.Read() == true)
+				{
+					foreach (DataRow dados  in tabela.Rows)
+					{
+						var pmtReferencia = Convert.ToInt32(leitura["ref"]);
+						var pmtNomeVisitante = leitura["nomeVisitante"].ToString();
+						var pmtVisitado = leitura["visitado"].ToString();
+						var pmtCpf = Convert.ToInt64(leitura["cpf"]);
+						var pmtCnpj = Convert.ToInt64(leitura["cnpj"]);
+						var pmtPlacaVeiculo = leitura["placaVeiculo"].ToString();
+						var pmtDataEntrada = leitura["dataEntrada"].ToString();
+						var pmtHoraEntrada = leitura["horaEntrada"].ToString();
+						var pmtPesoEntrada = Convert.ToDouble(leitura["pesoEntrada"]);
+						entradas.Add(new mdlEntrada(pmtReferencia, pmtNomeVisitante, pmtCpf, pmtCnpj, pmtPesoEntrada, pmtVisitado, pmtPlacaVeiculo));
+					}
 
-		//}
+					return entradas;
+				}
+				else
+				{
+					return null;
+				}
 
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+				return null;
+				throw new Exception("Erro interno" + ex.Message);
+			}
+			finally
+			{
+				conn.Close();
+			}
+		}
 		public static int GetReferencia()
 		{
 			return referencia;

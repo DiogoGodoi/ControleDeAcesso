@@ -12,6 +12,7 @@ namespace EntradaModel
 	public class mdlEntrada
 	{
 		//Atributos
+		public int referencia;
 		public string dataEntrada = DateTime.Now.ToString("dd-MM-yyyy");
 		public string horaEntrada = DateTime.Now.ToString("HH:mm");
 		public int idUsuario = DaoUsuario.idUsuario;
@@ -31,6 +32,23 @@ namespace EntradaModel
 			string visitado,
 			string placaVeiculo)
 		{
+			this.nomeVisitante = nomeVisitante;
+			this.cpf = cpf;
+			this.cnpj = cnpj;
+			this.pesoEntrada = pesoEntrada;
+			this.visitado = visitado;
+			this.placaVeiculo = placaVeiculo;
+		}
+		public mdlEntrada(
+			int referenci,
+			string nomeVisitante,
+			long cpf,
+			long cnpj,
+			double pesoEntrada,
+			string visitado,
+			string placaVeiculo)
+		{
+			this.referencia = referenci;
 			this.nomeVisitante = nomeVisitante;
 			this.cpf = cpf;
 			this.cnpj = cnpj;

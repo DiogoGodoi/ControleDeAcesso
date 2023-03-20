@@ -34,11 +34,21 @@
 			this.radEntrada = new System.Windows.Forms.RadioButton();
 			this.radSaida = new System.Windows.Forms.RadioButton();
 			this.Todos = new System.Windows.Forms.RadioButton();
-			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.btnVoltar = new System.Windows.Forms.Button();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.lblDataBusca = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.dtBusca = new System.Windows.Forms.DateTimePicker();
+			this.listConsulta = new System.Windows.Forms.ListView();
+			this.colNomeVisitante = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colVisitado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colDataEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colHoraEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colCpf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colCnpj = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colPesoEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colPlacaVeiculo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colIdUsuario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.ColRef = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -48,7 +58,7 @@
 			this.lblHistorico.AutoSize = true;
 			this.lblHistorico.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblHistorico.ForeColor = System.Drawing.Color.Navy;
-			this.lblHistorico.Location = new System.Drawing.Point(232, 122);
+			this.lblHistorico.Location = new System.Drawing.Point(562, 122);
 			this.lblHistorico.Name = "lblHistorico";
 			this.lblHistorico.Size = new System.Drawing.Size(98, 22);
 			this.lblHistorico.TabIndex = 5;
@@ -58,7 +68,7 @@
 			// 
 			this.pctLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.pctLogo.Image = ((System.Drawing.Image)(resources.GetObject("pctLogo.Image")));
-			this.pctLogo.Location = new System.Drawing.Point(209, 28);
+			this.pctLogo.Location = new System.Drawing.Point(539, 28);
 			this.pctLogo.Name = "pctLogo";
 			this.pctLogo.Size = new System.Drawing.Size(135, 71);
 			this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -78,6 +88,7 @@
 			this.radEntrada.TabStop = true;
 			this.radEntrada.Text = "Entrada";
 			this.radEntrada.UseVisualStyleBackColor = true;
+			this.radEntrada.CheckedChanged += new System.EventHandler(this.radEntrada_Selecionado);
 			// 
 			// radSaida
 			// 
@@ -85,7 +96,7 @@
 			this.radSaida.AutoSize = true;
 			this.radSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.radSaida.ForeColor = System.Drawing.Color.Navy;
-			this.radSaida.Location = new System.Drawing.Point(247, 163);
+			this.radSaida.Location = new System.Drawing.Point(577, 163);
 			this.radSaida.Name = "radSaida";
 			this.radSaida.Size = new System.Drawing.Size(62, 19);
 			this.radSaida.TabIndex = 7;
@@ -99,22 +110,13 @@
 			this.Todos.AutoSize = true;
 			this.Todos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Todos.ForeColor = System.Drawing.Color.Navy;
-			this.Todos.Location = new System.Drawing.Point(423, 163);
+			this.Todos.Location = new System.Drawing.Point(1084, 163);
 			this.Todos.Name = "Todos";
 			this.Todos.Size = new System.Drawing.Size(64, 19);
 			this.Todos.TabIndex = 8;
 			this.Todos.TabStop = true;
 			this.Todos.Text = "Todos";
 			this.Todos.UseVisualStyleBackColor = true;
-			// 
-			// listBox1
-			// 
-			this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.listBox1.FormattingEnabled = true;
-			this.listBox1.Location = new System.Drawing.Point(62, 210);
-			this.listBox1.Name = "listBox1";
-			this.listBox1.Size = new System.Drawing.Size(425, 186);
-			this.listBox1.TabIndex = 9;
 			// 
 			// btnVoltar
 			// 
@@ -129,7 +131,7 @@
 			this.btnVoltar.TabIndex = 23;
 			this.btnVoltar.Text = "Voltar";
 			this.btnVoltar.UseVisualStyleBackColor = false;
-			this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+			this.btnVoltar.Click += new System.EventHandler(this.Voltar);
 			// 
 			// btnBuscar
 			// 
@@ -157,24 +159,113 @@
 			this.lblDataBusca.TabIndex = 24;
 			this.lblDataBusca.Text = "Data da busca";
 			// 
-			// textBox1
+			// dtBusca
 			// 
-			this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.textBox1.Location = new System.Drawing.Point(177, 421);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(119, 20);
-			this.textBox1.TabIndex = 25;
+			this.dtBusca.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.dtBusca.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtBusca.Location = new System.Drawing.Point(178, 421);
+			this.dtBusca.Name = "dtBusca";
+			this.dtBusca.Size = new System.Drawing.Size(122, 20);
+			this.dtBusca.TabIndex = 25;
+			// 
+			// listConsulta
+			// 
+			this.listConsulta.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.listConsulta.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ColRef,
+            this.colNomeVisitante,
+            this.colVisitado,
+            this.colDataEntrada,
+            this.colHoraEntrada,
+            this.colCpf,
+            this.colCnpj,
+            this.colPesoEntrada,
+            this.colPlacaVeiculo,
+            this.colIdUsuario});
+			this.listConsulta.HideSelection = false;
+			this.listConsulta.Location = new System.Drawing.Point(62, 200);
+			this.listConsulta.Name = "listConsulta";
+			this.listConsulta.Size = new System.Drawing.Size(1141, 199);
+			this.listConsulta.TabIndex = 26;
+			this.listConsulta.UseCompatibleStateImageBehavior = false;
+			this.listConsulta.View = System.Windows.Forms.View.Details;
+			// 
+			// colNomeVisitante
+			// 
+			this.colNomeVisitante.DisplayIndex = 0;
+			this.colNomeVisitante.Text = "Nome do Visitante";
+			this.colNomeVisitante.Width = 200;
+			// 
+			// colVisitado
+			// 
+			this.colVisitado.DisplayIndex = 1;
+			this.colVisitado.Text = "Visitado";
+			this.colVisitado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colVisitado.Width = 200;
+			// 
+			// colDataEntrada
+			// 
+			this.colDataEntrada.DisplayIndex = 2;
+			this.colDataEntrada.Text = "Data da Entrada";
+			this.colDataEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colDataEntrada.Width = 100;
+			// 
+			// colHoraEntrada
+			// 
+			this.colHoraEntrada.DisplayIndex = 3;
+			this.colHoraEntrada.Text = "Hora da Entrada";
+			this.colHoraEntrada.Width = 100;
+			// 
+			// colCpf
+			// 
+			this.colCpf.DisplayIndex = 4;
+			this.colCpf.Text = "Cpf";
+			this.colCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colCpf.Width = 100;
+			// 
+			// colCnpj
+			// 
+			this.colCnpj.DisplayIndex = 5;
+			this.colCnpj.Text = "Cnpj";
+			this.colCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colCnpj.Width = 100;
+			// 
+			// colPesoEntrada
+			// 
+			this.colPesoEntrada.DisplayIndex = 6;
+			this.colPesoEntrada.Text = "Peso de Entrada";
+			this.colPesoEntrada.Width = 100;
+			// 
+			// colPlacaVeiculo
+			// 
+			this.colPlacaVeiculo.DisplayIndex = 7;
+			this.colPlacaVeiculo.Text = "Placa do Veiculo";
+			this.colPlacaVeiculo.Width = 100;
+			// 
+			// colIdUsuario
+			// 
+			this.colIdUsuario.DisplayIndex = 8;
+			this.colIdUsuario.Text = "Id Usuario";
+			this.colIdUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colIdUsuario.Width = 80;
+			// 
+			// ColRef
+			// 
+			this.ColRef.DisplayIndex = 9;
+			this.ColRef.Text = "Ref";
+			this.ColRef.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.ColRef.Width = 100;
 			// 
 			// frmConsulta
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(566, 513);
-			this.Controls.Add(this.textBox1);
+			this.ClientSize = new System.Drawing.Size(1227, 513);
+			this.Controls.Add(this.listConsulta);
+			this.Controls.Add(this.dtBusca);
 			this.Controls.Add(this.lblDataBusca);
 			this.Controls.Add(this.btnVoltar);
 			this.Controls.Add(this.btnBuscar);
-			this.Controls.Add(this.listBox1);
 			this.Controls.Add(this.Todos);
 			this.Controls.Add(this.radSaida);
 			this.Controls.Add(this.radEntrada);
@@ -183,7 +274,7 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmConsulta";
 			this.Text = "Consulta";
-			this.Load += new System.EventHandler(this.frmConsulta_Load);
+			this.Load += new System.EventHandler(this.frmConsulta_Carregamento);
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -197,11 +288,21 @@
 		private System.Windows.Forms.RadioButton radEntrada;
 		private System.Windows.Forms.RadioButton radSaida;
 		private System.Windows.Forms.RadioButton Todos;
-		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.Button btnVoltar;
 		private System.Windows.Forms.Button btnBuscar;
 		private System.Windows.Forms.Label lblDataBusca;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.DateTimePicker dtBusca;
+		private System.Windows.Forms.ListView listConsulta;
+		private System.Windows.Forms.ColumnHeader colNomeVisitante;
+		private System.Windows.Forms.ColumnHeader colVisitado;
+		private System.Windows.Forms.ColumnHeader colDataEntrada;
+		private System.Windows.Forms.ColumnHeader colHoraEntrada;
+		private System.Windows.Forms.ColumnHeader colCpf;
+		private System.Windows.Forms.ColumnHeader colCnpj;
+		private System.Windows.Forms.ColumnHeader colPesoEntrada;
+		private System.Windows.Forms.ColumnHeader colPlacaVeiculo;
+		private System.Windows.Forms.ColumnHeader colIdUsuario;
+		private System.Windows.Forms.ColumnHeader ColRef;
 	}
 }
 

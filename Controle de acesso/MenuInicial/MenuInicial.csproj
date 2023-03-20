@@ -122,6 +122,10 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ControleDeConsulta\ControleDeConsulta.csproj">
+      <Project>{AA2CE0CE-780E-45C8-9E7B-5500DFF02568}</Project>
+      <Name>ControleDeConsulta</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ControleDeEntrada\ControleDeEntrada.csproj">
       <Project>{f5d17cd2-3dd6-4c49-8f44-30b69c628254}</Project>
       <Name>ControleDeEntrada</Name>
