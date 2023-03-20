@@ -87,7 +87,7 @@
       <Name>ControleDeAutenticacao</Name>
     </ProjectReference>
     <ProjectReference Include="..\MenuInicial\MenuInicial.csproj">
-      <Project>{7F837FB1-5E5D-44B8-A205-D4293BE00FC3}</Project>
+      <Project>{7f837fb1-5e5d-44b8-a205-d4293be00fc3}</Project>
       <Name>MenuInicial</Name>
     </ProjectReference>
     <ProjectReference Include="..\UsuarioModel\UsuarioModel.csproj">

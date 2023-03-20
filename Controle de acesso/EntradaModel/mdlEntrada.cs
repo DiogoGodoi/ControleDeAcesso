@@ -22,6 +22,7 @@ namespace EntradaModel
 		public string visitado { get; set; }
 		public string placaVeiculo { get; set; }
 
+		public mdlEntrada() { }
 		public mdlEntrada(
 			string nomeVisitante,
 			long cpf,

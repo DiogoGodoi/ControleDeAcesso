@@ -51,7 +51,7 @@ namespace Menu_Inicial
 				txtPlacaVeiculo.Text = DaoEntrada.GetPlacaVeiculo();
 				txtDataSaida.Text = DaoEntrada.GetDataSaida();
 				txtHoraSaida.Text = DaoEntrada.GetHoraSaida();
-				txtPesoSaida.Text = DaoEntrada.GetPesoSaida();
+				txtPesoSaida.Text = DaoEntrada.GetPesoSaida().ToString();
 				btnAlterarSaida.Enabled = true;
 			}
 			else if (retorno == false)

@@ -1,7 +1,9 @@
 ﻿using ControleDeEntrada;
 using ControleDeSaida;
 using EntradaDao;
+using EntradaModel;
 using Menu_Inicial;
+using MenuInicial;
 using SaidaModel;
 using System;
 using System.Collections.Generic;
@@ -21,19 +23,11 @@ namespace Saida
 	public partial class frmSaida : Form
 	{
 		//Atributos
-		private Thread _thread;
+		private mdlEntrada dados = new mdlEntrada();
 		private int referencia;
-		private string nomeVisitante;
-		private string visitado;
-		private string cpf;
-		private string cnpj;
-		private string dataEntrada;
-		private string horaEntrada;
-		private string pesoEntrada;
-		private string placaVeiculo;
 		private string dataSaida;
 		private string horaSaida;
-		private string pesoSaida;
+		private double pesoSaida;
 
 		//Inicialização do formulário
 		public frmSaida()
@@ -41,29 +35,33 @@ namespace Saida
 			InitializeComponent();
 		}
 
-		//Configuração do método de cadastro
-		private void Cadastrar()
+		//Configuração do botão de cadastrar
+		private void EfetuarSaida(object sender, EventArgs e)
 		{
+			//Método de cadastro
 			//Blobo try catch para evitar quebras no sistema
 			try
 			{
 				referencia = Convert.ToInt32(txtReferencia.Text);
-				dataSaida = txtDataSaida.Text;
-				horaSaida = txtHoraSaida.Text;
-				pesoSaida = txtPesoSaida.Text;
+				dataSaida = dtSaida.Value.ToString("dd-MM-yyyy");
+				horaSaida = hrSaida.Value.ToString("hh:mm");
+				pesoSaida = Convert.ToDouble(txtPesoSaida.Text);
 				mdlSaida _mdlSaida = new mdlSaida(referencia, dataSaida, horaSaida, pesoSaida);
 
 				if (dataSaida == String.Empty && horaSaida == String.Empty)
 				{
-					MessageBox.Show("Por favor insira os dados de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Por favor insira os dados de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 				else if (dataSaida == String.Empty)
 				{
-					MessageBox.Show("Insira a data de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Insira a data de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 				else if (horaSaida == String.Empty)
 				{
-					MessageBox.Show("Insira a hora de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					MessageBox.Show("Insira a hora de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}else if (txtPesoSaida.Text == "0" && txtPesoEntrada.Text != String.Empty)
+				{
+					MessageBox.Show("Insira o peso de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
 				else
 				{
@@ -71,8 +69,8 @@ namespace Saida
 					if (retorno == true)
 					{
 						MessageBox.Show("Saida efetuada com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-						txtDataSaida.Text = String.Empty;
-						txtHoraSaida.Text = String.Empty;
+						dtSaida.Text = String.Empty;
+						hrSaida.Text = String.Empty;
 						txtPesoSaida.Text = String.Empty;
 						txtReferencia.Text = String.Empty;
 						txtReferencia.Focus();
@@ -88,8 +86,8 @@ namespace Saida
 				MessageBox.Show("Erro interno: " + ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-		//Configuração do método de busca
-		private void Buscar()
+		//Configuração do botão de buscar
+		private void Buscar(object sender, EventArgs e)
 		{
 			//Bloco try catch para a não quebra do sistema
 			try
@@ -102,71 +100,77 @@ namespace Saida
 
 					if (retorno == true)
 					{
-						nomeVisitante = DaoEntrada.GetNomeVisitante();
-						txtNomeVisitante.Text = nomeVisitante;
-						visitado = DaoEntrada.GetVisitado();
-						txtNomeVisitado.Text = visitado;
-						cpf = DaoEntrada.GetCpf().ToString();
-						txtCpf.Text = cpf;
-						cnpj = DaoEntrada.GetCnpj().ToString();
-						txtCnpj.Text = cnpj;
-						dataEntrada = DaoEntrada.GetDataEntrada();
-						txtDataEntrada.Text = dataEntrada;
-						horaEntrada = DaoEntrada.GetHoraEntrada();
-						txtHoraEntrada.Text = horaEntrada;
-						pesoEntrada = DaoEntrada.GetPesoEntrada().ToString();
-						txtPesoEntrada.Text = pesoEntrada;
-						placaVeiculo = DaoEntrada.GetPlacaVeiculo();
-						txtPlacaVeiculo.Text = placaVeiculo;
+						dados.nomeVisitante = DaoEntrada.GetNomeVisitante();
+						dados.visitado = DaoEntrada.GetVisitado();
+						dados.cpf = DaoEntrada.GetCpf();
+						dados.cnpj = DaoEntrada.GetCnpj();
+						dados.dataEntrada = DaoEntrada.GetDataEntrada();
+						dados.horaEntrada = DaoEntrada.GetHoraEntrada();
+						dados.pesoEntrada = DaoEntrada.GetPesoEntrada();
+						dados.placaVeiculo = DaoEntrada.GetPlacaVeiculo();
+						txtNomeVisitante.Text = dados.nomeVisitante;
+						txtNomeVisitado.Text = dados.visitado;
+						txtCpf.Text = Convert.ToString(dados.cpf);
+						txtCnpj.Text = dados.cnpj.ToString();
+						txtDataEntrada.Text = dados.dataEntrada;
+						txtHoraEntrada.Text = dados.horaEntrada;
+						txtPesoEntrada.Text = dados.ToString();
+						txtPlacaVeiculo.Text = dados.placaVeiculo;
+
 						dataSaida = DaoEntrada.GetDataSaida();
-						txtDataSaida.Text = dataSaida;
+						dtSaida.Text = dataSaida;
 						horaSaida = DaoEntrada.GetHoraSaida();
-						txtHoraSaida.Text = horaSaida;
+						hrSaida.Text = horaSaida;
 						pesoSaida = DaoEntrada.GetPesoSaida();
-						txtPesoSaida.Text= pesoSaida;
-						
-						if(dataSaida != String.Empty | horaSaida != String.Empty)
+						txtPesoSaida.Text = pesoSaida.ToString();
+
+						if (dataSaida != String.Empty | horaSaida != String.Empty)
 						{
-							txtDataSaida.Enabled = false;
-							txtHoraSaida.Enabled = false;
+							dtSaida.Enabled = false;
+							hrSaida.Enabled = false;
 							txtPesoSaida.Enabled = false;
 							btnCadastrar.Enabled = false;
 							MessageBox.Show("O acesso já encontra-se baixado", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						}
 
-					}else if(retorno == false)
-					{
-						bool segundoRetorno = DaoEntrada.PesquisarEntrada(referencia);
-						nomeVisitante = DaoEntrada.GetNomeVisitante();
-						txtNomeVisitante.Text = nomeVisitante;
-						visitado = DaoEntrada.GetVisitado();
-						txtNomeVisitado.Text = visitado;
-						cpf = DaoEntrada.GetCpf().ToString();
-						txtCpf.Text = cpf;
-						cnpj = DaoEntrada.GetCnpj().ToString();
-						txtCnpj.Text = cnpj;
-						dataEntrada = DaoEntrada.GetDataEntrada();
-						txtDataEntrada.Text = dataEntrada;
-						horaEntrada = DaoEntrada.GetHoraEntrada();
-						txtHoraEntrada.Text = horaEntrada;
-						pesoEntrada = DaoEntrada.GetPesoEntrada().ToString();
-						txtPesoEntrada.Text = pesoEntrada;
-						placaVeiculo = DaoEntrada.GetPlacaVeiculo();
-						txtPlacaVeiculo.Text = placaVeiculo;
-						txtDataSaida.Text = String.Empty;
-						txtHoraSaida.Text = String.Empty;
-						txtPesoSaida.Text = String.Empty;
-						txtDataSaida.Enabled = true;
-						txtHoraSaida.Enabled = true;
-						txtPesoSaida.Enabled = true;
-						btnCadastrar.Enabled = true;
 					}
 					else
 					{
+						bool segundoRetorno = DaoEntrada.PesquisarEntrada(referencia);
+
+						if(segundoRetorno == true)
+						{
+							dados.nomeVisitante = DaoEntrada.GetNomeVisitante();
+							dados.visitado = DaoEntrada.GetVisitado();
+							dados.cpf = DaoEntrada.GetCpf();
+							dados.cnpj = DaoEntrada.GetCnpj();
+							dados.dataEntrada = DaoEntrada.GetDataEntrada();
+							dados.horaEntrada = DaoEntrada.GetHoraEntrada();
+							dados.pesoEntrada = DaoEntrada.GetPesoEntrada();
+							dados.placaVeiculo = DaoEntrada.GetPlacaVeiculo();
+
+							txtNomeVisitante.Text = dados.nomeVisitante;
+							txtNomeVisitado.Text = dados.visitado;
+							txtCpf.Text = dados.cpf.ToString();
+							txtCnpj.Text = dados.cnpj.ToString();
+							txtDataEntrada.Text = dados.dataEntrada;
+							txtHoraEntrada.Text = dados.horaEntrada;
+							txtPesoEntrada.Text = dados.pesoEntrada.ToString();
+							txtPlacaVeiculo.Text = dados.placaVeiculo;
+							dtSaida.Text = String.Empty;
+							hrSaida.Text = String.Empty;
+							txtPesoSaida.Text = "0";
+							dtSaida.Enabled = true;
+							hrSaida.Enabled = true;
+							txtPesoSaida.Enabled = true;
+							btnCadastrar.Enabled = true;
+						}
+						else
+						{
 						MessageBox.Show("Não existe entrada com a referência informada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					}
-				}
-				else
+						}
+					}			
+				}else
 				{
 					MessageBox.Show("Por favor digite a referência de entrada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
@@ -176,36 +180,16 @@ namespace Saida
 				MessageBox.Show("Erro interno: " + ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-		//Configuração do método voltar
-		private void Voltar()
+		//Configuração do botão de voltar
+		private void Voltar(object sender, EventArgs e)
 		{
+			ctrlNavegacao navegar = new ctrlNavegacao();
 			//Thread para voltar ao formulário anterior
-			_thread = new Thread(AppRunVoltar);
+			Thread _thread = new Thread(navegar.NavegarParaMenuInicial);
 			_thread.SetApartmentState(ApartmentState.STA);
 			_thread.Start();
 			this.Close();
 		}
 
-		//Configuração do botão de voltar
-		private void btnVoltar_Click(object sender, EventArgs e)
-		{
-			Voltar();
-		}
-		//Configuração do botão de buscar
-		private void btnBuscar_Click(object sender, EventArgs e)
-		{
-			Buscar();
-		}
-		//Configuração do botão de cadastrar
-		private void btnCadastrar_Click(object sender, EventArgs e)
-		{
-			//Método de cadastro
-			Cadastrar();
-		}
-		//Configuração do formulário de anterior que alimentará a thread
-		private void AppRunVoltar()
-		{
-			Application.Run(new frmMenuInicial());
-		}
 	}
 }

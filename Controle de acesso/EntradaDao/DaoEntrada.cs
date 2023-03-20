@@ -25,7 +25,7 @@ namespace EntradaDao
 		private static string horaEntrada { get; set; }
 		private static string dataSaida { get; set; }
 		private static string horaSaida { get; set; }
-		private static string pesoSaida { get; set; }
+		private static double pesoSaida { get; set; }
 
 		//Método de entrada de dados no banco
 		public static bool InserirEntrada(mdlEntrada Entrada)
@@ -151,7 +151,7 @@ namespace EntradaDao
 				{
 					nomeVisitante = leitura["nomeVisitante"].ToString();
 					visitado = leitura["visitado"].ToString();
-					cpf = Convert.ToInt16(leitura["cpf"]);
+					cpf = Convert.ToInt64(leitura["cpf"]);
 					cnpj = Convert.ToInt64(leitura["cnpj"]);
 					placaVeiculo = leitura["placaVeiculo"].ToString();
 					dataEntrada = leitura["dataEntrada"].ToString();
@@ -208,7 +208,7 @@ namespace EntradaDao
 					pesoEntrada = Convert.ToDouble(leitura["pesoEntrada"]);
 					dataSaida = leitura["dataSaida"].ToString();
 					horaSaida = leitura["horaSaida"].ToString();
-					pesoSaida = leitura["pesoSaida"].ToString();
+					pesoSaida = Convert.ToDouble(leitura["pesoSaida"]);
 
 					return true;
 				}
@@ -275,7 +275,7 @@ namespace EntradaDao
 		{
 			return horaSaida;
 		}
-		public static string GetPesoSaida()
+		public static double GetPesoSaida()
 		{
 			return pesoSaida;
 		}

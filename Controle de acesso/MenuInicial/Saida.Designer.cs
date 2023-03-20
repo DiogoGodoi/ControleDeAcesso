@@ -44,8 +44,6 @@
 			this.lblNomeVisitado = new System.Windows.Forms.Label();
 			this.lblNomeVisitante = new System.Windows.Forms.Label();
 			this.txtPesoSaida = new System.Windows.Forms.TextBox();
-			this.txtHoraSaida = new System.Windows.Forms.TextBox();
-			this.txtDataSaida = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.lblSaida = new System.Windows.Forms.Label();
@@ -58,6 +56,8 @@
 			this.lblDataEntrada = new System.Windows.Forms.Label();
 			this.lblHoraEntrada = new System.Windows.Forms.Label();
 			this.txtHoraEntrada = new System.Windows.Forms.TextBox();
+			this.dtSaida = new System.Windows.Forms.DateTimePicker();
+			this.hrSaida = new System.Windows.Forms.DateTimePicker();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -74,7 +74,7 @@
 			this.btnVoltar.TabIndex = 39;
 			this.btnVoltar.Text = "Voltar";
 			this.btnVoltar.UseVisualStyleBackColor = false;
-			this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+			this.btnVoltar.Click += new System.EventHandler(this.Voltar);
 			// 
 			// btnCadastrar
 			// 
@@ -89,7 +89,7 @@
 			this.btnCadastrar.TabIndex = 38;
 			this.btnCadastrar.Text = "Cadastrar";
 			this.btnCadastrar.UseVisualStyleBackColor = false;
-			this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+			this.btnCadastrar.Click += new System.EventHandler(this.EfetuarSaida);
 			// 
 			// txtPlacaVeiculo
 			// 
@@ -225,22 +225,6 @@
 			this.txtPesoSaida.Size = new System.Drawing.Size(200, 20);
 			this.txtPesoSaida.TabIndex = 45;
 			// 
-			// txtHoraSaida
-			// 
-			this.txtHoraSaida.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtHoraSaida.Location = new System.Drawing.Point(550, 239);
-			this.txtHoraSaida.Name = "txtHoraSaida";
-			this.txtHoraSaida.Size = new System.Drawing.Size(200, 20);
-			this.txtHoraSaida.TabIndex = 44;
-			// 
-			// txtDataSaida
-			// 
-			this.txtDataSaida.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtDataSaida.Location = new System.Drawing.Point(550, 211);
-			this.txtDataSaida.Name = "txtDataSaida";
-			this.txtDataSaida.Size = new System.Drawing.Size(200, 20);
-			this.txtDataSaida.TabIndex = 43;
-			// 
 			// label1
 			// 
 			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -333,7 +317,7 @@
 			this.btnBuscar.TabIndex = 50;
 			this.btnBuscar.Text = "Buscar";
 			this.btnBuscar.UseVisualStyleBackColor = false;
-			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+			this.btnBuscar.Click += new System.EventHandler(this.Buscar);
 			// 
 			// txtDataEntrada
 			// 
@@ -377,11 +361,37 @@
 			this.txtHoraEntrada.Size = new System.Drawing.Size(189, 20);
 			this.txtHoraEntrada.TabIndex = 34;
 			// 
+			// dtSaida
+			// 
+			this.dtSaida.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.dtSaida.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dtSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dtSaida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+			this.dtSaida.Location = new System.Drawing.Point(550, 211);
+			this.dtSaida.Name = "dtSaida";
+			this.dtSaida.Size = new System.Drawing.Size(200, 20);
+			this.dtSaida.TabIndex = 53;
+			this.dtSaida.Value = new System.DateTime(2023, 3, 20, 15, 12, 48, 0);
+			// 
+			// hrSaida
+			// 
+			this.hrSaida.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.hrSaida.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveBorder;
+			this.hrSaida.CustomFormat = "hh:mm";
+			this.hrSaida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+			this.hrSaida.Location = new System.Drawing.Point(550, 239);
+			this.hrSaida.Name = "hrSaida";
+			this.hrSaida.ShowUpDown = true;
+			this.hrSaida.Size = new System.Drawing.Size(200, 20);
+			this.hrSaida.TabIndex = 54;
+			// 
 			// frmSaida
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 470);
+			this.Controls.Add(this.hrSaida);
+			this.Controls.Add(this.dtSaida);
 			this.Controls.Add(this.txtDataEntrada);
 			this.Controls.Add(this.lblDataEntrada);
 			this.Controls.Add(this.btnBuscar);
@@ -390,8 +400,6 @@
 			this.Controls.Add(this.lblTitulo);
 			this.Controls.Add(this.pctLogo);
 			this.Controls.Add(this.txtPesoSaida);
-			this.Controls.Add(this.txtHoraSaida);
-			this.Controls.Add(this.txtDataSaida);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.lblSaida);
@@ -437,8 +445,6 @@
 		private System.Windows.Forms.Label lblNomeVisitado;
 		private System.Windows.Forms.Label lblNomeVisitante;
 		private System.Windows.Forms.TextBox txtPesoSaida;
-		private System.Windows.Forms.TextBox txtHoraSaida;
-		private System.Windows.Forms.TextBox txtDataSaida;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label lblSaida;
@@ -451,6 +457,8 @@
 		private System.Windows.Forms.Label lblDataEntrada;
 		private System.Windows.Forms.Label lblHoraEntrada;
 		private System.Windows.Forms.TextBox txtHoraEntrada;
+		private System.Windows.Forms.DateTimePicker dtSaida;
+		private System.Windows.Forms.DateTimePicker hrSaida;
 	}
 }
 

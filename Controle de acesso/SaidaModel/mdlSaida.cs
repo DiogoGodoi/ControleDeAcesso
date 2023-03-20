@@ -16,10 +16,10 @@ namespace SaidaModel
         public int idUsuario = DaoUsuario.idUsuario;
         public string dataSaida { get; set; }
         public string horaSaida { get; set; }
-        public string pesoSaida { get; set; }
+        public double pesoSaida { get; set; }
 
 
-        public mdlSaida(int referenciia, string dtSaida, string hrSaida, string pSaida) {
+        public mdlSaida(int referenciia, string dtSaida, string hrSaida, double pSaida) {
             referencia = referenciia;
             dataSaida = dtSaida;
             horaSaida = hrSaida;
