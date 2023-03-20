@@ -39,6 +39,7 @@
 			this.lblDataBusca = new System.Windows.Forms.Label();
 			this.dtBusca = new System.Windows.Forms.DateTimePicker();
 			this.listConsulta = new System.Windows.Forms.ListView();
+			this.ColRef = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colNomeVisitante = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colVisitado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colDataEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,7 +49,6 @@
 			this.colPesoEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colPlacaVeiculo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colIdUsuario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.ColRef = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -190,6 +190,13 @@
 			this.listConsulta.UseCompatibleStateImageBehavior = false;
 			this.listConsulta.View = System.Windows.Forms.View.Details;
 			// 
+			// ColRef
+			// 
+			this.ColRef.DisplayIndex = 9;
+			this.ColRef.Text = "Ref";
+			this.ColRef.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.ColRef.Width = 50;
+			// 
 			// colNomeVisitante
 			// 
 			this.colNomeVisitante.DisplayIndex = 0;
@@ -248,13 +255,6 @@
 			this.colIdUsuario.Text = "Id Usuario";
 			this.colIdUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.colIdUsuario.Width = 80;
-			// 
-			// ColRef
-			// 
-			this.ColRef.DisplayIndex = 9;
-			this.ColRef.Text = "Ref";
-			this.ColRef.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.ColRef.Width = 100;
 			// 
 			// frmConsulta
 			// 
