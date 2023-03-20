@@ -12,6 +12,7 @@ using EntradaModel;
 using ControleDeEntrada;
 using Menu_Inicial;
 using EntradaDao;
+using MenuInicial;
 
 namespace Menu_Inicial
 {
@@ -31,43 +32,13 @@ namespace Menu_Inicial
 		{
 			InitializeComponent();
 		}
-		//Configuração do método de entrada de acesso de pessoal
-		private void EfetuarEntrada()
+
+		//Configuração do botão de cadastro
+		private void EfetuarEntrada(object sender, EventArgs e)
 		{
 			try
 			{
-				//Bloco try e catch para a não quebra do sistema
-				mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
-
-				bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
-
-				if (retorno != false)
-				{
-					MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					txtNomeVisitante.Text = String.Empty;
-					txtNomeVisitado.Text = String.Empty;
-					txtCpf.Text = String.Empty;
-					txtCnpj.Text = String.Empty;
-					txtPesoEntrada.Text = String.Empty;
-					txtPlacaVeiculo.Text = String.Empty;
-					txtNomeVisitante.Focus();
-				}
-				else
-				{
-					MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Erro interno" + ex.Message);
-			}
-		}
-		//Método para validar dados antes de efetuar a entrada
-		private void ValidadorDeCampos()
-		{
-			try
-			{
-				//Pré validação dos campos
+				//Pré validação dos campos do tipo numérico para inicialização
 				if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
 				{
 					nomeVisitante = txtNomeVisitante.Text;
@@ -132,7 +103,7 @@ namespace Menu_Inicial
 					pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
 				}
 
-				//Validação dos campos de entrada para cadastro no banco 
+				//Segunda validação dos campos 
 				if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty &&
 					txtPesoEntrada.Text == String.Empty && txtNomeVisitante.Text == String.Empty &&
 					txtNomeVisitado.Text == String.Empty)
@@ -151,45 +122,99 @@ namespace Menu_Inicial
 				{
 					MessageBox.Show("Por favor insira o cpf ou o cnpj do visitante", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
-				else if (txtNomeVisitante.Text != String.Empty 
-					&& txtNomeVisitado.Text != String.Empty 
-					&& txtCpf.Text != String.Empty 
-					&& txtCnpj.Text == String.Empty 
-					&& txtPesoEntrada.Text != String.Empty 
+				else if (txtNomeVisitante.Text != String.Empty
+					&& txtNomeVisitado.Text != String.Empty
+					&& txtCpf.Text != String.Empty
+					&& txtCnpj.Text == String.Empty
+					&& txtPesoEntrada.Text != String.Empty
 					&& txtPlacaVeiculo.Text == String.Empty)
 				{
 					MessageBox.Show("Por favor a placa do veículo", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
-				else if (txtNomeVisitante.Text != String.Empty 
+				else if (txtNomeVisitante.Text != String.Empty
 					&& txtNomeVisitado.Text != String.Empty
-					&& txtCpf.Text == String.Empty 
+					&& txtCpf.Text == String.Empty
 					&& txtCnpj.Text != String.Empty
 					&& txtPesoEntrada.Text != String.Empty
 					&& txtPlacaVeiculo.Text == String.Empty)
 				{
 					MessageBox.Show("Por favor a placa do veículo", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
-				else if (txtNomeVisitante.Text != String.Empty 
+				else if (txtNomeVisitante.Text != String.Empty
 					&& txtNomeVisitado.Text != String.Empty
-					&& txtCpf.Text != String.Empty 
-					&& txtCnpj.Text == String.Empty 
+					&& txtCpf.Text != String.Empty
+					&& txtCnpj.Text == String.Empty
 					&& txtPesoEntrada.Text != String.Empty
 					&& txtPesoEntrada.Text != String.Empty)
 				{
-					EfetuarEntrada();
+					mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
+
+					bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
+
+					if (retorno != false)
+					{
+						MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						txtNomeVisitante.Text = String.Empty;
+						txtNomeVisitado.Text = String.Empty;
+						txtCpf.Text = String.Empty;
+						txtCnpj.Text = String.Empty;
+						txtPesoEntrada.Text = String.Empty;
+						txtPlacaVeiculo.Text = String.Empty;
+						txtNomeVisitante.Focus();
+					}
+					else
+					{
+						MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
 				}
-				else if (txtNomeVisitante.Text != String.Empty 
+				else if (txtNomeVisitante.Text != String.Empty
 					&& txtNomeVisitado.Text != String.Empty
-					&& txtCpf.Text == String.Empty 
-					&& txtCnpj.Text != String.Empty 
+					&& txtCpf.Text == String.Empty
+					&& txtCnpj.Text != String.Empty
 					&& txtPesoEntrada.Text != String.Empty
 					&& txtPlacaVeiculo.Text != String.Empty)
 				{
-					EfetuarEntrada();
-				}else
+					mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
+
+					bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
+
+					if (retorno != false)
+					{
+						MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						txtNomeVisitante.Text = String.Empty;
+						txtNomeVisitado.Text = String.Empty;
+						txtCpf.Text = String.Empty;
+						txtCnpj.Text = String.Empty;
+						txtPesoEntrada.Text = String.Empty;
+						txtPlacaVeiculo.Text = String.Empty;
+						txtNomeVisitante.Focus();
+					}
+					else
+					{
+						MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+				else
 				{
-					//Método para efetuar o acesso de entrada de dados junto ao banco 
-					EfetuarEntrada();
+					mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
+
+					bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
+
+					if (retorno != false)
+					{
+						MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						txtNomeVisitante.Text = String.Empty;
+						txtNomeVisitado.Text = String.Empty;
+						txtCpf.Text = String.Empty;
+						txtCnpj.Text = String.Empty;
+						txtPesoEntrada.Text = String.Empty;
+						txtPlacaVeiculo.Text = String.Empty;
+						txtNomeVisitante.Focus();
+					}
+					else
+					{
+						MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
 				}
 			}
 			catch (FormatException)
@@ -197,29 +222,16 @@ namespace Menu_Inicial
 				MessageBox.Show("Os campos cpf, cnpj, e peso de entrada só aceitam numeros", "Mensagm", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
-		//Configuração da método para voltar ao menu anterior
-		private void Voltar()
+		//Configuração do botão de voltar
+		private void Voltar(object sender, EventArgs e)
 		{
+			ctrlNavegacao navegar = new ctrlNavegacao();
 			//Thread para voltar ao menu anterior
-			Thread _thread = new Thread(AppRunVoltar);
+			Thread _thread = new Thread(navegar.Voltar);
 			_thread.SetApartmentState(ApartmentState.STA);
 			_thread.Start();
 			this.Close();
 		}
-		//Configuração do botão de cadastro
-		private void btnCadastrar_Click(object sender, EventArgs e)
-		{
-			ValidadorDeCampos();
-		}
-		//Configuração do botão de voltar
-		private void btnVoltar_Click(object sender, EventArgs e)
-		{
-			Voltar();
-		}
 		//Configuração do formulário inicial que alimentará a Thread
-		private void AppRunVoltar()
-		{
-			Application.Run(new frmMenuInicial());
-		}
 	}
 }

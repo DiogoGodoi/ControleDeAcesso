@@ -16,109 +16,50 @@ namespace Menu_Inicial
 	public partial class frmMenuInicial : Form
 	{
 		//Inicializador do formulário
+		ctrlNavegacao navegar = new ctrlNavegacao();
 		public frmMenuInicial()
 		{
 			InitializeComponent();
 		}
-
-		//Configuração da método de entrada da tela de entrada
-		private void TelaDeEntrada()
+		private void TelaDeEntrada(object sender, EventArgs e)
 		{
-			//Thread da tela de entrada
-			Thread _thread = new Thread(AppRunEntrada);
-			_thread.SetApartmentState(ApartmentState.STA);
-			_thread.Start();
-			this.Close();
-		}
-		//Configuração método de entrada da tela de saída
-		private void TelaDeSaida()
+		Thread _thread = new Thread(navegar.NavegarParaTelaEntrada);
+		_thread.SetApartmentState(ApartmentState.STA);
+		_thread.Start();
+		this.Close();
+	}
+		//Configuração do botão da tela de saída
+		private void TelaDeSaida(object sender, EventArgs e)
 		{
 			//Thread da tela de saída
-			Thread _thread = new Thread(AppRunSaida);
+			Thread _thread = new Thread(navegar.NavegarParaTelaSaida);
 			_thread.SetApartmentState(ApartmentState.STA);
 			_thread.Start();
 			this.Close();
 		}
-		//Configuração método de entrada da tela de alteração
-		private void TelaDeAlteracao()
+		//Configuração do botão da tela de alteração
+		private void TelaDeAlteracao(object sender, EventArgs e)
 		{
 			//Thread da tela de alteração
-			Thread _thread = new Thread(AppRunAlteracao);
+			Thread _thread = new Thread(navegar.NavegarParaTelaAlteracao);
 			_thread.SetApartmentState(ApartmentState.STA);
 			_thread.Start();
 			this.Close();
 		}
-		//Configuração método de entrada da tela de consulta
-		private void TelaDeConsulta()
+		//Configuração do botão da tela de consulta
+		private void TelaDeConsulta(object sender, EventArgs e)
 		{
 			//Thread da tela de consulta
-			Thread _thread = new Thread(AppRunConsulta);
+			Thread _thread = new Thread(navegar.NavegarParaTelaConsulta);
 			_thread.SetApartmentState(ApartmentState.STA);
 			_thread.Start();
 			this.Close();
 		}
-		//Configuração do método de saida do sistema
-		private void Sair()
+		//Configuração do botão de saida do sistema
+		private void Sair(object sender, EventArgs e)
 		{
 			//Método para fechar o formulário atual
 			this.Close();
 		}
-
-
-		//Configuração do botão da tela entrada
-		private void btnEntrada_Click(object sender, EventArgs e)
-		{
-			//Método de navegação para tela de entrada
-			TelaDeEntrada();
-		}
-		//Configuração do botão da tela de saída
-		private void btnSaida_Click(object sender, EventArgs e)
-		{
-			//Método de navegação para tela de saída
-			TelaDeSaida();
-		}
-		//Configuração do botão da tela de alteração
-		private void btnAlterar_Click(object sender, EventArgs e)
-		{
-			//Método de navegação para tela de alteração
-			TelaDeAlteracao();
-		}
-		//Configuração do botão da tela de consulta
-		private void btnConsultar_Click(object sender, EventArgs e)
-		{
-			//Método de navegação para tela de consulta
-			TelaDeConsulta();
-		}
-		//Configuração do botão de saida do sistema
-		private void btnSair_click(object sender, EventArgs e)
-		{
-			//Método para sair do sistema
-			Sair();
-		}
-		//Configuração do formulário de entrada que alimentará a Thread de entrada
-		private void AppRunEntrada()
-		{
-			//Motor do formulário de entrada
-			Application.Run(new frmEntrada());
-		}
-		//Configuração do formulário de saída que alimentará a Thread de saída
-		private void AppRunSaida()
-		{
-			//Motor do formulário de saida
-			Application.Run(new frmSaida());
-		}
-		//Configuração do formulário de alteração que alimentará a Thread de alteração
-		private void AppRunAlteracao()
-		{
-			//Motor do formulário de alteração
-			Application.Run(new frmAlterar());
-		}
-		//Configuração do formulário de consulta que alimentará a Thread de consulta
-		private void AppRunConsulta()
-		{
-			//Motor do formulário de consulta
-			Application.Run(new frmConsulta());
-		}
-
 	}
 }

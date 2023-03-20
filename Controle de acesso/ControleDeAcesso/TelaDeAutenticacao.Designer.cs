@@ -116,7 +116,7 @@
 			this.btnSair.TabIndex = 7;
 			this.btnSair.Text = "Sair";
 			this.btnSair.UseVisualStyleBackColor = false;
-			this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+			this.btnSair.Click += new System.EventHandler(this.Sair);
 			// 
 			// btnEntrar
 			// 
@@ -131,7 +131,7 @@
 			this.btnEntrar.TabIndex = 6;
 			this.btnEntrar.Text = "Entrar";
 			this.btnEntrar.UseVisualStyleBackColor = false;
-			this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
+			this.btnEntrar.Click += new System.EventHandler(this.Entrar);
 			// 
 			// frmAutenticacao
 			// 

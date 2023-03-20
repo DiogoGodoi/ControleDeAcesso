@@ -127,7 +127,7 @@
 			this.btnEntrada.TabIndex = 8;
 			this.btnEntrada.Text = "Entrada";
 			this.btnEntrada.UseVisualStyleBackColor = false;
-			this.btnEntrada.Click += new System.EventHandler(this.btnEntrada_Click);
+			this.btnEntrada.Click += new System.EventHandler(this.TelaDeEntrada);
 			// 
 			// btnConsultar
 			// 
@@ -142,7 +142,7 @@
 			this.btnConsultar.TabIndex = 11;
 			this.btnConsultar.Text = "Consultar";
 			this.btnConsultar.UseVisualStyleBackColor = false;
-			this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+			this.btnConsultar.Click += new System.EventHandler(this.TelaDeConsulta);
 			// 
 			// btnAlterar
 			// 
@@ -157,7 +157,7 @@
 			this.btnAlterar.TabIndex = 10;
 			this.btnAlterar.Text = "Alterar";
 			this.btnAlterar.UseVisualStyleBackColor = false;
-			this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+			this.btnAlterar.Click += new System.EventHandler(this.TelaDeAlteracao);
 			// 
 			// btnSair
 			// 
@@ -172,7 +172,7 @@
 			this.btnSair.TabIndex = 12;
 			this.btnSair.Text = "Sair";
 			this.btnSair.UseVisualStyleBackColor = false;
-			this.btnSair.Click += new System.EventHandler(this.btnSair_click);
+			this.btnSair.Click += new System.EventHandler(this.Sair);
 			// 
 			// btnSaida
 			// 
@@ -187,7 +187,7 @@
 			this.btnSaida.TabIndex = 9;
 			this.btnSaida.Text = "Saida";
 			this.btnSaida.UseVisualStyleBackColor = false;
-			this.btnSaida.Click += new System.EventHandler(this.btnSaida_Click);
+			this.btnSaida.Click += new System.EventHandler(this.TelaDeSaida);
 			// 
 			// frmMenuInicial
 			// 

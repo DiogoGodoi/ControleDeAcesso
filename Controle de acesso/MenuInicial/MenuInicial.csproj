@@ -53,6 +53,7 @@
     <Compile Include="Alterar.Designer.cs">
       <DependentUpon>Alterar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Navegacao\ctrlNavegacao.cs" />
     <Compile Include="Entrada.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,7 +127,7 @@
       <Name>ControleDeEntrada</Name>
     </ProjectReference>
     <ProjectReference Include="..\ControleDeSaida\ControleDeSaida.csproj">
-      <Project>{F6B051B9-5C26-49CE-942D-41B584F7F4A4}</Project>
+      <Project>{f6b051b9-5c26-49ce-942d-41b584f7f4a4}</Project>
       <Name>ControleDeSaida</Name>
     </ProjectReference>
     <ProjectReference Include="..\EntradaDao\EntradaDao.csproj">

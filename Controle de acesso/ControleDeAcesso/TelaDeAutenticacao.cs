@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UsuarioModel;
+using MenuInicial;
 
 namespace ControleDeAcesso
 {
@@ -19,6 +20,7 @@ namespace ControleDeAcesso
 	public partial class frmAutenticacao : Form
 	{
 		//Atributos
+		private ctrlNavegacao navegar = new ctrlNavegacao();
 		private string nome { get; set; }
 		private string senha { get; set; }
 		public frmAutenticacao()
@@ -27,27 +29,10 @@ namespace ControleDeAcesso
 			InitializeComponent();
 		}
 
-
-		//Configuração do método de entrada do sistema
-		private void Entrar()
-		{
-			//thread de entrada do sistema
-			Thread _thread = new Thread(AppRunEntrar);
-			_thread.SetApartmentState(ApartmentState.STA);
-			_thread.Start();
-			this.Close();
-		}
-		//Configuração do método de saída do sistema
-		private void Sair()
-		{
-			//método para fechar janela atual
-			this.Close();
-		}
 		//Configuração do botão de entrada do sistema
-
-
-		private void btnEntrar_Click(object sender, EventArgs e)
+		private void Entrar(object sender, EventArgs e)
 		{	
+
 			//Asociação de atributos com os campos do formulário
 			nome = txtNome.Text;
 			senha = txtSenha.Text;
@@ -71,7 +56,11 @@ namespace ControleDeAcesso
 				bool retorno = ctrlAutenticacao.Autenticar(_mdlUsuario);
 				if (retorno == true)
 				{
-					Entrar();
+					//thread de entrada do sistema
+					Thread _thread = new Thread(navegar.NavegarParaMenuInicial);
+					_thread.SetApartmentState(ApartmentState.STA);
+					_thread.Start();
+					this.Close();
 				}
 				else
 				{
@@ -80,17 +69,10 @@ namespace ControleDeAcesso
 			}
 		}
 		//Configuração botão de saída do sistema
-		private void btnSair_Click(object sender, EventArgs e)
+		private void Sair(object sender, EventArgs e)
 		{
-			//Método para sair do sistema
-			Sair();
+			//método para fechar janela atual
+			this.Close();
 		}
-		//Configuração do formulário que alimentará a thread de entrada do sistema
-		private void AppRunEntrar()
-		{
-			//Motor do formulário do menu inicial
-			Application.Run(new frmMenuInicial());
-		}
-
 	}
 }
