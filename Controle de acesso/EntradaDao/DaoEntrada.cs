@@ -7,6 +7,7 @@ using System.Text;
 using MySqlConnector;
 using EntradaModel;
 using System.Threading.Tasks;
+using UsuarioModel;
 
 //Data access object de entrada
 namespace EntradaDao
@@ -36,8 +37,8 @@ namespace EntradaDao
 				Server = "192.168.0.253",
 				Port = 4550,
 				Database = "Portaria",
-				UserID = "root",
-				Password = "T21nfr@--"
+				UserID = mdlUsuario.staticNome,
+				Password = mdlUsuario.staticSenha
 			};
 			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
@@ -137,8 +138,8 @@ namespace EntradaDao
 				Server = "192.168.0.253",
 				Port = 4550,
 				Database = "Portaria",
-				UserID = "root",
-				Password = "T21nfr@--"
+				UserID = mdlUsuario.staticNome,
+				Password = mdlUsuario.staticSenha
 			};
 			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
@@ -186,8 +187,8 @@ namespace EntradaDao
 				Server = "192.168.0.253",
 				Port = 4550,
 				Database = "Portaria",
-				UserID = "root",
-				Password = "T21nfr@--"
+				UserID = mdlUsuario.staticNome,
+				Password = mdlUsuario.staticSenha
 			};
 			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
@@ -235,14 +236,14 @@ namespace EntradaDao
 				Server = "192.168.0.253",
 				Port = 4550,
 				Database = "Portaria",
-				UserID = "root",
-				Password = "T21nfr@--"
+				UserID = mdlUsuario.staticNome,
+				Password = mdlUsuario.staticSenha
 			};
 			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
 			{
 				conn.Open();
-				string query = $"SELECT * FROM Entrada WHERE dataEntrada = '{dataAtual}' ORDER BY dataEntrada ASC"; 
+				string query = $"SELECT * FROM Entrada"; 
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				cmd.CommandType = CommandType.Text;
 				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
@@ -293,8 +294,8 @@ namespace EntradaDao
 				Server = "192.168.0.253",
 				Port = 4550,
 				Database = "Portaria",
-				UserID = "root",
-				Password = "T21nfr@--"
+				UserID = mdlUsuario.staticNome,
+				Password = mdlUsuario.staticSenha
 			};
 			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try

@@ -1,5 +1,6 @@
 ﻿using ControleDeConsulta;
 using ControleDeEntrada;
+using EntradaDao;
 using EntradaModel;
 using MenuInicial;
 using SaidaModel;
@@ -46,18 +47,36 @@ namespace Menu_Inicial
 
 			if (entradas != null)
 			{
-				foreach (var item in entradas)
+				var busca = entradas.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
+				if(busca.Count() > 0)
 				{
-					lista = new ListViewItem(item.referencia.ToString());
-					lista.SubItems.Add(item.nomeVisitante);
-					lista.SubItems.Add(item.visitado);
-					lista.SubItems.Add(item.dataEntrada);
-					lista.SubItems.Add(item.horaEntrada);
-					lista.SubItems.Add(item.cpf.ToString());
-					lista.SubItems.Add(item.cnpj.ToString());
-					lista.SubItems.Add(item.pesoEntrada.ToString());
-					lista.SubItems.Add(item.placaVeiculo);
-					lista.SubItems.Add(item.idUsuario.ToString());
+					foreach (var item in busca)
+					{
+						lista = new ListViewItem(item.referencia.ToString());
+						lista.SubItems.Add(item.nomeVisitante);
+						lista.SubItems.Add(item.visitado);
+						lista.SubItems.Add(item.dataEntrada);
+						lista.SubItems.Add(item.horaEntrada);
+						lista.SubItems.Add(item.cpf.ToString());
+						lista.SubItems.Add(item.cnpj.ToString());
+						lista.SubItems.Add(item.pesoEntrada.ToString());
+						lista.SubItems.Add(item.placaVeiculo);
+						lista.SubItems.Add(item.idUsuario.ToString());
+						listEntrada.Items.Add(lista);
+					}
+				}
+				else
+				{
+					lista = new ListViewItem("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
 					listEntrada.Items.Add(lista);
 				}
 			}
@@ -73,7 +92,7 @@ namespace Menu_Inicial
 				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
-				listFinalizada.Items.Add(lista);
+				listEntrada.Items.Add(lista);
 			}
 		}
 		private void radSaida_CheckedChanged(object sender, EventArgs e)
@@ -90,14 +109,28 @@ namespace Menu_Inicial
 
 			if (saidas != null)
 			{
-				foreach (var item in saidas)
+				var busca = saidas.Where(i => i.dataSaida == dtBusca.Value.ToString("dd-MM-yyyy"));
+				if(busca.Count() > 0)
 				{
-					lista = new ListViewItem(item.referencia.ToString());
-					lista.SubItems.Add(item.dados.nomeVisitante);
-					lista.SubItems.Add(item.dataSaida);
-					lista.SubItems.Add(item.horaSaida);
-					lista.SubItems.Add(item.pesoSaida.ToString());
-					lista.SubItems.Add(item.idUsuario.ToString());
+					foreach (var item in busca)
+					{
+						lista = new ListViewItem(item.referencia.ToString());
+						lista.SubItems.Add(item.dados.nomeVisitante);
+						lista.SubItems.Add(item.dataSaida);
+						lista.SubItems.Add(item.horaSaida);
+						lista.SubItems.Add(item.pesoSaida.ToString());
+						lista.SubItems.Add(item.idUsuario.ToString());
+						listSaida.Items.Add(lista);
+					}
+				}
+				else
+				{
+					lista = new ListViewItem("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
 					listSaida.Items.Add(lista);
 				}
 			}
@@ -109,7 +142,7 @@ namespace Menu_Inicial
 				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
-				listFinalizada.Items.Add(lista);
+				listSaida.Items.Add(lista);
 			}
 		}
 		private void frmConsulta_Carregamento(object sender, EventArgs e)
@@ -128,18 +161,36 @@ namespace Menu_Inicial
 
 			if (entradas != null)
 			{
-				foreach (var item in entradas)
+				var busca = entradas.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
+				if(busca.Count() > 0)
 				{
-					lista = new ListViewItem(item.referencia.ToString());
-					lista.SubItems.Add(item.nomeVisitante);
-					lista.SubItems.Add(item.visitado);
-					lista.SubItems.Add(item.dataEntrada);
-					lista.SubItems.Add(item.horaEntrada);
-					lista.SubItems.Add(item.cpf.ToString());
-					lista.SubItems.Add(item.cnpj.ToString());
-					lista.SubItems.Add(item.pesoEntrada.ToString());
-					lista.SubItems.Add(item.placaVeiculo);
-					lista.SubItems.Add(item.idUsuario.ToString());
+					foreach (var item in busca)
+					{
+						lista = new ListViewItem(item.referencia.ToString());
+						lista.SubItems.Add(item.nomeVisitante);
+						lista.SubItems.Add(item.visitado);
+						lista.SubItems.Add(item.dataEntrada);
+						lista.SubItems.Add(item.horaEntrada);
+						lista.SubItems.Add(item.cpf.ToString());
+						lista.SubItems.Add(item.cnpj.ToString());
+						lista.SubItems.Add(item.pesoEntrada.ToString());
+						lista.SubItems.Add(item.placaVeiculo);
+						lista.SubItems.Add(item.idUsuario.ToString());
+						listEntrada.Items.Add(lista);
+					}
+				}
+				else
+				{
+					lista = new ListViewItem("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
 					listEntrada.Items.Add(lista);
 				}
 			}
@@ -155,7 +206,7 @@ namespace Menu_Inicial
 				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
-				listFinalizada.Items.Add(lista);
+				listEntrada.Items.Add(lista);
 			}
 		}
 		private void Todos_CheckedChanged(object sender, EventArgs e)
@@ -172,24 +223,48 @@ namespace Menu_Inicial
 
 			if (entradasFinalizada != null)
 			{
-				foreach (var item in entradasFinalizada)
+				listFinalizada.Items.Clear();
+				var busca = entradasFinalizada.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
+				if(busca.Count() > 0)
 				{
-					lista = new ListViewItem(item.referencia.ToString());
-					lista.SubItems.Add(item.nomeVisitante);
-					lista.SubItems.Add(item.visitado);
-					lista.SubItems.Add(item.cnpj.ToString());
-					lista.SubItems.Add(item.cpf.ToString());
-					lista.SubItems.Add(item.placaVeiculo);
-					lista.SubItems.Add(item.dataEntrada);
-					lista.SubItems.Add(item.dataSaida);
-					lista.SubItems.Add(item.horaEntrada);
-					lista.SubItems.Add(item.horaSaida);
-					lista.SubItems.Add(item.pesoEntrada.ToString());
-					lista.SubItems.Add(item.pesoSaida.ToString());
-					lista.SubItems.Add(item.idUsuarioEntrada.ToString());
-					lista.SubItems.Add(item.idUsuarioSaida.ToString());
+					foreach (var item in busca)
+					{
+						lista = new ListViewItem(item.referencia.ToString());
+						lista.SubItems.Add(item.nomeVisitante);
+						lista.SubItems.Add(item.visitado);
+						lista.SubItems.Add(item.cnpj.ToString());
+						lista.SubItems.Add(item.cpf.ToString());
+						lista.SubItems.Add(item.placaVeiculo);
+						lista.SubItems.Add(item.dataEntrada);
+						lista.SubItems.Add(item.dataSaida);
+						lista.SubItems.Add(item.horaEntrada);
+						lista.SubItems.Add(item.horaSaida);
+						lista.SubItems.Add(item.pesoEntrada.ToString());
+						lista.SubItems.Add(item.pesoSaida.ToString());
+						lista.SubItems.Add(item.idUsuarioEntrada.ToString());
+						lista.SubItems.Add(item.idUsuarioSaida.ToString());
+						listFinalizada.Items.Add(lista);
+					}
+				}
+				else
+				{
+					lista = new ListViewItem("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
 					listFinalizada.Items.Add(lista);
 				}
+				
 			}else
 			{
 				lista = new ListViewItem("Sem dados");
@@ -208,6 +283,126 @@ namespace Menu_Inicial
 				lista.SubItems.Add("Sem dados");
 				listFinalizada.Items.Add(lista);
 			}
+		}
+		private void btnBuscar_Click(object sender, EventArgs e)
+		{
+			List<mdlEntrada> entradas = new List<mdlEntrada>();
+			entradas = ctrlConsulta.ExibirEntrada();
+			List<mdlSaida> saidas = new List<mdlSaida>();
+			saidas = ctrlConsulta.ExibirSaida();
+			List<mdlEntrada> entradasFinalizadas = new List<mdlEntrada>();
+			entradasFinalizadas = ctrlConsulta.ExibirEntradaFinalizada();
+
+
+			if(listSaida.Visible == false && listFinalizada.Visible == false) {
+				listEntrada.Items.Clear();
+				var busca = entradas.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
+				if (busca.Count() >0)
+				{
+					foreach (var item in busca)
+					{
+						lista = new ListViewItem(item.referencia.ToString());
+						lista.SubItems.Add(item.nomeVisitante);
+						lista.SubItems.Add(item.visitado);
+						lista.SubItems.Add(item.dataEntrada);
+						lista.SubItems.Add(item.horaEntrada);
+						lista.SubItems.Add(item.cpf.ToString());
+						lista.SubItems.Add(item.cnpj.ToString());
+						lista.SubItems.Add(item.pesoEntrada.ToString());
+						lista.SubItems.Add(item.placaVeiculo);
+						lista.SubItems.Add(item.idUsuario.ToString());
+						listEntrada.Items.Add(lista);
+					}
+				}
+				else
+				{
+					listEntrada.Items.Clear();
+					lista = new ListViewItem("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					listEntrada.Items.Add(lista);
+				}
+			}
+			else if (listEntrada.Visible == false && listFinalizada.Visible == false)
+			{
+				listSaida.Items.Clear();
+				var busca = saidas.Where(i => i.dataSaida == dtBusca.Value.ToString("dd-MM-yyyy"));
+				if (busca.Count() > 0)
+				{
+					foreach (var item in busca)
+					{
+						lista = new ListViewItem(item.referencia.ToString());
+						lista.SubItems.Add(item.dados.nomeVisitante);
+						lista.SubItems.Add(item.dataSaida);
+						lista.SubItems.Add(item.horaSaida);
+						lista.SubItems.Add(item.pesoSaida.ToString());
+						lista.SubItems.Add(item.idUsuario.ToString());
+						listSaida.Items.Add(lista);
+					}
+				}
+				else
+				{
+					lista = new ListViewItem("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					listSaida.Items.Add(lista);
+				}
+			}
+			else if(listEntrada.Visible == false && listSaida.Visible == false)
+			{
+				listFinalizada.Items.Clear();
+				var busca = entradasFinalizadas.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
+				if(busca.Count() > 0)
+				{
+					foreach (var item in busca)
+					{
+						lista = new ListViewItem(item.referencia.ToString());
+						lista.SubItems.Add(item.nomeVisitante);
+						lista.SubItems.Add(item.visitado);
+						lista.SubItems.Add(item.cnpj.ToString());
+						lista.SubItems.Add(item.cpf.ToString());
+						lista.SubItems.Add(item.placaVeiculo);
+						lista.SubItems.Add(item.dataEntrada);
+						lista.SubItems.Add(item.dataSaida);
+						lista.SubItems.Add(item.horaEntrada);
+						lista.SubItems.Add(item.horaSaida);
+						lista.SubItems.Add(item.pesoEntrada.ToString());
+						lista.SubItems.Add(item.pesoSaida.ToString());
+						lista.SubItems.Add(item.idUsuarioEntrada.ToString());
+						lista.SubItems.Add(item.idUsuarioSaida.ToString());
+						listFinalizada.Items.Add(lista);
+					}
+				}
+				else
+				{
+					lista = new ListViewItem("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					listFinalizada.Items.Add(lista);
+				}
+			}
+
 		}
 	}
 }

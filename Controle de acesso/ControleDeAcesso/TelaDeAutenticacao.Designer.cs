@@ -100,6 +100,7 @@
 			this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtSenha.Location = new System.Drawing.Point(183, 294);
 			this.txtSenha.Name = "txtSenha";
+			this.txtSenha.PasswordChar = '*';
 			this.txtSenha.Size = new System.Drawing.Size(217, 20);
 			this.txtSenha.TabIndex = 5;
 			// 
@@ -107,6 +108,7 @@
 			// 
 			this.btnSair.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnSair.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSair.ForeColor = System.Drawing.Color.White;
@@ -122,6 +124,7 @@
 			// 
 			this.btnEntrar.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnEntrar.BackColor = System.Drawing.Color.Navy;
+			this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnEntrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEntrar.ForeColor = System.Drawing.Color.White;

@@ -65,6 +65,7 @@
 			// 
 			this.btnVoltar.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnVoltar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnVoltar.ForeColor = System.Drawing.Color.White;
@@ -80,6 +81,7 @@
 			// 
 			this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnCadastrar.BackColor = System.Drawing.Color.Navy;
+			this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnCadastrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnCadastrar.ForeColor = System.Drawing.Color.White;
@@ -308,6 +310,7 @@
 			// 
 			this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnBuscar.BackColor = System.Drawing.Color.Navy;
+			this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnBuscar.ForeColor = System.Drawing.Color.White;
@@ -419,6 +422,7 @@
 			this.Controls.Add(this.lblHoraEntrada);
 			this.Controls.Add(this.lblNomeVisitado);
 			this.Controls.Add(this.lblNomeVisitante);
+			this.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmSaida";
 			this.Text = "Saída";

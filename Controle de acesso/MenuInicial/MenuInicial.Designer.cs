@@ -118,6 +118,7 @@
 			// 
 			this.btnEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnEntrada.BackColor = System.Drawing.Color.Navy;
+			this.btnEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEntrada.ForeColor = System.Drawing.Color.White;
@@ -133,6 +134,7 @@
 			// 
 			this.btnConsultar.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnConsultar.BackColor = System.Drawing.Color.Navy;
+			this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnConsultar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnConsultar.ForeColor = System.Drawing.Color.White;
@@ -148,6 +150,7 @@
 			// 
 			this.btnAlterar.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnAlterar.BackColor = System.Drawing.Color.Navy;
+			this.btnAlterar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnAlterar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAlterar.ForeColor = System.Drawing.Color.White;
@@ -163,6 +166,7 @@
 			// 
 			this.btnSair.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnSair.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSair.ForeColor = System.Drawing.Color.White;
@@ -178,6 +182,7 @@
 			// 
 			this.btnSaida.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnSaida.BackColor = System.Drawing.Color.Navy;
+			this.btnSaida.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnSaida.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSaida.ForeColor = System.Drawing.Color.White;

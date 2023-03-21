@@ -66,6 +66,7 @@
 			// 
 			this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnBuscar.BackColor = System.Drawing.Color.Navy;
+			this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnBuscar.ForeColor = System.Drawing.Color.White;
@@ -184,6 +185,7 @@
 			// 
 			this.btnVoltar.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnVoltar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnVoltar.ForeColor = System.Drawing.Color.White;
@@ -199,6 +201,7 @@
 			// 
 			this.btnAlterarEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnAlterarEntrada.BackColor = System.Drawing.Color.Navy;
+			this.btnAlterarEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnAlterarEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnAlterarEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAlterarEntrada.ForeColor = System.Drawing.Color.White;
@@ -374,6 +377,7 @@
 			// 
 			this.btnAlterarSaida.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.btnAlterarSaida.BackColor = System.Drawing.Color.Navy;
+			this.btnAlterarSaida.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnAlterarSaida.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnAlterarSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAlterarSaida.ForeColor = System.Drawing.Color.White;
@@ -419,6 +423,7 @@
 			this.Controls.Add(this.lblDataEntrada);
 			this.Controls.Add(this.lblNomeVisitado);
 			this.Controls.Add(this.lblNomeVisitante);
+			this.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmAlterar";
 			this.Text = "Alterar";

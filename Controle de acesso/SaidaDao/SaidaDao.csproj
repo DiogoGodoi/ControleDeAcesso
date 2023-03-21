@@ -72,6 +72,10 @@
       <Project>{ec19b052-c134-4fb8-8a25-9960504ee6e8}</Project>
       <Name>SaidaModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UsuarioModel\UsuarioModel.csproj">
+      <Project>{F75B2E06-7693-4C6E-A68D-3EEC7B1166A1}</Project>
+      <Name>UsuarioModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -101,6 +101,7 @@
 			// 
 			this.radEntrada.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.radEntrada.AutoSize = true;
+			this.radEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.radEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.radEntrada.ForeColor = System.Drawing.Color.Navy;
 			this.radEntrada.Location = new System.Drawing.Point(62, 163);
@@ -116,6 +117,7 @@
 			// 
 			this.radSaida.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.radSaida.AutoSize = true;
+			this.radSaida.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.radSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.radSaida.ForeColor = System.Drawing.Color.Navy;
 			this.radSaida.Location = new System.Drawing.Point(586, 163);
@@ -131,6 +133,7 @@
 			// 
 			this.Todos.Anchor = System.Windows.Forms.AnchorStyles.Right;
 			this.Todos.AutoSize = true;
+			this.Todos.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Todos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Todos.ForeColor = System.Drawing.Color.Navy;
 			this.Todos.Location = new System.Drawing.Point(1102, 163);
@@ -146,6 +149,7 @@
 			// 
 			this.btnVoltar.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnVoltar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnVoltar.ForeColor = System.Drawing.Color.White;
@@ -161,6 +165,7 @@
 			// 
 			this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.Left;
 			this.btnBuscar.BackColor = System.Drawing.Color.Navy;
+			this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnBuscar.ForeColor = System.Drawing.Color.White;
@@ -170,6 +175,7 @@
 			this.btnBuscar.TabIndex = 22;
 			this.btnBuscar.Text = "Buscar";
 			this.btnBuscar.UseVisualStyleBackColor = false;
+			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
 			// 
 			// lblDataBusca
 			// 
@@ -477,6 +483,7 @@
 			this.Controls.Add(this.radEntrada);
 			this.Controls.Add(this.lblHistorico);
 			this.Controls.Add(this.pctLogo);
+			this.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmConsulta";
 			this.Text = "Consulta";

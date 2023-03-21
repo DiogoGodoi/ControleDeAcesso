@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using UsuarioModel;
 
 //Data access object de saída
 namespace SaidaDao
@@ -20,8 +21,8 @@ namespace SaidaDao
 				Server = "192.168.0.253",
 				Port = 4550,
 				Database = "Portaria",
-				UserID = "root",
-				Password = "T21nfr@--"
+				UserID = mdlUsuario.staticNome,
+				Password = mdlUsuario.staticSenha
 			};
             MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
             try
@@ -82,7 +83,6 @@ namespace SaidaDao
             }
 
 		}
-
 		//public static bool AlterarSaida(mdlSaida saida)
 		//{
 
@@ -95,8 +95,8 @@ namespace SaidaDao
 				Server = "192.168.0.253",
 				Port = 4550,
 				Database = "Portaria",
-				UserID = "root",
-				Password = "T21nfr@--"
+				UserID = mdlUsuario.staticNome,
+				Password = mdlUsuario.staticSenha
 			};
 			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try

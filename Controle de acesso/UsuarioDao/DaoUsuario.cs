@@ -18,17 +18,16 @@ namespace UsuarioDao
 		public int getIdUsuario() { return idUsuario; }
 		public string getNome() { return nome; }
 		public string getSenha() { return senha; }
-
 		//Método de autenticação de usuário junto ao banco de dados
 		public static bool Autenticar(mdlUsuario dados)
 		{
 			var builder = new MySqlConnectionStringBuilder
 			{
-			Server = "192.168.0.253",
-			Port = 4550,
-			Database = "Portaria",
-			UserID = "root",
-			Password = "T21nfr@--"
+				Server = "192.168.0.253",
+				Port = 4550,
+				Database = "Portaria",
+				UserID = mdlUsuario.staticNome,
+				Password = mdlUsuario.staticSenha
 			};
 			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
