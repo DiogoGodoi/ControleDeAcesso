@@ -1,5 +1,7 @@
 ﻿using EntradaDao;
 using EntradaModel;
+using SaidaDao;
+using SaidaModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,20 +12,19 @@ namespace ControleDeConsulta
 {
     public class ctrlConsulta
     {
-        public static List<mdlEntrada> ExibirEntradas()
+        public static List<mdlEntrada> ExibirEntrada()
         {
 			return DaoEntrada.ExibirEntrada();
         }
 
-		/*
-		public static List<DaoEntrada> ExibirSaidas()
+		public static List<mdlSaida> ExibirSaida()
 		{
-
+			return DaoSaida.ExibirSaida();
 		}
-		public static List<DaoEntrada> ExibirEntradaFinalizada()
+		public static List<mdlEntrada> ExibirEntradaFinalizada()
 		{
-
+			return DaoEntrada.ExibirEntradaFinalizada();
 		}
-		*/
+		
 	}
 }

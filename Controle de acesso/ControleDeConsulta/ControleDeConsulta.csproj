@@ -53,6 +53,14 @@
       <Project>{96595cec-3b40-40af-96da-a62f3c8a6bd2}</Project>
       <Name>EntradaModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SaidaDao\SaidaDao.csproj">
+      <Project>{28B8F552-76BA-4FD9-AB2C-6D4AFEFDE204}</Project>
+      <Name>SaidaDao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaidaModel\SaidaModel.csproj">
+      <Project>{EC19B052-C134-4FB8-8A25-9960504EE6E8}</Project>
+      <Name>SaidaModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

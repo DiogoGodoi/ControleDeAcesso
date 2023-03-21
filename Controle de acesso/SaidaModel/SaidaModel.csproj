@@ -49,6 +49,10 @@
       <Project>{340C758C-05A6-4C88-A569-5C68A631888A}</Project>
       <Name>EntradaDao</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EntradaModel\EntradaModel.csproj">
+      <Project>{96595CEC-3B40-40AF-96DA-A62F3C8A6BD2}</Project>
+      <Name>EntradaModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UsuarioDao\UsuarioDao.csproj">
       <Project>{f59e662e-6026-49de-b67f-7b2650b979c2}</Project>
       <Name>UsuarioDao</Name>

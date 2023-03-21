@@ -87,6 +87,60 @@ namespace SaidaDao
 		//{
 
 		//}
+		public static List<mdlSaida> ExibirSaida()
+		{
+			List<mdlSaida> saidas = new List<mdlSaida>();
+			var builder = new MySqlConnectionStringBuilder
+			{
+				Server = "192.168.0.253",
+				Port = 4550,
+				Database = "Portaria",
+				UserID = "root",
+				Password = "T21nfr@--"
+			};
+			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
+			try
+			{
+				conn.Open();
+				string query = "SELECT Saida.ref, Entrada.nomeVisitante, Saida.dataSaida, Saida.horaSaida, Saida.pesoSaida, Saida.IdUsuario " +
+					"FROM Saida INNER JOIN Entrada ON Entrada.ref=Saida.ref";
+				MySqlCommand cmd = new MySqlCommand(query, conn);
+				cmd.CommandType = CommandType.Text;
+				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
+				DataTable tabela = new DataTable();
+				adaptador.Fill(tabela);
+				var leitura = cmd.ExecuteReader();
 
-    }
+				if (leitura.Read() == true)
+				{
+					foreach (DataRow dados in tabela.Rows)
+					{
+						var pmtSaidaRef = Convert.ToInt32(dados["ref"]);
+						var pmtEntradaNomeVisitante = dados["nomeVisitante"].ToString();
+						var pmtSaidaDataSaida = dados["dataSaida"].ToString();
+						var pmtSaidaHoraSaida = dados["horaSaida"].ToString();
+						var pmtSaidaPesoSaida = Convert.ToDouble(dados["pesoSaida"]);
+						saidas.Add(new mdlSaida(pmtSaidaRef, pmtEntradaNomeVisitante, pmtSaidaDataSaida, pmtSaidaHoraSaida, pmtSaidaPesoSaida));
+					}
+
+					return saidas;
+				}
+				else
+				{
+					return null;
+				}
+
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+				return null;
+				throw new Exception("Erro interno" + ex.Message);
+			}
+			finally
+			{
+				conn.Close();
+			}
+		}
+	}
 }

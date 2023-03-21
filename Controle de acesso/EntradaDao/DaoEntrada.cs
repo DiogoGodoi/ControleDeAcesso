@@ -14,6 +14,7 @@ namespace EntradaDao
 	public class DaoEntrada
 	{
 		//Atributos
+		private static string dataAtual = DateTime.Now.Date.ToString("dd-MM-yyyy");
 		private static int referencia { get; set; }
 		private static string nomeVisitante { get; set; }
 		private static long cpf { get; set; }
@@ -241,7 +242,71 @@ namespace EntradaDao
 			try
 			{
 				conn.Open();
-				string query = "SELECT * FROM Entrada"; 
+				string query = $"SELECT * FROM Entrada WHERE dataEntrada = '{dataAtual}' ORDER BY dataEntrada ASC"; 
+				MySqlCommand cmd = new MySqlCommand(query, conn);
+				cmd.CommandType = CommandType.Text;
+				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
+				DataTable tabela = new DataTable();
+				adaptador.Fill(tabela);
+				var leitura = cmd.ExecuteReader();
+				if (leitura.Read() == true)
+				{
+					foreach (DataRow dados  in tabela.Rows)
+					{
+						var pmtReferencia = Convert.ToInt32(dados["ref"]);
+						var pmtNomeVisitante = dados["nomeVisitante"].ToString();
+						var pmtVisitado = dados["visitado"].ToString();
+						var pmtCpf = Convert.ToInt64(dados["cpf"]);
+						var pmtCnpj = Convert.ToInt64(dados["cnpj"]);
+						var pmtPlacaVeiculo = dados["placaVeiculo"].ToString();
+						var pmtDataEntrada = dados["dataEntrada"].ToString();
+						var pmtHoraEntrada = dados["horaEntrada"].ToString();
+						var pmtPesoEntrada = Convert.ToDouble(dados["pesoEntrada"]);
+						entradas.Add(new mdlEntrada(pmtReferencia, pmtNomeVisitante, pmtVisitado, pmtDataEntrada, pmtHoraEntrada, pmtCpf, pmtCnpj, pmtPesoEntrada, pmtPlacaVeiculo));
+					}
+
+					return entradas;
+				}
+				else
+				{
+					return null;
+				}
+
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+				return null;
+				throw new Exception("Erro interno" + ex.Message);
+			}
+			finally
+			{
+				conn.Close();
+			}
+		}
+		//Método para exibir entrada finalizada
+		public static List<mdlEntrada> ExibirEntradaFinalizada()
+		{
+			List<mdlEntrada> entradaFinalizada = new List<mdlEntrada>();
+			var builder = new MySqlConnectionStringBuilder
+			{
+				Server = "192.168.0.253",
+				Port = 4550,
+				Database = "Portaria",
+				UserID = "root",
+				Password = "T21nfr@--"
+			};
+			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
+			try
+			{
+				conn.Open();
+				string query = "SELECT Entrada.Ref, Entrada.nomeVisitante, Entrada.visitado, " +
+					"Entrada.cpf, Entrada.cnpj, " +
+					"Entrada.dataEntrada, Saida.dataSaida, " +
+					"Entrada.horaEntrada, Saida.horaSaida, " +
+					"Entrada.pesoEntrada, Saida.pesoSaida, " +
+					"Entrada.placaVeiculo, Entrada.idUsuario, " +
+					$"Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.ref=Saida.ref WHERE Entrada.dataEntrada = '{dataAtual}' ORDER BY Entrada.dataEntrada ASC";
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				cmd.CommandType = CommandType.Text;
 				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
@@ -251,21 +316,31 @@ namespace EntradaDao
 
 				if (leitura.Read() == true)
 				{
-					foreach (DataRow dados  in tabela.Rows)
-					{
-						var pmtReferencia = Convert.ToInt32(leitura["ref"]);
-						var pmtNomeVisitante = leitura["nomeVisitante"].ToString();
-						var pmtVisitado = leitura["visitado"].ToString();
-						var pmtCpf = Convert.ToInt64(leitura["cpf"]);
-						var pmtCnpj = Convert.ToInt64(leitura["cnpj"]);
-						var pmtPlacaVeiculo = leitura["placaVeiculo"].ToString();
-						var pmtDataEntrada = leitura["dataEntrada"].ToString();
-						var pmtHoraEntrada = leitura["horaEntrada"].ToString();
-						var pmtPesoEntrada = Convert.ToDouble(leitura["pesoEntrada"]);
-						entradas.Add(new mdlEntrada(pmtReferencia, pmtNomeVisitante, pmtCpf, pmtCnpj, pmtPesoEntrada, pmtVisitado, pmtPlacaVeiculo));
+					foreach (DataRow dados in tabela.Rows) {
+						var pmtRef = Convert.ToInt32(dados["ref"]);
+						var pmtNomeVisitante = dados["nomeVisitante"].ToString();
+						var pmtVisitado = dados["visitado"].ToString();
+						var pmtCpf = Convert.ToInt64(dados["cpf"]);
+						var pmtCnpj = Convert.ToInt64(dados["cnpj"]);
+						var pmtPlacaVeiculo = dados["placaVeiculo"].ToString();
+						var pmtDataEntrada = dados["dataEntrada"].ToString();
+						var pmtDataSaida = dados["dataSaida"].ToString();
+						var pmtHoraEntrada = dados["horaEntrada"].ToString();
+						var pmtHoraSaida = dados["horaSaida"].ToString();
+						var pmtPesoEntrada = Convert.ToDouble(dados["pesoEntrada"]);
+						var pmtPesoSaida = Convert.ToDouble(dados["pesoSaida"]);
+						var pmtIdUsuarioEntrada = Convert.ToInt32(dados["idUsuario"]);
+						var pmtIdUsuarioSaida = Convert.ToInt32(dados["idUsuario"]);
+						entradaFinalizada.Add(new mdlEntrada(
+							pmtNomeVisitante, pmtVisitado, 
+							pmtCpf, pmtCnpj, 
+							pmtPlacaVeiculo, pmtDataEntrada, 
+							pmtDataSaida, pmtHoraEntrada, 
+							pmtHoraSaida, pmtPesoEntrada, 
+							pmtPesoSaida, pmtIdUsuarioEntrada, 
+							pmtIdUsuarioSaida));
 					}
-
-					return entradas;
+					return entradaFinalizada;
 				}
 				else
 				{
