@@ -26,8 +26,9 @@ namespace EntradaModel
 		public double pesoSaida { get; set; }
 		public int idUsuarioEntrada { get; set; }
 		public int idUsuarioSaida { get;set; }
-		public int idUsuario = DaoUsuario.idUsuario;
+		public int idUsuario = daoUsuario.idUsuario;
 
+		//Construtores
 		public mdlEntrada() { }
 		public mdlEntrada(
 			string nomeVisitante,

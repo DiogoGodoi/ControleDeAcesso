@@ -17,7 +17,7 @@ namespace SaidaModel
 
         public mdlEntrada dados = new mdlEntrada();
 
-        public int idUsuario = DaoUsuario.idUsuario;
+        public int idUsuario = daoUsuario.idUsuario;
         public string dataSaida { get; set; }
         public string horaSaida { get; set; }
         public double pesoSaida { get; set; }

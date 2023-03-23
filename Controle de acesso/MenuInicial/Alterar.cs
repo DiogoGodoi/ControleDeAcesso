@@ -41,17 +41,17 @@ namespace Menu_Inicial
 			bool retorno = ctrlEntrada.PesquisarEntradaFinalizada(referencia);
 			if (retorno != false)
 			{
-				txtNomeVisitante.Text = DaoEntrada.GetNomeVisitante();
-				txtNomeVisitado.Text = DaoEntrada.GetVisitado();
-				txtDataEntrada.Text = DaoEntrada.GetDataEntrada();
-				txtHoraEntrada.Text = DaoEntrada.GetHoraEntrada();
-				txtCpf.Text = DaoEntrada.GetCpf().ToString();
-				txtCnpj.Text = DaoEntrada.GetCnpj().ToString();
-				txtPesoEntrada.Text = DaoEntrada.GetPesoEntrada().ToString();
-				txtPlacaVeiculo.Text = DaoEntrada.GetPlacaVeiculo();
-				txtDataSaida.Text = DaoEntrada.GetDataSaida();
-				txtHoraSaida.Text = DaoEntrada.GetHoraSaida();
-				txtPesoSaida.Text = DaoEntrada.GetPesoSaida().ToString();
+				txtNomeVisitante.Text = daoEntrada.GetNomeVisitante();
+				txtNomeVisitado.Text = daoEntrada.GetVisitado();
+				txtDataEntrada.Text = daoEntrada.GetDataEntrada();
+				txtHoraEntrada.Text = daoEntrada.GetHoraEntrada();
+				txtCpf.Text = daoEntrada.GetCpf().ToString();
+				txtCnpj.Text = daoEntrada.GetCnpj().ToString();
+				txtPesoEntrada.Text = daoEntrada.GetPesoEntrada().ToString();
+				txtPlacaVeiculo.Text = daoEntrada.GetPlacaVeiculo();
+				txtDataSaida.Text = daoEntrada.GetDataSaida();
+				txtHoraSaida.Text = daoEntrada.GetHoraSaida();
+				txtPesoSaida.Text = daoEntrada.GetPesoSaida().ToString();
 				btnAlterarSaida.Enabled = true;
 			}
 			else if (retorno == false)
@@ -60,14 +60,14 @@ namespace Menu_Inicial
 				bool segundoRetorno = ctrlEntrada.Pesquisar(referencia);
 				if (segundoRetorno == true)
 				{
-					txtNomeVisitante.Text = DaoEntrada.GetNomeVisitante();
-					txtNomeVisitado.Text = DaoEntrada.GetVisitado();
-					txtDataEntrada.Text = DaoEntrada.GetDataEntrada();
-					txtHoraEntrada.Text = DaoEntrada.GetHoraEntrada();
-					txtCpf.Text = DaoEntrada.GetCpf().ToString();
-					txtCnpj.Text = DaoEntrada.GetCnpj().ToString();
-					txtPesoEntrada.Text = DaoEntrada.GetPesoEntrada().ToString();
-					txtPlacaVeiculo.Text = DaoEntrada.GetPlacaVeiculo();
+					txtNomeVisitante.Text = daoEntrada.GetNomeVisitante();
+					txtNomeVisitado.Text = daoEntrada.GetVisitado();
+					txtDataEntrada.Text = daoEntrada.GetDataEntrada();
+					txtHoraEntrada.Text = daoEntrada.GetHoraEntrada();
+					txtCpf.Text = daoEntrada.GetCpf().ToString();
+					txtCnpj.Text = daoEntrada.GetCnpj().ToString();
+					txtPesoEntrada.Text = daoEntrada.GetPesoEntrada().ToString();
+					txtPlacaVeiculo.Text = daoEntrada.GetPlacaVeiculo();
 					txtDataSaida.Text = String.Empty;
 					txtHoraSaida.Text = String.Empty;
 					txtPesoSaida.Text = String.Empty;

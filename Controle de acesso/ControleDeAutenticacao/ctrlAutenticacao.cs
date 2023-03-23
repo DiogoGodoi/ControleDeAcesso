@@ -14,7 +14,7 @@ namespace ControleDeAutenticacao
         //Método de autenticação
         public static bool Autenticar(mdlUsuario dados)
         {
-            return DaoUsuario.Autenticar(dados);
+            return daoUsuario.Autenticar(dados);
         }
     }
 }

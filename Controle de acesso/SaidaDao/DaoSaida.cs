@@ -11,7 +11,7 @@ using UsuarioModel;
 //Data access object de saída
 namespace SaidaDao
 {
-    public class DaoSaida
+    public class daoSaida
     {
 		//Método para inserir saída no banco de dados
         public static bool InserirSaida(mdlSaida Saida)

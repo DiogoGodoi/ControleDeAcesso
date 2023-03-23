@@ -9,7 +9,7 @@ using MySqlConnector;
 //Data access object de usuário
 namespace UsuarioDao
 {
-	public class DaoUsuario
+	public class daoUsuario
 	{
 		//Atributos
 		public static int idUsuario { get; set; }
@@ -18,6 +18,7 @@ namespace UsuarioDao
 		public int getIdUsuario() { return idUsuario; }
 		public string getNome() { return nome; }
 		public string getSenha() { return senha; }
+
 		//Método de autenticação de usuário junto ao banco de dados
 		public static bool Autenticar(mdlUsuario dados)
 		{

@@ -20,7 +20,7 @@ namespace ControleDeAcesso
 	public partial class frmAutenticacao : Form
 	{
 		//Atributos
-		private ctrlNavegacao navegar = new ctrlNavegacao();
+		private ctrlNavegacao navegacao = new ctrlNavegacao();
 		private string nome { get; set; }
 		private string senha { get; set; }
 		public frmAutenticacao()
@@ -51,13 +51,14 @@ namespace ControleDeAcesso
 				MessageBox.Show("Por favor insira a senha", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			else
-			{
+			{	
+				//Criando o objeto e chamando a função do objeto mdlUsuario
 				mdlUsuario _mdlUsuario = new mdlUsuario(nome, senha);
 				bool retorno = ctrlAutenticacao.Autenticar(_mdlUsuario);
 				if (retorno == true)
 				{
 					//thread de entrada do sistema
-					Thread _thread = new Thread(navegar.NavegarParaMenuInicial);
+					Thread _thread = new Thread(navegacao.NavegarParaMenuInicial);
 					_thread.SetApartmentState(ApartmentState.STA);
 					_thread.Start();
 					this.Close();
@@ -68,6 +69,7 @@ namespace ControleDeAcesso
 				}
 			}
 		}
+
 		//Configuração botão de saída do sistema
 		private void Sair(object sender, EventArgs e)
 		{

@@ -14,7 +14,7 @@ namespace ControleDeSaida
         //Método para efetuar a saida de pessoal
         public static bool EfetuarSaida(mdlSaida dados)
         {
-            return DaoSaida.InserirSaida(dados);
+            return daoSaida.InserirSaida(dados);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Menu_Inicial
 		private string nomeVisitante;
 		private long cpf;
 		private long cnpj;
-		private long pesoEntrada;
+		private double pesoEntrada;
 		private string visitado;
 		private string placaVeiculo;
 
@@ -36,6 +36,7 @@ namespace Menu_Inicial
 		//Configuração do botão de cadastro
 		private void EfetuarEntrada(object sender, EventArgs e)
 		{
+			//Bloco try para evitar quebra no sistema
 			try
 			{
 				//Pré validação dos campos do tipo numérico para inicialização
@@ -147,10 +148,12 @@ namespace Menu_Inicial
 					&& txtPesoEntrada.Text != String.Empty
 					&& txtPesoEntrada.Text != String.Empty)
 				{
+					//Ciração de objeto e chamada de método para efetuar a entrada dos dados
 					mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
 
 					bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
 
+					//Validação para sucesso ou falha na entrada de dados
 					if (retorno != false)
 					{
 						MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -174,6 +177,7 @@ namespace Menu_Inicial
 					&& txtPesoEntrada.Text != String.Empty
 					&& txtPlacaVeiculo.Text != String.Empty)
 				{
+					//Ciração de objeto e chamada de método para efetuar a entrada dos dados
 					mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
 
 					bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
@@ -196,6 +200,7 @@ namespace Menu_Inicial
 				}
 				else
 				{
+					//Ciração de objeto e chamada de método para efetuar a entrada dos dados
 					mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
 
 					bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);

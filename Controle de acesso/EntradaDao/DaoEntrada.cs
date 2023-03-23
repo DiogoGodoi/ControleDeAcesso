@@ -12,7 +12,7 @@ using UsuarioModel;
 //Data access object de entrada
 namespace EntradaDao
 {
-	public class DaoEntrada
+	public class daoEntrada
 	{
 		//Atributos
 		private static string dataAtual = DateTime.Now.Date.ToString("dd-MM-yyyy");

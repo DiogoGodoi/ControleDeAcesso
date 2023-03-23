@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace MenuInicial
 {
+	//Controle de navegação
 	public class ctrlNavegacao
 	{
 		//Método de navegação para tela de entrada
@@ -31,10 +32,12 @@ namespace MenuInicial
 		{
 			Application.Run(new frmConsulta());
 		}
+		//Método para navegar para o menu inicial
 	    public void NavegarParaMenuInicial()
 		{
 			Application.Run(new frmMenuInicial());
 		}
+		//Método para voltar
 		public void Voltar()
 		{
 			Application.Run(new frmMenuInicial());

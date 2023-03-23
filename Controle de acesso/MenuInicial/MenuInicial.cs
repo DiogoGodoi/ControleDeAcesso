@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace Menu_Inicial
 {
+	//Menu inicial
 	public partial class frmMenuInicial : Form
 	{
 		//Inicializador do formulário

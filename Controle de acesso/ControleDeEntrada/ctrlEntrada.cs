@@ -14,33 +14,20 @@ namespace ControleDeEntrada
         //Método para entrada de dados
         public static bool EfetuarEntrada(mdlEntrada dados)
         {
-           return DaoEntrada.InserirEntrada(dados);
+           return daoEntrada.InserirEntrada(dados);
         }
-		//Método de exibição de dados
-
-		/* public static List<mdlEntrada> ExibirEntrada()
-		{
-
-		}
-
-		public static List<mdlEntrada> Exibir ()
-		{
-
-		}*/
-
-		//Método para pesquisa finalizada
-		public static bool PesquisarEntradaFinalizada(int referencia)
-		{
-			return DaoEntrada.PesquisarEntradaFinalizada(referencia);
-		}
 		//Método para pesquisa de dados
 		public static bool Pesquisar (int referencia)
         {
-         return DaoEntrada.PesquisarEntrada(referencia);
+         return daoEntrada.PesquisarEntrada(referencia);
         }
+		//Método para pesquisa finalizada
+		public static bool PesquisarEntradaFinalizada(int referencia)
+		{
+			return daoEntrada.PesquisarEntradaFinalizada(referencia);
+		}
 
-       
 
 
-    }
+	}
 }

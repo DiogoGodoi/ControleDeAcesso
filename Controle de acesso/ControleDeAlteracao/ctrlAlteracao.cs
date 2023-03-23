@@ -11,7 +11,7 @@ namespace ControleDeAlteracao
     {
         public static bool BuscarEntrada(int referencia)
         {
-            return DaoEntrada.PesquisarEntrada(referencia);
+            return daoEntrada.PesquisarEntrada(referencia);
         }
     }
 }

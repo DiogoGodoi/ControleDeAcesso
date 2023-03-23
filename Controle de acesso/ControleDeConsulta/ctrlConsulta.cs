@@ -14,16 +14,16 @@ namespace ControleDeConsulta
     {
         public static List<mdlEntrada> ExibirEntrada()
         {
-			return DaoEntrada.ExibirEntrada();
+			return daoEntrada.ExibirEntrada();
         }
 
 		public static List<mdlSaida> ExibirSaida()
 		{
-			return DaoSaida.ExibirSaida();
+			return daoSaida.ExibirSaida();
 		}
 		public static List<mdlEntrada> ExibirEntradaFinalizada()
 		{
-			return DaoEntrada.ExibirEntradaFinalizada();
+			return daoEntrada.ExibirEntradaFinalizada();
 		}
 		
 	}

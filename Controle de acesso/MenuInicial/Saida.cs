@@ -34,7 +34,6 @@ namespace Saida
 		{
 			InitializeComponent();
 		}
-
 		//Configuração do botão de cadastrar
 		private void EfetuarSaida(object sender, EventArgs e)
 		{
@@ -100,14 +99,14 @@ namespace Saida
 
 					if (retorno == true)
 					{
-						dados.nomeVisitante = DaoEntrada.GetNomeVisitante();
-						dados.visitado = DaoEntrada.GetVisitado();
-						dados.cpf = DaoEntrada.GetCpf();
-						dados.cnpj = DaoEntrada.GetCnpj();
-						dados.dataEntrada = DaoEntrada.GetDataEntrada();
-						dados.horaEntrada = DaoEntrada.GetHoraEntrada();
-						dados.pesoEntrada = DaoEntrada.GetPesoEntrada();
-						dados.placaVeiculo = DaoEntrada.GetPlacaVeiculo();
+						dados.nomeVisitante = daoEntrada.GetNomeVisitante();
+						dados.visitado = daoEntrada.GetVisitado();
+						dados.cpf = daoEntrada.GetCpf();
+						dados.cnpj = daoEntrada.GetCnpj();
+						dados.dataEntrada = daoEntrada.GetDataEntrada();
+						dados.horaEntrada = daoEntrada.GetHoraEntrada();
+						dados.pesoEntrada = daoEntrada.GetPesoEntrada();
+						dados.placaVeiculo = daoEntrada.GetPlacaVeiculo();
 						txtNomeVisitante.Text = dados.nomeVisitante;
 						txtNomeVisitado.Text = dados.visitado;
 						txtCpf.Text = Convert.ToString(dados.cpf);
@@ -117,11 +116,11 @@ namespace Saida
 						txtPesoEntrada.Text = dados.ToString();
 						txtPlacaVeiculo.Text = dados.placaVeiculo;
 
-						dataSaida = DaoEntrada.GetDataSaida();
+						dataSaida = daoEntrada.GetDataSaida();
 						dtSaida.Text = dataSaida;
-						horaSaida = DaoEntrada.GetHoraSaida();
+						horaSaida = daoEntrada.GetHoraSaida();
 						hrSaida.Text = horaSaida;
-						pesoSaida = DaoEntrada.GetPesoSaida();
+						pesoSaida = daoEntrada.GetPesoSaida();
 						txtPesoSaida.Text = pesoSaida.ToString();
 
 						if (dataSaida != String.Empty | horaSaida != String.Empty)
@@ -136,18 +135,18 @@ namespace Saida
 					}
 					else
 					{
-						bool segundoRetorno = DaoEntrada.PesquisarEntrada(referencia);
+						bool segundoRetorno = daoEntrada.PesquisarEntrada(referencia);
 
 						if(segundoRetorno == true)
 						{
-							dados.nomeVisitante = DaoEntrada.GetNomeVisitante();
-							dados.visitado = DaoEntrada.GetVisitado();
-							dados.cpf = DaoEntrada.GetCpf();
-							dados.cnpj = DaoEntrada.GetCnpj();
-							dados.dataEntrada = DaoEntrada.GetDataEntrada();
-							dados.horaEntrada = DaoEntrada.GetHoraEntrada();
-							dados.pesoEntrada = DaoEntrada.GetPesoEntrada();
-							dados.placaVeiculo = DaoEntrada.GetPlacaVeiculo();
+							dados.nomeVisitante = daoEntrada.GetNomeVisitante();
+							dados.visitado = daoEntrada.GetVisitado();
+							dados.cpf = daoEntrada.GetCpf();
+							dados.cnpj = daoEntrada.GetCnpj();
+							dados.dataEntrada = daoEntrada.GetDataEntrada();
+							dados.horaEntrada = daoEntrada.GetHoraEntrada();
+							dados.pesoEntrada = daoEntrada.GetPesoEntrada();
+							dados.placaVeiculo = daoEntrada.GetPlacaVeiculo();
 
 							txtNomeVisitante.Text = dados.nomeVisitante;
 							txtNomeVisitado.Text = dados.visitado;
