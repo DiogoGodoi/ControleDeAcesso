@@ -333,6 +333,7 @@ namespace EntradaDao
 						var pmtIdUsuarioEntrada = Convert.ToInt32(dados["idUsuario"]);
 						var pmtIdUsuarioSaida = Convert.ToInt32(dados["idUsuario"]);
 						entradaFinalizada.Add(new mdlEntrada(
+							pmtRef,
 							pmtNomeVisitante, pmtVisitado, 
 							pmtCpf, pmtCnpj, 
 							pmtPlacaVeiculo, pmtDataEntrada, 

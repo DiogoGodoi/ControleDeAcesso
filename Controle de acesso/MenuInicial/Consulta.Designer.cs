@@ -374,70 +374,60 @@
 			// 
 			// colFinRef
 			// 
-			this.colFinRef.DisplayIndex = 9;
 			this.colFinRef.Text = "Ref";
 			this.colFinRef.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.colFinRef.Width = 50;
 			// 
 			// colFinNomeVisitante
 			// 
-			this.colFinNomeVisitante.DisplayIndex = 0;
 			this.colFinNomeVisitante.Text = "Nome do Visitante";
 			this.colFinNomeVisitante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colFinNomeVisitante.Width = 193;
+			this.colFinNomeVisitante.Width = 163;
 			// 
 			// colFinNomeVisitado
 			// 
-			this.colFinNomeVisitado.DisplayIndex = 1;
 			this.colFinNomeVisitado.Text = "Visitado";
 			this.colFinNomeVisitado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colFinNomeVisitado.Width = 193;
+			this.colFinNomeVisitado.Width = 163;
 			// 
 			// colFinCnpj
 			// 
-			this.colFinCnpj.DisplayIndex = 2;
 			this.colFinCnpj.Text = "Cnpj";
 			this.colFinCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.colFinCnpj.Width = 100;
 			// 
 			// colFinCpf
 			// 
-			this.colFinCpf.DisplayIndex = 3;
 			this.colFinCpf.Text = "Cpf";
 			this.colFinCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.colFinCpf.Width = 80;
 			// 
 			// colFinPlacaVeiculo
 			// 
-			this.colFinPlacaVeiculo.DisplayIndex = 4;
 			this.colFinPlacaVeiculo.Text = "Placa do veículo";
 			this.colFinPlacaVeiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.colFinPlacaVeiculo.Width = 100;
 			// 
 			// colFinDataEntrada
 			// 
-			this.colFinDataEntrada.DisplayIndex = 5;
 			this.colFinDataEntrada.Text = "Data da entrada";
 			this.colFinDataEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.colFinDataEntrada.Width = 90;
 			// 
 			// colFinDataSaida
 			// 
-			this.colFinDataSaida.DisplayIndex = 6;
 			this.colFinDataSaida.Text = "Data da saida";
 			this.colFinDataSaida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.colFinDataSaida.Width = 80;
 			// 
 			// colFinHoraEntrada
 			// 
-			this.colFinHoraEntrada.DisplayIndex = 7;
 			this.colFinHoraEntrada.Text = "Hora da entrada";
 			this.colFinHoraEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.colFinHoraEntrada.Width = 90;
 			// 
 			// colFinHoraSaida
 			// 
-			this.colFinHoraSaida.DisplayIndex = 8;
 			this.colFinHoraSaida.Text = "Hora da saída";
 			this.colFinHoraSaida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.colFinHoraSaida.Width = 80;

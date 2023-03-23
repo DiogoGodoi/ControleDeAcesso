@@ -67,6 +67,7 @@ namespace EntradaModel
 			this.placaVeiculo = placaVeiculo;
 		}
 		public mdlEntrada(
+			int referenci,
 			string nVisitante, 
 			string visitado, 
 			long cpf, 
@@ -82,7 +83,7 @@ namespace EntradaModel
 			int idUsuarioSaida
 			)
 		{
-			this.referencia.ToString();
+			this.referencia = referenci;
 			this.nomeVisitante = nVisitante;
 			this.visitado = visitado;
 			this.cpf = cpf;
