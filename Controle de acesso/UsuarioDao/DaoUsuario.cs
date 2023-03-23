@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UsuarioModel;
 using MySqlConnector;
+using ControlAcessIP;
 
 //Data access object de usuário
 namespace UsuarioDao
@@ -24,8 +25,8 @@ namespace UsuarioDao
 		{
 			var builder = new MySqlConnectionStringBuilder
 			{
-				Server = "192.168.0.253",
-				Port = 4550,
+				Server = ctrlAcessIP.getIP(),
+				Port = ctrlAcessIP.getPort(),
 				Database = "Portaria",
 				UserID = mdlUsuario.staticNome,
 				Password = mdlUsuario.staticSenha

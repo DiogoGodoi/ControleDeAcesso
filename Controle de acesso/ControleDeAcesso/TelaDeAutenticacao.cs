@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UsuarioModel;
 using MenuInicial;
+using ControlAcessIP;
 
 namespace ControleDeAcesso
 {
@@ -32,11 +33,22 @@ namespace ControleDeAcesso
 		//Configuração do botão de entrada do sistema
 		private void Entrar(object sender, EventArgs e)
 		{	
-
 			//Asociação de atributos com os campos do formulário
 			nome = txtNome.Text;
 			senha = txtSenha.Text;
 
+			if(radAcessoInterno.Checked == true)
+			{
+				string IP = "192.168.0.253";
+				uint port = 4550;
+				ctrlAcessIP acesso = new ctrlAcessIP(IP, port);
+			}
+			else if(radAcessoExterno.Checked == true)
+			{
+				string IP = "177.67.158.126";
+				uint port = 4550;
+				ctrlAcessIP acesso = new ctrlAcessIP(IP, port);
+			}
 			//Validação dos campos
 			if (nome == String.Empty && senha == String.Empty)
 			{
@@ -74,16 +86,6 @@ namespace ControleDeAcesso
 		{
 			//método para fechar janela atual
 			this.Close();
-		}
-		private void Conectar(object sender, EventArgs e)
-		{
-			Thread _tread = new Thread(frmDataBase);
-			_tread.SetApartmentState(ApartmentState.STA);
-			_tread.Start();
-		}
-		private void frmDataBase()
-		{
-			Application.Run(new frmDatabase());
 		}
 	}
 }

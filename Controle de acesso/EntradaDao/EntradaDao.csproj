@@ -72,6 +72,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ControlAcessIP\ControlAcessIP.csproj">
+      <Project>{84d98f0e-43fa-4284-b230-88d47b44b518}</Project>
+      <Name>ControlAcessIP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntradaModel\EntradaModel.csproj">
       <Project>{96595cec-3b40-40af-96da-a62f3c8a6bd2}</Project>
       <Name>EntradaModel</Name>

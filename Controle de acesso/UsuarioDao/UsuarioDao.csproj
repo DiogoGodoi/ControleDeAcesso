@@ -68,6 +68,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ControlAcessIP\ControlAcessIP.csproj">
+      <Project>{84d98f0e-43fa-4284-b230-88d47b44b518}</Project>
+      <Name>ControlAcessIP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UsuarioModel\UsuarioModel.csproj">
       <Project>{f75b2e06-7693-4c6e-a68d-3eec7b1166a1}</Project>
       <Name>UsuarioModel</Name>

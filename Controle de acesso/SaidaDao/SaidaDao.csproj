@@ -68,6 +68,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ControlAcessIP\ControlAcessIP.csproj">
+      <Project>{84d98f0e-43fa-4284-b230-88d47b44b518}</Project>
+      <Name>ControlAcessIP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SaidaModel\SaidaModel.csproj">
       <Project>{ec19b052-c134-4fb8-8a25-9960504ee6e8}</Project>
       <Name>SaidaModel</Name>

@@ -37,11 +37,9 @@
 			this.txtSenha = new System.Windows.Forms.TextBox();
 			this.btnSair = new System.Windows.Forms.Button();
 			this.btnEntrar = new System.Windows.Forms.Button();
-			this.menuStrip = new System.Windows.Forms.MenuStrip();
-			this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.conectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.radAcessoInterno = new System.Windows.Forms.RadioButton();
+			this.radAcessoExterno = new System.Windows.Forms.RadioButton();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
-			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pctLogo
@@ -116,7 +114,7 @@
 			this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnSair.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSair.ForeColor = System.Drawing.Color.White;
-			this.btnSair.Location = new System.Drawing.Point(279, 357);
+			this.btnSair.Location = new System.Drawing.Point(279, 384);
 			this.btnSair.Name = "btnSair";
 			this.btnSair.Size = new System.Drawing.Size(121, 23);
 			this.btnSair.TabIndex = 7;
@@ -132,7 +130,7 @@
 			this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnEntrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEntrar.ForeColor = System.Drawing.Color.White;
-			this.btnEntrar.Location = new System.Drawing.Point(91, 357);
+			this.btnEntrar.Location = new System.Drawing.Point(91, 384);
 			this.btnEntrar.Name = "btnEntrar";
 			this.btnEntrar.Size = new System.Drawing.Size(121, 23);
 			this.btnEntrar.TabIndex = 6;
@@ -140,36 +138,39 @@
 			this.btnEntrar.UseVisualStyleBackColor = false;
 			this.btnEntrar.Click += new System.EventHandler(this.Entrar);
 			// 
-			// menuStrip
+			// radAcessoInterno
 			// 
-			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.databaseToolStripMenuItem});
-			this.menuStrip.Location = new System.Drawing.Point(0, 0);
-			this.menuStrip.Name = "menuStrip";
-			this.menuStrip.Size = new System.Drawing.Size(492, 24);
-			this.menuStrip.TabIndex = 8;
-			this.menuStrip.Text = "menuStrip1";
+			this.radAcessoInterno.AutoSize = true;
+			this.radAcessoInterno.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.radAcessoInterno.ForeColor = System.Drawing.Color.Navy;
+			this.radAcessoInterno.Location = new System.Drawing.Point(91, 339);
+			this.radAcessoInterno.Name = "radAcessoInterno";
+			this.radAcessoInterno.Size = new System.Drawing.Size(122, 19);
+			this.radAcessoInterno.TabIndex = 8;
+			this.radAcessoInterno.TabStop = true;
+			this.radAcessoInterno.Text = "Acesso interno";
+			this.radAcessoInterno.UseVisualStyleBackColor = true;
 			// 
-			// databaseToolStripMenuItem
+			// radAcessoExterno
 			// 
-			this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.conectarToolStripMenuItem});
-			this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-			this.databaseToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-			this.databaseToolStripMenuItem.Text = "Database";
-			// 
-			// conectarToolStripMenuItem
-			// 
-			this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
-			this.conectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.conectarToolStripMenuItem.Text = "Conectar";
-			this.conectarToolStripMenuItem.Click += new System.EventHandler(this.Conectar);
+			this.radAcessoExterno.AutoSize = true;
+			this.radAcessoExterno.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.radAcessoExterno.ForeColor = System.Drawing.Color.Navy;
+			this.radAcessoExterno.Location = new System.Drawing.Point(275, 339);
+			this.radAcessoExterno.Name = "radAcessoExterno";
+			this.radAcessoExterno.Size = new System.Drawing.Size(125, 19);
+			this.radAcessoExterno.TabIndex = 9;
+			this.radAcessoExterno.TabStop = true;
+			this.radAcessoExterno.Text = "Acesso externo";
+			this.radAcessoExterno.UseVisualStyleBackColor = true;
 			// 
 			// frmAutenticacao
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(492, 450);
+			this.Controls.Add(this.radAcessoExterno);
+			this.Controls.Add(this.radAcessoInterno);
 			this.Controls.Add(this.btnSair);
 			this.Controls.Add(this.btnEntrar);
 			this.Controls.Add(this.txtSenha);
@@ -178,13 +179,10 @@
 			this.Controls.Add(this.lblLogin);
 			this.Controls.Add(this.lblTitulo);
 			this.Controls.Add(this.pctLogo);
-			this.Controls.Add(this.menuStrip);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmAutenticacao";
 			this.Text = "Login";
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
-			this.menuStrip.ResumeLayout(false);
-			this.menuStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -200,9 +198,8 @@
 		private System.Windows.Forms.TextBox txtSenha;
 		private System.Windows.Forms.Button btnSair;
 		private System.Windows.Forms.Button btnEntrar;
-		private System.Windows.Forms.MenuStrip menuStrip;
-		private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem conectarToolStripMenuItem;
+		private System.Windows.Forms.RadioButton radAcessoInterno;
+		private System.Windows.Forms.RadioButton radAcessoExterno;
 	}
 }
 

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using UsuarioModel;
+using ControlAcessIP;
 
 //Data access object de saída
 namespace SaidaDao
@@ -18,8 +19,8 @@ namespace SaidaDao
         {
             var builder = new MySqlConnectionStringBuilder
             {
-				Server = "192.168.0.253",
-				Port = 4550,
+				Server = ctrlAcessIP.getIP(),
+				Port = ctrlAcessIP.getPort(),
 				Database = "Portaria",
 				UserID = mdlUsuario.staticNome,
 				Password = mdlUsuario.staticSenha
@@ -92,8 +93,8 @@ namespace SaidaDao
 			List<mdlSaida> saidas = new List<mdlSaida>();
 			var builder = new MySqlConnectionStringBuilder
 			{
-				Server = "192.168.0.253",
-				Port = 4550,
+				Server = ctrlAcessIP.getIP(),
+				Port = ctrlAcessIP.getPort(),
 				Database = "Portaria",
 				UserID = mdlUsuario.staticNome,
 				Password = mdlUsuario.staticSenha

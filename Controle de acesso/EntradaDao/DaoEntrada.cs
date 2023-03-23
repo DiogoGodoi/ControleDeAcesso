@@ -8,6 +8,7 @@ using MySqlConnector;
 using EntradaModel;
 using System.Threading.Tasks;
 using UsuarioModel;
+using ControlAcessIP;
 
 //Data access object de entrada
 namespace EntradaDao
@@ -33,8 +34,8 @@ namespace EntradaDao
 		{
 			var builder = new MySqlConnectionStringBuilder
 			{
-				Server = "192.168.0.253",
-				Port = 4550,
+				Server = ctrlAcessIP.getIP(),
+				Port = ctrlAcessIP.getPort(),
 				Database = "Portaria",
 				UserID = mdlUsuario.staticNome,
 				Password = mdlUsuario.staticSenha
@@ -133,8 +134,8 @@ namespace EntradaDao
 		{
 			var builder = new MySqlConnectionStringBuilder
 			{
-				Server = "192.168.0.253",
-				Port = 4550,
+				Server = ctrlAcessIP.getIP(),
+				Port = ctrlAcessIP.getPort(),
 				Database = "Portaria",
 				UserID = mdlUsuario.staticNome,
 				Password = mdlUsuario.staticSenha
@@ -183,8 +184,8 @@ namespace EntradaDao
 			List<mdlEntrada> entradas = new List<mdlEntrada>();
 			var builder = new MySqlConnectionStringBuilder
 			{
-				Server = "192.168.0.253",
-				Port = 4550,
+				Server = ctrlAcessIP.getIP(),
+				Port = ctrlAcessIP.getPort(),
 				Database = "Portaria",
 				UserID = mdlUsuario.staticNome,
 				Password = mdlUsuario.staticSenha
@@ -240,8 +241,8 @@ namespace EntradaDao
 		{
 			var builder = new MySqlConnectionStringBuilder
 			{
-				Server = "192.168.0.253",
-				Port = 4550,
+				Server = ctrlAcessIP.getIP(),
+				Port = ctrlAcessIP.getPort(),
 				Database = "Portaria",
 				UserID = mdlUsuario.staticNome,
 				Password = mdlUsuario.staticSenha
@@ -290,8 +291,8 @@ namespace EntradaDao
 			List<mdlEntrada> entradaFinalizada = new List<mdlEntrada>();
 			var builder = new MySqlConnectionStringBuilder
 			{
-				Server = "192.168.0.253",
-				Port = 4550,
+				Server = ctrlAcessIP.getIP(),
+				Port = ctrlAcessIP.getPort(),
 				Database = "Portaria",
 				UserID = mdlUsuario.staticNome,
 				Password = mdlUsuario.staticSenha

@@ -47,12 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Database.Designer.cs">
-      <DependentUpon>Database.cs</DependentUpon>
-    </Compile>
     <Compile Include="TelaDeAutenticacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,9 +55,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Database.resx">
-      <DependentUpon>Database.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TelaDeAutenticacao.resx">
       <DependentUpon>TelaDeAutenticacao.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,6 +82,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ControlAcessIP\ControlAcessIP.csproj">
+      <Project>{84d98f0e-43fa-4284-b230-88d47b44b518}</Project>
+      <Name>ControlAcessIP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ControleDeAutenticacao\ControleDeAutenticacao.csproj">
       <Project>{31c25d53-55d5-4c2d-9894-cc99a348449c}</Project>
       <Name>ControleDeAutenticacao</Name>
