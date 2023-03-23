@@ -71,6 +71,7 @@
 			this.colFinPesoSaida = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colFinUsuarioEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colFinUsuarioSaida = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colFinPesoSaldo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -111,7 +112,7 @@
 			this.radEntrada.TabStop = true;
 			this.radEntrada.Text = "Entrada";
 			this.radEntrada.UseVisualStyleBackColor = true;
-			this.radEntrada.CheckedChanged += new System.EventHandler(this.radEntrada_CheckedChanged);
+			this.radEntrada.CheckedChanged += new System.EventHandler(this.ExibirEntradas);
 			// 
 			// radSaida
 			// 
@@ -127,7 +128,7 @@
 			this.radSaida.TabStop = true;
 			this.radSaida.Text = "Saida";
 			this.radSaida.UseVisualStyleBackColor = true;
-			this.radSaida.CheckedChanged += new System.EventHandler(this.radSaida_CheckedChanged);
+			this.radSaida.CheckedChanged += new System.EventHandler(this.ExibirSaidas);
 			// 
 			// Todos
 			// 
@@ -143,7 +144,7 @@
 			this.Todos.TabStop = true;
 			this.Todos.Text = "Todos";
 			this.Todos.UseVisualStyleBackColor = true;
-			this.Todos.CheckedChanged += new System.EventHandler(this.Todos_CheckedChanged);
+			this.Todos.CheckedChanged += new System.EventHandler(this.ExibirEntradaFinalizada);
 			// 
 			// btnVoltar
 			// 
@@ -175,7 +176,7 @@
 			this.btnBuscar.TabIndex = 22;
 			this.btnBuscar.Text = "Buscar";
 			this.btnBuscar.UseVisualStyleBackColor = false;
-			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+			this.btnBuscar.Click += new System.EventHandler(this.Buscar);
 			// 
 			// lblDataBusca
 			// 
@@ -222,7 +223,6 @@
 			// 
 			// ColRef
 			// 
-			this.ColRef.DisplayIndex = 9;
 			this.ColRef.Text = "Ref";
 			this.ColRef.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.ColRef.Width = 50;
@@ -310,7 +310,6 @@
 			// 
 			// colSaidaRef
 			// 
-			this.colSaidaRef.DisplayIndex = 4;
 			this.colSaidaRef.Text = "Ref";
 			this.colSaidaRef.Width = 50;
 			// 
@@ -362,12 +361,13 @@
             this.colFinHoraSaida,
             this.colFinPesoEntrada,
             this.colFinPesoSaida,
+            this.colFinPesoSaldo,
             this.colFinUsuarioEntrada,
             this.colFinUsuarioSaida});
 			this.listFinalizada.HideSelection = false;
 			this.listFinalizada.Location = new System.Drawing.Point(3, 200);
 			this.listFinalizada.Name = "listFinalizada";
-			this.listFinalizada.Size = new System.Drawing.Size(1235, 199);
+			this.listFinalizada.Size = new System.Drawing.Size(1240, 199);
 			this.listFinalizada.TabIndex = 28;
 			this.listFinalizada.UseCompatibleStateImageBehavior = false;
 			this.listFinalizada.View = System.Windows.Forms.View.Details;
@@ -455,6 +455,10 @@
 			this.colFinUsuarioSaida.Text = "ID saída";
 			this.colFinUsuarioSaida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
+			// colFinPesoSaldo
+			// 
+			this.colFinPesoSaldo.Text = "Peso real";
+			// 
 			// frmConsulta
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,7 +481,7 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmConsulta";
 			this.Text = "Consulta";
-			this.Load += new System.EventHandler(this.frmConsulta_Carregamento);
+			this.Load += new System.EventHandler(this.InicializacaoDefault);
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -528,6 +532,7 @@
 		private System.Windows.Forms.ColumnHeader colFinPesoSaida;
 		private System.Windows.Forms.ColumnHeader colFinUsuarioEntrada;
 		private System.Windows.Forms.ColumnHeader colFinUsuarioSaida;
+		private System.Windows.Forms.ColumnHeader colFinPesoSaldo;
 	}
 }
 

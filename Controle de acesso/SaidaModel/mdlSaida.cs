@@ -14,14 +14,13 @@ namespace SaidaModel
     {
         //Atributos
         public int referencia { get; set; }
-
-        public mdlEntrada dados = new mdlEntrada();
-
         public int idUsuario = daoUsuario.idUsuario;
         public string dataSaida { get; set; }
         public string horaSaida { get; set; }
         public double pesoSaida { get; set; }
+        public mdlEntrada dados = new mdlEntrada();
 
+        //Construtor
         public mdlSaida (int referenci, string info, string dtSaida, string hrSaida, double pSaida)
         {
             referencia = referenci;
@@ -31,7 +30,9 @@ namespace SaidaModel
             pesoSaida = pSaida;
             idUsuario.ToString();
         }
-        public mdlSaida(int referenciia, string dtSaida, string hrSaida, double pSaida) {
+
+		//Construtor
+		public mdlSaida(int referenciia, string dtSaida, string hrSaida, double pSaida) {
             referencia = referenciia;
             dataSaida = dtSaida;
             horaSaida = hrSaida;

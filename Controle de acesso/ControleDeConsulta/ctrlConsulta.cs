@@ -16,7 +16,6 @@ namespace ControleDeConsulta
         {
 			return daoEntrada.ExibirEntrada();
         }
-
 		public static List<mdlSaida> ExibirSaida()
 		{
 			return daoSaida.ExibirSaida();

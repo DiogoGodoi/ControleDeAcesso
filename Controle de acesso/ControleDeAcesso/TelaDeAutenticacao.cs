@@ -53,8 +53,8 @@ namespace ControleDeAcesso
 			else
 			{	
 				//Criando o objeto e chamando a função do objeto mdlUsuario
-				mdlUsuario _mdlUsuario = new mdlUsuario(nome, senha);
-				bool retorno = ctrlAutenticacao.Autenticar(_mdlUsuario);
+				mdlUsuario dados = new mdlUsuario(nome, senha);
+				bool retorno = ctrlAutenticacao.Autenticar(dados);
 				if (retorno == true)
 				{
 					//thread de entrada do sistema
@@ -69,12 +69,21 @@ namespace ControleDeAcesso
 				}
 			}
 		}
-
 		//Configuração botão de saída do sistema
 		private void Sair(object sender, EventArgs e)
 		{
 			//método para fechar janela atual
 			this.Close();
+		}
+		private void Conectar(object sender, EventArgs e)
+		{
+			Thread _tread = new Thread(frmDataBase);
+			_tread.SetApartmentState(ApartmentState.STA);
+			_tread.Start();
+		}
+		private void frmDataBase()
+		{
+			Application.Run(new frmDatabase());
 		}
 	}
 }

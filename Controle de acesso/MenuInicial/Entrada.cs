@@ -149,9 +149,9 @@ namespace Menu_Inicial
 					&& txtPesoEntrada.Text != String.Empty)
 				{
 					//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-					mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
+					mdlEntrada dados = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
 
-					bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
+					bool retorno = ctrlEntrada.EfetuarEntrada(dados);
 
 					//Validação para sucesso ou falha na entrada de dados
 					if (retorno != false)

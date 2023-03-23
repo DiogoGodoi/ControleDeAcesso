@@ -18,6 +18,7 @@ using System.Windows.Forms;
 
 namespace Menu_Inicial
 {
+	//TelaDeConsulta
 	public partial class frmConsulta : Form
 	{
 		ListViewItem lista;
@@ -25,15 +26,7 @@ namespace Menu_Inicial
 		{
 			InitializeComponent();
 		}
-		private void Voltar(object sender, EventArgs e)
-		{
-			ctrlNavegacao navegar = new ctrlNavegacao();
-			Thread _thread = new Thread(navegar.NavegarParaMenuInicial);
-			_thread.SetApartmentState(ApartmentState.STA);
-			_thread.Start();
-			this.Close();
-		}
-		private void radEntrada_CheckedChanged(object sender, EventArgs e)
+		private void ExibirEntradas(object sender, EventArgs e)
 		{
 			listEntrada.Items.Clear();
 			listEntrada.Enabled = true;
@@ -95,7 +88,7 @@ namespace Menu_Inicial
 				listEntrada.Items.Add(lista);
 			}
 		}
-		private void radSaida_CheckedChanged(object sender, EventArgs e)
+		private void ExibirSaidas(object sender, EventArgs e)
 		{
 			listSaida.Items.Clear();
 			listSaida.Enabled = true;
@@ -145,7 +138,86 @@ namespace Menu_Inicial
 				listSaida.Items.Add(lista);
 			}
 		}
-		private void frmConsulta_Carregamento(object sender, EventArgs e)
+		private void ExibirEntradaFinalizada(object sender, EventArgs e)
+		{
+			listFinalizada.Items.Clear();
+			listFinalizada.Enabled = true;
+			listFinalizada.Visible = true;
+			listEntrada.Enabled = false;
+			listEntrada.Visible = false;
+			listSaida.Enabled = false;
+			listSaida.Visible = false;
+
+			List<mdlEntrada> entradasFinalizada = ctrlConsulta.ExibirEntradaFinalizada();
+
+			if (entradasFinalizada != null)
+			{
+				listFinalizada.Items.Clear();
+				var busca = entradasFinalizada.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
+				if(busca.Count() > 0)
+				{
+					foreach (var item in busca)
+					{
+
+						double saldo = item.pesoEntrada - item.pesoSaida;
+						lista = new ListViewItem(item.referencia.ToString());
+						lista.SubItems.Add(item.nomeVisitante);
+						lista.SubItems.Add(item.visitado);
+						lista.SubItems.Add(item.cnpj.ToString());
+						lista.SubItems.Add(item.cpf.ToString());
+						lista.SubItems.Add(item.placaVeiculo);
+						lista.SubItems.Add(item.dataEntrada);
+						lista.SubItems.Add(item.dataSaida);
+						lista.SubItems.Add(item.horaEntrada);
+						lista.SubItems.Add(item.horaSaida);
+						lista.SubItems.Add(item.pesoEntrada.ToString());
+						lista.SubItems.Add(item.pesoSaida.ToString());
+						lista.SubItems.Add(saldo.ToString());	
+						lista.SubItems.Add(item.idUsuarioEntrada.ToString());
+						lista.SubItems.Add(item.idUsuarioSaida.ToString());
+						listFinalizada.Items.Add(lista);
+					}
+				}
+				else
+				{
+					lista = new ListViewItem("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					listFinalizada.Items.Add(lista);
+				}
+				
+			}else
+			{
+				lista = new ListViewItem("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				listFinalizada.Items.Add(lista);
+			}
+		}
+		private void InicializacaoDefault(object sender, EventArgs e)
 		{
 			this.WindowState = FormWindowState.Maximized;
 
@@ -162,7 +234,7 @@ namespace Menu_Inicial
 			if (entradas != null)
 			{
 				var busca = entradas.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
-				if(busca.Count() > 0)
+				if (busca.Count() > 0)
 				{
 					foreach (var item in busca)
 					{
@@ -209,82 +281,7 @@ namespace Menu_Inicial
 				listEntrada.Items.Add(lista);
 			}
 		}
-		private void Todos_CheckedChanged(object sender, EventArgs e)
-		{
-			listFinalizada.Items.Clear();
-			listFinalizada.Enabled = true;
-			listFinalizada.Visible = true;
-			listEntrada.Enabled = false;
-			listEntrada.Visible = false;
-			listSaida.Enabled = false;
-			listSaida.Visible = false;
-
-			List<mdlEntrada> entradasFinalizada = ctrlConsulta.ExibirEntradaFinalizada();
-
-			if (entradasFinalizada != null)
-			{
-				listFinalizada.Items.Clear();
-				var busca = entradasFinalizada.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
-				if(busca.Count() > 0)
-				{
-					foreach (var item in busca)
-					{
-						lista = new ListViewItem(item.referencia.ToString());
-						lista.SubItems.Add(item.nomeVisitante);
-						lista.SubItems.Add(item.visitado);
-						lista.SubItems.Add(item.cnpj.ToString());
-						lista.SubItems.Add(item.cpf.ToString());
-						lista.SubItems.Add(item.placaVeiculo);
-						lista.SubItems.Add(item.dataEntrada);
-						lista.SubItems.Add(item.dataSaida);
-						lista.SubItems.Add(item.horaEntrada);
-						lista.SubItems.Add(item.horaSaida);
-						lista.SubItems.Add(item.pesoEntrada.ToString());
-						lista.SubItems.Add(item.pesoSaida.ToString());
-						lista.SubItems.Add(item.idUsuarioEntrada.ToString());
-						lista.SubItems.Add(item.idUsuarioSaida.ToString());
-						listFinalizada.Items.Add(lista);
-					}
-				}
-				else
-				{
-					lista = new ListViewItem("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					lista.SubItems.Add("Sem dados");
-					listFinalizada.Items.Add(lista);
-				}
-				
-			}else
-			{
-				lista = new ListViewItem("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				lista.SubItems.Add("Sem dados");
-				listFinalizada.Items.Add(lista);
-			}
-		}
-		private void btnBuscar_Click(object sender, EventArgs e)
+		private void Buscar(object sender, EventArgs e)
 		{
 			List<mdlEntrada> entradas = new List<mdlEntrada>();
 			entradas = ctrlConsulta.ExibirEntrada();
@@ -366,6 +363,7 @@ namespace Menu_Inicial
 				{
 					foreach (var item in busca)
 					{
+						double saldo = item.pesoEntrada - item.pesoSaida;
 						lista = new ListViewItem(item.referencia.ToString());
 						lista.SubItems.Add(item.nomeVisitante);
 						lista.SubItems.Add(item.visitado);
@@ -378,6 +376,7 @@ namespace Menu_Inicial
 						lista.SubItems.Add(item.horaSaida);
 						lista.SubItems.Add(item.pesoEntrada.ToString());
 						lista.SubItems.Add(item.pesoSaida.ToString());
+						lista.SubItems.Add(saldo.ToString());
 						lista.SubItems.Add(item.idUsuarioEntrada.ToString());
 						lista.SubItems.Add(item.idUsuarioSaida.ToString());
 						listFinalizada.Items.Add(lista);
@@ -399,10 +398,19 @@ namespace Menu_Inicial
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
 					listFinalizada.Items.Add(lista);
 				}
 			}
 
+		}
+		private void Voltar(object sender, EventArgs e)
+		{
+			ctrlNavegacao navegar = new ctrlNavegacao();
+			Thread _thread = new Thread(navegar.NavegarParaMenuInicial);
+			_thread.SetApartmentState(ApartmentState.STA);
+			_thread.Start();
+			this.Close();
 		}
 	}
 }

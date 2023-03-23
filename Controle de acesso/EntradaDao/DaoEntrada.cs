@@ -15,7 +15,6 @@ namespace EntradaDao
 	public class daoEntrada
 	{
 		//Atributos
-		private static string dataAtual = DateTime.Now.Date.ToString("dd-MM-yyyy");
 		private static int referencia { get; set; }
 		private static string nomeVisitante { get; set; }
 		private static long cpf { get; set; }
@@ -23,7 +22,7 @@ namespace EntradaDao
 		private static double pesoEntrada { get; set; }
 		private static string visitado { get; set; }
 		private static string placaVeiculo { get; set; }
-		private static string dataEntrada { get; set; }
+		private static string dataEntrada = DateTime.Now.Date.ToString("dd-MM-yyyy");
 		private static string horaEntrada { get; set; }
 		private static string dataSaida { get; set; }
 		private static string horaSaida { get; set; }
@@ -125,7 +124,6 @@ namespace EntradaDao
 				conn.Close();
 			}
 		}
-
 		//public static bool AlterarEntrada(mdlEntrada Entrada)
 		//{
 		//}
@@ -172,6 +170,64 @@ namespace EntradaDao
 			{
 				conn.Close();
 				return false;
+				throw new Exception("Erro interno" + ex.Message);
+			}
+			finally
+			{
+				conn.Close();
+			}
+		}
+		//Método para exibir entradas
+		public static List<mdlEntrada> ExibirEntrada()
+		{
+			List<mdlEntrada> entradas = new List<mdlEntrada>();
+			var builder = new MySqlConnectionStringBuilder
+			{
+				Server = "192.168.0.253",
+				Port = 4550,
+				Database = "Portaria",
+				UserID = mdlUsuario.staticNome,
+				Password = mdlUsuario.staticSenha
+			};
+			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
+			try
+			{
+				conn.Open();
+				string query = $"SELECT * FROM Entrada";
+				MySqlCommand cmd = new MySqlCommand(query, conn);
+				cmd.CommandType = CommandType.Text;
+				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
+				DataTable tabela = new DataTable();
+				adaptador.Fill(tabela);
+				var leitura = cmd.ExecuteReader();
+				if (leitura.Read() == true)
+				{
+					foreach (DataRow dados in tabela.Rows)
+					{
+						var pmtReferencia = Convert.ToInt32(dados["ref"]);
+						var pmtNomeVisitante = dados["nomeVisitante"].ToString();
+						var pmtVisitado = dados["visitado"].ToString();
+						var pmtCpf = Convert.ToInt64(dados["cpf"]);
+						var pmtCnpj = Convert.ToInt64(dados["cnpj"]);
+						var pmtPlacaVeiculo = dados["placaVeiculo"].ToString();
+						var pmtDataEntrada = dados["dataEntrada"].ToString();
+						var pmtHoraEntrada = dados["horaEntrada"].ToString();
+						var pmtPesoEntrada = Convert.ToDouble(dados["pesoEntrada"]);
+						entradas.Add(new mdlEntrada(pmtReferencia, pmtNomeVisitante, pmtVisitado, pmtDataEntrada, pmtHoraEntrada, pmtCpf, pmtCnpj, pmtPesoEntrada, pmtPlacaVeiculo));
+					}
+
+					return entradas;
+				}
+				else
+				{
+					return null;
+				}
+
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+				return null;
 				throw new Exception("Erro interno" + ex.Message);
 			}
 			finally
@@ -227,67 +283,10 @@ namespace EntradaDao
 				conn.Close(); 
 			}
 		}
-		//Método para exibir entradas
-		public static List<mdlEntrada> ExibirEntrada()
-		{
-			List<mdlEntrada> entradas = new List<mdlEntrada> ();
-			var builder = new MySqlConnectionStringBuilder
-			{
-				Server = "192.168.0.253",
-				Port = 4550,
-				Database = "Portaria",
-				UserID = mdlUsuario.staticNome,
-				Password = mdlUsuario.staticSenha
-			};
-			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
-			try
-			{
-				conn.Open();
-				string query = $"SELECT * FROM Entrada"; 
-				MySqlCommand cmd = new MySqlCommand(query, conn);
-				cmd.CommandType = CommandType.Text;
-				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
-				DataTable tabela = new DataTable();
-				adaptador.Fill(tabela);
-				var leitura = cmd.ExecuteReader();
-				if (leitura.Read() == true)
-				{
-					foreach (DataRow dados  in tabela.Rows)
-					{
-						var pmtReferencia = Convert.ToInt32(dados["ref"]);
-						var pmtNomeVisitante = dados["nomeVisitante"].ToString();
-						var pmtVisitado = dados["visitado"].ToString();
-						var pmtCpf = Convert.ToInt64(dados["cpf"]);
-						var pmtCnpj = Convert.ToInt64(dados["cnpj"]);
-						var pmtPlacaVeiculo = dados["placaVeiculo"].ToString();
-						var pmtDataEntrada = dados["dataEntrada"].ToString();
-						var pmtHoraEntrada = dados["horaEntrada"].ToString();
-						var pmtPesoEntrada = Convert.ToDouble(dados["pesoEntrada"]);
-						entradas.Add(new mdlEntrada(pmtReferencia, pmtNomeVisitante, pmtVisitado, pmtDataEntrada, pmtHoraEntrada, pmtCpf, pmtCnpj, pmtPesoEntrada, pmtPlacaVeiculo));
-					}
-
-					return entradas;
-				}
-				else
-				{
-					return null;
-				}
-
-			}
-			catch (Exception ex)
-			{
-				conn.Close();
-				return null;
-				throw new Exception("Erro interno" + ex.Message);
-			}
-			finally
-			{
-				conn.Close();
-			}
-		}
 		//Método para exibir entrada finalizada
 		public static List<mdlEntrada> ExibirEntradaFinalizada()
 		{
+			string dataPesquisa = DateTime.Now.Date.ToString("dd-MM-yyyy");
 			List<mdlEntrada> entradaFinalizada = new List<mdlEntrada>();
 			var builder = new MySqlConnectionStringBuilder
 			{
@@ -307,7 +306,7 @@ namespace EntradaDao
 					"Entrada.horaEntrada, Saida.horaSaida, " +
 					"Entrada.pesoEntrada, Saida.pesoSaida, " +
 					"Entrada.placaVeiculo, Entrada.idUsuario, " +
-					$"Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.ref=Saida.ref WHERE Entrada.dataEntrada = '{dataAtual}' ORDER BY Entrada.dataEntrada ASC";
+					$"Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.ref=Saida.ref WHERE Entrada.dataEntrada = '{dataPesquisa}' ORDER BY Entrada.dataEntrada ASC";
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				cmd.CommandType = CommandType.Text;
 				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
@@ -361,6 +360,8 @@ namespace EntradaDao
 				conn.Close();
 			}
 		}
+
+		//Getters de atributo
 		public static int GetReferencia()
 		{
 			return referencia;

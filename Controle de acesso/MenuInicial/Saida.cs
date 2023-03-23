@@ -45,7 +45,7 @@ namespace Saida
 				dataSaida = dtSaida.Value.ToString("dd-MM-yyyy");
 				horaSaida = hrSaida.Value.ToString("hh:mm");
 				pesoSaida = Convert.ToDouble(txtPesoSaida.Text);
-				mdlSaida _mdlSaida = new mdlSaida(referencia, dataSaida, horaSaida, pesoSaida);
+				mdlSaida dados = new mdlSaida(referencia, dataSaida, horaSaida, pesoSaida);
 
 				if (dataSaida == String.Empty && horaSaida == String.Empty)
 				{
@@ -64,7 +64,7 @@ namespace Saida
 				}
 				else
 				{
-					bool retorno = ctrlSaida.EfetuarSaida(_mdlSaida);
+					bool retorno = ctrlSaida.EfetuarSaida(dados);
 					if (retorno == true)
 					{
 						MessageBox.Show("Saida efetuada com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -37,7 +37,11 @@
 			this.txtSenha = new System.Windows.Forms.TextBox();
 			this.btnSair = new System.Windows.Forms.Button();
 			this.btnEntrar = new System.Windows.Forms.Button();
+			this.menuStrip = new System.Windows.Forms.MenuStrip();
+			this.databaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.conectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
+			this.menuStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// pctLogo
@@ -136,6 +140,31 @@
 			this.btnEntrar.UseVisualStyleBackColor = false;
 			this.btnEntrar.Click += new System.EventHandler(this.Entrar);
 			// 
+			// menuStrip
+			// 
+			this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.databaseToolStripMenuItem});
+			this.menuStrip.Location = new System.Drawing.Point(0, 0);
+			this.menuStrip.Name = "menuStrip";
+			this.menuStrip.Size = new System.Drawing.Size(492, 24);
+			this.menuStrip.TabIndex = 8;
+			this.menuStrip.Text = "menuStrip1";
+			// 
+			// databaseToolStripMenuItem
+			// 
+			this.databaseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.conectarToolStripMenuItem});
+			this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
+			this.databaseToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+			this.databaseToolStripMenuItem.Text = "Database";
+			// 
+			// conectarToolStripMenuItem
+			// 
+			this.conectarToolStripMenuItem.Name = "conectarToolStripMenuItem";
+			this.conectarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.conectarToolStripMenuItem.Text = "Conectar";
+			this.conectarToolStripMenuItem.Click += new System.EventHandler(this.Conectar);
+			// 
 			// frmAutenticacao
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,10 +178,13 @@
 			this.Controls.Add(this.lblLogin);
 			this.Controls.Add(this.lblTitulo);
 			this.Controls.Add(this.pctLogo);
+			this.Controls.Add(this.menuStrip);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmAutenticacao";
 			this.Text = "Login";
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
+			this.menuStrip.ResumeLayout(false);
+			this.menuStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -168,6 +200,9 @@
 		private System.Windows.Forms.TextBox txtSenha;
 		private System.Windows.Forms.Button btnSair;
 		private System.Windows.Forms.Button btnEntrar;
+		private System.Windows.Forms.MenuStrip menuStrip;
+		private System.Windows.Forms.ToolStripMenuItem databaseToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem conectarToolStripMenuItem;
 	}
 }
 
