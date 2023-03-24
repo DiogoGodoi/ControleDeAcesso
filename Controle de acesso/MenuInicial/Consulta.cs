@@ -92,7 +92,7 @@ namespace Menu_Inicial
 			List<mdlEntrada> entradasFinalizadas = new List<mdlEntrada>();
 			entradasFinalizadas = ctrlConsulta.ExibirEntradaFinalizada();
 
-			if(tabEntrada.Focused == true) {
+			if(tabEntrada.Focus()) {
 				listEntrada.Items.Clear();
 				var busca = entradas.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
 				if (busca.Count() >0)
@@ -128,7 +128,7 @@ namespace Menu_Inicial
 					listEntrada.Items.Add(lista);
 				}
 			}
-			else if (tabSaidas.Focused == true)
+			else if (tabSaidas.Focus())
 			{
 				listSaida.Items.Clear();
 				var busca = saidas.Where(i => i.dataSaida == dtBusca.Value.ToString("dd-MM-yyyy"));
@@ -156,7 +156,7 @@ namespace Menu_Inicial
 					listSaida.Items.Add(lista);
 				}
 			}
-			else if(tabAcessoFinalizado.Focused == true)
+			else if(tabAcessoFinalizado.Focus())
 			{
 				listFinalizada.Items.Clear();
 				var busca = entradasFinalizadas.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));

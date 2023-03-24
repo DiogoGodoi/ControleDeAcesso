@@ -143,13 +143,13 @@
 			// 
 			this.colNomeVisitante.Text = "Nome do Visitante";
 			this.colNomeVisitante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colNomeVisitante.Width = 200;
+			this.colNomeVisitante.Width = 232;
 			// 
 			// colVisitado
 			// 
 			this.colVisitado.Text = "Visitado";
 			this.colVisitado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colVisitado.Width = 200;
+			this.colVisitado.Width = 232;
 			// 
 			// colDataEntrada
 			// 
@@ -222,7 +222,7 @@
 			// 
 			this.colSaidaNomeVisitante.Text = "Nome do Visitante";
 			this.colSaidaNomeVisitante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colSaidaNomeVisitante.Width = 625;
+			this.colSaidaNomeVisitante.Width = 685;
 			// 
 			// colSaidaData
 			// 
@@ -375,6 +375,7 @@
 			this.tabControle.SelectedIndex = 0;
 			this.tabControle.Size = new System.Drawing.Size(1245, 288);
 			this.tabControle.TabIndex = 0;
+			this.tabControle.Enter += new System.EventHandler(this.ExibirEntradaFinalizada);
 			// 
 			// tabEntrada
 			// 
@@ -387,6 +388,7 @@
 			this.tabEntrada.TabIndex = 0;
 			this.tabEntrada.Text = "Entradas";
 			this.tabEntrada.Click += new System.EventHandler(this.ExibirEntrada);
+			this.tabEntrada.Enter += new System.EventHandler(this.ExibirEntrada);
 			// 
 			// tabSaidas
 			// 
@@ -399,6 +401,7 @@
 			this.tabSaidas.TabIndex = 1;
 			this.tabSaidas.Text = "Saídas";
 			this.tabSaidas.Click += new System.EventHandler(this.ExibirSaida);
+			this.tabSaidas.Enter += new System.EventHandler(this.ExibirSaida);
 			// 
 			// tabAcessoFinalizado
 			// 
