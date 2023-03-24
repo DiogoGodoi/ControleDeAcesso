@@ -104,7 +104,7 @@ namespace SaidaDao
 			{
 				conn.Open();
 				string query = "SELECT Saida.ref, Entrada.nomeVisitante, Saida.dataSaida, Saida.horaSaida, Saida.pesoSaida, Saida.IdUsuario " +
-					"FROM Saida INNER JOIN Entrada ON Entrada.ref=Saida.ref";
+					"FROM Saida INNER JOIN Entrada ON Entrada.ref=Saida.ref ORDER BY Saida.dataSaida, Saida.horaSaida ASC";
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				cmd.CommandType = CommandType.Text;
 				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);

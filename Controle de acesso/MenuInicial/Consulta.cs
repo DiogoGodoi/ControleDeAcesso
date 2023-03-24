@@ -95,7 +95,7 @@ namespace Menu_Inicial
 			if(tabEntrada.Focus()) {
 				listEntrada.Items.Clear();
 				var busca = entradas.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
-				if (busca.Count() >0)
+				if (busca.Count() > 0)
 				{
 					foreach (var item in busca)
 					{
@@ -147,6 +147,7 @@ namespace Menu_Inicial
 				}
 				else
 				{
+					listSaida.Items.Clear();
 					lista = new ListViewItem("Sem dados");
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
@@ -203,7 +204,6 @@ namespace Menu_Inicial
 					listFinalizada.Items.Add(lista);
 				}
 			}
-
 		}
 		private void Voltar(object sender, EventArgs e)
 		{
@@ -320,7 +320,7 @@ namespace Menu_Inicial
 			{
 				listFinalizada.Items.Clear();
 				var busca = entradasFinalizada.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
-				if (busca.Count() > 0)
+				if (busca.Count() != 0)
 				{
 					foreach (var item in busca)
 					{

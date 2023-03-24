@@ -194,7 +194,7 @@ namespace EntradaDao
 			try
 			{
 				conn.Open();
-				string query = $"SELECT * FROM Entrada";
+				string query = $"SELECT * FROM Entrada ORDER BY dataEntrada, horaEntrada ASC";
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				cmd.CommandType = CommandType.Text;
 				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
@@ -307,7 +307,7 @@ namespace EntradaDao
 					"Entrada.horaEntrada, Saida.horaSaida, " +
 					"Entrada.pesoEntrada, Saida.pesoSaida, " +
 					"Entrada.placaVeiculo, Entrada.idUsuario, " +
-					$"Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.ref=Saida.ref WHERE Entrada.dataEntrada = '{dataPesquisa}' ORDER BY Entrada.dataEntrada ASC";
+					$"Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.ref=Saida.ref WHERE Entrada.dataEntrada = '{dataPesquisa}' ORDER BY Entrada.dataEntrada, Entrada.HoraEntrada ASC";
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				cmd.CommandType = CommandType.Text;
 				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
