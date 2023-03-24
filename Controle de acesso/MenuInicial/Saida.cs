@@ -41,42 +41,45 @@ namespace Saida
 			//Blobo try catch para evitar quebras no sistema
 			try
 			{
-				referencia = Convert.ToInt32(txtReferencia.Text);
-				dataSaida = dtSaida.Value.ToString("dd-MM-yyyy");
-				horaSaida = hrSaida.Value.ToString("hh:mm");
-				pesoSaida = Convert.ToDouble(txtPesoSaida.Text);
-				mdlSaida dados = new mdlSaida(referencia, dataSaida, horaSaida, pesoSaida);
+				DialogResult mensagem = MessageBox.Show("Confirma a saída", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				if(mensagem == DialogResult.Yes) { 
+					referencia = Convert.ToInt32(txtReferencia.Text);
+					dataSaida = dtSaida.Value.ToString("dd-MM-yyyy");
+					horaSaida = hrSaida.Value.ToString("hh:mm");
+					pesoSaida = Convert.ToDouble(txtPesoSaida.Text);
+					mdlSaida dados = new mdlSaida(referencia, dataSaida, horaSaida, pesoSaida);
 
-				if (dataSaida == String.Empty && horaSaida == String.Empty)
-				{
-					MessageBox.Show("Por favor insira os dados de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
-				else if (dataSaida == String.Empty)
-				{
-					MessageBox.Show("Insira a data de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
-				else if (horaSaida == String.Empty)
-				{
-					MessageBox.Show("Insira a hora de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}else if (txtPesoSaida.Text == "0" && txtPesoEntrada.Text != String.Empty)
-				{
-					MessageBox.Show("Insira o peso de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
-				else
-				{
-					bool retorno = ctrlSaida.EfetuarSaida(dados);
-					if (retorno == true)
+					if (dataSaida == String.Empty && horaSaida == String.Empty)
 					{
-						MessageBox.Show("Saida efetuada com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-						dtSaida.Text = String.Empty;
-						hrSaida.Text = String.Empty;
-						txtPesoSaida.Text = String.Empty;
-						txtReferencia.Text = String.Empty;
-						txtReferencia.Focus();
+						MessageBox.Show("Por favor insira os dados de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else if (dataSaida == String.Empty)
+					{
+						MessageBox.Show("Insira a data de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else if (horaSaida == String.Empty)
+					{
+						MessageBox.Show("Insira a hora de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}else if (txtPesoSaida.Text == "0" && txtPesoEntrada.Text != String.Empty)
+					{
+						MessageBox.Show("Insira o peso de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
 					else
 					{
-						MessageBox.Show("Erro na operação", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						bool retorno = ctrlSaida.EfetuarSaida(dados);
+						if (retorno == true)
+						{
+							MessageBox.Show("Saida efetuada com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							dtSaida.Text = String.Empty;
+							hrSaida.Text = String.Empty;
+							txtPesoSaida.Text = String.Empty;
+							txtReferencia.Text = String.Empty;
+							txtReferencia.Focus();
+						}
+						else
+						{
+							MessageBox.Show("Erro na operação", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
 					}
 				}
 			}

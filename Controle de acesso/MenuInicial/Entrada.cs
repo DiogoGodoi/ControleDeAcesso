@@ -39,186 +39,190 @@ namespace Menu_Inicial
 			//Bloco try para evitar quebra no sistema
 			try
 			{
-				//Pré validação dos campos do tipo numérico para inicialização
-				if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
-				{
-					nomeVisitante = txtNomeVisitante.Text;
-					visitado = txtNomeVisitado.Text;
-					placaVeiculo = txtPlacaVeiculo.Text;
-					cpf = 0;
-					cnpj = 0;
-					pesoEntrada = 0;
-				}
-				else if (txtCpf.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
-				{
-					nomeVisitante = txtNomeVisitante.Text;
-					visitado = txtNomeVisitado.Text;
-					placaVeiculo = txtPlacaVeiculo.Text;
-					cpf = 0;
-					cnpj = Convert.ToInt64(txtCnpj.Text);
-					pesoEntrada = 0;
-				}
-				else if (txtCnpj.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
-				{
-					nomeVisitante = txtNomeVisitante.Text;
-					visitado = txtNomeVisitado.Text;
-					placaVeiculo = txtPlacaVeiculo.Text;
-					cpf = Convert.ToInt64(txtCpf.Text);
-					cnpj = 0;
-					pesoEntrada = 0;
-				}
-				else if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty)
-				{
-					nomeVisitante = txtNomeVisitante.Text;
-					visitado = txtNomeVisitado.Text;
-					placaVeiculo = txtPlacaVeiculo.Text;
-					cpf = 0;
-					cnpj = 0;
-					pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
-				}
-				else if (txtCpf.Text == String.Empty)
-				{
-					nomeVisitante = txtNomeVisitante.Text;
-					visitado = txtNomeVisitado.Text;
-					placaVeiculo = txtPlacaVeiculo.Text;
-					cpf = 0;
-					cnpj = Convert.ToInt64(txtCnpj.Text);
-					pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
-				}
-				else if (txtCnpj.Text == String.Empty)
-				{
-					nomeVisitante = txtNomeVisitante.Text;
-					visitado = txtNomeVisitado.Text;
-					placaVeiculo = txtPlacaVeiculo.Text;
-					cpf = Convert.ToInt64(txtCpf.Text);
-					cnpj = 0;
-					pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
-				}
-				else
-				{
-					nomeVisitante = txtNomeVisitante.Text;
-					visitado = txtNomeVisitado.Text;
-					placaVeiculo = txtPlacaVeiculo.Text;
-					cpf = Convert.ToInt64(txtCpf.Text);
-					cnpj = Convert.ToInt64(txtCnpj.Text);
-					pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
-				}
+				DialogResult mensagem = MessageBox.Show("Confirma a entrada ?", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-				//Segunda validação dos campos 
-				if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty &&
-					txtPesoEntrada.Text == String.Empty && txtNomeVisitante.Text == String.Empty &&
-					txtNomeVisitado.Text == String.Empty)
+				if(mensagem == DialogResult.Yes)
 				{
-					MessageBox.Show("Por favor insira os dados", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
-				else if (txtNomeVisitante.Text == String.Empty)
-				{
-					MessageBox.Show("Por favor insira o nome do visitante", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
-				else if (txtNomeVisitado.Text == String.Empty)
-				{
-					MessageBox.Show("Por favor insira o nome do visitado", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
-				else if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty)
-				{
-					MessageBox.Show("Por favor insira o cpf ou o cnpj do visitante", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
-				else if (txtNomeVisitante.Text != String.Empty
-					&& txtNomeVisitado.Text != String.Empty
-					&& txtCpf.Text != String.Empty
-					&& txtCnpj.Text == String.Empty
-					&& txtPesoEntrada.Text != String.Empty
-					&& txtPlacaVeiculo.Text == String.Empty)
-				{
-					MessageBox.Show("Por favor a placa do veículo", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
-				else if (txtNomeVisitante.Text != String.Empty
-					&& txtNomeVisitado.Text != String.Empty
-					&& txtCpf.Text == String.Empty
-					&& txtCnpj.Text != String.Empty
-					&& txtPesoEntrada.Text != String.Empty
-					&& txtPlacaVeiculo.Text == String.Empty)
-				{
-					MessageBox.Show("Por favor a placa do veículo", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-				}
-				else if (txtNomeVisitante.Text != String.Empty
-					&& txtNomeVisitado.Text != String.Empty
-					&& txtCpf.Text != String.Empty
-					&& txtCnpj.Text == String.Empty
-					&& txtPesoEntrada.Text != String.Empty
-					&& txtPesoEntrada.Text != String.Empty)
-				{
-					//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-					mdlEntrada dados = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
-
-					bool retorno = ctrlEntrada.EfetuarEntrada(dados);
-
-					//Validação para sucesso ou falha na entrada de dados
-					if (retorno != false)
+					//Pré validação dos campos do tipo numérico para inicialização
+					if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
 					{
-						MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-						txtNomeVisitante.Text = String.Empty;
-						txtNomeVisitado.Text = String.Empty;
-						txtCpf.Text = String.Empty;
-						txtCnpj.Text = String.Empty;
-						txtPesoEntrada.Text = String.Empty;
-						txtPlacaVeiculo.Text = String.Empty;
-						txtNomeVisitante.Focus();
+						nomeVisitante = txtNomeVisitante.Text;
+						visitado = txtNomeVisitado.Text;
+						placaVeiculo = txtPlacaVeiculo.Text;
+						cpf = 0;
+						cnpj = 0;
+						pesoEntrada = 0;
+					}
+					else if (txtCpf.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
+					{
+						nomeVisitante = txtNomeVisitante.Text;
+						visitado = txtNomeVisitado.Text;
+						placaVeiculo = txtPlacaVeiculo.Text;
+						cpf = 0;
+						cnpj = Convert.ToInt64(txtCnpj.Text);
+						pesoEntrada = 0;
+					}
+					else if (txtCnpj.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
+					{
+						nomeVisitante = txtNomeVisitante.Text;
+						visitado = txtNomeVisitado.Text;
+						placaVeiculo = txtPlacaVeiculo.Text;
+						cpf = Convert.ToInt64(txtCpf.Text);
+						cnpj = 0;
+						pesoEntrada = 0;
+					}
+					else if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty)
+					{
+						nomeVisitante = txtNomeVisitante.Text;
+						visitado = txtNomeVisitado.Text;
+						placaVeiculo = txtPlacaVeiculo.Text;
+						cpf = 0;
+						cnpj = 0;
+						pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
+					}
+					else if (txtCpf.Text == String.Empty)
+					{
+						nomeVisitante = txtNomeVisitante.Text;
+						visitado = txtNomeVisitado.Text;
+						placaVeiculo = txtPlacaVeiculo.Text;
+						cpf = 0;
+						cnpj = Convert.ToInt64(txtCnpj.Text);
+						pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
+					}
+					else if (txtCnpj.Text == String.Empty)
+					{
+						nomeVisitante = txtNomeVisitante.Text;
+						visitado = txtNomeVisitado.Text;
+						placaVeiculo = txtPlacaVeiculo.Text;
+						cpf = Convert.ToInt64(txtCpf.Text);
+						cnpj = 0;
+						pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
 					}
 					else
 					{
-						MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						nomeVisitante = txtNomeVisitante.Text;
+						visitado = txtNomeVisitado.Text;
+						placaVeiculo = txtPlacaVeiculo.Text;
+						cpf = Convert.ToInt64(txtCpf.Text);
+						cnpj = Convert.ToInt64(txtCnpj.Text);
+						pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
 					}
-				}
-				else if (txtNomeVisitante.Text != String.Empty
-					&& txtNomeVisitado.Text != String.Empty
-					&& txtCpf.Text == String.Empty
-					&& txtCnpj.Text != String.Empty
-					&& txtPesoEntrada.Text != String.Empty
-					&& txtPlacaVeiculo.Text != String.Empty)
-				{
-					//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-					mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
-
-					bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
-
-					if (retorno != false)
+					//Segunda validação dos campos 
+					if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty &&
+						txtPesoEntrada.Text == String.Empty && txtNomeVisitante.Text == String.Empty &&
+						txtNomeVisitado.Text == String.Empty)
 					{
-						MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-						txtNomeVisitante.Text = String.Empty;
-						txtNomeVisitado.Text = String.Empty;
-						txtCpf.Text = String.Empty;
-						txtCnpj.Text = String.Empty;
-						txtPesoEntrada.Text = String.Empty;
-						txtPlacaVeiculo.Text = String.Empty;
-						txtNomeVisitante.Focus();
+						MessageBox.Show("Por favor insira os dados", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else if (txtNomeVisitante.Text == String.Empty)
+					{
+						MessageBox.Show("Por favor insira o nome do visitante", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else if (txtNomeVisitado.Text == String.Empty)
+					{
+						MessageBox.Show("Por favor insira o nome do visitado", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty)
+					{
+						MessageBox.Show("Por favor insira o cpf ou o cnpj do visitante", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else if (txtNomeVisitante.Text != String.Empty
+						&& txtNomeVisitado.Text != String.Empty
+						&& txtCpf.Text != String.Empty
+						&& txtCnpj.Text == String.Empty
+						&& txtPesoEntrada.Text != String.Empty
+						&& txtPlacaVeiculo.Text == String.Empty)
+					{
+						MessageBox.Show("Por favor a placa do veículo", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else if (txtNomeVisitante.Text != String.Empty
+						&& txtNomeVisitado.Text != String.Empty
+						&& txtCpf.Text == String.Empty
+						&& txtCnpj.Text != String.Empty
+						&& txtPesoEntrada.Text != String.Empty
+						&& txtPlacaVeiculo.Text == String.Empty)
+					{
+						MessageBox.Show("Por favor a placa do veículo", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else if (txtNomeVisitante.Text != String.Empty
+						&& txtNomeVisitado.Text != String.Empty
+						&& txtCpf.Text != String.Empty
+						&& txtCnpj.Text == String.Empty
+						&& txtPesoEntrada.Text != String.Empty
+						&& txtPesoEntrada.Text != String.Empty)
+					{
+						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
+						mdlEntrada dados = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
+
+						bool retorno = ctrlEntrada.EfetuarEntrada(dados);
+
+						//Validação para sucesso ou falha na entrada de dados
+						if (retorno != false)
+						{
+							MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							txtNomeVisitante.Text = String.Empty;
+							txtNomeVisitado.Text = String.Empty;
+							txtCpf.Text = String.Empty;
+							txtCnpj.Text = String.Empty;
+							txtPesoEntrada.Text = String.Empty;
+							txtPlacaVeiculo.Text = String.Empty;
+							txtNomeVisitante.Focus();
+						}
+						else
+						{
+							MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
+					}
+					else if (txtNomeVisitante.Text != String.Empty
+						&& txtNomeVisitado.Text != String.Empty
+						&& txtCpf.Text == String.Empty
+						&& txtCnpj.Text != String.Empty
+						&& txtPesoEntrada.Text != String.Empty
+						&& txtPlacaVeiculo.Text != String.Empty)
+					{
+						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
+						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
+
+						bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
+
+						if (retorno != false)
+						{
+							MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							txtNomeVisitante.Text = String.Empty;
+							txtNomeVisitado.Text = String.Empty;
+							txtCpf.Text = String.Empty;
+							txtCnpj.Text = String.Empty;
+							txtPesoEntrada.Text = String.Empty;
+							txtPlacaVeiculo.Text = String.Empty;
+							txtNomeVisitante.Focus();
+						}
+						else
+						{
+							MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
 					}
 					else
 					{
-						MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
-					}
-				}
-				else
-				{
-					//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-					mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
+						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
+						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
 
-					bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
+						bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
 
-					if (retorno != false)
-					{
-						MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-						txtNomeVisitante.Text = String.Empty;
-						txtNomeVisitado.Text = String.Empty;
-						txtCpf.Text = String.Empty;
-						txtCnpj.Text = String.Empty;
-						txtPesoEntrada.Text = String.Empty;
-						txtPlacaVeiculo.Text = String.Empty;
-						txtNomeVisitante.Focus();
-					}
-					else
-					{
-						MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						if (retorno != false)
+						{
+							MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							txtNomeVisitante.Text = String.Empty;
+							txtNomeVisitado.Text = String.Empty;
+							txtCpf.Text = String.Empty;
+							txtCnpj.Text = String.Empty;
+							txtPesoEntrada.Text = String.Empty;
+							txtPlacaVeiculo.Text = String.Empty;
+							txtNomeVisitante.Focus();
+						}
+						else
+						{
+							MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
 					}
 				}
 			}

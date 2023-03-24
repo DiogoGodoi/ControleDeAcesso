@@ -93,7 +93,7 @@ namespace EntradaDao
 				var pmtPlacaVeiculo = cmd.CreateParameter();
 				pmtPlacaVeiculo.ParameterName = "@placaVeiculo";
 				pmtPlacaVeiculo.DbType = DbType.String;
-				pmtPlacaVeiculo.Value = Entrada.placaVeiculo;
+				pmtPlacaVeiculo.Value = Entrada.placaVeiculo.ToUpper();
 				cmd.Parameters.Add(pmtPlacaVeiculo);
 
 				var pmtIdUsuario = cmd.CreateParameter();
