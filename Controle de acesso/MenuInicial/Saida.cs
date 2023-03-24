@@ -45,7 +45,7 @@ namespace Saida
 				if(mensagem == DialogResult.Yes) { 
 					referencia = Convert.ToInt32(txtReferencia.Text);
 					dataSaida = dtSaida.Value.ToString("dd-MM-yyyy");
-					horaSaida = hrSaida.Value.ToString("hh:mm");
+					horaSaida = hrSaida.Value.ToString("HH:mm");
 					pesoSaida = Convert.ToDouble(txtPesoSaida.Text);
 					mdlSaida dados = new mdlSaida(referencia, dataSaida, horaSaida, pesoSaida);
 
