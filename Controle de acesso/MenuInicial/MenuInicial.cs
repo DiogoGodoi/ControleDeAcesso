@@ -62,5 +62,10 @@ namespace Menu_Inicial
 			//Método para fechar o formulário atual
 			this.Close();
 		}
+
+		private void frmMenuInicial_Load(object sender, EventArgs e)
+		{
+			btnAlterar.Enabled = false;
+		}
 	}
 }
