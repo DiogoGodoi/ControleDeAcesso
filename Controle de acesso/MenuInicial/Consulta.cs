@@ -90,7 +90,7 @@ namespace Menu_Inicial
 			List<mdlSaida> saidas = new List<mdlSaida>();
 			saidas = ctrlConsulta.ExibirSaida();
 			List<mdlEntrada> entradasFinalizadas = new List<mdlEntrada>();
-			entradasFinalizadas = ctrlConsulta.ExibirEntradaFinalizada();
+			entradasFinalizadas = ctrlConsulta.ExibirEntradaFinalizada(dtBusca.Value.ToString("dd-MM-yyyy"));
 
 			if(tabEntrada.Focus()) {
 				listEntrada.Items.Clear();
@@ -314,7 +314,7 @@ namespace Menu_Inicial
 		{
 			listFinalizada.Items.Clear();
 
-			List<mdlEntrada> entradasFinalizada = ctrlConsulta.ExibirEntradaFinalizada();
+			List<mdlEntrada> entradasFinalizada = ctrlConsulta.ExibirEntradaFinalizada(dtBusca.Value.ToString("dd-MM-yyyy"));
 
 			if (entradasFinalizada != null)
 			{

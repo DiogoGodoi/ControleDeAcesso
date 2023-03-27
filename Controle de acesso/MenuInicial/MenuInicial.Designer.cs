@@ -39,8 +39,8 @@
 			this.btnSair = new System.Windows.Forms.Button();
 			this.btnSaida = new System.Windows.Forms.Button();
 			this.nav = new System.Windows.Forms.Panel();
-			this.pctLogo = new System.Windows.Forms.PictureBox();
 			this.lblTitulo = new System.Windows.Forms.Label();
+			this.pctLogo = new System.Windows.Forms.PictureBox();
 			this.footer = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pctEntrada)).BeginInit();
@@ -191,18 +191,6 @@
 			this.nav.Size = new System.Drawing.Size(800, 62);
 			this.nav.TabIndex = 27;
 			// 
-			// pctLogo
-			// 
-			this.pctLogo.BackColor = System.Drawing.Color.White;
-			this.pctLogo.Dock = System.Windows.Forms.DockStyle.Left;
-			this.pctLogo.Image = ((System.Drawing.Image)(resources.GetObject("pctLogo.Image")));
-			this.pctLogo.Location = new System.Drawing.Point(0, 0);
-			this.pctLogo.Name = "pctLogo";
-			this.pctLogo.Size = new System.Drawing.Size(115, 62);
-			this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pctLogo.TabIndex = 4;
-			this.pctLogo.TabStop = false;
-			// 
 			// lblTitulo
 			// 
 			this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -214,6 +202,18 @@
 			this.lblTitulo.Size = new System.Drawing.Size(380, 32);
 			this.lblTitulo.TabIndex = 5;
 			this.lblTitulo.Text = "Selecione a opção desejada";
+			// 
+			// pctLogo
+			// 
+			this.pctLogo.BackColor = System.Drawing.Color.White;
+			this.pctLogo.Dock = System.Windows.Forms.DockStyle.Left;
+			this.pctLogo.Image = ((System.Drawing.Image)(resources.GetObject("pctLogo.Image")));
+			this.pctLogo.Location = new System.Drawing.Point(0, 0);
+			this.pctLogo.Name = "pctLogo";
+			this.pctLogo.Size = new System.Drawing.Size(115, 62);
+			this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctLogo.TabIndex = 4;
+			this.pctLogo.TabStop = false;
 			// 
 			// footer
 			// 

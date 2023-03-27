@@ -285,9 +285,8 @@ namespace EntradaDao
 			}
 		}
 		//Método para exibir entrada finalizada
-		public static List<mdlEntrada> ExibirEntradaFinalizada()
+		public static List<mdlEntrada> ExibirEntradaFinalizada(string dt)
 		{
-			string dataPesquisa = DateTime.Now.Date.ToString("dd-MM-yyyy");
 			List<mdlEntrada> entradaFinalizada = new List<mdlEntrada>();
 			var builder = new MySqlConnectionStringBuilder
 			{
@@ -307,7 +306,7 @@ namespace EntradaDao
 					"Entrada.horaEntrada, Saida.horaSaida, " +
 					"Entrada.pesoEntrada, Saida.pesoSaida, " +
 					"Entrada.placaVeiculo, Entrada.idUsuario, " +
-					$"Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.ref=Saida.ref WHERE Entrada.dataEntrada = '{dataPesquisa}' ORDER BY Entrada.dataEntrada, Entrada.HoraEntrada ASC";
+					$"Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.ref=Saida.ref WHERE Entrada.dataEntrada = '{dt}' ORDER BY Entrada.dataEntrada, Entrada.HoraEntrada ASC";
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				cmd.CommandType = CommandType.Text;
 				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
