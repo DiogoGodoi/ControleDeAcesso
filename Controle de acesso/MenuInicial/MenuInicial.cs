@@ -18,54 +18,45 @@ namespace Menu_Inicial
 	{
 		//Inicializador do formulário
 		ctrlNavegacao navegar = new ctrlNavegacao();
+		Form formAtivo;
 		public frmMenuInicial()
 		{
 			InitializeComponent();
 		}
-		private void TelaDeEntrada(object sender, EventArgs e)
-		{
-		Thread _thread = new Thread(navegar.NavegarParaTelaEntrada);
-		_thread.SetApartmentState(ApartmentState.STA);
-		_thread.Start();
-		this.Close();
-	}
 		//Configuração do botão da tela de saída
 		private void TelaDeSaida(object sender, EventArgs e)
 		{
-			//Thread da tela de saída
-			Thread _thread = new Thread(navegar.NavegarParaTelaSaida);
-			_thread.SetApartmentState(ApartmentState.STA);
-			_thread.Start();
-			this.Close();
+			ctrlNavegacao.ActiveButton(btnSaida, panelSlideBar);
+			ctrlNavegacao.Navegacao(formAtivo, new frmSaida(), panelConteudo);
 		}
 		//Configuração do botão da tela de alteração
 		private void TelaDeAlteracao(object sender, EventArgs e)
 		{
-			//Thread da tela de alteração
-			Thread _thread = new Thread(navegar.NavegarParaTelaAlteracao);
-			_thread.SetApartmentState(ApartmentState.STA);
-			_thread.Start();
-			this.Close();
+			ctrlNavegacao.ActiveButton(btnAlterar, panelSlideBar);
+			ctrlNavegacao.Navegacao(formAtivo, new frmAlterar(), panelConteudo);
 		}
 		//Configuração do botão da tela de consulta
 		private void TelaDeConsulta(object sender, EventArgs e)
 		{
-			//Thread da tela de consulta
-			Thread _thread = new Thread(navegar.NavegarParaTelaConsulta);
-			_thread.SetApartmentState(ApartmentState.STA);
-			_thread.Start();
-			this.Close();
+			ctrlNavegacao.ActiveButton(btnConsultar, panelSlideBar);
+			ctrlNavegacao.Navegacao(formAtivo, new frmConsulta(), panelConteudo);
 		}
-		//Configuração do botão de saida do sistema
+
 		private void Sair(object sender, EventArgs e)
 		{
-			//Método para fechar o formulário atual
 			this.Close();
+		}
+
+		private void btnEntrada_Click(object sender, EventArgs e)
+		{
+			ctrlNavegacao.ActiveButton(btnEntrada, panelSlideBar);
+			ctrlNavegacao.Navegacao(formAtivo, new frmEntrada(), panelConteudo);
 		}
 
 		private void frmMenuInicial_Load(object sender, EventArgs e)
 		{
 			btnAlterar.Enabled = false;
+			this.WindowState = FormWindowState.Maximized;
 		}
 	}
 }

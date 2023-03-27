@@ -41,12 +41,14 @@
 			this.nav = new System.Windows.Forms.Panel();
 			this.pctLogo = new System.Windows.Forms.PictureBox();
 			this.titulo = new System.Windows.Forms.Label();
-			this.footer = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+			this.panelLineFooter = new System.Windows.Forms.Panel();
+			this.panelFooter = new System.Windows.Forms.Panel();
+			this.lblFooter = new System.Windows.Forms.Label();
+			this.label1 = new System.Windows.Forms.Label();
 			this.nav.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
-			this.footer.SuspendLayout();
+			this.panelFooter.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// lblTitulo
@@ -204,27 +206,48 @@
 			this.titulo.TabIndex = 5;
 			this.titulo.Text = "Entrar";
 			// 
-			// footer
+			// panelLineFooter
 			// 
-			this.footer.BackColor = System.Drawing.Color.Maroon;
-			this.footer.Controls.Add(this.label1);
-			this.footer.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.footer.Location = new System.Drawing.Point(0, 428);
-			this.footer.Name = "footer";
-			this.footer.Size = new System.Drawing.Size(492, 22);
-			this.footer.TabIndex = 28;
+			this.panelLineFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panelLineFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panelLineFooter.Location = new System.Drawing.Point(0, 404);
+			this.panelLineFooter.Name = "panelLineFooter";
+			this.panelLineFooter.Size = new System.Drawing.Size(492, 10);
+			this.panelLineFooter.TabIndex = 32;
+			// 
+			// panelFooter
+			// 
+			this.panelFooter.BackColor = System.Drawing.Color.Navy;
+			this.panelFooter.Controls.Add(this.label1);
+			this.panelFooter.Controls.Add(this.lblFooter);
+			this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panelFooter.ForeColor = System.Drawing.Color.White;
+			this.panelFooter.Location = new System.Drawing.Point(0, 414);
+			this.panelFooter.Name = "panelFooter";
+			this.panelFooter.Size = new System.Drawing.Size(492, 36);
+			this.panelFooter.TabIndex = 31;
+			// 
+			// lblFooter
+			// 
+			this.lblFooter.AutoSize = true;
+			this.lblFooter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblFooter.Location = new System.Drawing.Point(499, 15);
+			this.lblFooter.Name = "lblFooter";
+			this.lblFooter.Size = new System.Drawing.Size(158, 12);
+			this.lblFooter.TabIndex = 0;
+			this.lblFooter.Text = "Pta - Serviços terceirizados";
+			this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-			this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(265, 0);
+			this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(167, 12);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(227, 18);
-			this.label1.TabIndex = 6;
+			this.label1.Size = new System.Drawing.Size(158, 12);
+			this.label1.TabIndex = 1;
 			this.label1.Text = "Pta - Serviços terceirizados";
+			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// frmAutenticacao
 			// 
@@ -232,7 +255,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(492, 450);
-			this.Controls.Add(this.footer);
+			this.Controls.Add(this.panelLineFooter);
+			this.Controls.Add(this.panelFooter);
 			this.Controls.Add(this.nav);
 			this.Controls.Add(this.radAcessoExterno);
 			this.Controls.Add(this.radAcessoInterno);
@@ -249,8 +273,8 @@
 			this.nav.ResumeLayout(false);
 			this.nav.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
-			this.footer.ResumeLayout(false);
-			this.footer.PerformLayout();
+			this.panelFooter.ResumeLayout(false);
+			this.panelFooter.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -269,9 +293,11 @@
 		private System.Windows.Forms.Panel nav;
 		private System.Windows.Forms.PictureBox pctLogo;
 		private System.Windows.Forms.Label titulo;
-		private System.Windows.Forms.Panel footer;
-		private System.Windows.Forms.Label label1;
 		private System.ComponentModel.BackgroundWorker backgroundWorker1;
+		private System.Windows.Forms.Panel panelLineFooter;
+		private System.Windows.Forms.Panel panelFooter;
+		private System.Windows.Forms.Label lblFooter;
+		private System.Windows.Forms.Label label1;
 	}
 }
 

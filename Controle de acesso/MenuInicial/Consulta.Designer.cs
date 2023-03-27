@@ -30,7 +30,6 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsulta));
 			this.lblHistorico = new System.Windows.Forms.Label();
-			this.pctLogo = new System.Windows.Forms.PictureBox();
 			this.listEntrada = new System.Windows.Forms.ListView();
 			this.ColRef = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colNomeVisitante = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -70,19 +69,20 @@
 			this.tabSaidas = new System.Windows.Forms.TabPage();
 			this.tabAcessoFinalizado = new System.Windows.Forms.TabPage();
 			this.btnBuscar = new System.Windows.Forms.Button();
-			this.btnVoltar = new System.Windows.Forms.Button();
 			this.lblDataBusca = new System.Windows.Forms.Label();
 			this.dtBusca = new System.Windows.Forms.DateTimePicker();
 			this.nav = new System.Windows.Forms.Panel();
-			this.footer = new System.Windows.Forms.Panel();
-			this.label1 = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
+			this.panelFooter = new System.Windows.Forms.Panel();
+			this.lblFooter = new System.Windows.Forms.Label();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
 			this.tabControle.SuspendLayout();
 			this.tabEntrada.SuspendLayout();
 			this.tabSaidas.SuspendLayout();
 			this.tabAcessoFinalizado.SuspendLayout();
 			this.nav.SuspendLayout();
-			this.footer.SuspendLayout();
+			this.panelFooter.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// lblHistorico
@@ -91,29 +91,15 @@
 			this.lblHistorico.AutoSize = true;
 			this.lblHistorico.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblHistorico.ForeColor = System.Drawing.Color.White;
-			this.lblHistorico.Location = new System.Drawing.Point(570, 21);
+			this.lblHistorico.Location = new System.Drawing.Point(278, 21);
 			this.lblHistorico.Name = "lblHistorico";
 			this.lblHistorico.Size = new System.Drawing.Size(98, 22);
 			this.lblHistorico.TabIndex = 5;
 			this.lblHistorico.Text = "Consultar";
 			// 
-			// pctLogo
-			// 
-			this.pctLogo.BackColor = System.Drawing.Color.White;
-			this.pctLogo.Dock = System.Windows.Forms.DockStyle.Left;
-			this.pctLogo.Image = ((System.Drawing.Image)(resources.GetObject("pctLogo.Image")));
-			this.pctLogo.Location = new System.Drawing.Point(0, 0);
-			this.pctLogo.Name = "pctLogo";
-			this.pctLogo.Size = new System.Drawing.Size(115, 62);
-			this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pctLogo.TabIndex = 4;
-			this.pctLogo.TabStop = false;
-			// 
 			// listEntrada
 			// 
-			this.listEntrada.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.listEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.listEntrada.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ColRef,
             this.colNomeVisitante,
@@ -125,10 +111,14 @@
             this.colPesoEntrada,
             this.colPlacaVeiculo,
             this.colIdUsuario});
+			this.listEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.listEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.listEntrada.ForeColor = System.Drawing.Color.Navy;
+			this.listEntrada.GridLines = true;
 			this.listEntrada.HideSelection = false;
 			this.listEntrada.Location = new System.Drawing.Point(3, 3);
 			this.listEntrada.Name = "listEntrada";
-			this.listEntrada.Size = new System.Drawing.Size(1231, 256);
+			this.listEntrada.Size = new System.Drawing.Size(623, 251);
 			this.listEntrada.TabIndex = 26;
 			this.listEntrada.UseCompatibleStateImageBehavior = false;
 			this.listEntrada.View = System.Windows.Forms.View.Details;
@@ -195,9 +185,7 @@
 			// 
 			// listSaida
 			// 
-			this.listSaida.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.listSaida.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.listSaida.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colSaidaRef,
             this.colSaidaNomeVisitante,
@@ -205,10 +193,14 @@
             this.colSaidaHora,
             this.colSaidaPesoSaida,
             this.colSaidaIdUsuario});
+			this.listSaida.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.listSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.listSaida.ForeColor = System.Drawing.Color.Navy;
+			this.listSaida.GridLines = true;
 			this.listSaida.HideSelection = false;
 			this.listSaida.Location = new System.Drawing.Point(3, 3);
 			this.listSaida.Name = "listSaida";
-			this.listSaida.Size = new System.Drawing.Size(1231, 256);
+			this.listSaida.Size = new System.Drawing.Size(623, 251);
 			this.listSaida.TabIndex = 27;
 			this.listSaida.UseCompatibleStateImageBehavior = false;
 			this.listSaida.View = System.Windows.Forms.View.Details;
@@ -248,9 +240,7 @@
 			// 
 			// listFinalizada
 			// 
-			this.listFinalizada.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+			this.listFinalizada.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.listFinalizada.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colFinRef,
             this.colFinNomeVisitante,
@@ -267,10 +257,13 @@
             this.colFinPesoSaldo,
             this.colFinUsuarioEntrada,
             this.colFinUsuarioSaida});
+			this.listFinalizada.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.listFinalizada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.listFinalizada.ForeColor = System.Drawing.Color.Navy;
 			this.listFinalizada.HideSelection = false;
 			this.listFinalizada.Location = new System.Drawing.Point(3, 3);
 			this.listFinalizada.Name = "listFinalizada";
-			this.listFinalizada.Size = new System.Drawing.Size(1228, 256);
+			this.listFinalizada.Size = new System.Drawing.Size(623, 251);
 			this.listFinalizada.TabIndex = 28;
 			this.listFinalizada.UseCompatibleStateImageBehavior = false;
 			this.listFinalizada.View = System.Windows.Forms.View.Details;
@@ -370,10 +363,10 @@
 			this.tabControle.Controls.Add(this.tabEntrada);
 			this.tabControle.Controls.Add(this.tabSaidas);
 			this.tabControle.Controls.Add(this.tabAcessoFinalizado);
-			this.tabControle.Location = new System.Drawing.Point(0, 103);
+			this.tabControle.Location = new System.Drawing.Point(16, 103);
 			this.tabControle.Name = "tabControle";
 			this.tabControle.SelectedIndex = 0;
-			this.tabControle.Size = new System.Drawing.Size(1245, 288);
+			this.tabControle.Size = new System.Drawing.Size(637, 283);
 			this.tabControle.TabIndex = 0;
 			this.tabControle.Enter += new System.EventHandler(this.ExibirEntradaFinalizada);
 			// 
@@ -384,7 +377,7 @@
 			this.tabEntrada.Location = new System.Drawing.Point(4, 22);
 			this.tabEntrada.Name = "tabEntrada";
 			this.tabEntrada.Padding = new System.Windows.Forms.Padding(3);
-			this.tabEntrada.Size = new System.Drawing.Size(1237, 262);
+			this.tabEntrada.Size = new System.Drawing.Size(629, 257);
 			this.tabEntrada.TabIndex = 0;
 			this.tabEntrada.Text = "Entradas";
 			this.tabEntrada.Click += new System.EventHandler(this.ExibirEntrada);
@@ -397,7 +390,7 @@
 			this.tabSaidas.Location = new System.Drawing.Point(4, 22);
 			this.tabSaidas.Name = "tabSaidas";
 			this.tabSaidas.Padding = new System.Windows.Forms.Padding(3);
-			this.tabSaidas.Size = new System.Drawing.Size(1237, 262);
+			this.tabSaidas.Size = new System.Drawing.Size(629, 257);
 			this.tabSaidas.TabIndex = 1;
 			this.tabSaidas.Text = "Saídas";
 			this.tabSaidas.Click += new System.EventHandler(this.ExibirSaida);
@@ -410,7 +403,7 @@
 			this.tabAcessoFinalizado.Location = new System.Drawing.Point(4, 22);
 			this.tabAcessoFinalizado.Name = "tabAcessoFinalizado";
 			this.tabAcessoFinalizado.Padding = new System.Windows.Forms.Padding(3);
-			this.tabAcessoFinalizado.Size = new System.Drawing.Size(1237, 262);
+			this.tabAcessoFinalizado.Size = new System.Drawing.Size(629, 257);
 			this.tabAcessoFinalizado.TabIndex = 2;
 			this.tabAcessoFinalizado.Text = "Acesso finalizado";
 			this.tabAcessoFinalizado.Click += new System.EventHandler(this.ExibirEntradaFinalizada);
@@ -423,7 +416,7 @@
 			this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnBuscar.ForeColor = System.Drawing.Color.White;
-			this.btnBuscar.Location = new System.Drawing.Point(311, 413);
+			this.btnBuscar.Location = new System.Drawing.Point(311, 408);
 			this.btnBuscar.Name = "btnBuscar";
 			this.btnBuscar.Size = new System.Drawing.Size(81, 23);
 			this.btnBuscar.TabIndex = 22;
@@ -431,29 +424,12 @@
 			this.btnBuscar.UseVisualStyleBackColor = false;
 			this.btnBuscar.Click += new System.EventHandler(this.Buscar);
 			// 
-			// btnVoltar
-			// 
-			this.btnVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnVoltar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnVoltar.ForeColor = System.Drawing.Color.White;
-			this.btnVoltar.Location = new System.Drawing.Point(407, 413);
-			this.btnVoltar.Name = "btnVoltar";
-			this.btnVoltar.Size = new System.Drawing.Size(81, 23);
-			this.btnVoltar.TabIndex = 23;
-			this.btnVoltar.Text = "Voltar";
-			this.btnVoltar.UseVisualStyleBackColor = false;
-			this.btnVoltar.Click += new System.EventHandler(this.Voltar);
-			// 
 			// lblDataBusca
 			// 
-			this.lblDataBusca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.lblDataBusca.AutoSize = true;
 			this.lblDataBusca.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblDataBusca.ForeColor = System.Drawing.Color.White;
-			this.lblDataBusca.Location = new System.Drawing.Point(60, 415);
+			this.lblDataBusca.Location = new System.Drawing.Point(60, 410);
 			this.lblDataBusca.Name = "lblDataBusca";
 			this.lblDataBusca.Size = new System.Drawing.Size(112, 17);
 			this.lblDataBusca.TabIndex = 24;
@@ -463,7 +439,7 @@
 			// 
 			this.dtBusca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.dtBusca.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtBusca.Location = new System.Drawing.Point(174, 415);
+			this.dtBusca.Location = new System.Drawing.Point(174, 410);
 			this.dtBusca.Name = "dtBusca";
 			this.dtBusca.Size = new System.Drawing.Size(127, 20);
 			this.dtBusca.TabIndex = 25;
@@ -471,64 +447,92 @@
 			// nav
 			// 
 			this.nav.BackColor = System.Drawing.Color.Navy;
-			this.nav.Controls.Add(this.pctLogo);
 			this.nav.Controls.Add(this.lblHistorico);
 			this.nav.Dock = System.Windows.Forms.DockStyle.Top;
 			this.nav.Location = new System.Drawing.Point(0, 0);
 			this.nav.Name = "nav";
-			this.nav.Size = new System.Drawing.Size(1245, 62);
+			this.nav.Size = new System.Drawing.Size(660, 62);
 			this.nav.TabIndex = 26;
 			// 
-			// footer
+			// panelFooter
 			// 
-			this.footer.BackColor = System.Drawing.Color.Maroon;
-			this.footer.Controls.Add(this.label1);
-			this.footer.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.footer.Location = new System.Drawing.Point(0, 479);
-			this.footer.Name = "footer";
-			this.footer.Size = new System.Drawing.Size(1245, 28);
-			this.footer.TabIndex = 27;
+			this.panelFooter.BackColor = System.Drawing.Color.Navy;
+			this.panelFooter.Controls.Add(this.lblFooter);
+			this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panelFooter.ForeColor = System.Drawing.Color.White;
+			this.panelFooter.Location = new System.Drawing.Point(0, 466);
+			this.panelFooter.Name = "panelFooter";
+			this.panelFooter.Size = new System.Drawing.Size(660, 36);
+			this.panelFooter.TabIndex = 27;
 			// 
-			// label1
+			// lblFooter
 			// 
-			this.label1.AutoSize = true;
-			this.label1.Dock = System.Windows.Forms.DockStyle.Right;
-			this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(984, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(261, 22);
-			this.label1.TabIndex = 6;
-			this.label1.Text = "Pta - Serviços terceirizados";
+			this.lblFooter.AutoSize = true;
+			this.lblFooter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblFooter.Location = new System.Drawing.Point(251, 12);
+			this.lblFooter.Name = "lblFooter";
+			this.lblFooter.Size = new System.Drawing.Size(158, 12);
+			this.lblFooter.TabIndex = 1;
+			this.lblFooter.Text = "Pta - Serviços terceirizados";
+			this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel2.Location = new System.Drawing.Point(10, 62);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(650, 10);
+			this.panel2.TabIndex = 35;
+			// 
+			// panel1
+			// 
+			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panel1.Location = new System.Drawing.Point(0, 62);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(10, 394);
+			this.panel1.TabIndex = 34;
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panel3.Location = new System.Drawing.Point(0, 456);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(660, 10);
+			this.panel3.TabIndex = 33;
 			// 
 			// frmConsulta
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(1245, 507);
+			this.ClientSize = new System.Drawing.Size(660, 502);
 			this.ControlBox = false;
-			this.Controls.Add(this.footer);
+			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.panelFooter);
 			this.Controls.Add(this.nav);
 			this.Controls.Add(this.tabControle);
 			this.Controls.Add(this.dtBusca);
 			this.Controls.Add(this.lblDataBusca);
-			this.Controls.Add(this.btnVoltar);
 			this.Controls.Add(this.btnBuscar);
 			this.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmConsulta";
 			this.Text = "Consulta";
 			this.Load += new System.EventHandler(this.InicializacaoDefault);
-			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
 			this.tabControle.ResumeLayout(false);
 			this.tabEntrada.ResumeLayout(false);
 			this.tabSaidas.ResumeLayout(false);
 			this.tabAcessoFinalizado.ResumeLayout(false);
 			this.nav.ResumeLayout(false);
 			this.nav.PerformLayout();
-			this.footer.ResumeLayout(false);
-			this.footer.PerformLayout();
+			this.panelFooter.ResumeLayout(false);
+			this.panelFooter.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -537,7 +541,6 @@
 		#endregion
 
 		private System.Windows.Forms.Label lblHistorico;
-		private System.Windows.Forms.PictureBox pctLogo;
 		private System.Windows.Forms.ListView listEntrada;
 		private System.Windows.Forms.ColumnHeader colNomeVisitante;
 		private System.Windows.Forms.ColumnHeader colVisitado;
@@ -577,12 +580,14 @@
 		private System.Windows.Forms.TabPage tabSaidas;
 		private System.Windows.Forms.TabPage tabAcessoFinalizado;
 		private System.Windows.Forms.Button btnBuscar;
-		private System.Windows.Forms.Button btnVoltar;
 		private System.Windows.Forms.Label lblDataBusca;
 		private System.Windows.Forms.DateTimePicker dtBusca;
 		private System.Windows.Forms.Panel nav;
-		private System.Windows.Forms.Panel footer;
-		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Panel panelFooter;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Label lblFooter;
 	}
 }
 

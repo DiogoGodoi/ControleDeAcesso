@@ -424,9 +424,11 @@
 			this.Controls.Add(this.lblNomeVisitado);
 			this.Controls.Add(this.lblNomeVisitante);
 			this.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmAlterar";
 			this.Text = "Alterar";
+			this.Load += new System.EventHandler(this.frmAlterar_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();

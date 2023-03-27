@@ -231,16 +231,10 @@ namespace Menu_Inicial
 				MessageBox.Show("Os campos cpf, cnpj, e peso de entrada só aceitam numeros", "Mensagm", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
-		//Configuração do botão de voltar
-		private void Voltar(object sender, EventArgs e)
+
+		private void frmEntrada_Load(object sender, EventArgs e)
 		{
-			ctrlNavegacao navegar = new ctrlNavegacao();
-			//Thread para voltar ao menu anterior
-			Thread _thread = new Thread(navegar.Voltar);
-			_thread.SetApartmentState(ApartmentState.STA);
-			_thread.Start();
-			this.Close();
+			this.WindowState = FormWindowState.Maximized;
 		}
-		//Configuração do formulário inicial que alimentará a Thread
 	}
 }

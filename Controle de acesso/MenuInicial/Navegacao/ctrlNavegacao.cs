@@ -1,11 +1,13 @@
 ﻿using Menu_Inicial;
 using Saida;
 using System;
+using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace MenuInicial
 {
@@ -13,34 +15,31 @@ namespace MenuInicial
 	public class ctrlNavegacao
 	{
 		//Método de navegação para tela de entrada
-		public void NavegarParaTelaEntrada()
+		public static void Navegacao(Form formAtivo, Form form, Panel panel)
 		{
-			Application.Run(new frmEntrada());
+			FecharAtivo(formAtivo);
+			formAtivo = form;
+			form.TopLevel = false;
+			panel.Controls.Add(form);
+			form.BringToFront();
+			form.Show();
 		}
-		//Método de navegação para tela de saída
-		public void NavegarParaTelaSaida()
+		public void NavegarPareMenuInicial()
 		{
-			Application.Run(new frmSaida());
+			Application.Run(new frmMenuInicial());	
 		}
-		//Método de navegação para tela de alteração
-		public void NavegarParaTelaAlteracao()
+		public static void FecharAtivo(Form formAtivo)
 		{
-			Application.Run(new frmAlterar());
+			if(formAtivo != null)
+				formAtivo.Close();	
 		}
-		//Método de navegação para tela de consulta
-		public void NavegarParaTelaConsulta()
+		public static void ActiveButton(Button button, Panel panel)
 		{
-			Application.Run(new frmConsulta());
-		}
-		//Método para navegar para o menu inicial
-	    public void NavegarParaMenuInicial()
-		{
-			Application.Run(new frmMenuInicial());
-		}
-		//Método para voltar
-		public void Voltar()
-		{
-			Application.Run(new frmMenuInicial());
+			foreach (Control controls in panel.Controls)
+			{
+				controls.BackColor = System.Drawing.Color.Red;
+				button.BackColor = System.Drawing.Color.IndianRed;
+			}
 		}
 	}
 }

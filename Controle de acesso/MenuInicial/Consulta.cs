@@ -205,14 +205,6 @@ namespace Menu_Inicial
 				}
 			}
 		}
-		private void Voltar(object sender, EventArgs e)
-		{
-			ctrlNavegacao navegar = new ctrlNavegacao();
-			Thread _thread = new Thread(navegar.NavegarParaMenuInicial);
-			_thread.SetApartmentState(ApartmentState.STA);
-			_thread.Start();
-			this.Close();
-		}
 		private void ExibirEntrada(object sender, EventArgs e)
 		{
 			listEntrada.Items.Clear();

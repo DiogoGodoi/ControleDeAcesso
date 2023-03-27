@@ -70,7 +70,7 @@ namespace ControleDeAcesso
 				if (retorno == true)
 				{
 					//thread de entrada do sistema
-					Thread _thread = new Thread(navegacao.NavegarParaMenuInicial);
+					Thread _thread = new Thread(navegacao.NavegarPareMenuInicial);
 					_thread.SetApartmentState(ApartmentState.STA);
 					_thread.Start();
 					this.Close();

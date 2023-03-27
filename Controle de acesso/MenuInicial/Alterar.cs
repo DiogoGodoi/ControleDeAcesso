@@ -104,5 +104,10 @@ namespace Menu_Inicial
 		{
 			Application.Run(new frmMenuInicial());
 		}
+
+		private void frmAlterar_Load(object sender, EventArgs e)
+		{
+			this.WindowState = FormWindowState.Maximized;
+		}
 	}
 }

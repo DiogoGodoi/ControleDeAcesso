@@ -182,16 +182,10 @@ namespace Saida
 				MessageBox.Show("Erro interno: " + ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-		//Configuração do botão de voltar
-		private void Voltar(object sender, EventArgs e)
-		{
-			ctrlNavegacao navegar = new ctrlNavegacao();
-			//Thread para voltar ao formulário anterior
-			Thread _thread = new Thread(navegar.NavegarParaMenuInicial);
-			_thread.SetApartmentState(ApartmentState.STA);
-			_thread.Start();
-			this.Close();
-		}
 
+		private void frmSaida_Load(object sender, EventArgs e)
+		{
+			this.WindowState = FormWindowState.Maximized;
+		}
 	}
 }
