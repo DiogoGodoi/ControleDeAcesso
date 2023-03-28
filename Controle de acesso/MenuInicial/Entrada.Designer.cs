@@ -217,7 +217,7 @@
 			this.nav.Dock = System.Windows.Forms.DockStyle.Top;
 			this.nav.Location = new System.Drawing.Point(0, 0);
 			this.nav.Name = "nav";
-			this.nav.Size = new System.Drawing.Size(660, 61);
+			this.nav.Size = new System.Drawing.Size(660, 62);
 			this.nav.TabIndex = 27;
 			// 
 			// lblTitulo
@@ -226,7 +226,7 @@
 			this.lblTitulo.AutoSize = true;
 			this.lblTitulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblTitulo.ForeColor = System.Drawing.Color.White;
-			this.lblTitulo.Location = new System.Drawing.Point(237, 19);
+			this.lblTitulo.Location = new System.Drawing.Point(237, 20);
 			this.lblTitulo.Name = "lblTitulo";
 			this.lblTitulo.Size = new System.Drawing.Size(186, 22);
 			this.lblTitulo.TabIndex = 5;
@@ -268,16 +268,16 @@
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panel1.Location = new System.Drawing.Point(0, 61);
+			this.panel1.Location = new System.Drawing.Point(0, 62);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(10, 395);
+			this.panel1.Size = new System.Drawing.Size(10, 394);
 			this.panel1.TabIndex = 31;
 			// 
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel2.Location = new System.Drawing.Point(10, 61);
+			this.panel2.Location = new System.Drawing.Point(10, 62);
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(650, 10);
 			this.panel2.TabIndex = 32;
@@ -286,9 +286,9 @@
 			// 
 			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panel3.Location = new System.Drawing.Point(650, 71);
+			this.panel3.Location = new System.Drawing.Point(650, 72);
 			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(10, 385);
+			this.panel3.Size = new System.Drawing.Size(10, 384);
 			this.panel3.TabIndex = 34;
 			// 
 			// pctLogo

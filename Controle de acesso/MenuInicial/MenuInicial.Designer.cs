@@ -196,7 +196,6 @@
 			this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pctLogo.TabIndex = 0;
 			this.pctLogo.TabStop = false;
-			this.pctLogo.Click += new System.EventHandler(this.pctLogo_Click);
 			// 
 			// fileSystemWatcher1
 			// 
@@ -225,7 +224,7 @@
 			this.pctLogoPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("pctLogoPrincipal.Image")));
 			this.pctLogoPrincipal.Location = new System.Drawing.Point(61, 185);
 			this.pctLogoPrincipal.Name = "pctLogoPrincipal";
-			this.pctLogoPrincipal.Size = new System.Drawing.Size(527, 198);
+			this.pctLogoPrincipal.Size = new System.Drawing.Size(509, 165);
 			this.pctLogoPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pctLogoPrincipal.TabIndex = 36;
 			this.pctLogoPrincipal.TabStop = false;
@@ -234,16 +233,16 @@
 			// 
 			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panel4.Location = new System.Drawing.Point(650, 64);
+			this.panel4.Location = new System.Drawing.Point(650, 72);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(10, 392);
+			this.panel4.Size = new System.Drawing.Size(10, 384);
 			this.panel4.TabIndex = 35;
 			// 
 			// panel3
 			// 
 			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel3.Location = new System.Drawing.Point(0, 54);
+			this.panel3.Location = new System.Drawing.Point(0, 62);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(660, 10);
 			this.panel3.TabIndex = 34;
@@ -284,7 +283,7 @@
 			this.lblMain.AutoSize = true;
 			this.lblMain.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblMain.ForeColor = System.Drawing.Color.White;
-			this.lblMain.Location = new System.Drawing.Point(119, 95);
+			this.lblMain.Location = new System.Drawing.Point(112, 95);
 			this.lblMain.Name = "lblMain";
 			this.lblMain.Size = new System.Drawing.Size(407, 37);
 			this.lblMain.TabIndex = 29;
@@ -298,7 +297,7 @@
 			this.nav.Dock = System.Windows.Forms.DockStyle.Top;
 			this.nav.Location = new System.Drawing.Point(0, 0);
 			this.nav.Name = "nav";
-			this.nav.Size = new System.Drawing.Size(660, 54);
+			this.nav.Size = new System.Drawing.Size(660, 62);
 			this.nav.TabIndex = 28;
 			// 
 			// lblTitulo
@@ -307,7 +306,7 @@
 			this.lblTitulo.AutoSize = true;
 			this.lblTitulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblTitulo.ForeColor = System.Drawing.Color.White;
-			this.lblTitulo.Location = new System.Drawing.Point(304, 17);
+			this.lblTitulo.Location = new System.Drawing.Point(304, 21);
 			this.lblTitulo.Name = "lblTitulo";
 			this.lblTitulo.Size = new System.Drawing.Size(63, 22);
 			this.lblTitulo.TabIndex = 5;
