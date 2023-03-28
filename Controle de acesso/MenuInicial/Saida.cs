@@ -116,7 +116,7 @@ namespace Saida
 						txtCnpj.Text = dados.cnpj.ToString();
 						txtDataEntrada.Text = dados.dataEntrada;
 						txtHoraEntrada.Text = dados.horaEntrada;
-						txtPesoEntrada.Text = dados.ToString();
+						txtPesoEntrada.Text = daoEntrada.GetPesoEntrada().ToString();
 						txtPlacaVeiculo.Text = dados.placaVeiculo;
 
 						dataSaida = daoEntrada.GetDataSaida();

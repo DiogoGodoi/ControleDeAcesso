@@ -50,8 +50,10 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
+			this.pctLogo = new FontAwesome.Sharp.IconPictureBox();
 			this.nav.SuspendLayout();
 			this.panelFooter.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lblNomeVisitante
@@ -60,7 +62,7 @@
 			this.lblNomeVisitante.AutoSize = true;
 			this.lblNomeVisitante.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblNomeVisitante.ForeColor = System.Drawing.Color.Black;
-			this.lblNomeVisitante.Location = new System.Drawing.Point(62, 176);
+			this.lblNomeVisitante.Location = new System.Drawing.Point(61, 212);
 			this.lblNomeVisitante.Name = "lblNomeVisitante";
 			this.lblNomeVisitante.Size = new System.Drawing.Size(137, 17);
 			this.lblNomeVisitante.TabIndex = 4;
@@ -72,7 +74,7 @@
 			this.lblNomeVisitado.AutoSize = true;
 			this.lblNomeVisitado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblNomeVisitado.ForeColor = System.Drawing.Color.Black;
-			this.lblNomeVisitado.Location = new System.Drawing.Point(62, 204);
+			this.lblNomeVisitado.Location = new System.Drawing.Point(61, 240);
 			this.lblNomeVisitado.Name = "lblNomeVisitado";
 			this.lblNomeVisitado.Size = new System.Drawing.Size(132, 17);
 			this.lblNomeVisitado.TabIndex = 5;
@@ -84,7 +86,7 @@
 			this.lblPlaca.AutoSize = true;
 			this.lblPlaca.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblPlaca.ForeColor = System.Drawing.Color.Black;
-			this.lblPlaca.Location = new System.Drawing.Point(62, 314);
+			this.lblPlaca.Location = new System.Drawing.Point(61, 350);
 			this.lblPlaca.Name = "lblPlaca";
 			this.lblPlaca.Size = new System.Drawing.Size(127, 17);
 			this.lblPlaca.TabIndex = 11;
@@ -96,7 +98,7 @@
 			this.lblPeso.AutoSize = true;
 			this.lblPeso.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblPeso.ForeColor = System.Drawing.Color.Black;
-			this.lblPeso.Location = new System.Drawing.Point(62, 286);
+			this.lblPeso.Location = new System.Drawing.Point(61, 322);
 			this.lblPeso.Name = "lblPeso";
 			this.lblPeso.Size = new System.Drawing.Size(127, 17);
 			this.lblPeso.TabIndex = 10;
@@ -108,7 +110,7 @@
 			this.lblCnpj.AutoSize = true;
 			this.lblCnpj.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblCnpj.ForeColor = System.Drawing.Color.Black;
-			this.lblCnpj.Location = new System.Drawing.Point(62, 260);
+			this.lblCnpj.Location = new System.Drawing.Point(61, 296);
 			this.lblCnpj.Name = "lblCnpj";
 			this.lblCnpj.Size = new System.Drawing.Size(41, 17);
 			this.lblCnpj.TabIndex = 9;
@@ -120,7 +122,7 @@
 			this.lblCpf.AutoSize = true;
 			this.lblCpf.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblCpf.ForeColor = System.Drawing.Color.Black;
-			this.lblCpf.Location = new System.Drawing.Point(62, 232);
+			this.lblCpf.Location = new System.Drawing.Point(61, 268);
 			this.lblCpf.Name = "lblCpf";
 			this.lblCpf.Size = new System.Drawing.Size(33, 17);
 			this.lblCpf.TabIndex = 8;
@@ -128,56 +130,68 @@
 			// 
 			// txtNomeVisitante
 			// 
+			this.txtNomeVisitante.AcceptsTab = true;
 			this.txtNomeVisitante.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtNomeVisitante.BackColor = System.Drawing.SystemColors.InactiveBorder;
-			this.txtNomeVisitante.Location = new System.Drawing.Point(209, 176);
+			this.txtNomeVisitante.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+			this.txtNomeVisitante.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtNomeVisitante.Location = new System.Drawing.Point(208, 212);
 			this.txtNomeVisitante.Name = "txtNomeVisitante";
-			this.txtNomeVisitante.Size = new System.Drawing.Size(343, 20);
+			this.txtNomeVisitante.Size = new System.Drawing.Size(343, 13);
 			this.txtNomeVisitante.TabIndex = 12;
 			// 
 			// txtNomeVisitado
 			// 
+			this.txtNomeVisitado.AcceptsTab = true;
 			this.txtNomeVisitado.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtNomeVisitado.BackColor = System.Drawing.SystemColors.InactiveBorder;
-			this.txtNomeVisitado.Location = new System.Drawing.Point(209, 204);
+			this.txtNomeVisitado.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+			this.txtNomeVisitado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtNomeVisitado.Location = new System.Drawing.Point(208, 240);
 			this.txtNomeVisitado.Name = "txtNomeVisitado";
-			this.txtNomeVisitado.Size = new System.Drawing.Size(343, 20);
+			this.txtNomeVisitado.Size = new System.Drawing.Size(343, 13);
 			this.txtNomeVisitado.TabIndex = 13;
 			// 
 			// txtPlacaVeiculo
 			// 
+			this.txtPlacaVeiculo.AcceptsTab = true;
 			this.txtPlacaVeiculo.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtPlacaVeiculo.BackColor = System.Drawing.SystemColors.InactiveBorder;
-			this.txtPlacaVeiculo.Location = new System.Drawing.Point(209, 314);
+			this.txtPlacaVeiculo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+			this.txtPlacaVeiculo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtPlacaVeiculo.Location = new System.Drawing.Point(208, 350);
 			this.txtPlacaVeiculo.Name = "txtPlacaVeiculo";
-			this.txtPlacaVeiculo.Size = new System.Drawing.Size(343, 20);
+			this.txtPlacaVeiculo.Size = new System.Drawing.Size(343, 13);
 			this.txtPlacaVeiculo.TabIndex = 19;
 			// 
 			// txtPesoEntrada
 			// 
+			this.txtPesoEntrada.AcceptsTab = true;
 			this.txtPesoEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtPesoEntrada.BackColor = System.Drawing.SystemColors.InactiveBorder;
-			this.txtPesoEntrada.Location = new System.Drawing.Point(209, 286);
+			this.txtPesoEntrada.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+			this.txtPesoEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtPesoEntrada.Location = new System.Drawing.Point(208, 322);
 			this.txtPesoEntrada.Name = "txtPesoEntrada";
-			this.txtPesoEntrada.Size = new System.Drawing.Size(343, 20);
+			this.txtPesoEntrada.Size = new System.Drawing.Size(343, 13);
 			this.txtPesoEntrada.TabIndex = 18;
 			// 
 			// txtCnpj
 			// 
+			this.txtCnpj.AcceptsTab = true;
 			this.txtCnpj.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtCnpj.BackColor = System.Drawing.SystemColors.InactiveBorder;
-			this.txtCnpj.Location = new System.Drawing.Point(209, 260);
+			this.txtCnpj.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+			this.txtCnpj.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtCnpj.Location = new System.Drawing.Point(208, 296);
 			this.txtCnpj.Name = "txtCnpj";
-			this.txtCnpj.Size = new System.Drawing.Size(343, 20);
+			this.txtCnpj.Size = new System.Drawing.Size(343, 13);
 			this.txtCnpj.TabIndex = 17;
 			// 
 			// txtCpf
 			// 
+			this.txtCpf.AcceptsTab = true;
 			this.txtCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtCpf.BackColor = System.Drawing.SystemColors.InactiveBorder;
-			this.txtCpf.Location = new System.Drawing.Point(209, 232);
+			this.txtCpf.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+			this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtCpf.Location = new System.Drawing.Point(208, 268);
 			this.txtCpf.Name = "txtCpf";
-			this.txtCpf.Size = new System.Drawing.Size(343, 20);
+			this.txtCpf.Size = new System.Drawing.Size(343, 13);
 			this.txtCpf.TabIndex = 16;
 			// 
 			// btnCadastrar
@@ -188,7 +202,7 @@
 			this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnCadastrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-			this.btnCadastrar.Location = new System.Drawing.Point(302, 362);
+			this.btnCadastrar.Location = new System.Drawing.Point(301, 398);
 			this.btnCadastrar.Name = "btnCadastrar";
 			this.btnCadastrar.Size = new System.Drawing.Size(121, 23);
 			this.btnCadastrar.TabIndex = 20;
@@ -277,12 +291,29 @@
 			this.panel3.Size = new System.Drawing.Size(10, 385);
 			this.panel3.TabIndex = 34;
 			// 
+			// pctLogo
+			// 
+			this.pctLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.pctLogo.BackColor = System.Drawing.Color.White;
+			this.pctLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.pctLogo.IconChar = FontAwesome.Sharp.IconChar.PersonWalking;
+			this.pctLogo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.pctLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.pctLogo.IconSize = 90;
+			this.pctLogo.Location = new System.Drawing.Point(301, 98);
+			this.pctLogo.Name = "pctLogo";
+			this.pctLogo.Size = new System.Drawing.Size(90, 90);
+			this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctLogo.TabIndex = 35;
+			this.pctLogo.TabStop = false;
+			// 
 			// frmEntrada
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(660, 502);
+			this.Controls.Add(this.pctLogo);
 			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
@@ -311,6 +342,7 @@
 			this.nav.PerformLayout();
 			this.panelFooter.ResumeLayout(false);
 			this.panelFooter.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -338,6 +370,7 @@
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label lblFooter;
 		private System.Windows.Forms.Panel panel3;
+		private FontAwesome.Sharp.IconPictureBox pctLogo;
 	}
 }
 

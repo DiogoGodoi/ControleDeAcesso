@@ -58,5 +58,10 @@ namespace Menu_Inicial
 			btnAlterar.Enabled = false;
 			this.WindowState = FormWindowState.Maximized;
 		}
+
+		private void pctLogo_Click(object sender, EventArgs e)
+		{
+			panelConteudo.Controls.RemoveAt(0);
+		}
 	}
 }

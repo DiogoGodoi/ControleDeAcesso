@@ -95,21 +95,25 @@
 			// 
 			// txtNome
 			// 
+			this.txtNome.AcceptsTab = true;
 			this.txtNome.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtNome.BackColor = System.Drawing.SystemColors.InactiveBorder;
+			this.txtNome.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtNome.Location = new System.Drawing.Point(181, 198);
 			this.txtNome.Name = "txtNome";
-			this.txtNome.Size = new System.Drawing.Size(222, 20);
+			this.txtNome.Size = new System.Drawing.Size(222, 13);
 			this.txtNome.TabIndex = 4;
 			// 
 			// txtSenha
 			// 
+			this.txtSenha.AcceptsTab = true;
 			this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.txtSenha.BackColor = System.Drawing.SystemColors.InactiveBorder;
+			this.txtSenha.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtSenha.Location = new System.Drawing.Point(181, 252);
 			this.txtSenha.Name = "txtSenha";
 			this.txtSenha.PasswordChar = '*';
-			this.txtSenha.Size = new System.Drawing.Size(222, 20);
+			this.txtSenha.Size = new System.Drawing.Size(222, 13);
 			this.txtSenha.TabIndex = 5;
 			// 
 			// btnSair

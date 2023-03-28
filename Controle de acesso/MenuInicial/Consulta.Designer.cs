@@ -78,12 +78,16 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel4 = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel5 = new System.Windows.Forms.Panel();
+			this.pctLogo = new FontAwesome.Sharp.IconPictureBox();
 			this.tabControle.SuspendLayout();
 			this.tabEntrada.SuspendLayout();
 			this.tabSaidas.SuspendLayout();
 			this.tabAcessoFinalizado.SuspendLayout();
 			this.nav.SuspendLayout();
 			this.panelFooter.SuspendLayout();
+			this.panel5.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lblHistorico
@@ -120,7 +124,7 @@
 			this.listEntrada.HideSelection = false;
 			this.listEntrada.Location = new System.Drawing.Point(3, 3);
 			this.listEntrada.Name = "listEntrada";
-			this.listEntrada.Size = new System.Drawing.Size(614, 250);
+			this.listEntrada.Size = new System.Drawing.Size(614, 239);
 			this.listEntrada.TabIndex = 26;
 			this.listEntrada.UseCompatibleStateImageBehavior = false;
 			this.listEntrada.View = System.Windows.Forms.View.Details;
@@ -203,7 +207,7 @@
 			this.listSaida.HideSelection = false;
 			this.listSaida.Location = new System.Drawing.Point(3, 3);
 			this.listSaida.Name = "listSaida";
-			this.listSaida.Size = new System.Drawing.Size(614, 250);
+			this.listSaida.Size = new System.Drawing.Size(614, 302);
 			this.listSaida.TabIndex = 27;
 			this.listSaida.UseCompatibleStateImageBehavior = false;
 			this.listSaida.View = System.Windows.Forms.View.Details;
@@ -271,7 +275,7 @@
 			this.listFinalizada.Location = new System.Drawing.Point(3, 3);
 			this.listFinalizada.Name = "listFinalizada";
 			this.listFinalizada.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.listFinalizada.Size = new System.Drawing.Size(614, 250);
+			this.listFinalizada.Size = new System.Drawing.Size(614, 302);
 			this.listFinalizada.TabIndex = 28;
 			this.listFinalizada.UseCompatibleStateImageBehavior = false;
 			this.listFinalizada.View = System.Windows.Forms.View.Details;
@@ -373,12 +377,12 @@
 			this.tabControle.Controls.Add(this.tabSaidas);
 			this.tabControle.Controls.Add(this.tabAcessoFinalizado);
 			this.tabControle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.tabControle.Location = new System.Drawing.Point(16, 103);
+			this.tabControle.Location = new System.Drawing.Point(16, 185);
 			this.tabControle.Multiline = true;
 			this.tabControle.Name = "tabControle";
 			this.tabControle.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.tabControle.SelectedIndex = 0;
-			this.tabControle.Size = new System.Drawing.Size(628, 283);
+			this.tabControle.Size = new System.Drawing.Size(628, 272);
 			this.tabControle.TabIndex = 0;
 			this.tabControle.Enter += new System.EventHandler(this.ExibirEntradaFinalizada);
 			// 
@@ -389,7 +393,7 @@
 			this.tabEntrada.Location = new System.Drawing.Point(4, 23);
 			this.tabEntrada.Name = "tabEntrada";
 			this.tabEntrada.Padding = new System.Windows.Forms.Padding(3);
-			this.tabEntrada.Size = new System.Drawing.Size(620, 256);
+			this.tabEntrada.Size = new System.Drawing.Size(620, 245);
 			this.tabEntrada.TabIndex = 0;
 			this.tabEntrada.Text = "Entradas";
 			this.tabEntrada.Click += new System.EventHandler(this.ExibirEntrada);
@@ -402,7 +406,7 @@
 			this.tabSaidas.Location = new System.Drawing.Point(4, 23);
 			this.tabSaidas.Name = "tabSaidas";
 			this.tabSaidas.Padding = new System.Windows.Forms.Padding(3);
-			this.tabSaidas.Size = new System.Drawing.Size(620, 256);
+			this.tabSaidas.Size = new System.Drawing.Size(620, 308);
 			this.tabSaidas.TabIndex = 1;
 			this.tabSaidas.Text = "Saídas";
 			this.tabSaidas.Click += new System.EventHandler(this.ExibirSaida);
@@ -415,7 +419,7 @@
 			this.tabAcessoFinalizado.Location = new System.Drawing.Point(4, 23);
 			this.tabAcessoFinalizado.Name = "tabAcessoFinalizado";
 			this.tabAcessoFinalizado.Padding = new System.Windows.Forms.Padding(3);
-			this.tabAcessoFinalizado.Size = new System.Drawing.Size(620, 256);
+			this.tabAcessoFinalizado.Size = new System.Drawing.Size(620, 308);
 			this.tabAcessoFinalizado.TabIndex = 2;
 			this.tabAcessoFinalizado.Text = "Acesso finalizado";
 			this.tabAcessoFinalizado.Click += new System.EventHandler(this.ExibirEntradaFinalizada);
@@ -428,7 +432,7 @@
 			this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnBuscar.ForeColor = System.Drawing.Color.White;
-			this.btnBuscar.Location = new System.Drawing.Point(311, 408);
+			this.btnBuscar.Location = new System.Drawing.Point(311, 475);
 			this.btnBuscar.Name = "btnBuscar";
 			this.btnBuscar.Size = new System.Drawing.Size(81, 23);
 			this.btnBuscar.TabIndex = 22;
@@ -451,7 +455,7 @@
 			// 
 			this.dtBusca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.dtBusca.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtBusca.Location = new System.Drawing.Point(174, 410);
+			this.dtBusca.Location = new System.Drawing.Point(174, 477);
 			this.dtBusca.Name = "dtBusca";
 			this.dtBusca.Size = new System.Drawing.Size(127, 20);
 			this.dtBusca.TabIndex = 25;
@@ -472,7 +476,7 @@
 			this.panelFooter.Controls.Add(this.lblFooter);
 			this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panelFooter.ForeColor = System.Drawing.Color.White;
-			this.panelFooter.Location = new System.Drawing.Point(0, 466);
+			this.panelFooter.Location = new System.Drawing.Point(0, 533);
 			this.panelFooter.Name = "panelFooter";
 			this.panelFooter.Size = new System.Drawing.Size(660, 36);
 			this.panelFooter.TabIndex = 27;
@@ -492,7 +496,7 @@
 			// 
 			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel3.Location = new System.Drawing.Point(0, 456);
+			this.panel3.Location = new System.Drawing.Point(0, 523);
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(660, 10);
 			this.panel3.TabIndex = 33;
@@ -512,7 +516,7 @@
 			this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
 			this.panel4.Location = new System.Drawing.Point(650, 72);
 			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(10, 384);
+			this.panel4.Size = new System.Drawing.Size(10, 451);
 			this.panel4.TabIndex = 36;
 			// 
 			// panel1
@@ -521,16 +525,42 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location = new System.Drawing.Point(0, 62);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(10, 394);
+			this.panel1.Size = new System.Drawing.Size(10, 461);
 			this.panel1.TabIndex = 34;
+			// 
+			// panel5
+			// 
+			this.panel5.Controls.Add(this.pctLogo);
+			this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel5.Location = new System.Drawing.Point(10, 72);
+			this.panel5.Name = "panel5";
+			this.panel5.Size = new System.Drawing.Size(640, 100);
+			this.panel5.TabIndex = 37;
+			// 
+			// pctLogo
+			// 
+			this.pctLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.pctLogo.BackColor = System.Drawing.Color.White;
+			this.pctLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.pctLogo.IconChar = FontAwesome.Sharp.IconChar.Book;
+			this.pctLogo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.pctLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.pctLogo.IconSize = 62;
+			this.pctLogo.Location = new System.Drawing.Point(276, 19);
+			this.pctLogo.Name = "pctLogo";
+			this.pctLogo.Size = new System.Drawing.Size(90, 62);
+			this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+			this.pctLogo.TabIndex = 38;
+			this.pctLogo.TabStop = false;
 			// 
 			// frmConsulta
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
-			this.ClientSize = new System.Drawing.Size(660, 502);
+			this.ClientSize = new System.Drawing.Size(660, 569);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel5);
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
@@ -555,6 +585,8 @@
 			this.nav.PerformLayout();
 			this.panelFooter.ResumeLayout(false);
 			this.panelFooter.PerformLayout();
+			this.panel5.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -611,6 +643,8 @@
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel4;
 		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel panel5;
+		private FontAwesome.Sharp.IconPictureBox pctLogo;
 	}
 }
 

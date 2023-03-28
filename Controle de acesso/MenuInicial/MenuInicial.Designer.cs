@@ -39,23 +39,23 @@
 			this.pctLogo = new System.Windows.Forms.PictureBox();
 			this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
 			this.panelConteudo = new System.Windows.Forms.Panel();
+			this.pctLogoPrincipal = new System.Windows.Forms.PictureBox();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panelLineFooter = new System.Windows.Forms.Panel();
 			this.panelFooter = new System.Windows.Forms.Panel();
 			this.lblFooter = new System.Windows.Forms.Label();
 			this.lblMain = new System.Windows.Forms.Label();
 			this.nav = new System.Windows.Forms.Panel();
 			this.lblTitulo = new System.Windows.Forms.Label();
-			this.panel4 = new System.Windows.Forms.Panel();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.panelLineFooter = new System.Windows.Forms.Panel();
-			this.pctLogoPrincipal = new System.Windows.Forms.PictureBox();
 			this.panelSlideBar.SuspendLayout();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
 			this.panelConteudo.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pctLogoPrincipal)).BeginInit();
 			this.panelFooter.SuspendLayout();
 			this.nav.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pctLogoPrincipal)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelSlideBar
@@ -196,6 +196,7 @@
 			this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pctLogo.TabIndex = 0;
 			this.pctLogo.TabStop = false;
+			this.pctLogo.Click += new System.EventHandler(this.pctLogo_Click);
 			// 
 			// fileSystemWatcher1
 			// 
@@ -217,6 +218,44 @@
 			this.panelConteudo.Name = "panelConteudo";
 			this.panelConteudo.Size = new System.Drawing.Size(660, 502);
 			this.panelConteudo.TabIndex = 14;
+			// 
+			// pctLogoPrincipal
+			// 
+			this.pctLogoPrincipal.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.pctLogoPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("pctLogoPrincipal.Image")));
+			this.pctLogoPrincipal.Location = new System.Drawing.Point(61, 185);
+			this.pctLogoPrincipal.Name = "pctLogoPrincipal";
+			this.pctLogoPrincipal.Size = new System.Drawing.Size(527, 198);
+			this.pctLogoPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctLogoPrincipal.TabIndex = 36;
+			this.pctLogoPrincipal.TabStop = false;
+			// 
+			// panel4
+			// 
+			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panel4.Location = new System.Drawing.Point(650, 64);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(10, 392);
+			this.panel4.TabIndex = 35;
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel3.Location = new System.Drawing.Point(0, 54);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(660, 10);
+			this.panel3.TabIndex = 34;
+			// 
+			// panelLineFooter
+			// 
+			this.panelLineFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panelLineFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panelLineFooter.Location = new System.Drawing.Point(0, 456);
+			this.panelLineFooter.Name = "panelLineFooter";
+			this.panelLineFooter.Size = new System.Drawing.Size(660, 10);
+			this.panelLineFooter.TabIndex = 32;
 			// 
 			// panelFooter
 			// 
@@ -275,44 +314,6 @@
 			this.lblTitulo.Text = "Home";
 			this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// panel4
-			// 
-			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panel4.Location = new System.Drawing.Point(650, 64);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(10, 392);
-			this.panel4.TabIndex = 35;
-			// 
-			// panel3
-			// 
-			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel3.Location = new System.Drawing.Point(0, 54);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(660, 10);
-			this.panel3.TabIndex = 34;
-			// 
-			// panelLineFooter
-			// 
-			this.panelLineFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panelLineFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panelLineFooter.Location = new System.Drawing.Point(0, 456);
-			this.panelLineFooter.Name = "panelLineFooter";
-			this.panelLineFooter.Size = new System.Drawing.Size(660, 10);
-			this.panelLineFooter.TabIndex = 32;
-			// 
-			// pctLogoPrincipal
-			// 
-			this.pctLogoPrincipal.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.pctLogoPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("pctLogoPrincipal.Image")));
-			this.pctLogoPrincipal.Location = new System.Drawing.Point(61, 185);
-			this.pctLogoPrincipal.Name = "pctLogoPrincipal";
-			this.pctLogoPrincipal.Size = new System.Drawing.Size(527, 198);
-			this.pctLogoPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pctLogoPrincipal.TabIndex = 36;
-			this.pctLogoPrincipal.TabStop = false;
-			// 
 			// frmMenuInicial
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,11 +334,11 @@
 			((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
 			this.panelConteudo.ResumeLayout(false);
 			this.panelConteudo.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pctLogoPrincipal)).EndInit();
 			this.panelFooter.ResumeLayout(false);
 			this.panelFooter.PerformLayout();
 			this.nav.ResumeLayout(false);
 			this.nav.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pctLogoPrincipal)).EndInit();
 			this.ResumeLayout(false);
 
 		}
