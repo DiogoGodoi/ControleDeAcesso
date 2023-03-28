@@ -314,26 +314,50 @@ namespace Menu_Inicial
 				var busca = entradasFinalizada.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
 				if (busca.Count() != 0)
 				{
+
 					foreach (var item in busca)
 					{
-
-						double saldo = item.pesoEntrada - item.pesoSaida;
-						lista = new ListViewItem(item.referencia.ToString());
-						lista.SubItems.Add(item.nomeVisitante);
-						lista.SubItems.Add(item.visitado);
-						lista.SubItems.Add(item.cnpj.ToString());
-						lista.SubItems.Add(item.cpf.ToString());
-						lista.SubItems.Add(item.placaVeiculo);
-						lista.SubItems.Add(item.dataEntrada);
-						lista.SubItems.Add(item.dataSaida);
-						lista.SubItems.Add(item.horaEntrada);
-						lista.SubItems.Add(item.horaSaida);
-						lista.SubItems.Add(item.pesoEntrada.ToString());
-						lista.SubItems.Add(item.pesoSaida.ToString());
-						lista.SubItems.Add(saldo.ToString());
-						lista.SubItems.Add(item.idUsuarioEntrada.ToString());
-						lista.SubItems.Add(item.idUsuarioSaida.ToString());
-						listFinalizada.Items.Add(lista);
+						double saldo;
+						if (item.pesoEntrada > item.pesoSaida)
+						{
+							saldo = item.pesoEntrada - item.pesoSaida;
+							lista = new ListViewItem(item.referencia.ToString());
+							lista.SubItems.Add(item.nomeVisitante);
+							lista.SubItems.Add(item.visitado);
+							lista.SubItems.Add(item.cnpj.ToString());
+							lista.SubItems.Add(item.cpf.ToString());
+							lista.SubItems.Add(item.placaVeiculo);
+							lista.SubItems.Add(item.dataEntrada);
+							lista.SubItems.Add(item.dataSaida);
+							lista.SubItems.Add(item.horaEntrada);
+							lista.SubItems.Add(item.horaSaida);
+							lista.SubItems.Add(item.pesoEntrada.ToString());
+							lista.SubItems.Add(item.pesoSaida.ToString());
+							lista.SubItems.Add(saldo.ToString());
+							lista.SubItems.Add(item.idUsuarioEntrada.ToString());
+							lista.SubItems.Add(item.idUsuarioSaida.ToString());
+							listFinalizada.Items.Add(lista);
+						}
+						else if (item.pesoEntrada < item.pesoSaida)
+						{
+							saldo = item.pesoSaida - item.pesoEntrada;
+							lista = new ListViewItem(item.referencia.ToString());
+							lista.SubItems.Add(item.nomeVisitante);
+							lista.SubItems.Add(item.visitado);
+							lista.SubItems.Add(item.cnpj.ToString());
+							lista.SubItems.Add(item.cpf.ToString());
+							lista.SubItems.Add(item.placaVeiculo);
+							lista.SubItems.Add(item.dataEntrada);
+							lista.SubItems.Add(item.dataSaida);
+							lista.SubItems.Add(item.horaEntrada);
+							lista.SubItems.Add(item.horaSaida);
+							lista.SubItems.Add(item.pesoEntrada.ToString());
+							lista.SubItems.Add(item.pesoSaida.ToString());
+							lista.SubItems.Add(saldo.ToString());
+							lista.SubItems.Add(item.idUsuarioEntrada.ToString());
+							lista.SubItems.Add(item.idUsuarioSaida.ToString());
+							listFinalizada.Items.Add(lista);
+						}	
 					}
 				}
 				else

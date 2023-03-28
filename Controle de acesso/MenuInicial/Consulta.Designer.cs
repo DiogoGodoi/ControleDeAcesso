@@ -121,6 +121,7 @@
 			this.listEntrada.ForeColor = System.Drawing.Color.Navy;
 			this.listEntrada.FullRowSelect = true;
 			this.listEntrada.GridLines = true;
+			this.listEntrada.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
 			this.listEntrada.HideSelection = false;
 			this.listEntrada.Location = new System.Drawing.Point(3, 3);
 			this.listEntrada.Name = "listEntrada";
@@ -207,7 +208,7 @@
 			this.listSaida.HideSelection = false;
 			this.listSaida.Location = new System.Drawing.Point(3, 3);
 			this.listSaida.Name = "listSaida";
-			this.listSaida.Size = new System.Drawing.Size(614, 302);
+			this.listSaida.Size = new System.Drawing.Size(614, 239);
 			this.listSaida.TabIndex = 27;
 			this.listSaida.UseCompatibleStateImageBehavior = false;
 			this.listSaida.View = System.Windows.Forms.View.Details;
@@ -275,7 +276,7 @@
 			this.listFinalizada.Location = new System.Drawing.Point(3, 3);
 			this.listFinalizada.Name = "listFinalizada";
 			this.listFinalizada.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.listFinalizada.Size = new System.Drawing.Size(614, 302);
+			this.listFinalizada.Size = new System.Drawing.Size(614, 239);
 			this.listFinalizada.TabIndex = 28;
 			this.listFinalizada.UseCompatibleStateImageBehavior = false;
 			this.listFinalizada.View = System.Windows.Forms.View.Details;
@@ -406,7 +407,7 @@
 			this.tabSaidas.Location = new System.Drawing.Point(4, 23);
 			this.tabSaidas.Name = "tabSaidas";
 			this.tabSaidas.Padding = new System.Windows.Forms.Padding(3);
-			this.tabSaidas.Size = new System.Drawing.Size(620, 308);
+			this.tabSaidas.Size = new System.Drawing.Size(620, 245);
 			this.tabSaidas.TabIndex = 1;
 			this.tabSaidas.Text = "Saídas";
 			this.tabSaidas.Click += new System.EventHandler(this.ExibirSaida);
@@ -419,7 +420,7 @@
 			this.tabAcessoFinalizado.Location = new System.Drawing.Point(4, 23);
 			this.tabAcessoFinalizado.Name = "tabAcessoFinalizado";
 			this.tabAcessoFinalizado.Padding = new System.Windows.Forms.Padding(3);
-			this.tabAcessoFinalizado.Size = new System.Drawing.Size(620, 308);
+			this.tabAcessoFinalizado.Size = new System.Drawing.Size(620, 245);
 			this.tabAcessoFinalizado.TabIndex = 2;
 			this.tabAcessoFinalizado.Text = "Acesso finalizado";
 			this.tabAcessoFinalizado.Click += new System.EventHandler(this.ExibirEntradaFinalizada);

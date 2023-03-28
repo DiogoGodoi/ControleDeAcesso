@@ -62,7 +62,7 @@
 			this.lblNomeVisitante.AutoSize = true;
 			this.lblNomeVisitante.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblNomeVisitante.ForeColor = System.Drawing.Color.Black;
-			this.lblNomeVisitante.Location = new System.Drawing.Point(61, 212);
+			this.lblNomeVisitante.Location = new System.Drawing.Point(84, 221);
 			this.lblNomeVisitante.Name = "lblNomeVisitante";
 			this.lblNomeVisitante.Size = new System.Drawing.Size(137, 17);
 			this.lblNomeVisitante.TabIndex = 4;
@@ -74,7 +74,7 @@
 			this.lblNomeVisitado.AutoSize = true;
 			this.lblNomeVisitado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblNomeVisitado.ForeColor = System.Drawing.Color.Black;
-			this.lblNomeVisitado.Location = new System.Drawing.Point(61, 240);
+			this.lblNomeVisitado.Location = new System.Drawing.Point(84, 249);
 			this.lblNomeVisitado.Name = "lblNomeVisitado";
 			this.lblNomeVisitado.Size = new System.Drawing.Size(132, 17);
 			this.lblNomeVisitado.TabIndex = 5;
@@ -86,7 +86,7 @@
 			this.lblPlaca.AutoSize = true;
 			this.lblPlaca.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblPlaca.ForeColor = System.Drawing.Color.Black;
-			this.lblPlaca.Location = new System.Drawing.Point(61, 350);
+			this.lblPlaca.Location = new System.Drawing.Point(84, 359);
 			this.lblPlaca.Name = "lblPlaca";
 			this.lblPlaca.Size = new System.Drawing.Size(127, 17);
 			this.lblPlaca.TabIndex = 11;
@@ -98,7 +98,7 @@
 			this.lblPeso.AutoSize = true;
 			this.lblPeso.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblPeso.ForeColor = System.Drawing.Color.Black;
-			this.lblPeso.Location = new System.Drawing.Point(61, 322);
+			this.lblPeso.Location = new System.Drawing.Point(84, 331);
 			this.lblPeso.Name = "lblPeso";
 			this.lblPeso.Size = new System.Drawing.Size(127, 17);
 			this.lblPeso.TabIndex = 10;
@@ -110,7 +110,7 @@
 			this.lblCnpj.AutoSize = true;
 			this.lblCnpj.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblCnpj.ForeColor = System.Drawing.Color.Black;
-			this.lblCnpj.Location = new System.Drawing.Point(61, 296);
+			this.lblCnpj.Location = new System.Drawing.Point(84, 305);
 			this.lblCnpj.Name = "lblCnpj";
 			this.lblCnpj.Size = new System.Drawing.Size(41, 17);
 			this.lblCnpj.TabIndex = 9;
@@ -122,7 +122,7 @@
 			this.lblCpf.AutoSize = true;
 			this.lblCpf.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblCpf.ForeColor = System.Drawing.Color.Black;
-			this.lblCpf.Location = new System.Drawing.Point(61, 268);
+			this.lblCpf.Location = new System.Drawing.Point(84, 277);
 			this.lblCpf.Name = "lblCpf";
 			this.lblCpf.Size = new System.Drawing.Size(33, 17);
 			this.lblCpf.TabIndex = 8;
@@ -134,10 +134,12 @@
 			this.txtNomeVisitante.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtNomeVisitante.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
 			this.txtNomeVisitante.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtNomeVisitante.Location = new System.Drawing.Point(208, 212);
+			this.txtNomeVisitante.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtNomeVisitante.Location = new System.Drawing.Point(253, 224);
 			this.txtNomeVisitante.Name = "txtNomeVisitante";
-			this.txtNomeVisitante.Size = new System.Drawing.Size(343, 13);
+			this.txtNomeVisitante.Size = new System.Drawing.Size(296, 16);
 			this.txtNomeVisitante.TabIndex = 12;
+			this.txtNomeVisitante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtNomeVisitado
 			// 
@@ -145,10 +147,12 @@
 			this.txtNomeVisitado.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtNomeVisitado.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
 			this.txtNomeVisitado.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtNomeVisitado.Location = new System.Drawing.Point(208, 240);
+			this.txtNomeVisitado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtNomeVisitado.Location = new System.Drawing.Point(253, 252);
 			this.txtNomeVisitado.Name = "txtNomeVisitado";
-			this.txtNomeVisitado.Size = new System.Drawing.Size(343, 13);
+			this.txtNomeVisitado.Size = new System.Drawing.Size(296, 16);
 			this.txtNomeVisitado.TabIndex = 13;
+			this.txtNomeVisitado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtPlacaVeiculo
 			// 
@@ -156,10 +160,12 @@
 			this.txtPlacaVeiculo.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtPlacaVeiculo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
 			this.txtPlacaVeiculo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtPlacaVeiculo.Location = new System.Drawing.Point(208, 350);
+			this.txtPlacaVeiculo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtPlacaVeiculo.Location = new System.Drawing.Point(253, 362);
 			this.txtPlacaVeiculo.Name = "txtPlacaVeiculo";
-			this.txtPlacaVeiculo.Size = new System.Drawing.Size(343, 13);
+			this.txtPlacaVeiculo.Size = new System.Drawing.Size(296, 16);
 			this.txtPlacaVeiculo.TabIndex = 19;
+			this.txtPlacaVeiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtPesoEntrada
 			// 
@@ -167,10 +173,12 @@
 			this.txtPesoEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtPesoEntrada.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
 			this.txtPesoEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtPesoEntrada.Location = new System.Drawing.Point(208, 322);
+			this.txtPesoEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtPesoEntrada.Location = new System.Drawing.Point(253, 334);
 			this.txtPesoEntrada.Name = "txtPesoEntrada";
-			this.txtPesoEntrada.Size = new System.Drawing.Size(343, 13);
+			this.txtPesoEntrada.Size = new System.Drawing.Size(296, 16);
 			this.txtPesoEntrada.TabIndex = 18;
+			this.txtPesoEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtCnpj
 			// 
@@ -178,10 +186,12 @@
 			this.txtCnpj.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtCnpj.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
 			this.txtCnpj.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtCnpj.Location = new System.Drawing.Point(208, 296);
+			this.txtCnpj.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtCnpj.Location = new System.Drawing.Point(253, 308);
 			this.txtCnpj.Name = "txtCnpj";
-			this.txtCnpj.Size = new System.Drawing.Size(343, 13);
+			this.txtCnpj.Size = new System.Drawing.Size(296, 16);
 			this.txtCnpj.TabIndex = 17;
+			this.txtCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtCpf
 			// 
@@ -189,10 +199,12 @@
 			this.txtCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtCpf.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
 			this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.txtCpf.Location = new System.Drawing.Point(208, 268);
+			this.txtCpf.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtCpf.Location = new System.Drawing.Point(253, 280);
 			this.txtCpf.Name = "txtCpf";
-			this.txtCpf.Size = new System.Drawing.Size(343, 13);
+			this.txtCpf.Size = new System.Drawing.Size(296, 16);
 			this.txtCpf.TabIndex = 16;
+			this.txtCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// btnCadastrar
 			// 
@@ -202,7 +214,7 @@
 			this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.btnCadastrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-			this.btnCadastrar.Location = new System.Drawing.Point(301, 398);
+			this.btnCadastrar.Location = new System.Drawing.Point(288, 394);
 			this.btnCadastrar.Name = "btnCadastrar";
 			this.btnCadastrar.Size = new System.Drawing.Size(121, 23);
 			this.btnCadastrar.TabIndex = 20;
@@ -309,30 +321,30 @@
 			// 
 			// frmEntrada
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(660, 502);
-			this.Controls.Add(this.pctLogo);
-			this.Controls.Add(this.panel3);
-			this.Controls.Add(this.panel2);
-			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.panelLineFooter);
-			this.Controls.Add(this.panelFooter);
-			this.Controls.Add(this.nav);
-			this.Controls.Add(this.btnCadastrar);
-			this.Controls.Add(this.txtPlacaVeiculo);
-			this.Controls.Add(this.txtPesoEntrada);
-			this.Controls.Add(this.txtCnpj);
-			this.Controls.Add(this.txtCpf);
-			this.Controls.Add(this.txtNomeVisitado);
-			this.Controls.Add(this.txtNomeVisitante);
-			this.Controls.Add(this.lblPlaca);
-			this.Controls.Add(this.lblPeso);
-			this.Controls.Add(this.lblCnpj);
-			this.Controls.Add(this.lblCpf);
-			this.Controls.Add(this.lblNomeVisitado);
 			this.Controls.Add(this.lblNomeVisitante);
+			this.Controls.Add(this.lblNomeVisitado);
+			this.Controls.Add(this.lblCpf);
+			this.Controls.Add(this.pctLogo);
+			this.Controls.Add(this.lblCnpj);
+			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.lblPeso);
+			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.lblPlaca);
+			this.Controls.Add(this.panel1);
+			this.Controls.Add(this.txtNomeVisitante);
+			this.Controls.Add(this.panelLineFooter);
+			this.Controls.Add(this.txtNomeVisitado);
+			this.Controls.Add(this.panelFooter);
+			this.Controls.Add(this.btnCadastrar);
+			this.Controls.Add(this.nav);
+			this.Controls.Add(this.txtCpf);
+			this.Controls.Add(this.txtPesoEntrada);
+			this.Controls.Add(this.txtPlacaVeiculo);
+			this.Controls.Add(this.txtCnpj);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmEntrada";

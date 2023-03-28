@@ -92,10 +92,12 @@
 			this.txtPlacaVeiculo.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.txtPlacaVeiculo.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtPlacaVeiculo.Enabled = false;
+			this.txtPlacaVeiculo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPlacaVeiculo.Location = new System.Drawing.Point(205, 430);
 			this.txtPlacaVeiculo.Name = "txtPlacaVeiculo";
-			this.txtPlacaVeiculo.Size = new System.Drawing.Size(147, 13);
+			this.txtPlacaVeiculo.Size = new System.Drawing.Size(147, 16);
 			this.txtPlacaVeiculo.TabIndex = 37;
+			this.txtPlacaVeiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtPesoEntrada
 			// 
@@ -104,10 +106,12 @@
 			this.txtPesoEntrada.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.txtPesoEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtPesoEntrada.Enabled = false;
+			this.txtPesoEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPesoEntrada.Location = new System.Drawing.Point(205, 402);
 			this.txtPesoEntrada.Name = "txtPesoEntrada";
-			this.txtPesoEntrada.Size = new System.Drawing.Size(147, 13);
+			this.txtPesoEntrada.Size = new System.Drawing.Size(147, 16);
 			this.txtPesoEntrada.TabIndex = 36;
+			this.txtPesoEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtCnpj
 			// 
@@ -116,10 +120,12 @@
 			this.txtCnpj.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.txtCnpj.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtCnpj.Enabled = false;
+			this.txtCnpj.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCnpj.Location = new System.Drawing.Point(205, 322);
 			this.txtCnpj.Name = "txtCnpj";
-			this.txtCnpj.Size = new System.Drawing.Size(147, 13);
+			this.txtCnpj.Size = new System.Drawing.Size(147, 16);
 			this.txtCnpj.TabIndex = 35;
+			this.txtCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtCpf
 			// 
@@ -128,10 +134,12 @@
 			this.txtCpf.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.txtCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtCpf.Enabled = false;
+			this.txtCpf.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtCpf.Location = new System.Drawing.Point(205, 294);
 			this.txtCpf.Name = "txtCpf";
-			this.txtCpf.Size = new System.Drawing.Size(147, 13);
+			this.txtCpf.Size = new System.Drawing.Size(147, 16);
 			this.txtCpf.TabIndex = 33;
+			this.txtCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtNomeVisitado
 			// 
@@ -140,10 +148,12 @@
 			this.txtNomeVisitado.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.txtNomeVisitado.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtNomeVisitado.Enabled = false;
+			this.txtNomeVisitado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtNomeVisitado.Location = new System.Drawing.Point(205, 268);
 			this.txtNomeVisitado.Name = "txtNomeVisitado";
-			this.txtNomeVisitado.Size = new System.Drawing.Size(147, 13);
+			this.txtNomeVisitado.Size = new System.Drawing.Size(147, 16);
 			this.txtNomeVisitado.TabIndex = 31;
+			this.txtNomeVisitado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtNomeVisitante
 			// 
@@ -152,10 +162,12 @@
 			this.txtNomeVisitante.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.txtNomeVisitante.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtNomeVisitante.Enabled = false;
+			this.txtNomeVisitante.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtNomeVisitante.Location = new System.Drawing.Point(205, 237);
 			this.txtNomeVisitante.Name = "txtNomeVisitante";
-			this.txtNomeVisitante.Size = new System.Drawing.Size(376, 13);
+			this.txtNomeVisitante.Size = new System.Drawing.Size(376, 16);
 			this.txtNomeVisitante.TabIndex = 30;
+			this.txtNomeVisitante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lblPlaca
 			// 
@@ -235,10 +247,12 @@
 			this.txtPesoSaida.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtPesoSaida.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.txtPesoSaida.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtPesoSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtPesoSaida.Location = new System.Drawing.Point(487, 322);
 			this.txtPesoSaida.Name = "txtPesoSaida";
-			this.txtPesoSaida.Size = new System.Drawing.Size(94, 13);
+			this.txtPesoSaida.Size = new System.Drawing.Size(94, 16);
 			this.txtPesoSaida.TabIndex = 45;
+			this.txtPesoSaida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// label1
 			// 
@@ -282,10 +296,12 @@
 			this.txtReferencia.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtReferencia.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.txtReferencia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtReferencia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtReferencia.Location = new System.Drawing.Point(240, 206);
 			this.txtReferencia.Name = "txtReferencia";
-			this.txtReferencia.Size = new System.Drawing.Size(271, 13);
+			this.txtReferencia.Size = new System.Drawing.Size(271, 16);
 			this.txtReferencia.TabIndex = 49;
+			this.txtReferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lblReferencia
 			// 
@@ -322,10 +338,12 @@
 			this.txtDataEntrada.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.txtDataEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtDataEntrada.Enabled = false;
+			this.txtDataEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtDataEntrada.Location = new System.Drawing.Point(205, 350);
 			this.txtDataEntrada.Name = "txtDataEntrada";
-			this.txtDataEntrada.Size = new System.Drawing.Size(147, 13);
+			this.txtDataEntrada.Size = new System.Drawing.Size(147, 16);
 			this.txtDataEntrada.TabIndex = 52;
+			this.txtDataEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lblDataEntrada
 			// 
@@ -358,10 +376,12 @@
 			this.txtHoraEntrada.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.txtHoraEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.txtHoraEntrada.Enabled = false;
+			this.txtHoraEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtHoraEntrada.Location = new System.Drawing.Point(205, 376);
 			this.txtHoraEntrada.Name = "txtHoraEntrada";
-			this.txtHoraEntrada.Size = new System.Drawing.Size(147, 13);
+			this.txtHoraEntrada.Size = new System.Drawing.Size(147, 16);
 			this.txtHoraEntrada.TabIndex = 34;
+			this.txtHoraEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// dtSaida
 			// 

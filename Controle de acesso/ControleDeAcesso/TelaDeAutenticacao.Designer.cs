@@ -42,13 +42,13 @@
 			this.pctLogo = new System.Windows.Forms.PictureBox();
 			this.titulo = new System.Windows.Forms.Label();
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-			this.panelLineFooter = new System.Windows.Forms.Panel();
 			this.panelFooter = new System.Windows.Forms.Panel();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblFooter = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
+			this.panelLineFooter = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
 			this.nav.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			this.panelFooter.SuspendLayout();
@@ -99,10 +99,12 @@
 			this.txtNome.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtNome.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtNome.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtNome.Location = new System.Drawing.Point(181, 198);
 			this.txtNome.Name = "txtNome";
-			this.txtNome.Size = new System.Drawing.Size(222, 13);
+			this.txtNome.Size = new System.Drawing.Size(222, 16);
 			this.txtNome.TabIndex = 4;
+			this.txtNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtSenha
 			// 
@@ -110,11 +112,13 @@
 			this.txtSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.txtSenha.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
 			this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.txtSenha.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtSenha.Location = new System.Drawing.Point(181, 252);
 			this.txtSenha.Name = "txtSenha";
 			this.txtSenha.PasswordChar = '*';
-			this.txtSenha.Size = new System.Drawing.Size(222, 13);
+			this.txtSenha.Size = new System.Drawing.Size(222, 16);
 			this.txtSenha.TabIndex = 5;
+			this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// btnSair
 			// 
@@ -213,15 +217,6 @@
 			this.titulo.TabIndex = 5;
 			this.titulo.Text = "Entrar";
 			// 
-			// panelLineFooter
-			// 
-			this.panelLineFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panelLineFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panelLineFooter.Location = new System.Drawing.Point(0, 404);
-			this.panelLineFooter.Name = "panelLineFooter";
-			this.panelLineFooter.Size = new System.Drawing.Size(492, 10);
-			this.panelLineFooter.TabIndex = 32;
-			// 
 			// panelFooter
 			// 
 			this.panelFooter.BackColor = System.Drawing.Color.Navy;
@@ -265,15 +260,6 @@
 			this.panel1.Size = new System.Drawing.Size(10, 342);
 			this.panel1.TabIndex = 33;
 			// 
-			// panel2
-			// 
-			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel2.Location = new System.Drawing.Point(10, 62);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(482, 10);
-			this.panel2.TabIndex = 34;
-			// 
 			// panel3
 			// 
 			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -282,6 +268,24 @@
 			this.panel3.Name = "panel3";
 			this.panel3.Size = new System.Drawing.Size(10, 332);
 			this.panel3.TabIndex = 35;
+			// 
+			// panelLineFooter
+			// 
+			this.panelLineFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panelLineFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panelLineFooter.Location = new System.Drawing.Point(0, 404);
+			this.panelLineFooter.Name = "panelLineFooter";
+			this.panelLineFooter.Size = new System.Drawing.Size(492, 10);
+			this.panelLineFooter.TabIndex = 32;
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel2.Location = new System.Drawing.Point(10, 62);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(482, 10);
+			this.panel2.TabIndex = 34;
 			// 
 			// frmAutenticacao
 			// 
@@ -332,13 +336,13 @@
 		private System.Windows.Forms.PictureBox pctLogo;
 		private System.Windows.Forms.Label titulo;
 		private System.ComponentModel.BackgroundWorker backgroundWorker1;
-		private System.Windows.Forms.Panel panelLineFooter;
 		private System.Windows.Forms.Panel panelFooter;
 		private System.Windows.Forms.Label lblFooter;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panelLineFooter;
+		private System.Windows.Forms.Panel panel2;
 	}
 }
 

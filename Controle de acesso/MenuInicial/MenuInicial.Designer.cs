@@ -35,27 +35,24 @@
 			this.btnConsultar = new FontAwesome.Sharp.IconButton();
 			this.btnSaida = new FontAwesome.Sharp.IconButton();
 			this.btnEntrada = new FontAwesome.Sharp.IconButton();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.pctLogo = new System.Windows.Forms.PictureBox();
+			this.panelLogo = new System.Windows.Forms.Panel();
 			this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
 			this.panelConteudo = new System.Windows.Forms.Panel();
 			this.pctLogoPrincipal = new System.Windows.Forms.PictureBox();
-			this.panel4 = new System.Windows.Forms.Panel();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.panelLineFooter = new System.Windows.Forms.Panel();
 			this.panelFooter = new System.Windows.Forms.Panel();
 			this.lblFooter = new System.Windows.Forms.Label();
 			this.lblMain = new System.Windows.Forms.Label();
 			this.nav = new System.Windows.Forms.Panel();
 			this.lblTitulo = new System.Windows.Forms.Label();
+			this.pctLogo = new System.Windows.Forms.PictureBox();
 			this.panelSlideBar.SuspendLayout();
-			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
+			this.panelLogo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
 			this.panelConteudo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogoPrincipal)).BeginInit();
 			this.panelFooter.SuspendLayout();
 			this.nav.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelSlideBar
@@ -66,7 +63,7 @@
 			this.panelSlideBar.Controls.Add(this.btnConsultar);
 			this.panelSlideBar.Controls.Add(this.btnSaida);
 			this.panelSlideBar.Controls.Add(this.btnEntrada);
-			this.panelSlideBar.Controls.Add(this.panel1);
+			this.panelSlideBar.Controls.Add(this.panelLogo);
 			this.panelSlideBar.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panelSlideBar.Location = new System.Drawing.Point(0, 0);
 			this.panelSlideBar.Name = "panelSlideBar";
@@ -86,7 +83,7 @@
 			this.btnAlterar.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.btnAlterar.IconSize = 30;
 			this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnAlterar.Location = new System.Drawing.Point(0, 196);
+			this.btnAlterar.Location = new System.Drawing.Point(0, 182);
 			this.btnAlterar.Name = "btnAlterar";
 			this.btnAlterar.Size = new System.Drawing.Size(140, 40);
 			this.btnAlterar.TabIndex = 20;
@@ -127,7 +124,7 @@
 			this.btnConsultar.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.btnConsultar.IconSize = 30;
 			this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnConsultar.Location = new System.Drawing.Point(0, 156);
+			this.btnConsultar.Location = new System.Drawing.Point(0, 142);
 			this.btnConsultar.Name = "btnConsultar";
 			this.btnConsultar.Size = new System.Drawing.Size(140, 40);
 			this.btnConsultar.TabIndex = 18;
@@ -148,7 +145,7 @@
 			this.btnSaida.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.btnSaida.IconSize = 35;
 			this.btnSaida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnSaida.Location = new System.Drawing.Point(0, 116);
+			this.btnSaida.Location = new System.Drawing.Point(0, 102);
 			this.btnSaida.Name = "btnSaida";
 			this.btnSaida.Size = new System.Drawing.Size(140, 40);
 			this.btnSaida.TabIndex = 16;
@@ -169,7 +166,7 @@
 			this.btnEntrada.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.btnEntrada.IconSize = 30;
 			this.btnEntrada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnEntrada.Location = new System.Drawing.Point(0, 76);
+			this.btnEntrada.Location = new System.Drawing.Point(0, 62);
 			this.btnEntrada.Name = "btnEntrada";
 			this.btnEntrada.Size = new System.Drawing.Size(140, 40);
 			this.btnEntrada.TabIndex = 15;
@@ -177,25 +174,14 @@
 			this.btnEntrada.UseVisualStyleBackColor = false;
 			this.btnEntrada.Click += new System.EventHandler(this.btnEntrada_Click);
 			// 
-			// panel1
+			// panelLogo
 			// 
-			this.panel1.Controls.Add(this.pctLogo);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel1.Location = new System.Drawing.Point(0, 0);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(140, 76);
-			this.panel1.TabIndex = 14;
-			// 
-			// pctLogo
-			// 
-			this.pctLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.pctLogo.Image = ((System.Drawing.Image)(resources.GetObject("pctLogo.Image")));
-			this.pctLogo.Location = new System.Drawing.Point(0, 0);
-			this.pctLogo.Name = "pctLogo";
-			this.pctLogo.Size = new System.Drawing.Size(140, 76);
-			this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pctLogo.TabIndex = 0;
-			this.pctLogo.TabStop = false;
+			this.panelLogo.Controls.Add(this.pctLogo);
+			this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panelLogo.Location = new System.Drawing.Point(0, 0);
+			this.panelLogo.Name = "panelLogo";
+			this.panelLogo.Size = new System.Drawing.Size(140, 62);
+			this.panelLogo.TabIndex = 14;
 			// 
 			// fileSystemWatcher1
 			// 
@@ -206,9 +192,6 @@
 			// 
 			this.panelConteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panelConteudo.Controls.Add(this.pctLogoPrincipal);
-			this.panelConteudo.Controls.Add(this.panel4);
-			this.panelConteudo.Controls.Add(this.panel3);
-			this.panelConteudo.Controls.Add(this.panelLineFooter);
 			this.panelConteudo.Controls.Add(this.panelFooter);
 			this.panelConteudo.Controls.Add(this.lblMain);
 			this.panelConteudo.Controls.Add(this.nav);
@@ -228,33 +211,6 @@
 			this.pctLogoPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pctLogoPrincipal.TabIndex = 36;
 			this.pctLogoPrincipal.TabStop = false;
-			// 
-			// panel4
-			// 
-			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panel4.Location = new System.Drawing.Point(650, 72);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(10, 384);
-			this.panel4.TabIndex = 35;
-			// 
-			// panel3
-			// 
-			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel3.Location = new System.Drawing.Point(0, 62);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(660, 10);
-			this.panel3.TabIndex = 34;
-			// 
-			// panelLineFooter
-			// 
-			this.panelLineFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panelLineFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panelLineFooter.Location = new System.Drawing.Point(0, 456);
-			this.panelLineFooter.Name = "panelLineFooter";
-			this.panelLineFooter.Size = new System.Drawing.Size(660, 10);
-			this.panelLineFooter.TabIndex = 32;
 			// 
 			// panelFooter
 			// 
@@ -313,6 +269,18 @@
 			this.lblTitulo.Text = "Home";
 			this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// pctLogo
+			// 
+			this.pctLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.pctLogo.Image = ((System.Drawing.Image)(resources.GetObject("pctLogo.Image")));
+			this.pctLogo.InitialImage = ((System.Drawing.Image)(resources.GetObject("pctLogo.InitialImage")));
+			this.pctLogo.Location = new System.Drawing.Point(0, 0);
+			this.pctLogo.Name = "pctLogo";
+			this.pctLogo.Size = new System.Drawing.Size(140, 62);
+			this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctLogo.TabIndex = 0;
+			this.pctLogo.TabStop = false;
+			// 
 			// frmMenuInicial
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -328,8 +296,7 @@
 			this.Text = "Menu inicial";
 			this.Load += new System.EventHandler(this.frmMenuInicial_Load);
 			this.panelSlideBar.ResumeLayout(false);
-			this.panel1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
+			this.panelLogo.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
 			this.panelConteudo.ResumeLayout(false);
 			this.panelConteudo.PerformLayout();
@@ -338,15 +305,15 @@
 			this.panelFooter.PerformLayout();
 			this.nav.ResumeLayout(false);
 			this.nav.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
 			this.ResumeLayout(false);
 
 		}
 
 		#endregion
 		private System.Windows.Forms.Panel panelSlideBar;
-		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel panelLogo;
 		private System.IO.FileSystemWatcher fileSystemWatcher1;
-		private System.Windows.Forms.PictureBox pctLogo;
 		private FontAwesome.Sharp.IconButton btnSair;
 		private FontAwesome.Sharp.IconButton btnConsultar;
 		private FontAwesome.Sharp.IconButton btnSaida;
@@ -358,10 +325,8 @@
 		private System.Windows.Forms.Panel panelFooter;
 		private System.Windows.Forms.Label lblFooter;
 		private FontAwesome.Sharp.IconButton btnAlterar;
-		private System.Windows.Forms.Panel panel4;
-		private System.Windows.Forms.Panel panel3;
-		private System.Windows.Forms.Panel panelLineFooter;
 		private System.Windows.Forms.PictureBox pctLogoPrincipal;
+		private System.Windows.Forms.PictureBox pctLogo;
 	}
 }
 
