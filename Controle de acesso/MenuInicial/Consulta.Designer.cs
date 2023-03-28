@@ -74,9 +74,10 @@
 			this.nav = new System.Windows.Forms.Panel();
 			this.panelFooter = new System.Windows.Forms.Panel();
 			this.lblFooter = new System.Windows.Forms.Label();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel1 = new System.Windows.Forms.Panel();
 			this.tabControle.SuspendLayout();
 			this.tabEntrada.SuspendLayout();
 			this.tabSaidas.SuspendLayout();
@@ -114,11 +115,12 @@
 			this.listEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.listEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.listEntrada.ForeColor = System.Drawing.Color.Navy;
+			this.listEntrada.FullRowSelect = true;
 			this.listEntrada.GridLines = true;
 			this.listEntrada.HideSelection = false;
 			this.listEntrada.Location = new System.Drawing.Point(3, 3);
 			this.listEntrada.Name = "listEntrada";
-			this.listEntrada.Size = new System.Drawing.Size(623, 251);
+			this.listEntrada.Size = new System.Drawing.Size(614, 250);
 			this.listEntrada.TabIndex = 26;
 			this.listEntrada.UseCompatibleStateImageBehavior = false;
 			this.listEntrada.View = System.Windows.Forms.View.Details;
@@ -196,11 +198,12 @@
 			this.listSaida.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.listSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.listSaida.ForeColor = System.Drawing.Color.Navy;
+			this.listSaida.FullRowSelect = true;
 			this.listSaida.GridLines = true;
 			this.listSaida.HideSelection = false;
 			this.listSaida.Location = new System.Drawing.Point(3, 3);
 			this.listSaida.Name = "listSaida";
-			this.listSaida.Size = new System.Drawing.Size(623, 251);
+			this.listSaida.Size = new System.Drawing.Size(614, 250);
 			this.listSaida.TabIndex = 27;
 			this.listSaida.UseCompatibleStateImageBehavior = false;
 			this.listSaida.View = System.Windows.Forms.View.Details;
@@ -240,7 +243,9 @@
 			// 
 			// listFinalizada
 			// 
+			this.listFinalizada.BackColor = System.Drawing.Color.White;
 			this.listFinalizada.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.listFinalizada.CausesValidation = false;
 			this.listFinalizada.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colFinRef,
             this.colFinNomeVisitante,
@@ -260,10 +265,13 @@
 			this.listFinalizada.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.listFinalizada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.listFinalizada.ForeColor = System.Drawing.Color.Navy;
+			this.listFinalizada.FullRowSelect = true;
+			this.listFinalizada.GridLines = true;
 			this.listFinalizada.HideSelection = false;
 			this.listFinalizada.Location = new System.Drawing.Point(3, 3);
 			this.listFinalizada.Name = "listFinalizada";
-			this.listFinalizada.Size = new System.Drawing.Size(623, 251);
+			this.listFinalizada.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.listFinalizada.Size = new System.Drawing.Size(614, 250);
 			this.listFinalizada.TabIndex = 28;
 			this.listFinalizada.UseCompatibleStateImageBehavior = false;
 			this.listFinalizada.View = System.Windows.Forms.View.Details;
@@ -343,6 +351,7 @@
 			// colFinPesoSaldo
 			// 
 			this.colFinPesoSaldo.Text = "Peso real";
+			this.colFinPesoSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// colFinUsuarioEntrada
 			// 
@@ -363,10 +372,13 @@
 			this.tabControle.Controls.Add(this.tabEntrada);
 			this.tabControle.Controls.Add(this.tabSaidas);
 			this.tabControle.Controls.Add(this.tabAcessoFinalizado);
+			this.tabControle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.tabControle.Location = new System.Drawing.Point(16, 103);
+			this.tabControle.Multiline = true;
 			this.tabControle.Name = "tabControle";
+			this.tabControle.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.tabControle.SelectedIndex = 0;
-			this.tabControle.Size = new System.Drawing.Size(637, 283);
+			this.tabControle.Size = new System.Drawing.Size(628, 283);
 			this.tabControle.TabIndex = 0;
 			this.tabControle.Enter += new System.EventHandler(this.ExibirEntradaFinalizada);
 			// 
@@ -374,10 +386,10 @@
 			// 
 			this.tabEntrada.BackColor = System.Drawing.Color.White;
 			this.tabEntrada.Controls.Add(this.listEntrada);
-			this.tabEntrada.Location = new System.Drawing.Point(4, 22);
+			this.tabEntrada.Location = new System.Drawing.Point(4, 23);
 			this.tabEntrada.Name = "tabEntrada";
 			this.tabEntrada.Padding = new System.Windows.Forms.Padding(3);
-			this.tabEntrada.Size = new System.Drawing.Size(629, 257);
+			this.tabEntrada.Size = new System.Drawing.Size(620, 256);
 			this.tabEntrada.TabIndex = 0;
 			this.tabEntrada.Text = "Entradas";
 			this.tabEntrada.Click += new System.EventHandler(this.ExibirEntrada);
@@ -387,10 +399,10 @@
 			// 
 			this.tabSaidas.BackColor = System.Drawing.Color.White;
 			this.tabSaidas.Controls.Add(this.listSaida);
-			this.tabSaidas.Location = new System.Drawing.Point(4, 22);
+			this.tabSaidas.Location = new System.Drawing.Point(4, 23);
 			this.tabSaidas.Name = "tabSaidas";
 			this.tabSaidas.Padding = new System.Windows.Forms.Padding(3);
-			this.tabSaidas.Size = new System.Drawing.Size(629, 257);
+			this.tabSaidas.Size = new System.Drawing.Size(620, 256);
 			this.tabSaidas.TabIndex = 1;
 			this.tabSaidas.Text = "Saídas";
 			this.tabSaidas.Click += new System.EventHandler(this.ExibirSaida);
@@ -400,10 +412,10 @@
 			// 
 			this.tabAcessoFinalizado.BackColor = System.Drawing.Color.White;
 			this.tabAcessoFinalizado.Controls.Add(this.listFinalizada);
-			this.tabAcessoFinalizado.Location = new System.Drawing.Point(4, 22);
+			this.tabAcessoFinalizado.Location = new System.Drawing.Point(4, 23);
 			this.tabAcessoFinalizado.Name = "tabAcessoFinalizado";
 			this.tabAcessoFinalizado.Padding = new System.Windows.Forms.Padding(3);
-			this.tabAcessoFinalizado.Size = new System.Drawing.Size(629, 257);
+			this.tabAcessoFinalizado.Size = new System.Drawing.Size(620, 256);
 			this.tabAcessoFinalizado.TabIndex = 2;
 			this.tabAcessoFinalizado.Text = "Acesso finalizado";
 			this.tabAcessoFinalizado.Click += new System.EventHandler(this.ExibirEntradaFinalizada);
@@ -476,6 +488,15 @@
 			this.lblFooter.Text = "Pta - Serviços terceirizados";
 			this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panel3.Location = new System.Drawing.Point(0, 456);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(660, 10);
+			this.panel3.TabIndex = 33;
+			// 
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -484,6 +505,15 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(650, 10);
 			this.panel2.TabIndex = 35;
+			// 
+			// panel4
+			// 
+			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panel4.Location = new System.Drawing.Point(650, 72);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(10, 384);
+			this.panel4.TabIndex = 36;
 			// 
 			// panel1
 			// 
@@ -494,15 +524,6 @@
 			this.panel1.Size = new System.Drawing.Size(10, 394);
 			this.panel1.TabIndex = 34;
 			// 
-			// panel3
-			// 
-			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel3.Location = new System.Drawing.Point(0, 456);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(660, 10);
-			this.panel3.TabIndex = 33;
-			// 
 			// frmConsulta
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,6 +531,7 @@
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(660, 502);
 			this.ControlBox = false;
+			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panel3);
@@ -584,10 +606,11 @@
 		private System.Windows.Forms.DateTimePicker dtBusca;
 		private System.Windows.Forms.Panel nav;
 		private System.Windows.Forms.Panel panelFooter;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label lblFooter;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Panel panel1;
 	}
 }
 

@@ -46,9 +46,10 @@
 			this.lblTitulo = new System.Windows.Forms.Label();
 			this.panelLineFooter = new System.Windows.Forms.Panel();
 			this.panelFooter = new System.Windows.Forms.Panel();
+			this.lblFooter = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.lblFooter = new System.Windows.Forms.Label();
+			this.panel3 = new System.Windows.Forms.Panel();
 			this.nav.SuspendLayout();
 			this.panelFooter.SuspendLayout();
 			this.SuspendLayout();
@@ -238,6 +239,17 @@
 			this.panelFooter.Size = new System.Drawing.Size(660, 36);
 			this.panelFooter.TabIndex = 29;
 			// 
+			// lblFooter
+			// 
+			this.lblFooter.AutoSize = true;
+			this.lblFooter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblFooter.Location = new System.Drawing.Point(251, 12);
+			this.lblFooter.Name = "lblFooter";
+			this.lblFooter.Size = new System.Drawing.Size(158, 12);
+			this.lblFooter.TabIndex = 1;
+			this.lblFooter.Text = "Pta - Serviços terceirizados";
+			this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// panel1
 			// 
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -256,16 +268,14 @@
 			this.panel2.Size = new System.Drawing.Size(650, 10);
 			this.panel2.TabIndex = 32;
 			// 
-			// lblFooter
+			// panel3
 			// 
-			this.lblFooter.AutoSize = true;
-			this.lblFooter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblFooter.Location = new System.Drawing.Point(251, 12);
-			this.lblFooter.Name = "lblFooter";
-			this.lblFooter.Size = new System.Drawing.Size(158, 12);
-			this.lblFooter.TabIndex = 1;
-			this.lblFooter.Text = "Pta - Serviços terceirizados";
-			this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panel3.Location = new System.Drawing.Point(650, 71);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(10, 385);
+			this.panel3.TabIndex = 34;
 			// 
 			// frmEntrada
 			// 
@@ -273,6 +283,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(660, 502);
+			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panelLineFooter);
@@ -326,6 +337,7 @@
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label lblFooter;
+		private System.Windows.Forms.Panel panel3;
 	}
 }
 

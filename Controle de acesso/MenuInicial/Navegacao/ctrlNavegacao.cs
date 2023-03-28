@@ -37,8 +37,8 @@ namespace MenuInicial
 		{
 			foreach (Control controls in panel.Controls)
 			{
-				controls.BackColor = System.Drawing.Color.Red;
-				button.BackColor = System.Drawing.Color.IndianRed;
+				controls.BackColor = System.Drawing.Color.Navy;
+				button.BackColor = System.Drawing.Color.DarkSlateBlue;
 			}
 		}
 	}

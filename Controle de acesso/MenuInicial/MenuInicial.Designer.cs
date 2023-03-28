@@ -39,15 +39,15 @@
 			this.pctLogo = new System.Windows.Forms.PictureBox();
 			this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
 			this.panelConteudo = new System.Windows.Forms.Panel();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.panelLineFooter = new System.Windows.Forms.Panel();
 			this.panelFooter = new System.Windows.Forms.Panel();
 			this.lblFooter = new System.Windows.Forms.Label();
 			this.lblMain = new System.Windows.Forms.Label();
 			this.nav = new System.Windows.Forms.Panel();
 			this.lblTitulo = new System.Windows.Forms.Label();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.panel4 = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panelLineFooter = new System.Windows.Forms.Panel();
+			this.pctLogoPrincipal = new System.Windows.Forms.PictureBox();
 			this.panelSlideBar.SuspendLayout();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
@@ -55,7 +55,7 @@
 			this.panelConteudo.SuspendLayout();
 			this.panelFooter.SuspendLayout();
 			this.nav.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctLogoPrincipal)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// panelSlideBar
@@ -75,8 +75,9 @@
 			// 
 			// btnAlterar
 			// 
-			this.btnAlterar.BackColor = System.Drawing.Color.Red;
+			this.btnAlterar.BackColor = System.Drawing.Color.Navy;
 			this.btnAlterar.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnAlterar.FlatAppearance.BorderSize = 0;
 			this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnAlterar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnAlterar.ForeColor = System.Drawing.Color.White;
@@ -94,8 +95,9 @@
 			// 
 			// btnSair
 			// 
-			this.btnSair.BackColor = System.Drawing.Color.Red;
+			this.btnSair.BackColor = System.Drawing.Color.Navy;
 			this.btnSair.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.btnSair.FlatAppearance.BorderSize = 0;
 			this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnSair.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSair.ForeColor = System.Drawing.Color.White;
@@ -114,8 +116,9 @@
 			// 
 			// btnConsultar
 			// 
-			this.btnConsultar.BackColor = System.Drawing.Color.Red;
+			this.btnConsultar.BackColor = System.Drawing.Color.Navy;
 			this.btnConsultar.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnConsultar.FlatAppearance.BorderSize = 0;
 			this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnConsultar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnConsultar.ForeColor = System.Drawing.Color.White;
@@ -134,8 +137,9 @@
 			// 
 			// btnSaida
 			// 
-			this.btnSaida.BackColor = System.Drawing.Color.Red;
+			this.btnSaida.BackColor = System.Drawing.Color.Navy;
 			this.btnSaida.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnSaida.FlatAppearance.BorderSize = 0;
 			this.btnSaida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnSaida.ForeColor = System.Drawing.Color.White;
@@ -154,8 +158,9 @@
 			// 
 			// btnEntrada
 			// 
-			this.btnEntrada.BackColor = System.Drawing.Color.Red;
+			this.btnEntrada.BackColor = System.Drawing.Color.Navy;
 			this.btnEntrada.Dock = System.Windows.Forms.DockStyle.Top;
+			this.btnEntrada.FlatAppearance.BorderSize = 0;
 			this.btnEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnEntrada.ForeColor = System.Drawing.Color.White;
@@ -199,45 +204,19 @@
 			// 
 			// panelConteudo
 			// 
+			this.panelConteudo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panelConteudo.Controls.Add(this.pctLogoPrincipal);
+			this.panelConteudo.Controls.Add(this.panel4);
 			this.panelConteudo.Controls.Add(this.panel3);
-			this.panelConteudo.Controls.Add(this.panel2);
 			this.panelConteudo.Controls.Add(this.panelLineFooter);
 			this.panelConteudo.Controls.Add(this.panelFooter);
 			this.panelConteudo.Controls.Add(this.lblMain);
 			this.panelConteudo.Controls.Add(this.nav);
-			this.panelConteudo.Controls.Add(this.pictureBox1);
 			this.panelConteudo.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panelConteudo.Location = new System.Drawing.Point(140, 0);
 			this.panelConteudo.Name = "panelConteudo";
 			this.panelConteudo.Size = new System.Drawing.Size(660, 502);
 			this.panelConteudo.TabIndex = 14;
-			// 
-			// panel3
-			// 
-			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel3.Location = new System.Drawing.Point(10, 44);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(650, 10);
-			this.panel3.TabIndex = 34;
-			// 
-			// panel2
-			// 
-			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panel2.Location = new System.Drawing.Point(0, 44);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(10, 412);
-			this.panel2.TabIndex = 33;
-			// 
-			// panelLineFooter
-			// 
-			this.panelLineFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panelLineFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panelLineFooter.Location = new System.Drawing.Point(0, 456);
-			this.panelLineFooter.Name = "panelLineFooter";
-			this.panelLineFooter.Size = new System.Drawing.Size(660, 10);
-			this.panelLineFooter.TabIndex = 32;
 			// 
 			// panelFooter
 			// 
@@ -265,7 +244,7 @@
 			this.lblMain.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblMain.AutoSize = true;
 			this.lblMain.Font = new System.Drawing.Font("Arial Rounded MT Bold", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblMain.ForeColor = System.Drawing.Color.Navy;
+			this.lblMain.ForeColor = System.Drawing.Color.White;
 			this.lblMain.Location = new System.Drawing.Point(119, 95);
 			this.lblMain.Name = "lblMain";
 			this.lblMain.Size = new System.Drawing.Size(407, 37);
@@ -280,7 +259,7 @@
 			this.nav.Dock = System.Windows.Forms.DockStyle.Top;
 			this.nav.Location = new System.Drawing.Point(0, 0);
 			this.nav.Name = "nav";
-			this.nav.Size = new System.Drawing.Size(660, 44);
+			this.nav.Size = new System.Drawing.Size(660, 54);
 			this.nav.TabIndex = 28;
 			// 
 			// lblTitulo
@@ -289,23 +268,50 @@
 			this.lblTitulo.AutoSize = true;
 			this.lblTitulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblTitulo.ForeColor = System.Drawing.Color.White;
-			this.lblTitulo.Location = new System.Drawing.Point(304, 12);
+			this.lblTitulo.Location = new System.Drawing.Point(304, 17);
 			this.lblTitulo.Name = "lblTitulo";
 			this.lblTitulo.Size = new System.Drawing.Size(63, 22);
 			this.lblTitulo.TabIndex = 5;
 			this.lblTitulo.Text = "Home";
 			this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// pictureBox1
+			// panel4
 			// 
-			this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-			this.pictureBox1.Location = new System.Drawing.Point(186, 156);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(276, 263);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 0;
-			this.pictureBox1.TabStop = false;
+			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panel4.Location = new System.Drawing.Point(650, 64);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(10, 392);
+			this.panel4.TabIndex = 35;
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel3.Location = new System.Drawing.Point(0, 54);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(660, 10);
+			this.panel3.TabIndex = 34;
+			// 
+			// panelLineFooter
+			// 
+			this.panelLineFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panelLineFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panelLineFooter.Location = new System.Drawing.Point(0, 456);
+			this.panelLineFooter.Name = "panelLineFooter";
+			this.panelLineFooter.Size = new System.Drawing.Size(660, 10);
+			this.panelLineFooter.TabIndex = 32;
+			// 
+			// pctLogoPrincipal
+			// 
+			this.pctLogoPrincipal.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.pctLogoPrincipal.Image = ((System.Drawing.Image)(resources.GetObject("pctLogoPrincipal.Image")));
+			this.pctLogoPrincipal.Location = new System.Drawing.Point(61, 185);
+			this.pctLogoPrincipal.Name = "pctLogoPrincipal";
+			this.pctLogoPrincipal.Size = new System.Drawing.Size(527, 198);
+			this.pctLogoPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pctLogoPrincipal.TabIndex = 36;
+			this.pctLogoPrincipal.TabStop = false;
 			// 
 			// frmMenuInicial
 			// 
@@ -331,7 +337,7 @@
 			this.panelFooter.PerformLayout();
 			this.nav.ResumeLayout(false);
 			this.nav.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.pctLogoPrincipal)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -346,16 +352,16 @@
 		private FontAwesome.Sharp.IconButton btnSaida;
 		private FontAwesome.Sharp.IconButton btnEntrada;
 		private System.Windows.Forms.Panel panelConteudo;
-		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Panel nav;
 		private System.Windows.Forms.Label lblTitulo;
 		private System.Windows.Forms.Label lblMain;
-		private System.Windows.Forms.Panel panelLineFooter;
 		private System.Windows.Forms.Panel panelFooter;
 		private System.Windows.Forms.Label lblFooter;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.Panel panel3;
 		private FontAwesome.Sharp.IconButton btnAlterar;
+		private System.Windows.Forms.Panel panel4;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panelLineFooter;
+		private System.Windows.Forms.PictureBox pctLogoPrincipal;
 	}
 }
 

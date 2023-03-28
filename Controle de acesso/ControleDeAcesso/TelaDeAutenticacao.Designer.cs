@@ -44,8 +44,11 @@
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
 			this.panelLineFooter = new System.Windows.Forms.Panel();
 			this.panelFooter = new System.Windows.Forms.Panel();
-			this.lblFooter = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
+			this.lblFooter = new System.Windows.Forms.Label();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
 			this.nav.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			this.panelFooter.SuspendLayout();
@@ -227,17 +230,6 @@
 			this.panelFooter.Size = new System.Drawing.Size(492, 36);
 			this.panelFooter.TabIndex = 31;
 			// 
-			// lblFooter
-			// 
-			this.lblFooter.AutoSize = true;
-			this.lblFooter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblFooter.Location = new System.Drawing.Point(499, 15);
-			this.lblFooter.Name = "lblFooter";
-			this.lblFooter.Size = new System.Drawing.Size(158, 12);
-			this.lblFooter.TabIndex = 0;
-			this.lblFooter.Text = "Pta - Serviços terceirizados";
-			this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -249,12 +241,53 @@
 			this.label1.Text = "Pta - Serviços terceirizados";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// lblFooter
+			// 
+			this.lblFooter.AutoSize = true;
+			this.lblFooter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblFooter.Location = new System.Drawing.Point(499, 15);
+			this.lblFooter.Name = "lblFooter";
+			this.lblFooter.Size = new System.Drawing.Size(158, 12);
+			this.lblFooter.TabIndex = 0;
+			this.lblFooter.Text = "Pta - Serviços terceirizados";
+			this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panel1
+			// 
+			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panel1.Location = new System.Drawing.Point(0, 62);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(10, 342);
+			this.panel1.TabIndex = 33;
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel2.Location = new System.Drawing.Point(10, 62);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(482, 10);
+			this.panel2.TabIndex = 34;
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panel3.Location = new System.Drawing.Point(482, 72);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(10, 332);
+			this.panel3.TabIndex = 35;
+			// 
 			// frmAutenticacao
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(492, 450);
+			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panelLineFooter);
 			this.Controls.Add(this.panelFooter);
 			this.Controls.Add(this.nav);
@@ -267,6 +300,7 @@
 			this.Controls.Add(this.lblSenha);
 			this.Controls.Add(this.lblLogin);
 			this.Controls.Add(this.lblTitulo);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmAutenticacao";
 			this.Text = "Login";
@@ -298,6 +332,9 @@
 		private System.Windows.Forms.Panel panelFooter;
 		private System.Windows.Forms.Label lblFooter;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel3;
 	}
 }
 

@@ -58,10 +58,11 @@
 			this.nav = new System.Windows.Forms.Panel();
 			this.lblTitulo = new System.Windows.Forms.Label();
 			this.panelFooter = new System.Windows.Forms.Panel();
+			this.lblFooter = new System.Windows.Forms.Label();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
-			this.lblFooter = new System.Windows.Forms.Label();
+			this.panel4 = new System.Windows.Forms.Panel();
 			this.nav.SuspendLayout();
 			this.panelFooter.SuspendLayout();
 			this.SuspendLayout();
@@ -398,6 +399,17 @@
 			this.panelFooter.Size = new System.Drawing.Size(660, 36);
 			this.panelFooter.TabIndex = 56;
 			// 
+			// lblFooter
+			// 
+			this.lblFooter.AutoSize = true;
+			this.lblFooter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblFooter.Location = new System.Drawing.Point(251, 12);
+			this.lblFooter.Name = "lblFooter";
+			this.lblFooter.Size = new System.Drawing.Size(158, 12);
+			this.lblFooter.TabIndex = 1;
+			this.lblFooter.Text = "Pta - Serviços terceirizados";
+			this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
@@ -425,16 +437,14 @@
 			this.panel3.Size = new System.Drawing.Size(660, 10);
 			this.panel3.TabIndex = 58;
 			// 
-			// lblFooter
+			// panel4
 			// 
-			this.lblFooter.AutoSize = true;
-			this.lblFooter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblFooter.Location = new System.Drawing.Point(251, 12);
-			this.lblFooter.Name = "lblFooter";
-			this.lblFooter.Size = new System.Drawing.Size(158, 12);
-			this.lblFooter.TabIndex = 1;
-			this.lblFooter.Text = "Pta - Serviços terceirizados";
-			this.lblFooter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panel4.Location = new System.Drawing.Point(650, 72);
+			this.panel4.Name = "panel4";
+			this.panel4.Size = new System.Drawing.Size(10, 384);
+			this.panel4.TabIndex = 61;
 			// 
 			// frmSaida
 			// 
@@ -442,6 +452,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(660, 502);
+			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panel3);
@@ -522,6 +533,7 @@
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Label lblFooter;
+		private System.Windows.Forms.Panel panel4;
 	}
 }
 
