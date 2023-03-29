@@ -29,8 +29,6 @@ namespace Menu_Inicial
 		private void InicializacaoDefault(object sender, EventArgs e)
 		{
 			this.WindowState = FormWindowState.Maximized;
-
-			listEntrada.Items.Clear();
 			List<mdlEntrada> entradas = ctrlConsulta.ExibirEntrada();
 
 			if (entradas != null)
@@ -90,7 +88,7 @@ namespace Menu_Inicial
 			List<mdlSaida> saidas = new List<mdlSaida>();
 			saidas = ctrlConsulta.ExibirSaida();
 			List<mdlEntrada> entradasFinalizadas = new List<mdlEntrada>();
-			entradasFinalizadas = ctrlConsulta.ExibirEntradaFinalizada(dtBusca.Value.ToString("dd-MM-yyyy"));
+			entradasFinalizadas = ctrlConsulta.ExibirEntradaFinalizada();
 
 			if(tabEntrada.Focus()) {
 				listEntrada.Items.Clear();
@@ -159,10 +157,10 @@ namespace Menu_Inicial
 			}
 			else if(tabAcessoFinalizado.Focus())
 			{
-				listFinalizada.Items.Clear();
 				var busca = entradasFinalizadas.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
 				if(busca.Count() > 0)
 				{
+					listFinalizada.Items.Clear();
 					foreach (var item in busca)
 					{
 						double saldo = item.pesoEntrada - item.pesoSaida;
@@ -305,59 +303,40 @@ namespace Menu_Inicial
 		private void ExibirEntradaFinalizada(object sender, EventArgs e)
 		{
 			listFinalizada.Items.Clear();
-
-			List<mdlEntrada> entradasFinalizada = ctrlConsulta.ExibirEntradaFinalizada(dtBusca.Value.ToString("dd-MM-yyyy"));
+			List<mdlEntrada> entradasFinalizada = ctrlConsulta.ExibirEntradaFinalizada();
 
 			if (entradasFinalizada != null)
 			{
-				listFinalizada.Items.Clear();
 				var busca = entradasFinalizada.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
-				if (busca.Count() != 0)
+				if (busca.Count() > 0)
 				{
-
 					foreach (var item in busca)
 					{
 						double saldo;
 						if (item.pesoEntrada > item.pesoSaida)
 						{
 							saldo = item.pesoEntrada - item.pesoSaida;
-							lista = new ListViewItem(item.referencia.ToString());
-							lista.SubItems.Add(item.nomeVisitante);
-							lista.SubItems.Add(item.visitado);
-							lista.SubItems.Add(item.cnpj.ToString());
-							lista.SubItems.Add(item.cpf.ToString());
-							lista.SubItems.Add(item.placaVeiculo);
-							lista.SubItems.Add(item.dataEntrada);
-							lista.SubItems.Add(item.dataSaida);
-							lista.SubItems.Add(item.horaEntrada);
-							lista.SubItems.Add(item.horaSaida);
-							lista.SubItems.Add(item.pesoEntrada.ToString());
-							lista.SubItems.Add(item.pesoSaida.ToString());
-							lista.SubItems.Add(saldo.ToString());
-							lista.SubItems.Add(item.idUsuarioEntrada.ToString());
-							lista.SubItems.Add(item.idUsuarioSaida.ToString());
-							listFinalizada.Items.Add(lista);
 						}
-						else if (item.pesoEntrada < item.pesoSaida)
+						else
 						{
 							saldo = item.pesoSaida - item.pesoEntrada;
-							lista = new ListViewItem(item.referencia.ToString());
-							lista.SubItems.Add(item.nomeVisitante);
-							lista.SubItems.Add(item.visitado);
-							lista.SubItems.Add(item.cnpj.ToString());
-							lista.SubItems.Add(item.cpf.ToString());
-							lista.SubItems.Add(item.placaVeiculo);
-							lista.SubItems.Add(item.dataEntrada);
-							lista.SubItems.Add(item.dataSaida);
-							lista.SubItems.Add(item.horaEntrada);
-							lista.SubItems.Add(item.horaSaida);
-							lista.SubItems.Add(item.pesoEntrada.ToString());
-							lista.SubItems.Add(item.pesoSaida.ToString());
-							lista.SubItems.Add(saldo.ToString());
-							lista.SubItems.Add(item.idUsuarioEntrada.ToString());
-							lista.SubItems.Add(item.idUsuarioSaida.ToString());
-							listFinalizada.Items.Add(lista);
-						}	
+						}
+						lista = new ListViewItem(item.referencia.ToString());
+						lista.SubItems.Add(item.nomeVisitante);
+						lista.SubItems.Add(item.visitado);
+						lista.SubItems.Add(item.cnpj.ToString());
+						lista.SubItems.Add(item.cpf.ToString());
+						lista.SubItems.Add(item.placaVeiculo);
+						lista.SubItems.Add(item.dataEntrada);
+						lista.SubItems.Add(item.dataSaida);
+						lista.SubItems.Add(item.horaEntrada);
+						lista.SubItems.Add(item.horaSaida);
+						lista.SubItems.Add(item.pesoEntrada.ToString());
+						lista.SubItems.Add(item.pesoSaida.ToString());
+						lista.SubItems.Add(saldo.ToString());
+						lista.SubItems.Add(item.idUsuarioEntrada.ToString());
+						lista.SubItems.Add(item.idUsuarioSaida.ToString());
+						listFinalizada.Items.Add(lista);
 					}
 				}
 				else

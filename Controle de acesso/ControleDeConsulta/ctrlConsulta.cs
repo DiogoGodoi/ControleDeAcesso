@@ -20,9 +20,9 @@ namespace ControleDeConsulta
 		{
 			return daoSaida.ExibirSaida();
 		}
-		public static List<mdlEntrada> ExibirEntradaFinalizada(string dt)
+		public static List<mdlEntrada> ExibirEntradaFinalizada()
 		{
-			return daoEntrada.ExibirEntradaFinalizada(dt);
+			return daoEntrada.ExibirEntradaFinalizada();
 		}
 		
 	}
