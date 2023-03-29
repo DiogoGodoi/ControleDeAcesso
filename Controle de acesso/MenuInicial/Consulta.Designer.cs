@@ -33,11 +33,13 @@
 			this.listEntrada = new System.Windows.Forms.ListView();
 			this.ColRef = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colNomeVisitante = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colCpf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colTransportadora = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colCnpj = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.ColNatureza = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colVisitado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colDataEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colHoraEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.colCpf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.colCnpj = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colPesoEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colPlacaVeiculo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colIdUsuario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -51,9 +53,9 @@
 			this.listFinalizada = new System.Windows.Forms.ListView();
 			this.colFinRef = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colFinNomeVisitante = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.colFinNomeVisitado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.colFinCnpj = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colFinCpf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colFinTransportadora = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colFinCnpj = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colFinPlacaVeiculo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colFinDataEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colFinDataSaida = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -62,6 +64,8 @@
 			this.colFinPesoEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colFinPesoSaida = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colFinPesoSaldo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colFinNatureza = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.colFinNomeVisitado = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colFinUsuarioEntrada = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.colFinUsuarioSaida = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.tabControle = new System.Windows.Forms.TabControl();
@@ -108,11 +112,13 @@
 			this.listEntrada.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ColRef,
             this.colNomeVisitante,
+            this.colCpf,
+            this.colTransportadora,
+            this.colCnpj,
+            this.ColNatureza,
             this.colVisitado,
             this.colDataEntrada,
             this.colHoraEntrada,
-            this.colCpf,
-            this.colCnpj,
             this.colPesoEntrada,
             this.colPlacaVeiculo,
             this.colIdUsuario});
@@ -142,6 +148,29 @@
 			this.colNomeVisitante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.colNomeVisitante.Width = 232;
 			// 
+			// colCpf
+			// 
+			this.colCpf.Text = "Cpf";
+			this.colCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colCpf.Width = 100;
+			// 
+			// colTransportadora
+			// 
+			this.colTransportadora.Text = "Transportadora";
+			this.colTransportadora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colTransportadora.Width = 100;
+			// 
+			// colCnpj
+			// 
+			this.colCnpj.Text = "Cnpj";
+			this.colCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colCnpj.Width = 100;
+			// 
+			// ColNatureza
+			// 
+			this.ColNatureza.Text = "Natureza";
+			this.ColNatureza.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			// 
 			// colVisitado
 			// 
 			this.colVisitado.Text = "Visitado";
@@ -159,18 +188,6 @@
 			this.colHoraEntrada.Text = "Hora da Entrada";
 			this.colHoraEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.colHoraEntrada.Width = 100;
-			// 
-			// colCpf
-			// 
-			this.colCpf.Text = "Cpf";
-			this.colCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colCpf.Width = 100;
-			// 
-			// colCnpj
-			// 
-			this.colCnpj.Text = "Cnpj";
-			this.colCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colCnpj.Width = 100;
 			// 
 			// colPesoEntrada
 			// 
@@ -254,9 +271,9 @@
 			this.listFinalizada.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colFinRef,
             this.colFinNomeVisitante,
-            this.colFinNomeVisitado,
-            this.colFinCnpj,
             this.colFinCpf,
+            this.colFinTransportadora,
+            this.colFinCnpj,
             this.colFinPlacaVeiculo,
             this.colFinDataEntrada,
             this.colFinDataSaida,
@@ -265,6 +282,8 @@
             this.colFinPesoEntrada,
             this.colFinPesoSaida,
             this.colFinPesoSaldo,
+            this.colFinNatureza,
+            this.colFinNomeVisitado,
             this.colFinUsuarioEntrada,
             this.colFinUsuarioSaida});
 			this.listFinalizada.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -291,25 +310,25 @@
 			// 
 			this.colFinNomeVisitante.Text = "Nome do Visitante";
 			this.colFinNomeVisitante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colFinNomeVisitante.Width = 163;
-			// 
-			// colFinNomeVisitado
-			// 
-			this.colFinNomeVisitado.Text = "Visitado";
-			this.colFinNomeVisitado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colFinNomeVisitado.Width = 163;
-			// 
-			// colFinCnpj
-			// 
-			this.colFinCnpj.Text = "Cnpj";
-			this.colFinCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colFinCnpj.Width = 100;
+			this.colFinNomeVisitante.Width = 180;
 			// 
 			// colFinCpf
 			// 
 			this.colFinCpf.Text = "Cpf";
 			this.colFinCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			this.colFinCpf.Width = 80;
+			// 
+			// colFinTransportadora
+			// 
+			this.colFinTransportadora.Text = "Transportadora";
+			this.colFinTransportadora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colFinTransportadora.Width = 180;
+			// 
+			// colFinCnpj
+			// 
+			this.colFinCnpj.Text = "Cnpj";
+			this.colFinCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colFinCnpj.Width = 100;
 			// 
 			// colFinPlacaVeiculo
 			// 
@@ -321,48 +340,60 @@
 			// 
 			this.colFinDataEntrada.Text = "Data da entrada";
 			this.colFinDataEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colFinDataEntrada.Width = 90;
+			this.colFinDataEntrada.Width = 100;
 			// 
 			// colFinDataSaida
 			// 
 			this.colFinDataSaida.Text = "Data da saida";
 			this.colFinDataSaida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colFinDataSaida.Width = 80;
+			this.colFinDataSaida.Width = 100;
 			// 
 			// colFinHoraEntrada
 			// 
 			this.colFinHoraEntrada.Text = "Hora da entrada";
 			this.colFinHoraEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colFinHoraEntrada.Width = 90;
+			this.colFinHoraEntrada.Width = 100;
 			// 
 			// colFinHoraSaida
 			// 
 			this.colFinHoraSaida.Text = "Hora da saída";
 			this.colFinHoraSaida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colFinHoraSaida.Width = 80;
+			this.colFinHoraSaida.Width = 100;
 			// 
 			// colFinPesoEntrada
 			// 
 			this.colFinPesoEntrada.Text = "Peso de entrada";
 			this.colFinPesoEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colFinPesoEntrada.Width = 90;
+			this.colFinPesoEntrada.Width = 100;
 			// 
 			// colFinPesoSaida
 			// 
 			this.colFinPesoSaida.Text = "Peso de saida";
 			this.colFinPesoSaida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colFinPesoSaida.Width = 80;
+			this.colFinPesoSaida.Width = 100;
 			// 
 			// colFinPesoSaldo
 			// 
 			this.colFinPesoSaldo.Text = "Peso real";
 			this.colFinPesoSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colFinPesoSaldo.Width = 100;
+			// 
+			// colFinNatureza
+			// 
+			this.colFinNatureza.Text = "Natureza";
+			this.colFinNatureza.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colFinNatureza.Width = 100;
+			// 
+			// colFinNomeVisitado
+			// 
+			this.colFinNomeVisitado.Text = "Visitado";
+			this.colFinNomeVisitado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.colFinNomeVisitado.Width = 180;
 			// 
 			// colFinUsuarioEntrada
 			// 
 			this.colFinUsuarioEntrada.Text = "ID entrada";
 			this.colFinUsuarioEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.colFinUsuarioEntrada.Width = 65;
 			// 
 			// colFinUsuarioSaida
 			// 
@@ -646,6 +677,10 @@
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Panel panel5;
 		private FontAwesome.Sharp.IconPictureBox pctLogo;
+		private System.Windows.Forms.ColumnHeader colTransportadora;
+		private System.Windows.Forms.ColumnHeader colFinTransportadora;
+		private System.Windows.Forms.ColumnHeader ColNatureza;
+		private System.Windows.Forms.ColumnHeader colFinNatureza;
 	}
 }
 

@@ -25,6 +25,8 @@ namespace EntradaDao
 		private static string placaVeiculo { get; set; }
 		private static string dataEntrada = DateTime.Now.Date.ToString("dd-MM-yyyy");
 		private static string horaEntrada { get; set; }
+		private static string transportadora { get; set; }
+		private static string natureza { get; set; }
 		private static string dataSaida { get; set; }
 		private static string horaSaida { get; set; }
 		private static double pesoSaida { get; set; }
@@ -44,8 +46,8 @@ namespace EntradaDao
 			try
 			{
 				conn.Open();
-				string query = "INSERT INTO ENTRADA (nomeVisitante, visitado, dataEntrada, horaEntrada, cpf, cnpj, pesoEntrada, placaVeiculo, idUsuario) " +
-				"VALUES (@nomeVisitante, @visitado, @dataEntrada, @horaEntrada, @cpf, @cnpj, @pesoEntrada, @placaVeiculo, @idUsuario)";
+				string query = "INSERT INTO ENTRADA (nomeVisitante, visitado, dataEntrada, horaEntrada, cpf, cnpj, pesoEntrada, placaVeiculo, idUsuario, transportadora, natureza) " +
+				"VALUES (@nomeVisitante, @visitado, @dataEntrada, @horaEntrada, @cpf, @cnpj, @pesoEntrada, @placaVeiculo, @idUsuario, @transportadora, @natureza)";
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 
 				var pmtNomeVisitante = cmd.CreateParameter();
@@ -102,6 +104,18 @@ namespace EntradaDao
 				pmtIdUsuario.Value = Entrada.idUsuario;
 				cmd.Parameters.Add(pmtIdUsuario);
 
+				var pmtTransportadora = cmd.CreateParameter();
+				pmtTransportadora.ParameterName = "@transportadora";
+				pmtTransportadora.DbType = DbType.String;
+				pmtTransportadora.Value = Entrada.transportadora;
+				cmd.Parameters.Add(pmtTransportadora);
+
+				var pmtNatureza = cmd.CreateParameter();
+				pmtNatureza.ParameterName = "@natureza";
+				pmtNatureza.DbType = DbType.String;
+				pmtNatureza.Value = Entrada.natureza;
+				cmd.Parameters.Add(pmtNatureza);
+
 				if (cmd.ExecuteNonQuery() > 0)
 				{
 					conn.Close();
@@ -151,9 +165,10 @@ namespace EntradaDao
 				if (leitura.Read() == true)
 				{
 					nomeVisitante = leitura["nomeVisitante"].ToString().ToUpper(); ;
-					visitado = leitura["visitado"].ToString().ToUpper();
 					cpf = Convert.ToInt64(leitura["cpf"]);
+					transportadora = leitura["transportadora"].ToString().ToUpper();
 					cnpj = Convert.ToInt64(leitura["cnpj"]);
+					visitado = leitura["visitado"].ToString().ToUpper();
 					placaVeiculo = leitura["placaVeiculo"].ToString();
 					dataEntrada = leitura["dataEntrada"].ToString();
 					horaEntrada = leitura["horaEntrada"].ToString();
@@ -207,14 +222,16 @@ namespace EntradaDao
 					{
 						var pmtReferencia = Convert.ToInt32(dados["ref"]);
 						var pmtNomeVisitante = dados["nomeVisitante"].ToString().ToUpper();
-						var pmtVisitado = dados["visitado"].ToString().ToUpper();
 						var pmtCpf = Convert.ToInt64(dados["cpf"]);
+						var pmtVisitado = dados["visitado"].ToString().ToUpper();
+						var pmtTransportadora = dados["transportadora"].ToString().ToUpper();
 						var pmtCnpj = Convert.ToInt64(dados["cnpj"]);
 						var pmtPlacaVeiculo = dados["placaVeiculo"].ToString();
 						var pmtDataEntrada = dados["dataEntrada"].ToString();
 						var pmtHoraEntrada = dados["horaEntrada"].ToString();
 						var pmtPesoEntrada = Convert.ToDouble(dados["pesoEntrada"]);
-						entradas.Add(new mdlEntrada(pmtReferencia, pmtNomeVisitante, pmtVisitado, pmtDataEntrada, pmtHoraEntrada, pmtCpf, pmtCnpj, pmtPesoEntrada, pmtPlacaVeiculo));
+						var pmtNatureza = dados["natureza"].ToString().ToUpper();
+						entradas.Add(new mdlEntrada(pmtReferencia, pmtNomeVisitante, pmtVisitado, pmtDataEntrada, pmtHoraEntrada, pmtCpf, pmtCnpj, pmtPesoEntrada, pmtPlacaVeiculo, pmtTransportadora, pmtNatureza));
 					}
 
 					return entradas;
@@ -251,16 +268,17 @@ namespace EntradaDao
 			try
 			{
 				conn.Open();
-				string query = $"SELECT Entrada.nomeVisitante, Entrada.visitado, Entrada.cnpj, Entrada.cpf, Entrada.placaVeiculo, Entrada.dataEntrada, Saida.dataSaida, Entrada.horaEntrada, Saida.horaSaida, Entrada.pesoEntrada, Saida.pesoSaida, Entrada.idUsuario, Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.ref=Saida.ref WHERE Entrada.ref = {dados}";
+				string query = $"SELECT Entrada.nomeVisitante, Entrada.cpf, Entrada.transportadora, Entrada.cnpj, Entrada.visitado, Entrada.natureza, Entrada.placaVeiculo, Entrada.dataEntrada, Saida.dataSaida, Entrada.horaEntrada, Saida.horaSaida, Entrada.pesoEntrada, Saida.pesoSaida, Entrada.idUsuario, Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.ref=Saida.ref WHERE Entrada.ref = {dados}";
 				
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				var leitura = cmd.ExecuteReader();	
 				if(leitura.Read() == true)
 				{
 					nomeVisitante = leitura["nomeVisitante"].ToString().ToUpper();
-					visitado = leitura["visitado"].ToString().ToUpper();
 					cpf = Convert.ToInt64(leitura["cpf"]);
 					cnpj = Convert.ToInt64(leitura["cnpj"]);
+					transportadora = leitura["transportadora"].ToString().ToUpper();
+					visitado = leitura["visitado"].ToString().ToUpper();
 					placaVeiculo = leitura["placaVeiculo"].ToString();
 					dataEntrada = leitura["dataEntrada"].ToString();
 					horaEntrada = leitura["horaEntrada"].ToString();
@@ -268,6 +286,8 @@ namespace EntradaDao
 					dataSaida = leitura["dataSaida"].ToString();
 					horaSaida = leitura["horaSaida"].ToString();
 					pesoSaida = Convert.ToDouble(leitura["pesoSaida"]);
+					natureza = leitura["natureza"].ToString().ToUpper();
+
 
 					return true;
 				}
@@ -300,7 +320,8 @@ namespace EntradaDao
 			try
 			{
 				conn.Open();
-				string query = "SELECT Entrada.Ref, Entrada.nomeVisitante, Entrada.visitado, " +
+				string query = "SELECT Entrada.Ref, Entrada.nomeVisitante, Entrada.transportadora," +
+					"Entrada.visitado, Entrada.natureza," +
 					"Entrada.cpf, Entrada.cnpj, " +
 					"Entrada.dataEntrada, Saida.dataSaida, " +
 					"Entrada.horaEntrada, Saida.horaSaida, " +
@@ -319,9 +340,10 @@ namespace EntradaDao
 					foreach (DataRow dados in tabela.Rows) {
 						var pmtRef = Convert.ToInt32(dados["ref"]);
 						var pmtNomeVisitante = dados["nomeVisitante"].ToString().ToUpper();
-						var pmtVisitado = dados["visitado"].ToString().ToUpper();
 						var pmtCpf = Convert.ToInt64(dados["cpf"]);
+						var pmtTransportadora = dados["transportadora"].ToString().ToUpper();
 						var pmtCnpj = Convert.ToInt64(dados["cnpj"]);
+						var pmtVisitado = dados["visitado"].ToString().ToUpper();
 						var pmtPlacaVeiculo = dados["placaVeiculo"].ToString();
 						var pmtDataEntrada = dados["dataEntrada"].ToString();
 						var pmtDataSaida = dados["dataSaida"].ToString();
@@ -331,6 +353,7 @@ namespace EntradaDao
 						var pmtPesoSaida = Convert.ToDouble(dados["pesoSaida"]);
 						var pmtIdUsuarioEntrada = Convert.ToInt32(dados["idUsuario"]);
 						var pmtIdUsuarioSaida = Convert.ToInt32(dados["idUsuario"]);
+						var pmtNatureza = dados["natureza"].ToString().ToUpper();
 						entradaFinalizada.Add(new mdlEntrada(
 							pmtRef,
 							pmtNomeVisitante, pmtVisitado, 
@@ -339,7 +362,7 @@ namespace EntradaDao
 							pmtDataSaida, pmtHoraEntrada, 
 							pmtHoraSaida, pmtPesoEntrada, 
 							pmtPesoSaida, pmtIdUsuarioEntrada, 
-							pmtIdUsuarioSaida));
+							pmtIdUsuarioSaida, pmtTransportadora, pmtNatureza));
 					}
 					return entradaFinalizada;
 				}
@@ -397,6 +420,14 @@ namespace EntradaDao
 		public static string GetHoraEntrada()
 		{
 			return horaEntrada;
+		}
+		public static string GetTransportadora()
+		{
+			return transportadora;
+		}
+		public static string GetNatureza()
+		{
+			return natureza;
 		}
 		public static string GetDataSaida()
 		{

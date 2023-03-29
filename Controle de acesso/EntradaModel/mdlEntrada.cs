@@ -25,8 +25,10 @@ namespace EntradaModel
 		public double pesoEntrada { get; set; }
 		public double pesoSaida { get; set; }
 		public int idUsuarioEntrada { get; set; }
-		public int idUsuarioSaida { get;set; }
+		public int idUsuarioSaida { get; set; }
 		public int idUsuario = daoUsuario.idUsuario;
+		public string transportadora { get; set; }
+		public string natureza { get; set; }
 
 		//Construtores
 		public mdlEntrada() { }
@@ -36,7 +38,9 @@ namespace EntradaModel
 			long cnpj,
 			double pesoEntrada,
 			string visitado,
-			string placaVeiculo)
+			string placaVeiculo,
+			string transportadora,
+			string natureza)
 		{
 			this.nomeVisitante = nomeVisitante;
 			this.cpf = cpf;
@@ -44,6 +48,8 @@ namespace EntradaModel
 			this.pesoEntrada = pesoEntrada;
 			this.visitado = visitado;
 			this.placaVeiculo = placaVeiculo;
+			this.transportadora = transportadora;
+			this.natureza = natureza;
 		}
 		public mdlEntrada(
 			int referenci,
@@ -54,7 +60,9 @@ namespace EntradaModel
 			long cpf,
 			long cnpj,
 			double pesoEntrada,
-			string placaVeiculo)
+			string placaVeiculo,
+			string transportadora,
+			string natureza)
 		{
 			this.referencia = referenci;
 			this.nomeVisitante = nomeVisitante;
@@ -65,6 +73,8 @@ namespace EntradaModel
 			this.cnpj = cnpj;
 			this.pesoEntrada = pesoEntrada;
 			this.placaVeiculo = placaVeiculo;
+			this.transportadora = transportadora;
+			this.natureza = natureza;
 		}
 		public mdlEntrada(
 			int referenci,
@@ -80,8 +90,9 @@ namespace EntradaModel
 			double pesoEntrada,
 			double pesoSaida,
 			int idUsuarioEntrada,
-			int idUsuarioSaida
-			)
+			int idUsuarioSaida,
+			string transportadora, 
+			string natureza)
 		{
 			this.referencia = referenci;
 			this.nomeVisitante = nVisitante;
@@ -97,6 +108,8 @@ namespace EntradaModel
 			this.pesoSaida = pesoSaida;
 			this.idUsuarioEntrada = idUsuarioEntrada;
 			this.idUsuarioSaida = idUsuarioSaida;
+			this.transportadora = transportadora;
+			this.natureza = natureza;
 		}
 	}
 

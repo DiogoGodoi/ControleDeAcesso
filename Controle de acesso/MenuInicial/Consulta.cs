@@ -40,11 +40,13 @@ namespace Menu_Inicial
 					{
 						lista = new ListViewItem(item.referencia.ToString());
 						lista.SubItems.Add(item.nomeVisitante);
+						lista.SubItems.Add(item.cpf.ToString());
+						lista.SubItems.Add(item.transportadora);
+						lista.SubItems.Add(item.cnpj.ToString());
+						lista.SubItems.Add(item.natureza);
 						lista.SubItems.Add(item.visitado);
 						lista.SubItems.Add(item.dataEntrada);
 						lista.SubItems.Add(item.horaEntrada);
-						lista.SubItems.Add(item.cpf.ToString());
-						lista.SubItems.Add(item.cnpj.ToString());
 						lista.SubItems.Add(item.pesoEntrada.ToString());
 						lista.SubItems.Add(item.placaVeiculo);
 						lista.SubItems.Add(item.idUsuario.ToString());
@@ -63,12 +65,16 @@ namespace Menu_Inicial
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
 					listEntrada.Items.Add(lista);
 				}
 			}
 			else
 			{
 				lista = new ListViewItem("Sem dados");
+				lista.SubItems.Add("Sem dados");
+				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
@@ -99,11 +105,13 @@ namespace Menu_Inicial
 					{
 						lista = new ListViewItem(item.referencia.ToString());
 						lista.SubItems.Add(item.nomeVisitante);
+						lista.SubItems.Add(item.cpf.ToString());
+						lista.SubItems.Add(item.transportadora);
+						lista.SubItems.Add(item.cnpj.ToString());
+						lista.SubItems.Add(item.natureza);
 						lista.SubItems.Add(item.visitado);
 						lista.SubItems.Add(item.dataEntrada);
 						lista.SubItems.Add(item.horaEntrada);
-						lista.SubItems.Add(item.cpf.ToString());
-						lista.SubItems.Add(item.cnpj.ToString());
 						lista.SubItems.Add(item.pesoEntrada.ToString());
 						lista.SubItems.Add(item.placaVeiculo);
 						lista.SubItems.Add(item.idUsuario.ToString());
@@ -114,6 +122,8 @@ namespace Menu_Inicial
 				{
 					listEntrada.Items.Clear();
 					lista = new ListViewItem("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
@@ -157,18 +167,18 @@ namespace Menu_Inicial
 			}
 			else if(tabAcessoFinalizado.Focus())
 			{
+				listFinalizada.Items.Clear();
 				var busca = entradasFinalizadas.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
 				if(busca.Count() > 0)
 				{
-					listFinalizada.Items.Clear();
 					foreach (var item in busca)
 					{
 						double saldo = item.pesoEntrada - item.pesoSaida;
 						lista = new ListViewItem(item.referencia.ToString());
 						lista.SubItems.Add(item.nomeVisitante);
-						lista.SubItems.Add(item.visitado);
-						lista.SubItems.Add(item.cnpj.ToString());
 						lista.SubItems.Add(item.cpf.ToString());
+						lista.SubItems.Add(item.transportadora);
+						lista.SubItems.Add(item.cnpj.ToString());
 						lista.SubItems.Add(item.placaVeiculo);
 						lista.SubItems.Add(item.dataEntrada);
 						lista.SubItems.Add(item.dataSaida);
@@ -177,6 +187,8 @@ namespace Menu_Inicial
 						lista.SubItems.Add(item.pesoEntrada.ToString());
 						lista.SubItems.Add(item.pesoSaida.ToString());
 						lista.SubItems.Add(saldo.ToString());
+						lista.SubItems.Add(item.natureza);
+						lista.SubItems.Add(item.visitado);
 						lista.SubItems.Add(item.idUsuarioEntrada.ToString());
 						lista.SubItems.Add(item.idUsuarioSaida.ToString());
 						listFinalizada.Items.Add(lista);
@@ -185,6 +197,8 @@ namespace Menu_Inicial
 				else
 				{
 					lista = new ListViewItem("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
@@ -217,11 +231,13 @@ namespace Menu_Inicial
 					{
 						lista = new ListViewItem(item.referencia.ToString());
 						lista.SubItems.Add(item.nomeVisitante);
+						lista.SubItems.Add(item.cpf.ToString());
+						lista.SubItems.Add(item.transportadora);
+						lista.SubItems.Add(item.cnpj.ToString());
+						lista.SubItems.Add(item.natureza);
 						lista.SubItems.Add(item.visitado);
 						lista.SubItems.Add(item.dataEntrada);
 						lista.SubItems.Add(item.horaEntrada);
-						lista.SubItems.Add(item.cpf.ToString());
-						lista.SubItems.Add(item.cnpj.ToString());
 						lista.SubItems.Add(item.pesoEntrada.ToString());
 						lista.SubItems.Add(item.placaVeiculo);
 						lista.SubItems.Add(item.idUsuario.ToString());
@@ -240,12 +256,14 @@ namespace Menu_Inicial
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
 					listEntrada.Items.Add(lista);
 				}
 			}
 			else
 			{
 				lista = new ListViewItem("Sem dados");
+				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
@@ -312,20 +330,21 @@ namespace Menu_Inicial
 				{
 					foreach (var item in busca)
 					{
-						double saldo;
+						var saldo = 0.0;
+
 						if (item.pesoEntrada > item.pesoSaida)
 						{
 							saldo = item.pesoEntrada - item.pesoSaida;
 						}
-						else
-						{
+						else if (item.pesoSaida > item.pesoEntrada) {
 							saldo = item.pesoSaida - item.pesoEntrada;
 						}
+
 						lista = new ListViewItem(item.referencia.ToString());
 						lista.SubItems.Add(item.nomeVisitante);
-						lista.SubItems.Add(item.visitado);
-						lista.SubItems.Add(item.cnpj.ToString());
 						lista.SubItems.Add(item.cpf.ToString());
+						lista.SubItems.Add(item.transportadora);
+						lista.SubItems.Add(item.cnpj.ToString());
 						lista.SubItems.Add(item.placaVeiculo);
 						lista.SubItems.Add(item.dataEntrada);
 						lista.SubItems.Add(item.dataSaida);
@@ -334,6 +353,8 @@ namespace Menu_Inicial
 						lista.SubItems.Add(item.pesoEntrada.ToString());
 						lista.SubItems.Add(item.pesoSaida.ToString());
 						lista.SubItems.Add(saldo.ToString());
+						lista.SubItems.Add(item.natureza);
+						lista.SubItems.Add(item.visitado);
 						lista.SubItems.Add(item.idUsuarioEntrada.ToString());
 						lista.SubItems.Add(item.idUsuarioSaida.ToString());
 						listFinalizada.Items.Add(lista);
@@ -355,6 +376,8 @@ namespace Menu_Inicial
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
 					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
+					lista.SubItems.Add("Sem dados");
 					listFinalizada.Items.Add(lista);
 				}
 
@@ -362,6 +385,7 @@ namespace Menu_Inicial
 			else
 			{
 				lista = new ListViewItem("Sem dados");
+				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");
 				lista.SubItems.Add("Sem dados");

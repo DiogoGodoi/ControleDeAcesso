@@ -21,6 +21,8 @@ namespace Menu_Inicial
 	{
 		//Atributos
 		private string nomeVisitante;
+		private string transportadora;
+		private string natureza;
 		private long cpf;
 		private long cnpj;
 		private double pesoEntrada;
@@ -47,6 +49,7 @@ namespace Menu_Inicial
 					if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
 					{
 						nomeVisitante = txtNomeVisitante.Text;
+						transportadora = txtTransportadora.Text;
 						visitado = txtNomeVisitado.Text;
 						placaVeiculo = txtPlacaVeiculo.Text;
 						cpf = 0;
@@ -56,6 +59,7 @@ namespace Menu_Inicial
 					else if (txtCpf.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
 					{
 						nomeVisitante = txtNomeVisitante.Text;
+						transportadora = txtTransportadora.Text;
 						visitado = txtNomeVisitado.Text;
 						placaVeiculo = txtPlacaVeiculo.Text;
 						cpf = 0;
@@ -65,6 +69,7 @@ namespace Menu_Inicial
 					else if (txtCnpj.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
 					{
 						nomeVisitante = txtNomeVisitante.Text;
+						transportadora = txtTransportadora.Text;
 						visitado = txtNomeVisitado.Text;
 						placaVeiculo = txtPlacaVeiculo.Text;
 						cpf = Convert.ToInt64(txtCpf.Text);
@@ -74,6 +79,7 @@ namespace Menu_Inicial
 					else if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty)
 					{
 						nomeVisitante = txtNomeVisitante.Text;
+						transportadora = txtTransportadora.Text;
 						visitado = txtNomeVisitado.Text;
 						placaVeiculo = txtPlacaVeiculo.Text;
 						cpf = 0;
@@ -83,6 +89,7 @@ namespace Menu_Inicial
 					else if (txtCpf.Text == String.Empty)
 					{
 						nomeVisitante = txtNomeVisitante.Text;
+						transportadora = txtTransportadora.Text;
 						visitado = txtNomeVisitado.Text;
 						placaVeiculo = txtPlacaVeiculo.Text;
 						cpf = 0;
@@ -92,6 +99,7 @@ namespace Menu_Inicial
 					else if (txtCnpj.Text == String.Empty)
 					{
 						nomeVisitante = txtNomeVisitante.Text;
+						transportadora = txtTransportadora.Text;
 						visitado = txtNomeVisitado.Text;
 						placaVeiculo = txtPlacaVeiculo.Text;
 						cpf = Convert.ToInt64(txtCpf.Text);
@@ -101,6 +109,7 @@ namespace Menu_Inicial
 					else
 					{
 						nomeVisitante = txtNomeVisitante.Text;
+						transportadora = txtTransportadora.Text;
 						visitado = txtNomeVisitado.Text;
 						placaVeiculo = txtPlacaVeiculo.Text;
 						cpf = Convert.ToInt64(txtCpf.Text);
@@ -152,7 +161,7 @@ namespace Menu_Inicial
 						&& txtPesoEntrada.Text != String.Empty)
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada dados = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
+						mdlEntrada dados = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza);
 
 						bool retorno = ctrlEntrada.EfetuarEntrada(dados);
 
@@ -181,7 +190,7 @@ namespace Menu_Inicial
 						&& txtPlacaVeiculo.Text != String.Empty)
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
+						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza);
 
 						bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
 
@@ -204,7 +213,7 @@ namespace Menu_Inicial
 					else
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo);
+						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza);
 
 						bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
 
@@ -235,6 +244,18 @@ namespace Menu_Inicial
 		private void frmEntrada_Load(object sender, EventArgs e)
 		{
 			this.WindowState = FormWindowState.Maximized;
+		}
+		private void radVisita_CheckedChanged(object sender, EventArgs e)
+		{
+			natureza = radVisita.Text = "VISITA";
+		}
+		private void radColeta_CheckedChanged(object sender, EventArgs e)
+		{
+			natureza = radColeta.Text = "COLETA";
+		}
+		private void radEntrega_CheckedChanged(object sender, EventArgs e)
+		{
+			natureza = radEntrega.Text = "ENTREGA";
 		}
 	}
 }
