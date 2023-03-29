@@ -150,8 +150,8 @@ namespace EntradaDao
 				var leitura = cmd.ExecuteReader();
 				if (leitura.Read() == true)
 				{
-					nomeVisitante = leitura["nomeVisitante"].ToString();
-					visitado = leitura["visitado"].ToString();
+					nomeVisitante = leitura["nomeVisitante"].ToString().ToUpper(); ;
+					visitado = leitura["visitado"].ToString().ToUpper();
 					cpf = Convert.ToInt64(leitura["cpf"]);
 					cnpj = Convert.ToInt64(leitura["cnpj"]);
 					placaVeiculo = leitura["placaVeiculo"].ToString();
@@ -206,8 +206,8 @@ namespace EntradaDao
 					foreach (DataRow dados in tabela.Rows)
 					{
 						var pmtReferencia = Convert.ToInt32(dados["ref"]);
-						var pmtNomeVisitante = dados["nomeVisitante"].ToString();
-						var pmtVisitado = dados["visitado"].ToString();
+						var pmtNomeVisitante = dados["nomeVisitante"].ToString().ToUpper();
+						var pmtVisitado = dados["visitado"].ToString().ToUpper();
 						var pmtCpf = Convert.ToInt64(dados["cpf"]);
 						var pmtCnpj = Convert.ToInt64(dados["cnpj"]);
 						var pmtPlacaVeiculo = dados["placaVeiculo"].ToString();
@@ -257,8 +257,8 @@ namespace EntradaDao
 				var leitura = cmd.ExecuteReader();	
 				if(leitura.Read() == true)
 				{
-					nomeVisitante = leitura["nomeVisitante"].ToString();
-					visitado = leitura["visitado"].ToString();
+					nomeVisitante = leitura["nomeVisitante"].ToString().ToUpper();
+					visitado = leitura["visitado"].ToString().ToUpper();
 					cpf = Convert.ToInt64(leitura["cpf"]);
 					cnpj = Convert.ToInt64(leitura["cnpj"]);
 					placaVeiculo = leitura["placaVeiculo"].ToString();
@@ -318,8 +318,8 @@ namespace EntradaDao
 				{
 					foreach (DataRow dados in tabela.Rows) {
 						var pmtRef = Convert.ToInt32(dados["ref"]);
-						var pmtNomeVisitante = dados["nomeVisitante"].ToString();
-						var pmtVisitado = dados["visitado"].ToString();
+						var pmtNomeVisitante = dados["nomeVisitante"].ToString().ToUpper();
+						var pmtVisitado = dados["visitado"].ToString().ToUpper();
 						var pmtCpf = Convert.ToInt64(dados["cpf"]);
 						var pmtCnpj = Convert.ToInt64(dados["cnpj"]);
 						var pmtPlacaVeiculo = dados["placaVeiculo"].ToString();

@@ -117,7 +117,7 @@ namespace SaidaDao
 					foreach (DataRow dados in tabela.Rows)
 					{
 						var pmtSaidaRef = Convert.ToInt32(dados["ref"]);
-						var pmtEntradaNomeVisitante = dados["nomeVisitante"].ToString();
+						var pmtEntradaNomeVisitante = dados["nomeVisitante"].ToString().ToUpper();
 						var pmtSaidaDataSaida = dados["dataSaida"].ToString();
 						var pmtSaidaHoraSaida = dados["horaSaida"].ToString();
 						var pmtSaidaPesoSaida = Convert.ToDouble(dados["pesoSaida"]);
