@@ -32,10 +32,12 @@
 			this.panelNav = new System.Windows.Forms.Panel();
 			this.lblTitulo = new System.Windows.Forms.Label();
 			this.pctLogo = new System.Windows.Forms.PictureBox();
-			this.progress = new System.Windows.Forms.ProgressBar();
+			this.panel1 = new System.Windows.Forms.Panel();
 			this.lblCarregamento = new System.Windows.Forms.Label();
+			this.progress = new System.Windows.Forms.ProgressBar();
 			this.panelNav.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// panelNav
@@ -72,33 +74,44 @@
 			this.pctLogo.TabIndex = 1;
 			this.pctLogo.TabStop = false;
 			// 
-			// progress
+			// panel1
 			// 
-			this.progress.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.progress.Location = new System.Drawing.Point(52, 306);
-			this.progress.Name = "progress";
-			this.progress.Size = new System.Drawing.Size(358, 23);
-			this.progress.TabIndex = 2;
+			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel1.Controls.Add(this.lblCarregamento);
+			this.panel1.Controls.Add(this.progress);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panel1.Location = new System.Drawing.Point(0, 297);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(456, 75);
+			this.panel1.TabIndex = 2;
 			// 
 			// lblCarregamento
 			// 
 			this.lblCarregamento.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblCarregamento.AutoSize = true;
 			this.lblCarregamento.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCarregamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.lblCarregamento.Location = new System.Drawing.Point(49, 288);
+			this.lblCarregamento.ForeColor = System.Drawing.Color.White;
+			this.lblCarregamento.Location = new System.Drawing.Point(49, 10);
 			this.lblCarregamento.Name = "lblCarregamento";
 			this.lblCarregamento.Size = new System.Drawing.Size(47, 15);
-			this.lblCarregamento.TabIndex = 3;
+			this.lblCarregamento.TabIndex = 5;
 			this.lblCarregamento.Text = "label1";
+			// 
+			// progress
+			// 
+			this.progress.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.progress.Location = new System.Drawing.Point(52, 28);
+			this.progress.Name = "progress";
+			this.progress.Size = new System.Drawing.Size(358, 23);
+			this.progress.TabIndex = 4;
 			// 
 			// frmSplash
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(456, 372);
-			this.Controls.Add(this.lblCarregamento);
-			this.Controls.Add(this.progress);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.pctLogo);
 			this.Controls.Add(this.panelNav);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -110,8 +123,9 @@
 			this.panelNav.ResumeLayout(false);
 			this.panelNav.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
@@ -119,8 +133,9 @@
 		private System.Windows.Forms.Label lblTitulo;
 		private System.Windows.Forms.Panel panelNav;
 		private System.Windows.Forms.PictureBox pctLogo;
-		private System.Windows.Forms.ProgressBar progress;
+		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Label lblCarregamento;
+		private System.Windows.Forms.ProgressBar progress;
 	}
 }
 
