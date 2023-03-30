@@ -85,7 +85,11 @@ namespace ControleDeAcesso
 		private void Sair(object sender, EventArgs e)
 		{
 			//método para fechar janela atual
-			this.Close();
+			DialogResult mensagem = MessageBox.Show("Deseja realmente sair ?", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if (mensagem == DialogResult.Yes)
+			{
+				this.Close();
+			}
 		}
 	}
 }

@@ -41,8 +41,6 @@ namespace Saida
 			//Blobo try catch para evitar quebras no sistema
 			try
 			{
-				DialogResult mensagem = MessageBox.Show("Confirma a saída", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-				if(mensagem == DialogResult.Yes) { 
 					referencia = Convert.ToInt32(txtReferencia.Text);
 					dataSaida = dtSaida.Value.ToString("dd-MM-yyyy");
 					horaSaida = hrSaida.Value.ToString("HH:mm");
@@ -66,6 +64,10 @@ namespace Saida
 					}
 					else
 					{
+					DialogResult mensagem = MessageBox.Show("Confirma a saída", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+					if (mensagem == DialogResult.Yes)
+					{
+
 						bool retorno = ctrlSaida.EfetuarSaida(dados);
 						if (retorno == true)
 						{

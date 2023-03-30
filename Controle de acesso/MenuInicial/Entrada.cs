@@ -43,7 +43,7 @@ namespace Menu_Inicial
 			{
 				DialogResult mensagem = MessageBox.Show("Confirma a entrada ?", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-				if(mensagem == DialogResult.Yes)
+				if (mensagem == DialogResult.Yes)
 				{
 					//Pré validação dos campos do tipo numérico para inicialização
 					if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
@@ -135,6 +135,14 @@ namespace Menu_Inicial
 					{
 						MessageBox.Show("Por favor insira o cpf ou o cnpj do visitante", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
+					else if (txtTransportadora.Text == String.Empty)
+					{
+						MessageBox.Show("Por favor insira o nome da transportadora", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else if (radColeta.Checked == false && radEntrega.Checked == false && radVisita.Checked == false)
+					{
+						MessageBox.Show("Por favor insira a natureza da entrada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
 					else if (txtNomeVisitante.Text != String.Empty
 						&& txtNomeVisitado.Text != String.Empty
 						&& txtCpf.Text != String.Empty
@@ -171,6 +179,7 @@ namespace Menu_Inicial
 							MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 							txtNomeVisitante.Text = String.Empty;
 							txtNomeVisitado.Text = String.Empty;
+							txtTransportadora.Text = String.Empty;
 							txtCpf.Text = String.Empty;
 							txtCnpj.Text = String.Empty;
 							txtPesoEntrada.Text = String.Empty;
@@ -181,13 +190,14 @@ namespace Menu_Inicial
 						{
 							MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 						}
+
 					}
 					else if (txtNomeVisitante.Text != String.Empty
-						&& txtNomeVisitado.Text != String.Empty
-						&& txtCpf.Text == String.Empty
-						&& txtCnpj.Text != String.Empty
-						&& txtPesoEntrada.Text != String.Empty
-						&& txtPlacaVeiculo.Text != String.Empty)
+					&& txtNomeVisitado.Text != String.Empty
+					&& txtCpf.Text == String.Empty
+					&& txtCnpj.Text != String.Empty
+					&& txtPesoEntrada.Text != String.Empty
+					&& txtPlacaVeiculo.Text != String.Empty)
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
 						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza);
@@ -199,6 +209,7 @@ namespace Menu_Inicial
 							MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 							txtNomeVisitante.Text = String.Empty;
 							txtNomeVisitado.Text = String.Empty;
+							txtTransportadora.Text = String.Empty;
 							txtCpf.Text = String.Empty;
 							txtCnpj.Text = String.Empty;
 							txtPesoEntrada.Text = String.Empty;
@@ -222,6 +233,7 @@ namespace Menu_Inicial
 							MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 							txtNomeVisitante.Text = String.Empty;
 							txtNomeVisitado.Text = String.Empty;
+							txtTransportadora.Text = String.Empty;
 							txtCpf.Text = String.Empty;
 							txtCnpj.Text = String.Empty;
 							txtPesoEntrada.Text = String.Empty;

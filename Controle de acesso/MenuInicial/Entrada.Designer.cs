@@ -263,9 +263,9 @@
 			// 
 			this.pctLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.pctLogo.BackColor = System.Drawing.Color.White;
-			this.pctLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.pctLogo.ForeColor = System.Drawing.Color.Navy;
 			this.pctLogo.IconChar = FontAwesome.Sharp.IconChar.PersonWalking;
-			this.pctLogo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.pctLogo.IconColor = System.Drawing.Color.Navy;
 			this.pctLogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.pctLogo.IconSize = 90;
 			this.pctLogo.Location = new System.Drawing.Point(301, 123);

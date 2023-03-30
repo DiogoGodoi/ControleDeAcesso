@@ -44,7 +44,11 @@ namespace Menu_Inicial
 
 		private void Sair(object sender, EventArgs e)
 		{
-			this.Close();
+			DialogResult mensagem = MessageBox.Show("Deseja realmente sair ?", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+			if(mensagem == DialogResult.Yes)
+			{
+				this.Close();
+			}
 		}
 
 		private void btnEntrada_Click(object sender, EventArgs e)

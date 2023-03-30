@@ -273,7 +273,6 @@ namespace Menu_Inicial
 				listFinalizada.Items.Add(lista);
 			}
 		}
-
 		private void btnBuscar_Click(object sender, EventArgs e)
 		{
 			List<mdlEntrada> entradas = new List<mdlEntrada>();
