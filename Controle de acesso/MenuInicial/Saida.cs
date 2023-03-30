@@ -118,8 +118,8 @@ namespace Saida
 						txtHoraEntrada.Text = dados.horaEntrada;
 						txtPesoEntrada.Text = daoEntrada.GetPesoEntrada().ToString();
 						txtPlacaVeiculo.Text = dados.placaVeiculo;
-						txtTransportadora.Text = dados.transportadora;
-						txtNatureza.Text = dados.natureza;
+						txtTransportadora.Text = daoEntrada.GetTransportadora();
+						txtNatureza.Text = daoEntrada.GetNatureza();
 
 						dataSaida = daoEntrada.GetDataSaida();
 						dtSaida.Text = dataSaida;

@@ -164,7 +164,7 @@
 			this.lblPlaca.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblPlaca.AutoSize = true;
 			this.lblPlaca.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPlaca.ForeColor = System.Drawing.Color.Black;
+			this.lblPlaca.ForeColor = System.Drawing.Color.Navy;
 			this.lblPlaca.Location = new System.Drawing.Point(62, 472);
 			this.lblPlaca.Name = "lblPlaca";
 			this.lblPlaca.Size = new System.Drawing.Size(127, 17);
@@ -176,7 +176,7 @@
 			this.lblPeso.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblPeso.AutoSize = true;
 			this.lblPeso.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPeso.ForeColor = System.Drawing.Color.Black;
+			this.lblPeso.ForeColor = System.Drawing.Color.Navy;
 			this.lblPeso.Location = new System.Drawing.Point(62, 444);
 			this.lblPeso.Name = "lblPeso";
 			this.lblPeso.Size = new System.Drawing.Size(127, 17);
@@ -188,7 +188,7 @@
 			this.lblCnpj.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblCnpj.AutoSize = true;
 			this.lblCnpj.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCnpj.ForeColor = System.Drawing.Color.Black;
+			this.lblCnpj.ForeColor = System.Drawing.Color.Navy;
 			this.lblCnpj.Location = new System.Drawing.Point(62, 367);
 			this.lblCnpj.Name = "lblCnpj";
 			this.lblCnpj.Size = new System.Drawing.Size(41, 17);
@@ -200,7 +200,7 @@
 			this.lblCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblCpf.AutoSize = true;
 			this.lblCpf.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCpf.ForeColor = System.Drawing.Color.Black;
+			this.lblCpf.ForeColor = System.Drawing.Color.Navy;
 			this.lblCpf.Location = new System.Drawing.Point(62, 313);
 			this.lblCpf.Name = "lblCpf";
 			this.lblCpf.Size = new System.Drawing.Size(33, 17);
@@ -212,7 +212,7 @@
 			this.lblNomeVisitante.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblNomeVisitante.AutoSize = true;
 			this.lblNomeVisitante.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNomeVisitante.ForeColor = System.Drawing.Color.Black;
+			this.lblNomeVisitante.ForeColor = System.Drawing.Color.Navy;
 			this.lblNomeVisitante.Location = new System.Drawing.Point(62, 282);
 			this.lblNomeVisitante.Name = "lblNomeVisitante";
 			this.lblNomeVisitante.Size = new System.Drawing.Size(137, 17);
@@ -237,7 +237,7 @@
 			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.ForeColor = System.Drawing.Color.Black;
+			this.label1.ForeColor = System.Drawing.Color.Navy;
 			this.label1.Location = new System.Drawing.Point(358, 367);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(109, 17);
@@ -249,7 +249,7 @@
 			this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.Black;
+			this.label2.ForeColor = System.Drawing.Color.Navy;
 			this.label2.Location = new System.Drawing.Point(358, 341);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(109, 17);
@@ -261,7 +261,7 @@
 			this.lblSaida.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblSaida.AutoSize = true;
 			this.lblSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblSaida.ForeColor = System.Drawing.Color.Black;
+			this.lblSaida.ForeColor = System.Drawing.Color.Navy;
 			this.lblSaida.Location = new System.Drawing.Point(358, 313);
 			this.lblSaida.Name = "lblSaida";
 			this.lblSaida.Size = new System.Drawing.Size(107, 17);
@@ -286,7 +286,7 @@
 			this.lblReferencia.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblReferencia.AutoSize = true;
 			this.lblReferencia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblReferencia.ForeColor = System.Drawing.Color.Black;
+			this.lblReferencia.ForeColor = System.Drawing.Color.Navy;
 			this.lblReferencia.Location = new System.Drawing.Point(62, 251);
 			this.lblReferencia.Name = "lblReferencia";
 			this.lblReferencia.Size = new System.Drawing.Size(172, 17);
@@ -328,7 +328,7 @@
 			this.lblDataEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblDataEntrada.AutoSize = true;
 			this.lblDataEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblDataEntrada.ForeColor = System.Drawing.Color.Black;
+			this.lblDataEntrada.ForeColor = System.Drawing.Color.Navy;
 			this.lblDataEntrada.Location = new System.Drawing.Point(62, 392);
 			this.lblDataEntrada.Name = "lblDataEntrada";
 			this.lblDataEntrada.Size = new System.Drawing.Size(125, 17);
@@ -340,7 +340,7 @@
 			this.lblHoraEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblHoraEntrada.AutoSize = true;
 			this.lblHoraEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblHoraEntrada.ForeColor = System.Drawing.Color.Black;
+			this.lblHoraEntrada.ForeColor = System.Drawing.Color.Navy;
 			this.lblHoraEntrada.Location = new System.Drawing.Point(62, 418);
 			this.lblHoraEntrada.Name = "lblHoraEntrada";
 			this.lblHoraEntrada.Size = new System.Drawing.Size(127, 17);
@@ -501,7 +501,7 @@
 			this.lblTransportadora.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblTransportadora.AutoSize = true;
 			this.lblTransportadora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTransportadora.ForeColor = System.Drawing.Color.Black;
+			this.lblTransportadora.ForeColor = System.Drawing.Color.Navy;
 			this.lblTransportadora.Location = new System.Drawing.Point(62, 338);
 			this.lblTransportadora.Name = "lblTransportadora";
 			this.lblTransportadora.Size = new System.Drawing.Size(123, 17);
@@ -527,7 +527,7 @@
 			this.lblNomeVisitado.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblNomeVisitado.AutoSize = true;
 			this.lblNomeVisitado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNomeVisitado.ForeColor = System.Drawing.Color.Black;
+			this.lblNomeVisitado.ForeColor = System.Drawing.Color.Navy;
 			this.lblNomeVisitado.Location = new System.Drawing.Point(62, 531);
 			this.lblNomeVisitado.Name = "lblNomeVisitado";
 			this.lblNomeVisitado.Size = new System.Drawing.Size(132, 17);
@@ -553,7 +553,7 @@
 			this.lblNatureza.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblNatureza.AutoSize = true;
 			this.lblNatureza.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNatureza.ForeColor = System.Drawing.Color.Black;
+			this.lblNatureza.ForeColor = System.Drawing.Color.Navy;
 			this.lblNatureza.Location = new System.Drawing.Point(62, 501);
 			this.lblNatureza.Name = "lblNatureza";
 			this.lblNatureza.Size = new System.Drawing.Size(75, 17);
@@ -604,6 +604,7 @@
 			this.Controls.Add(this.lblHoraEntrada);
 			this.Controls.Add(this.lblNomeVisitante);
 			this.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.ForeColor = System.Drawing.Color.Navy;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "frmSaida";

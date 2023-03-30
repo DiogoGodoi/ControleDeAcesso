@@ -67,7 +67,7 @@
 			this.lblNomeVisitante.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblNomeVisitante.AutoSize = true;
 			this.lblNomeVisitante.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNomeVisitante.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.lblNomeVisitante.ForeColor = System.Drawing.Color.Navy;
 			this.lblNomeVisitante.Location = new System.Drawing.Point(84, 246);
 			this.lblNomeVisitante.Name = "lblNomeVisitante";
 			this.lblNomeVisitante.Size = new System.Drawing.Size(137, 17);
@@ -79,7 +79,7 @@
 			this.lblPlaca.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblPlaca.AutoSize = true;
 			this.lblPlaca.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPlaca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.lblPlaca.ForeColor = System.Drawing.Color.Navy;
 			this.lblPlaca.Location = new System.Drawing.Point(84, 437);
 			this.lblPlaca.Name = "lblPlaca";
 			this.lblPlaca.Size = new System.Drawing.Size(127, 17);
@@ -91,7 +91,7 @@
 			this.lblPeso.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblPeso.AutoSize = true;
 			this.lblPeso.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblPeso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.lblPeso.ForeColor = System.Drawing.Color.Navy;
 			this.lblPeso.Location = new System.Drawing.Point(84, 409);
 			this.lblPeso.Name = "lblPeso";
 			this.lblPeso.Size = new System.Drawing.Size(127, 17);
@@ -103,7 +103,7 @@
 			this.lblCnpj.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblCnpj.AutoSize = true;
 			this.lblCnpj.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCnpj.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.lblCnpj.ForeColor = System.Drawing.Color.Navy;
 			this.lblCnpj.Location = new System.Drawing.Point(84, 327);
 			this.lblCnpj.Name = "lblCnpj";
 			this.lblCnpj.Size = new System.Drawing.Size(41, 17);
@@ -280,7 +280,7 @@
 			this.lblCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblCpf.AutoSize = true;
 			this.lblCpf.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCpf.ForeColor = System.Drawing.Color.Black;
+			this.lblCpf.ForeColor = System.Drawing.Color.Navy;
 			this.lblCpf.Location = new System.Drawing.Point(84, 274);
 			this.lblCpf.Name = "lblCpf";
 			this.lblCpf.Size = new System.Drawing.Size(33, 17);
@@ -305,7 +305,7 @@
 			this.lblTransportadora.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblTransportadora.AutoSize = true;
 			this.lblTransportadora.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTransportadora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.lblTransportadora.ForeColor = System.Drawing.Color.Navy;
 			this.lblTransportadora.Location = new System.Drawing.Point(84, 300);
 			this.lblTransportadora.Name = "lblTransportadora";
 			this.lblTransportadora.Size = new System.Drawing.Size(123, 17);
@@ -330,7 +330,7 @@
 			this.lblNomeVisitado.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblNomeVisitado.AutoSize = true;
 			this.lblNomeVisitado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNomeVisitado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.lblNomeVisitado.ForeColor = System.Drawing.Color.Navy;
 			this.lblNomeVisitado.Location = new System.Drawing.Point(84, 382);
 			this.lblNomeVisitado.Name = "lblNomeVisitado";
 			this.lblNomeVisitado.Size = new System.Drawing.Size(132, 17);
@@ -355,7 +355,7 @@
 			this.lblNatureza.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblNatureza.AutoSize = true;
 			this.lblNatureza.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNatureza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.lblNatureza.ForeColor = System.Drawing.Color.Navy;
 			this.lblNatureza.Location = new System.Drawing.Point(84, 356);
 			this.lblNatureza.Name = "lblNatureza";
 			this.lblNatureza.Size = new System.Drawing.Size(75, 17);
@@ -367,7 +367,7 @@
 			this.radEntrega.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.radEntrega.AutoSize = true;
 			this.radEntrega.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radEntrega.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.radEntrega.ForeColor = System.Drawing.Color.Navy;
 			this.radEntrega.Location = new System.Drawing.Point(253, 356);
 			this.radEntrega.Name = "radEntrega";
 			this.radEntrega.Size = new System.Drawing.Size(77, 19);
@@ -382,7 +382,7 @@
 			this.radColeta.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.radColeta.AutoSize = true;
 			this.radColeta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radColeta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.radColeta.ForeColor = System.Drawing.Color.Navy;
 			this.radColeta.Location = new System.Drawing.Point(376, 356);
 			this.radColeta.Name = "radColeta";
 			this.radColeta.Size = new System.Drawing.Size(68, 19);
@@ -397,7 +397,7 @@
 			this.radVisita.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.radVisita.AutoSize = true;
 			this.radVisita.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radVisita.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.radVisita.ForeColor = System.Drawing.Color.Navy;
 			this.radVisita.Location = new System.Drawing.Point(487, 356);
 			this.radVisita.Name = "radVisita";
 			this.radVisita.Size = new System.Drawing.Size(62, 19);

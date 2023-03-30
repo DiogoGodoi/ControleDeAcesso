@@ -240,22 +240,21 @@ namespace Menu_Inicial
 				MessageBox.Show("Os campos cpf, cnpj, e peso de entrada só aceitam numeros", "Mensagm", MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
-
 		private void frmEntrada_Load(object sender, EventArgs e)
 		{
 			this.WindowState = FormWindowState.Maximized;
 		}
 		private void radVisita_CheckedChanged(object sender, EventArgs e)
 		{
-			natureza = radVisita.Text = "VISITA";
+			natureza = "VISITA";
 		}
 		private void radColeta_CheckedChanged(object sender, EventArgs e)
 		{
-			natureza = radColeta.Text = "COLETA";
+			natureza = "COLETA";
 		}
 		private void radEntrega_CheckedChanged(object sender, EventArgs e)
 		{
-			natureza = radEntrega.Text = "ENTREGA";
+			natureza = "ENTREGA";
 		}
 	}
 }
