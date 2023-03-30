@@ -42,7 +42,7 @@
 			// 
 			// panelNav
 			// 
-			this.panelNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panelNav.BackColor = System.Drawing.Color.Navy;
 			this.panelNav.Controls.Add(this.lblTitulo);
 			this.panelNav.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelNav.Location = new System.Drawing.Point(0, 0);
@@ -67,16 +67,16 @@
 			// 
 			this.pctLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.pctLogo.Image = ((System.Drawing.Image)(resources.GetObject("pctLogo.Image")));
-			this.pctLogo.Location = new System.Drawing.Point(52, 104);
+			this.pctLogo.Location = new System.Drawing.Point(114, 132);
 			this.pctLogo.Name = "pctLogo";
-			this.pctLogo.Size = new System.Drawing.Size(358, 163);
+			this.pctLogo.Size = new System.Drawing.Size(223, 91);
 			this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pctLogo.TabIndex = 1;
 			this.pctLogo.TabStop = false;
 			// 
 			// panel1
 			// 
-			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel1.BackColor = System.Drawing.Color.Navy;
 			this.panel1.Controls.Add(this.lblCarregamento);
 			this.panel1.Controls.Add(this.progress);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;

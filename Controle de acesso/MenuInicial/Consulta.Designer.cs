@@ -72,7 +72,6 @@
 			this.tabEntrada = new System.Windows.Forms.TabPage();
 			this.tabSaidas = new System.Windows.Forms.TabPage();
 			this.tabAcessoFinalizado = new System.Windows.Forms.TabPage();
-			this.btnBuscar = new System.Windows.Forms.Button();
 			this.lblDataBusca = new System.Windows.Forms.Label();
 			this.dtBusca = new System.Windows.Forms.DateTimePicker();
 			this.nav = new System.Windows.Forms.Panel();
@@ -84,6 +83,7 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.pctLogo = new FontAwesome.Sharp.IconPictureBox();
+			this.btnBuscar = new FontAwesome.Sharp.IconButton();
 			this.tabControle.SuspendLayout();
 			this.tabEntrada.SuspendLayout();
 			this.tabSaidas.SuspendLayout();
@@ -456,22 +456,6 @@
 			this.tabAcessoFinalizado.Text = "Acesso finalizado";
 			this.tabAcessoFinalizado.Click += new System.EventHandler(this.ExibirEntradaFinalizada);
 			// 
-			// btnBuscar
-			// 
-			this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.btnBuscar.BackColor = System.Drawing.Color.Navy;
-			this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnBuscar.ForeColor = System.Drawing.Color.White;
-			this.btnBuscar.Location = new System.Drawing.Point(311, 475);
-			this.btnBuscar.Name = "btnBuscar";
-			this.btnBuscar.Size = new System.Drawing.Size(81, 23);
-			this.btnBuscar.TabIndex = 22;
-			this.btnBuscar.Text = "Buscar";
-			this.btnBuscar.UseVisualStyleBackColor = false;
-			this.btnBuscar.Click += new System.EventHandler(this.Buscar);
-			// 
 			// lblDataBusca
 			// 
 			this.lblDataBusca.AutoSize = true;
@@ -585,6 +569,27 @@
 			this.pctLogo.TabIndex = 38;
 			this.pctLogo.TabStop = false;
 			// 
+			// btnBuscar
+			// 
+			this.btnBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnBuscar.BackColor = System.Drawing.Color.Navy;
+			this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnBuscar.ForeColor = System.Drawing.Color.White;
+			this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.SearchLocation;
+			this.btnBuscar.IconColor = System.Drawing.Color.White;
+			this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnBuscar.IconSize = 18;
+			this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnBuscar.Location = new System.Drawing.Point(318, 477);
+			this.btnBuscar.Name = "btnBuscar";
+			this.btnBuscar.Size = new System.Drawing.Size(81, 23);
+			this.btnBuscar.TabIndex = 38;
+			this.btnBuscar.Text = "Buscar";
+			this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnBuscar.UseVisualStyleBackColor = false;
+			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+			// 
 			// frmConsulta
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -592,6 +597,7 @@
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(660, 569);
 			this.ControlBox = false;
+			this.Controls.Add(this.btnBuscar);
 			this.Controls.Add(this.panel5);
 			this.Controls.Add(this.panel4);
 			this.Controls.Add(this.panel2);
@@ -602,7 +608,6 @@
 			this.Controls.Add(this.tabControle);
 			this.Controls.Add(this.dtBusca);
 			this.Controls.Add(this.lblDataBusca);
-			this.Controls.Add(this.btnBuscar);
 			this.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -665,7 +670,6 @@
 		private System.Windows.Forms.TabPage tabEntrada;
 		private System.Windows.Forms.TabPage tabSaidas;
 		private System.Windows.Forms.TabPage tabAcessoFinalizado;
-		private System.Windows.Forms.Button btnBuscar;
 		private System.Windows.Forms.Label lblDataBusca;
 		private System.Windows.Forms.DateTimePicker dtBusca;
 		private System.Windows.Forms.Panel nav;
@@ -681,6 +685,7 @@
 		private System.Windows.Forms.ColumnHeader colFinTransportadora;
 		private System.Windows.Forms.ColumnHeader ColNatureza;
 		private System.Windows.Forms.ColumnHeader colFinNatureza;
+		private FontAwesome.Sharp.IconButton btnBuscar;
 	}
 }
 
