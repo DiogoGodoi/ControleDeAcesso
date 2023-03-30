@@ -34,8 +34,6 @@
 			this.lblSenha = new System.Windows.Forms.Label();
 			this.txtNome = new System.Windows.Forms.TextBox();
 			this.txtSenha = new System.Windows.Forms.TextBox();
-			this.btnSair = new System.Windows.Forms.Button();
-			this.btnEntrar = new System.Windows.Forms.Button();
 			this.radAcessoInterno = new System.Windows.Forms.RadioButton();
 			this.radAcessoExterno = new System.Windows.Forms.RadioButton();
 			this.nav = new System.Windows.Forms.Panel();
@@ -49,6 +47,8 @@
 			this.panel3 = new System.Windows.Forms.Panel();
 			this.panelLineFooter = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
+			this.iconButton1 = new FontAwesome.Sharp.IconButton();
+			this.iconButton2 = new FontAwesome.Sharp.IconButton();
 			this.nav.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			this.panelFooter.SuspendLayout();
@@ -119,38 +119,6 @@
 			this.txtSenha.Size = new System.Drawing.Size(222, 16);
 			this.txtSenha.TabIndex = 5;
 			this.txtSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// btnSair
-			// 
-			this.btnSair.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-			this.btnSair.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnSair.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSair.ForeColor = System.Drawing.Color.White;
-			this.btnSair.Location = new System.Drawing.Point(277, 340);
-			this.btnSair.Name = "btnSair";
-			this.btnSair.Size = new System.Drawing.Size(126, 23);
-			this.btnSair.TabIndex = 7;
-			this.btnSair.Text = "Sair";
-			this.btnSair.UseVisualStyleBackColor = false;
-			this.btnSair.Click += new System.EventHandler(this.Sair);
-			// 
-			// btnEntrar
-			// 
-			this.btnEntrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnEntrar.BackColor = System.Drawing.Color.Navy;
-			this.btnEntrar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnEntrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnEntrar.ForeColor = System.Drawing.Color.White;
-			this.btnEntrar.Location = new System.Drawing.Point(89, 340);
-			this.btnEntrar.Name = "btnEntrar";
-			this.btnEntrar.Size = new System.Drawing.Size(121, 23);
-			this.btnEntrar.TabIndex = 6;
-			this.btnEntrar.Text = "Entrar";
-			this.btnEntrar.UseVisualStyleBackColor = false;
-			this.btnEntrar.Click += new System.EventHandler(this.Entrar);
 			// 
 			// radAcessoInterno
 			// 
@@ -287,12 +255,54 @@
 			this.panel2.Size = new System.Drawing.Size(482, 10);
 			this.panel2.TabIndex = 34;
 			// 
+			// iconButton1
+			// 
+			this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+			this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.iconButton1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.iconButton1.ForeColor = System.Drawing.Color.White;
+			this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.PersonWalkingArrowLoopLeft;
+			this.iconButton1.IconColor = System.Drawing.Color.White;
+			this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.iconButton1.IconSize = 20;
+			this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iconButton1.Location = new System.Drawing.Point(277, 340);
+			this.iconButton1.Name = "iconButton1";
+			this.iconButton1.Size = new System.Drawing.Size(126, 23);
+			this.iconButton1.TabIndex = 36;
+			this.iconButton1.Text = "Sair";
+			this.iconButton1.UseVisualStyleBackColor = false;
+			this.iconButton1.Click += new System.EventHandler(this.Sair);
+			// 
+			// iconButton2
+			// 
+			this.iconButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.iconButton2.BackColor = System.Drawing.Color.Navy;
+			this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.iconButton2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.iconButton2.ForeColor = System.Drawing.Color.White;
+			this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.ArrowAltCircleRight;
+			this.iconButton2.IconColor = System.Drawing.Color.White;
+			this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.iconButton2.IconSize = 20;
+			this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iconButton2.Location = new System.Drawing.Point(90, 340);
+			this.iconButton2.Name = "iconButton2";
+			this.iconButton2.Size = new System.Drawing.Size(121, 23);
+			this.iconButton2.TabIndex = 37;
+			this.iconButton2.Text = "Entrar";
+			this.iconButton2.UseVisualStyleBackColor = false;
+			this.iconButton2.Click += new System.EventHandler(this.Entrar);
+			// 
 			// frmAutenticacao
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(492, 450);
+			this.Controls.Add(this.iconButton2);
+			this.Controls.Add(this.iconButton1);
 			this.Controls.Add(this.panel3);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
@@ -301,8 +311,6 @@
 			this.Controls.Add(this.nav);
 			this.Controls.Add(this.radAcessoExterno);
 			this.Controls.Add(this.radAcessoInterno);
-			this.Controls.Add(this.btnSair);
-			this.Controls.Add(this.btnEntrar);
 			this.Controls.Add(this.txtSenha);
 			this.Controls.Add(this.txtNome);
 			this.Controls.Add(this.lblSenha);
@@ -328,8 +336,6 @@
 		private System.Windows.Forms.Label lblSenha;
 		private System.Windows.Forms.TextBox txtNome;
 		private System.Windows.Forms.TextBox txtSenha;
-		private System.Windows.Forms.Button btnSair;
-		private System.Windows.Forms.Button btnEntrar;
 		private System.Windows.Forms.RadioButton radAcessoInterno;
 		private System.Windows.Forms.RadioButton radAcessoExterno;
 		private System.Windows.Forms.Panel nav;
@@ -343,6 +349,8 @@
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Panel panelLineFooter;
 		private System.Windows.Forms.Panel panel2;
+		private FontAwesome.Sharp.IconButton iconButton1;
+		private FontAwesome.Sharp.IconButton iconButton2;
 	}
 }
 

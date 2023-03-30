@@ -31,19 +31,20 @@ namespace ControleDeAcesso
 		}
 
 		//Configuração do botão de entrada do sistema
+
 		private void Entrar(object sender, EventArgs e)
-		{	
+		{
 			//Asociação de atributos com os campos do formulário
 			nome = txtNome.Text;
 			senha = txtSenha.Text;
 
-			if(radAcessoInterno.Checked == true)
+			if (radAcessoInterno.Checked == true)
 			{
 				string IP = "192.168.0.253";
 				uint port = 4550;
 				ctrlAcessIP acesso = new ctrlAcessIP(IP, port);
 			}
-			else if(radAcessoExterno.Checked == true)
+			else if (radAcessoExterno.Checked == true)
 			{
 				string IP = "177.67.158.126";
 				uint port = 4550;
@@ -63,7 +64,7 @@ namespace ControleDeAcesso
 				MessageBox.Show("Por favor insira a senha", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 			else
-			{	
+			{
 				//Criando o objeto e chamando a função do objeto mdlUsuario
 				mdlUsuario dados = new mdlUsuario(nome, senha);
 				bool retorno = ctrlAutenticacao.Autenticar(dados);
