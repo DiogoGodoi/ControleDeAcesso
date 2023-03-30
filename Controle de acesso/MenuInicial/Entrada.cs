@@ -36,6 +36,7 @@ namespace Menu_Inicial
 		}
 
 		//Configuração do botão de cadastro
+
 		private void EfetuarEntrada(object sender, EventArgs e)
 		{
 			//Bloco try para evitar quebra no sistema

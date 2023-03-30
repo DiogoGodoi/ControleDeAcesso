@@ -37,7 +37,6 @@
 			this.txtPlacaVeiculo = new System.Windows.Forms.TextBox();
 			this.txtPesoEntrada = new System.Windows.Forms.TextBox();
 			this.txtCnpj = new System.Windows.Forms.TextBox();
-			this.btnCadastrar = new System.Windows.Forms.Button();
 			this.nav = new System.Windows.Forms.Panel();
 			this.lblTitulo = new System.Windows.Forms.Label();
 			this.panelLineFooter = new System.Windows.Forms.Panel();
@@ -57,6 +56,7 @@
 			this.radEntrega = new System.Windows.Forms.RadioButton();
 			this.radColeta = new System.Windows.Forms.RadioButton();
 			this.radVisita = new System.Windows.Forms.RadioButton();
+			this.btnCadastrar = new FontAwesome.Sharp.IconButton();
 			this.nav.SuspendLayout();
 			this.panelFooter.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
@@ -161,22 +161,6 @@
 			this.txtCnpj.Size = new System.Drawing.Size(296, 16);
 			this.txtCnpj.TabIndex = 17;
 			this.txtCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			// 
-			// btnCadastrar
-			// 
-			this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnCadastrar.BackColor = System.Drawing.Color.Navy;
-			this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			this.btnCadastrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-			this.btnCadastrar.Location = new System.Drawing.Point(288, 471);
-			this.btnCadastrar.Name = "btnCadastrar";
-			this.btnCadastrar.Size = new System.Drawing.Size(121, 23);
-			this.btnCadastrar.TabIndex = 20;
-			this.btnCadastrar.Text = "Cadastrar";
-			this.btnCadastrar.UseVisualStyleBackColor = false;
-			this.btnCadastrar.Click += new System.EventHandler(this.EfetuarEntrada);
 			// 
 			// nav
 			// 
@@ -407,12 +391,33 @@
 			this.radVisita.UseVisualStyleBackColor = true;
 			this.radVisita.CheckedChanged += new System.EventHandler(this.radVisita_CheckedChanged);
 			// 
+			// btnCadastrar
+			// 
+			this.btnCadastrar.BackColor = System.Drawing.Color.Navy;
+			this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCadastrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCadastrar.ForeColor = System.Drawing.Color.White;
+			this.btnCadastrar.IconChar = FontAwesome.Sharp.IconChar.Check;
+			this.btnCadastrar.IconColor = System.Drawing.Color.White;
+			this.btnCadastrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnCadastrar.IconSize = 20;
+			this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnCadastrar.Location = new System.Drawing.Point(288, 479);
+			this.btnCadastrar.Name = "btnCadastrar";
+			this.btnCadastrar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+			this.btnCadastrar.Size = new System.Drawing.Size(121, 23);
+			this.btnCadastrar.TabIndex = 46;
+			this.btnCadastrar.Text = "Cadastrar";
+			this.btnCadastrar.UseVisualStyleBackColor = false;
+			this.btnCadastrar.Click += new System.EventHandler(this.EfetuarEntrada);
+			// 
 			// frmEntrada
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(660, 607);
+			this.Controls.Add(this.btnCadastrar);
 			this.Controls.Add(this.radVisita);
 			this.Controls.Add(this.radColeta);
 			this.Controls.Add(this.radEntrega);
@@ -434,7 +439,6 @@
 			this.Controls.Add(this.txtNomeVisitante);
 			this.Controls.Add(this.panelLineFooter);
 			this.Controls.Add(this.panelFooter);
-			this.Controls.Add(this.btnCadastrar);
 			this.Controls.Add(this.nav);
 			this.Controls.Add(this.txtPesoEntrada);
 			this.Controls.Add(this.txtPlacaVeiculo);
@@ -464,7 +468,6 @@
 		private System.Windows.Forms.TextBox txtPlacaVeiculo;
 		private System.Windows.Forms.TextBox txtPesoEntrada;
 		private System.Windows.Forms.TextBox txtCnpj;
-		private System.Windows.Forms.Button btnCadastrar;
 		private System.Windows.Forms.Panel nav;
 		private System.Windows.Forms.Label lblTitulo;
 		private System.Windows.Forms.Panel panelLineFooter;
@@ -484,6 +487,7 @@
 		private System.Windows.Forms.RadioButton radEntrega;
 		private System.Windows.Forms.RadioButton radColeta;
 		private System.Windows.Forms.RadioButton radVisita;
+		private FontAwesome.Sharp.IconButton btnCadastrar;
 	}
 }
 
