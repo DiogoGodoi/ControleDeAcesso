@@ -136,7 +136,7 @@ namespace Menu_Inicial
 					{
 						MessageBox.Show("Por favor insira o cpf ou o cnpj do visitante", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
-					else if (txtTransportadora.Text == String.Empty)
+					else if (txtTransportadora.Text == String.Empty && txtCnpj.Text != String.Empty)
 					{
 						MessageBox.Show("Por favor insira o nome da transportadora", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}

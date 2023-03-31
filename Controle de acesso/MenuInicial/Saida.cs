@@ -41,29 +41,30 @@ namespace Saida
 			//Blobo try catch para evitar quebras no sistema
 			try
 			{
-					referencia = Convert.ToInt32(txtReferencia.Text);
-					dataSaida = dtSaida.Value.ToString("dd-MM-yyyy");
-					horaSaida = hrSaida.Value.ToString("HH:mm");
-					pesoSaida = Convert.ToDouble(txtPesoSaida.Text);
-					mdlSaida dados = new mdlSaida(referencia, dataSaida, horaSaida, pesoSaida);
+				referencia = Convert.ToInt32(txtReferencia.Text);
+				dataSaida = dtSaida.Value.ToString("dd-MM-yyyy");
+				horaSaida = hrSaida.Value.ToString("HH:mm");
+				pesoSaida = Convert.ToDouble(txtPesoSaida.Text);
+				mdlSaida dados = new mdlSaida(referencia, dataSaida, horaSaida, pesoSaida);
 
-					if (dataSaida == String.Empty && horaSaida == String.Empty)
-					{
-						MessageBox.Show("Por favor insira os dados de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					}
-					else if (dataSaida == String.Empty)
-					{
-						MessageBox.Show("Insira a data de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					}
-					else if (horaSaida == String.Empty)
-					{
-						MessageBox.Show("Insira a hora de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					}else if (txtPesoSaida.Text == "0" && txtPesoEntrada.Text != String.Empty)
-					{
-						MessageBox.Show("Insira o peso de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-					}
-					else
-					{
+				if (dataSaida == String.Empty && horaSaida == String.Empty)
+				{
+					MessageBox.Show("Por favor insira os dados de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				else if (dataSaida == String.Empty)
+				{
+					MessageBox.Show("Insira a data de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				else if (horaSaida == String.Empty)
+				{
+					MessageBox.Show("Insira a hora de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				else if (txtPesoSaida.Text == "0" && txtPesoEntrada.Text != String.Empty)
+				{
+					MessageBox.Show("Insira o peso de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+				else
+				{
 					DialogResult mensagem = MessageBox.Show("Confirma a saída", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 					if (mensagem == DialogResult.Yes)
 					{

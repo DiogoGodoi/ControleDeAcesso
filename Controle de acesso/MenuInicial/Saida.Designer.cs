@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSaida));
-			this.btnCadastrar = new System.Windows.Forms.Button();
 			this.txtPlacaVeiculo = new System.Windows.Forms.TextBox();
 			this.txtPesoEntrada = new System.Windows.Forms.TextBox();
 			this.txtCnpj = new System.Windows.Forms.TextBox();
@@ -68,26 +67,11 @@
 			this.lblNomeVisitado = new System.Windows.Forms.Label();
 			this.txtNatureza = new System.Windows.Forms.TextBox();
 			this.lblNatureza = new System.Windows.Forms.Label();
+			this.btnCadastrar = new FontAwesome.Sharp.IconButton();
 			this.nav.SuspendLayout();
 			this.panelFooter.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// btnCadastrar
-			// 
-			this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnCadastrar.BackColor = System.Drawing.Color.Navy;
-			this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnCadastrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-			this.btnCadastrar.Location = new System.Drawing.Point(288, 579);
-			this.btnCadastrar.Name = "btnCadastrar";
-			this.btnCadastrar.Size = new System.Drawing.Size(121, 23);
-			this.btnCadastrar.TabIndex = 38;
-			this.btnCadastrar.Text = "Cadastrar";
-			this.btnCadastrar.UseVisualStyleBackColor = false;
-			this.btnCadastrar.Click += new System.EventHandler(this.EfetuarSaida);
 			// 
 			// txtPlacaVeiculo
 			// 
@@ -560,12 +544,34 @@
 			this.lblNatureza.TabIndex = 69;
 			this.lblNatureza.Text = "Natureza";
 			// 
+			// btnCadastrar
+			// 
+			this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.btnCadastrar.BackColor = System.Drawing.Color.Navy;
+			this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnCadastrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnCadastrar.ForeColor = System.Drawing.Color.White;
+			this.btnCadastrar.IconChar = FontAwesome.Sharp.IconChar.Check;
+			this.btnCadastrar.IconColor = System.Drawing.Color.White;
+			this.btnCadastrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnCadastrar.IconSize = 20;
+			this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnCadastrar.Location = new System.Drawing.Point(288, 581);
+			this.btnCadastrar.Name = "btnCadastrar";
+			this.btnCadastrar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+			this.btnCadastrar.Size = new System.Drawing.Size(121, 23);
+			this.btnCadastrar.TabIndex = 71;
+			this.btnCadastrar.Text = "Cadastrar";
+			this.btnCadastrar.UseVisualStyleBackColor = false;
+			this.btnCadastrar.Click += new System.EventHandler(this.EfetuarSaida);
+			// 
 			// frmSaida
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(660, 689);
+			this.Controls.Add(this.btnCadastrar);
 			this.Controls.Add(this.txtNatureza);
 			this.Controls.Add(this.lblNatureza);
 			this.Controls.Add(this.txtNomeVisitado);
@@ -590,7 +596,6 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.lblSaida);
-			this.Controls.Add(this.btnCadastrar);
 			this.Controls.Add(this.txtPlacaVeiculo);
 			this.Controls.Add(this.txtPesoEntrada);
 			this.Controls.Add(this.txtCnpj);
@@ -621,7 +626,6 @@
 		}
 
 		#endregion
-		private System.Windows.Forms.Button btnCadastrar;
 		private System.Windows.Forms.TextBox txtPlacaVeiculo;
 		private System.Windows.Forms.TextBox txtPesoEntrada;
 		private System.Windows.Forms.TextBox txtCnpj;
@@ -660,6 +664,7 @@
 		private System.Windows.Forms.Label lblNomeVisitado;
 		private System.Windows.Forms.TextBox txtNatureza;
 		private System.Windows.Forms.Label lblNatureza;
+		private FontAwesome.Sharp.IconButton btnCadastrar;
 	}
 }
 
