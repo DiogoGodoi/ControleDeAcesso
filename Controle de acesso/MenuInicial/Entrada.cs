@@ -157,6 +157,17 @@ namespace Menu_Inicial
 						&& txtNomeVisitado.Text != String.Empty
 						&& txtCpf.Text == String.Empty
 						&& txtCnpj.Text != String.Empty
+						&& txtTransportadora.Text != String.Empty
+						&& txtPesoEntrada.Text != String.Empty
+						&& txtPlacaVeiculo.Text == String.Empty)
+					{
+						MessageBox.Show("Por favor a placa do veículo", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else if (txtNomeVisitante.Text != String.Empty
+						&& txtNomeVisitado.Text != String.Empty
+						&& txtCpf.Text != String.Empty
+						&& txtCnpj.Text != String.Empty
+						&& txtTransportadora.Text != String.Empty
 						&& txtPesoEntrada.Text != String.Empty
 						&& txtPlacaVeiculo.Text == String.Empty)
 					{
