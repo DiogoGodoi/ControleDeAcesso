@@ -14,6 +14,7 @@ namespace UsuarioDao
 	{
 		//Atributos
 		public static int idUsuario { get; set; }
+		public static string sNome {get;set;}
 		private string nome { get; set; }
 		private string senha { get; set; }
 		public int getIdUsuario() { return idUsuario; }
@@ -44,6 +45,7 @@ namespace UsuarioDao
 				  if (leitura["nome"].ToString() == dados.nome && leitura["senha"].ToString() == dados.senha)
 				  {
 				  idUsuario = Convert.ToInt16(leitura["idUsuario"]);
+				  sNome = leitura["nome"].ToString();
 			      return true;
 				  }else
 			   	  {

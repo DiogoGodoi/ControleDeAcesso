@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UsuarioDao;
 
 namespace Menu_Inicial
 {
@@ -22,12 +23,14 @@ namespace Menu_Inicial
 	public partial class frmConsulta : Form
 	{
 		ListViewItem lista;
+		DataTable dadosEntrada;
 		public frmConsulta()
 		{
 			InitializeComponent();
 		}
 		private void InicializacaoDefault(object sender, EventArgs e)
 		{
+			btnImprimir.Visible = true;
 			this.WindowState = FormWindowState.Maximized;
 			List<mdlEntrada> entradas = ctrlConsulta.ExibirEntrada();
 
@@ -89,6 +92,7 @@ namespace Menu_Inicial
 		}
 		private void ExibirEntrada(object sender, EventArgs e)
 		{
+			btnImprimir.Visible = true;
 			listEntrada.Items.Clear();
 			List<mdlEntrada> entradas = ctrlConsulta.ExibirEntrada();
 
@@ -148,6 +152,7 @@ namespace Menu_Inicial
 		}
 		private void ExibirSaida(object sender, EventArgs e)
 		{
+			btnImprimir.Visible = false;
 			listSaida.Items.Clear();
 			List<mdlSaida> saidas = ctrlConsulta.ExibirSaida();
 			if (saidas != null)
@@ -190,6 +195,7 @@ namespace Menu_Inicial
 		}
 		private void ExibirEntradaFinalizada(object sender, EventArgs e)
 		{
+			btnImprimir.Visible = false;
 			listFinalizada.Items.Clear();
 			List<mdlEntrada> entradasFinalizada = ctrlConsulta.ExibirEntradaFinalizada();
 
@@ -403,6 +409,40 @@ namespace Menu_Inicial
 					listFinalizada.Items.Add(lista);
 				}
 			}
+		}
+		private void btnImprimir_Click(object sender, EventArgs e)
+		{	
+			if(tabEntrada.Focus() == true)
+			{
+			btnImprimir.Visible = true;
+			Form imprimirEntrada = new ImpressaoRelEntrada(dtEntrada(dadosEntrada));
+			imprimirEntrada.Show();
+			}
+			else if(tabSaidas.Focus() == true)
+			{
+				btnImprimir.Visible = false;
+			}else
+			{
+				btnImprimir.Visible = false;
+			}
+		}
+		private DataTable dtEntrada (DataTable dados)
+		{
+			dados = new DataTable();
+			dados.Columns.Add("dataSaida", typeof(string));
+			dados.Columns.Add("nomeVisitante", typeof(string));
+			dados.Columns.Add("transportadora", typeof(string));
+			dados.Columns.Add("Visitado", typeof(string));
+			dados.Columns.Add("Natureza", typeof(string));
+
+			List<mdlEntrada> entrada = daoEntrada.ExibirEntrada();
+			var filtro = entrada.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
+			foreach (var item in filtro)
+			{
+				dados.Rows.Add(item.dataEntrada, item.nomeVisitante, item.transportadora, item.visitado, item.natureza);
+			}
+
+			return dados;
 		}
 	}
 }

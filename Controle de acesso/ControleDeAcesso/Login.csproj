@@ -137,6 +137,10 @@
       <Project>{7f837fb1-5e5d-44b8-a205-d4293be00fc3}</Project>
       <Name>MenuInicial</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UsuarioDao\UsuarioDao.csproj">
+      <Project>{f59e662e-6026-49de-b67f-7b2650b979c2}</Project>
+      <Name>UsuarioDao</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UsuarioModel\UsuarioModel.csproj">
       <Project>{f75b2e06-7693-4c6e-a68d-3eec7b1166a1}</Project>
       <Name>UsuarioModel</Name>

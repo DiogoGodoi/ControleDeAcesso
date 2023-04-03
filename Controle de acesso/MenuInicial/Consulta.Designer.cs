@@ -84,6 +84,7 @@
 			this.panel5 = new System.Windows.Forms.Panel();
 			this.pctLogo = new FontAwesome.Sharp.IconPictureBox();
 			this.btnBuscar = new FontAwesome.Sharp.IconButton();
+			this.btnImprimir = new FontAwesome.Sharp.IconButton();
 			this.tabControle.SuspendLayout();
 			this.tabEntrada.SuspendLayout();
 			this.tabSaidas.SuspendLayout();
@@ -590,6 +591,27 @@
 			this.btnBuscar.UseVisualStyleBackColor = false;
 			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
 			// 
+			// btnImprimir
+			// 
+			this.btnImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.btnImprimir.BackColor = System.Drawing.Color.Navy;
+			this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnImprimir.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnImprimir.ForeColor = System.Drawing.Color.White;
+			this.btnImprimir.IconChar = FontAwesome.Sharp.IconChar.Paperclip;
+			this.btnImprimir.IconColor = System.Drawing.Color.White;
+			this.btnImprimir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnImprimir.IconSize = 18;
+			this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnImprimir.Location = new System.Drawing.Point(405, 477);
+			this.btnImprimir.Name = "btnImprimir";
+			this.btnImprimir.Size = new System.Drawing.Size(98, 23);
+			this.btnImprimir.TabIndex = 39;
+			this.btnImprimir.Text = "Imprimir";
+			this.btnImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnImprimir.UseVisualStyleBackColor = false;
+			this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+			// 
 			// frmConsulta
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -597,6 +619,7 @@
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(660, 569);
 			this.ControlBox = false;
+			this.Controls.Add(this.btnImprimir);
 			this.Controls.Add(this.btnBuscar);
 			this.Controls.Add(this.panel5);
 			this.Controls.Add(this.panel4);
@@ -686,6 +709,7 @@
 		private System.Windows.Forms.ColumnHeader ColNatureza;
 		private System.Windows.Forms.ColumnHeader colFinNatureza;
 		private FontAwesome.Sharp.IconButton btnBuscar;
+		private FontAwesome.Sharp.IconButton btnImprimir;
 	}
 }
 
