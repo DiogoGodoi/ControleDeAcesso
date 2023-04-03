@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlAcessIP", "ControlAc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelaDeSplash", "TelaDeSplash\TelaDeSplash.csproj", "{EF2ADE32-E378-4E74-858D-4F38249F1439}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Relatorios", "Relatorios\Relatorios.csproj", "{6697C9E6-0552-49DD-8AB2-D4C1AA94D611}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{EF2ADE32-E378-4E74-858D-4F38249F1439}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF2ADE32-E378-4E74-858D-4F38249F1439}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF2ADE32-E378-4E74-858D-4F38249F1439}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6697C9E6-0552-49DD-8AB2-D4C1AA94D611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6697C9E6-0552-49DD-8AB2-D4C1AA94D611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6697C9E6-0552-49DD-8AB2-D4C1AA94D611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6697C9E6-0552-49DD-8AB2-D4C1AA94D611}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,6 +144,7 @@ Global
 		{AA2CE0CE-780E-45C8-9E7B-5500DFF02568} = {DFDDBB28-AE1D-46C4-9F2B-70DF80055E2B}
 		{84D98F0E-43FA-4284-B230-88D47B44B518} = {DFDDBB28-AE1D-46C4-9F2B-70DF80055E2B}
 		{EF2ADE32-E378-4E74-858D-4F38249F1439} = {44F9C03E-BDC0-4AC1-912E-C4FE0E6E98E0}
+		{6697C9E6-0552-49DD-8AB2-D4C1AA94D611} = {44F9C03E-BDC0-4AC1-912E-C4FE0E6E98E0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D972149C-7B5C-47DB-950D-D2FA982A5CB1}

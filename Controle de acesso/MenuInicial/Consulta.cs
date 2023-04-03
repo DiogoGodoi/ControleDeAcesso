@@ -3,6 +3,7 @@ using ControleDeEntrada;
 using EntradaDao;
 using EntradaModel;
 using MenuInicial;
+using Relatorios;
 using SaidaModel;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace Menu_Inicial
 	public partial class frmConsulta : Form
 	{
 		ListViewItem lista;
-		DataTable dadosEntrada;
+		DataTable dataGrid;
 		public frmConsulta()
 		{
 			InitializeComponent();
@@ -152,7 +153,6 @@ namespace Menu_Inicial
 		}
 		private void ExibirSaida(object sender, EventArgs e)
 		{
-			btnImprimir.Visible = false;
 			listSaida.Items.Clear();
 			List<mdlSaida> saidas = ctrlConsulta.ExibirSaida();
 			if (saidas != null)
@@ -415,12 +415,13 @@ namespace Menu_Inicial
 			if(tabEntrada.Focus() == true)
 			{
 			btnImprimir.Visible = true;
-			Form imprimirEntrada = new ImpressaoRelEntrada(dtEntrada(dadosEntrada));
+			Form imprimirEntrada = new frmRelEntrada(dtEntrada(dataGrid));
 			imprimirEntrada.Show();
 			}
 			else if(tabSaidas.Focus() == true)
 			{
-				btnImprimir.Visible = false;
+				Form imprimirSaida = new frmRelSaida(dtSaida(dataGrid));
+				imprimirSaida.Show();
 			}else
 			{
 				btnImprimir.Visible = false;
@@ -435,11 +436,30 @@ namespace Menu_Inicial
 			dados.Columns.Add("Visitado", typeof(string));
 			dados.Columns.Add("Natureza", typeof(string));
 
-			List<mdlEntrada> entrada = daoEntrada.ExibirEntrada();
+			List<mdlEntrada> entrada = ctrlConsulta.ExibirEntrada();
 			var filtro = entrada.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
 			foreach (var item in filtro)
 			{
 				dados.Rows.Add(item.dataEntrada, item.nomeVisitante, item.transportadora, item.visitado, item.natureza);
+			}
+
+			return dados;
+		}
+		private DataTable dtSaida(DataTable dados)
+		{
+			dados = new DataTable();
+			dados.Columns.Add("dataSaida", typeof(string));
+			dados.Columns.Add("visitante", typeof(string));
+			dados.Columns.Add("transportadora", typeof(string));
+			dados.Columns.Add("Natureza", typeof(string));
+			dados.Columns.Add("pesoSaida", typeof(double));
+			dados.Columns.Add("horaSaida", typeof(string));
+
+			List<mdlSaida> saida = ctrlConsulta.ExibirSaida();
+			var filtro = saida.Where(i => i.dataSaida == dtBusca.Value.ToString("dd-MM-yyyy"));
+			foreach (var item in filtro)
+			{
+				dados.Rows.Add(item.dataSaida, item.dados.nomeVisitante, item.dados.transportadora, item.dados.natureza, item.pesoSaida, item.horaSaida);
 			}
 
 			return dados;

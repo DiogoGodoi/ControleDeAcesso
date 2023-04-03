@@ -10,19 +10,24 @@ using System.Windows.Forms;
 
 namespace MenuInicial
 {
-	public partial class ImpressaoRelEntrada : Form
+	public partial class frmRelEntrada : Form
 	{
 		DataTable dtTable = new DataTable();
-		public ImpressaoRelEntrada(DataTable dtTable)
+		public frmRelEntrada(DataTable dtTable)
 		{
 			InitializeComponent();
 			this.dtTable = dtTable;
 		}
 		private void rpViwer_Load(object sender, EventArgs e)
 		{
-			this.rpViwer.LocalReport.DataSources.Clear();
-			this.rpViwer.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("mdlEntrada", dtTable));
-			this.rpViwer.RefreshReport();
+			this.rpEntrada.LocalReport.DataSources.Clear();
+			this.rpEntrada.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("mdlEntrada", dtTable));
+			this.rpEntrada.RefreshReport();
+		}
+
+		private void ImpressaoRelEntrada_Load(object sender, EventArgs e)
+		{
+			this.rpEntrada.RefreshReport();
 		}
 	}
 }

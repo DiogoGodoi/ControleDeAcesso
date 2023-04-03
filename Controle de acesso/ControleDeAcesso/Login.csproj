@@ -111,6 +111,7 @@
     </Compile>
     <None Include="Login_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SaidaModel.mdlSaida.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,6 +137,10 @@
     <ProjectReference Include="..\MenuInicial\MenuInicial.csproj">
       <Project>{7f837fb1-5e5d-44b8-a205-d4293be00fc3}</Project>
       <Name>MenuInicial</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaidaModel\SaidaModel.csproj">
+      <Project>{ec19b052-c134-4fb8-8a25-9960504ee6e8}</Project>
+      <Name>SaidaModel</Name>
     </ProjectReference>
     <ProjectReference Include="..\UsuarioDao\UsuarioDao.csproj">
       <Project>{f59e662e-6026-49de-b67f-7b2650b979c2}</Project>

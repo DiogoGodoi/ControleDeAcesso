@@ -221,6 +221,10 @@
       <Project>{96595cec-3b40-40af-96da-a62f3c8a6bd2}</Project>
       <Name>EntradaModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Relatorios\Relatorios.csproj">
+      <Project>{6697c9e6-0552-49dd-8ab2-d4c1aa94d611}</Project>
+      <Name>Relatorios</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SaidaModel\SaidaModel.csproj">
       <Project>{EC19B052-C134-4FB8-8A25-9960504EE6E8}</Project>
       <Name>SaidaModel</Name>

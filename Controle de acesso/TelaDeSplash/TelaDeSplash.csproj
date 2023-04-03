@@ -26,7 +26,7 @@
     <InstallUrl>\\servidor\Publico\Infra - TI\Softwares\Utilitários\Instalador - Controle de Acesso\archives\</InstallUrl>
     <UpdateUrl>\\servidor\Publico\Infra - TI\Softwares\Utilitários\Instalador - Controle de Acesso\archives\</UpdateUrl>
     <MinimumRequiredVersion>2.0.0.15</MinimumRequiredVersion>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

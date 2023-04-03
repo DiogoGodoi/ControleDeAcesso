@@ -103,7 +103,7 @@ namespace SaidaDao
 			try
 			{
 				conn.Open();
-				string query = "SELECT Saida.ref, Entrada.nomeVisitante, Saida.dataSaida, Saida.horaSaida, Saida.pesoSaida, Saida.IdUsuario " +
+				string query = "SELECT Saida.ref, Entrada.nomeVisitante, Entrada.transportadora, Entrada.Natureza, Saida.dataSaida, Saida.horaSaida, Saida.pesoSaida, Saida.IdUsuario " +
 					"FROM Saida INNER JOIN Entrada ON Entrada.ref=Saida.ref ORDER BY Saida.dataSaida, Saida.horaSaida ASC";
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				cmd.CommandType = CommandType.Text;
@@ -121,7 +121,9 @@ namespace SaidaDao
 						var pmtSaidaDataSaida = dados["dataSaida"].ToString();
 						var pmtSaidaHoraSaida = dados["horaSaida"].ToString();
 						var pmtSaidaPesoSaida = Convert.ToDouble(dados["pesoSaida"]);
-						saidas.Add(new mdlSaida(pmtSaidaRef, pmtEntradaNomeVisitante, pmtSaidaDataSaida, pmtSaidaHoraSaida, pmtSaidaPesoSaida));
+						var pmtTransportadora = dados["transportadora"].ToString();
+						var pmtNatureza = dados["natureza"].ToString();
+						saidas.Add(new mdlSaida(pmtSaidaRef, pmtEntradaNomeVisitante, pmtSaidaDataSaida, pmtSaidaHoraSaida, pmtSaidaPesoSaida, pmtNatureza, pmtTransportadora));
 					}
 
 					return saidas;
