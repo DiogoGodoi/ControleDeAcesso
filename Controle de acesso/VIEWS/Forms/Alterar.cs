@@ -149,11 +149,24 @@ namespace VIEWS.Forms
 						placaVeiculo.Text = String.Empty;
 						natureza.Text = String.Empty;
 						visitado.Text = String.Empty;
+						referencia.Text = String.Empty;
 						referencia.Focus();
 					}
 					else
 					{
 						MessageBox.Show("Erro na alteração", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+
+				}
+				else
+				{
+					bool alterarEntrada = AlterarEntrada();
+					await Task.Delay(1500);
+					bool alterarSaida = AlterarSaida();
+
+					if(alterarEntrada == true && alterarSaida == true)
+					{
+					MessageBox.Show("Dados Alterados com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						nomeDoVisitante.Text = String.Empty;
 						cpf.Text = String.Empty;
 						transportadora.Text = String.Empty;
@@ -168,28 +181,18 @@ namespace VIEWS.Forms
 						dataSaida.Text = String.Empty;
 						horaSaida.Text = String.Empty;
 						pesoSaida.Text = String.Empty;
+						referencia.Text = String.Empty;
 						referencia.Focus();
-					}
-				}
-				else
-				{
-					bool alterarEntrada = AlterarEntrada();
-					await Task.Delay(1500);
-					bool alterarSaida = AlterarSaida();
-
-					if(alterarEntrada == true && alterarSaida == true)
-					{
-					MessageBox.Show("Dados Alterados com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
 					else
 					{
 					MessageBox.Show("Erro na alteração", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
+
 				}
 				
 			}
 		}
-
 		public bool AlterarEntrada()
 		{
 			try
