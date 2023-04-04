@@ -6,8 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
-using MODEL;
-using VIWES;
 
 namespace VIEWS
 {

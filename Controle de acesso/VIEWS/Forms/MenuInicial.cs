@@ -13,7 +13,7 @@ using MODEL;
 using DAO;
 using VIEWS;
 
-namespace VIWES
+namespace VIEWS
 {
 	//Menu inicial
 	public partial class frmMenuInicial : Form

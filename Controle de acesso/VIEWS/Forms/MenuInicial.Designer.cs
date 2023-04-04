@@ -1,4 +1,4 @@
-﻿namespace VIWES
+﻿namespace VIEWS
 {
 	partial class frmMenuInicial
 	{
