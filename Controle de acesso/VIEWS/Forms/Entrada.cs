@@ -138,7 +138,7 @@ namespace VIEWS
 					{
 						MessageBox.Show("Por favor insira o nome da transportadora", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
-					else if (radColeta.Checked == false && radEntrega.Checked == false && radVisita.Checked == false)
+					else if (cbNatureza.Text != String.Empty)
 					{
 						MessageBox.Show("Por favor insira a natureza da entrada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
@@ -179,7 +179,7 @@ namespace VIEWS
 						&& txtPesoEntrada.Text != String.Empty)
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada dados = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
+						mdlEntrada dados = new mdlEntrada(dtHoraEntrada.Value.ToString("HH:mm"),nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
 
 						bool retorno = ctrlEntrada.EfetuarEntrada(dados);
 
@@ -210,7 +210,7 @@ namespace VIEWS
 					&& txtPlacaVeiculo.Text != String.Empty)
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
+						mdlEntrada _mdlEntrada = new mdlEntrada(dtHoraEntrada.Value.ToString("HH:mm"), nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
 
 						bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
 
@@ -234,7 +234,7 @@ namespace VIEWS
 					else
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
+						mdlEntrada _mdlEntrada = new mdlEntrada(dtHoraEntrada.Value.ToString("HH:mm"), nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
 
 						bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
 
@@ -265,18 +265,6 @@ namespace VIEWS
 		private void frmEntrada_Load(object sender, EventArgs e)
 		{
 			this.WindowState = FormWindowState.Maximized;
-		}
-		private void radVisita_CheckedChanged(object sender, EventArgs e)
-		{
-			natureza = "VISITA";
-		}
-		private void radColeta_CheckedChanged(object sender, EventArgs e)
-		{
-			natureza = "COLETA";
-		}
-		private void radEntrega_CheckedChanged(object sender, EventArgs e)
-		{
-			natureza = "ENTREGA";
 		}
 	}
 }

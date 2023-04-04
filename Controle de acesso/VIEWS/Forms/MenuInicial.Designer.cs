@@ -45,6 +45,10 @@
 			this.lblMain = new System.Windows.Forms.Label();
 			this.nav = new System.Windows.Forms.Panel();
 			this.lblTitulo = new System.Windows.Forms.Label();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.panelLineFooter = new System.Windows.Forms.Panel();
 			this.panelSlideBar.SuspendLayout();
 			this.panelLogo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
@@ -57,7 +61,7 @@
 			// 
 			// panelSlideBar
 			// 
-			this.panelSlideBar.BackColor = System.Drawing.Color.Navy;
+			this.panelSlideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panelSlideBar.Controls.Add(this.btnAlterar);
 			this.panelSlideBar.Controls.Add(this.btnSair);
 			this.panelSlideBar.Controls.Add(this.btnConsultar);
@@ -72,7 +76,7 @@
 			// 
 			// btnAlterar
 			// 
-			this.btnAlterar.BackColor = System.Drawing.Color.Navy;
+			this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.btnAlterar.Dock = System.Windows.Forms.DockStyle.Top;
 			this.btnAlterar.FlatAppearance.BorderSize = 0;
 			this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -92,7 +96,7 @@
 			// 
 			// btnSair
 			// 
-			this.btnSair.BackColor = System.Drawing.Color.Navy;
+			this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.btnSair.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.btnSair.FlatAppearance.BorderSize = 0;
 			this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -113,7 +117,7 @@
 			// 
 			// btnConsultar
 			// 
-			this.btnConsultar.BackColor = System.Drawing.Color.Navy;
+			this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.btnConsultar.Dock = System.Windows.Forms.DockStyle.Top;
 			this.btnConsultar.FlatAppearance.BorderSize = 0;
 			this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -134,7 +138,7 @@
 			// 
 			// btnSaida
 			// 
-			this.btnSaida.BackColor = System.Drawing.Color.Navy;
+			this.btnSaida.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.btnSaida.Dock = System.Windows.Forms.DockStyle.Top;
 			this.btnSaida.FlatAppearance.BorderSize = 0;
 			this.btnSaida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -155,7 +159,7 @@
 			// 
 			// btnEntrada
 			// 
-			this.btnEntrada.BackColor = System.Drawing.Color.Navy;
+			this.btnEntrada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.btnEntrada.Dock = System.Windows.Forms.DockStyle.Top;
 			this.btnEntrada.FlatAppearance.BorderSize = 0;
 			this.btnEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -203,6 +207,10 @@
 			// panelConteudo
 			// 
 			this.panelConteudo.BackColor = System.Drawing.Color.White;
+			this.panelConteudo.Controls.Add(this.panel3);
+			this.panelConteudo.Controls.Add(this.panel2);
+			this.panelConteudo.Controls.Add(this.panel1);
+			this.panelConteudo.Controls.Add(this.panelLineFooter);
 			this.panelConteudo.Controls.Add(this.pctLogoPrincipal);
 			this.panelConteudo.Controls.Add(this.panelFooter);
 			this.panelConteudo.Controls.Add(this.lblMain);
@@ -226,7 +234,7 @@
 			// 
 			// panelFooter
 			// 
-			this.panelFooter.BackColor = System.Drawing.Color.Navy;
+			this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panelFooter.Controls.Add(this.lblFooter);
 			this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panelFooter.ForeColor = System.Drawing.Color.White;
@@ -260,7 +268,7 @@
 			// 
 			// nav
 			// 
-			this.nav.BackColor = System.Drawing.Color.Navy;
+			this.nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.nav.Controls.Add(this.lblTitulo);
 			this.nav.Dock = System.Windows.Forms.DockStyle.Top;
 			this.nav.Location = new System.Drawing.Point(0, 0);
@@ -280,6 +288,42 @@
 			this.lblTitulo.TabIndex = 5;
 			this.lblTitulo.Text = "Home";
 			this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panel3.Location = new System.Drawing.Point(650, 72);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(10, 384);
+			this.panel3.TabIndex = 40;
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel2.Location = new System.Drawing.Point(10, 62);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(650, 10);
+			this.panel2.TabIndex = 39;
+			// 
+			// panel1
+			// 
+			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panel1.Location = new System.Drawing.Point(0, 62);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(10, 394);
+			this.panel1.TabIndex = 38;
+			// 
+			// panelLineFooter
+			// 
+			this.panelLineFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panelLineFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panelLineFooter.Location = new System.Drawing.Point(0, 456);
+			this.panelLineFooter.Name = "panelLineFooter";
+			this.panelLineFooter.Size = new System.Drawing.Size(660, 10);
+			this.panelLineFooter.TabIndex = 37;
 			// 
 			// frmMenuInicial
 			// 
@@ -327,6 +371,10 @@
 		private FontAwesome.Sharp.IconButton btnAlterar;
 		private System.Windows.Forms.PictureBox pctLogoPrincipal;
 		private System.Windows.Forms.PictureBox pctLogo;
+		private System.Windows.Forms.Panel panel3;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel panelLineFooter;
 	}
 }
 

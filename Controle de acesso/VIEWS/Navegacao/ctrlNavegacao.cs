@@ -35,8 +35,8 @@ namespace VIEWS
 		{
 			foreach (Control controls in panel.Controls)
 			{
-				controls.BackColor = System.Drawing.Color.Navy;
-				button.BackColor = System.Drawing.Color.DarkSlateBlue;
+				controls.BackColor = System.Drawing.Color.FromArgb(0, 0, 64);
+				button.BackColor = System.Drawing.Color.Navy;
 			}
 		}
 	}

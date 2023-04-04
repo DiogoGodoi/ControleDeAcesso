@@ -152,7 +152,7 @@
 			// 
 			// nav
 			// 
-			this.nav.BackColor = System.Drawing.Color.Navy;
+			this.nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.nav.Controls.Add(this.pctLogo);
 			this.nav.Controls.Add(this.titulo);
 			this.nav.Dock = System.Windows.Forms.DockStyle.Top;
@@ -187,7 +187,7 @@
 			// 
 			// panelFooter
 			// 
-			this.panelFooter.BackColor = System.Drawing.Color.Navy;
+			this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panelFooter.Controls.Add(this.label1);
 			this.panelFooter.Controls.Add(this.lblFooter);
 			this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -221,7 +221,7 @@
 			// 
 			// panel1
 			// 
-			this.panel1.BackColor = System.Drawing.Color.Navy;
+			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location = new System.Drawing.Point(0, 62);
 			this.panel1.Name = "panel1";
@@ -230,7 +230,7 @@
 			// 
 			// panel3
 			// 
-			this.panel3.BackColor = System.Drawing.Color.Navy;
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
 			this.panel3.Location = new System.Drawing.Point(482, 72);
 			this.panel3.Name = "panel3";
@@ -239,7 +239,7 @@
 			// 
 			// panelLineFooter
 			// 
-			this.panelLineFooter.BackColor = System.Drawing.Color.Navy;
+			this.panelLineFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panelLineFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panelLineFooter.Location = new System.Drawing.Point(0, 404);
 			this.panelLineFooter.Name = "panelLineFooter";
@@ -248,7 +248,7 @@
 			// 
 			// panel2
 			// 
-			this.panel2.BackColor = System.Drawing.Color.Navy;
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel2.Location = new System.Drawing.Point(10, 62);
 			this.panel2.Name = "panel2";

@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEntrada));
 			this.lblNomeVisitante = new System.Windows.Forms.Label();
 			this.lblPlaca = new System.Windows.Forms.Label();
@@ -52,14 +53,16 @@
 			this.txtTransportadora = new System.Windows.Forms.TextBox();
 			this.lblNomeVisitado = new System.Windows.Forms.Label();
 			this.txtNomeVisitado = new System.Windows.Forms.TextBox();
-			this.lblNatureza = new System.Windows.Forms.Label();
-			this.radEntrega = new System.Windows.Forms.RadioButton();
-			this.radColeta = new System.Windows.Forms.RadioButton();
-			this.radVisita = new System.Windows.Forms.RadioButton();
 			this.btnCadastrar = new FontAwesome.Sharp.IconButton();
+			this.lblNatureza = new System.Windows.Forms.Label();
+			this.cbNatureza = new System.Windows.Forms.ComboBox();
+			this.dtHoraEntrada = new System.Windows.Forms.DateTimePicker();
+			this.label2 = new System.Windows.Forms.Label();
+			this.daoEntradaBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.nav.SuspendLayout();
 			this.panelFooter.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.daoEntradaBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// lblNomeVisitante
@@ -164,7 +167,7 @@
 			// 
 			// nav
 			// 
-			this.nav.BackColor = System.Drawing.Color.Navy;
+			this.nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.nav.Controls.Add(this.lblTitulo);
 			this.nav.Dock = System.Windows.Forms.DockStyle.Top;
 			this.nav.Location = new System.Drawing.Point(0, 0);
@@ -196,7 +199,7 @@
 			// 
 			// panelFooter
 			// 
-			this.panelFooter.BackColor = System.Drawing.Color.Navy;
+			this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panelFooter.Controls.Add(this.lblFooter);
 			this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panelFooter.ForeColor = System.Drawing.Color.White;
@@ -334,63 +337,6 @@
 			this.txtNomeVisitado.TabIndex = 41;
 			this.txtNomeVisitado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
-			// lblNatureza
-			// 
-			this.lblNatureza.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.lblNatureza.AutoSize = true;
-			this.lblNatureza.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblNatureza.ForeColor = System.Drawing.Color.Navy;
-			this.lblNatureza.Location = new System.Drawing.Point(84, 356);
-			this.lblNatureza.Name = "lblNatureza";
-			this.lblNatureza.Size = new System.Drawing.Size(75, 17);
-			this.lblNatureza.TabIndex = 42;
-			this.lblNatureza.Text = "Natureza";
-			// 
-			// radEntrega
-			// 
-			this.radEntrega.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.radEntrega.AutoSize = true;
-			this.radEntrega.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radEntrega.ForeColor = System.Drawing.Color.Navy;
-			this.radEntrega.Location = new System.Drawing.Point(253, 356);
-			this.radEntrega.Name = "radEntrega";
-			this.radEntrega.Size = new System.Drawing.Size(77, 19);
-			this.radEntrega.TabIndex = 43;
-			this.radEntrega.TabStop = true;
-			this.radEntrega.Text = "Entrega";
-			this.radEntrega.UseVisualStyleBackColor = true;
-			this.radEntrega.CheckedChanged += new System.EventHandler(this.radEntrega_CheckedChanged);
-			// 
-			// radColeta
-			// 
-			this.radColeta.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.radColeta.AutoSize = true;
-			this.radColeta.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radColeta.ForeColor = System.Drawing.Color.Navy;
-			this.radColeta.Location = new System.Drawing.Point(376, 356);
-			this.radColeta.Name = "radColeta";
-			this.radColeta.Size = new System.Drawing.Size(68, 19);
-			this.radColeta.TabIndex = 44;
-			this.radColeta.TabStop = true;
-			this.radColeta.Text = "Coleta";
-			this.radColeta.UseVisualStyleBackColor = true;
-			this.radColeta.CheckedChanged += new System.EventHandler(this.radColeta_CheckedChanged);
-			// 
-			// radVisita
-			// 
-			this.radVisita.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.radVisita.AutoSize = true;
-			this.radVisita.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radVisita.ForeColor = System.Drawing.Color.Navy;
-			this.radVisita.Location = new System.Drawing.Point(487, 356);
-			this.radVisita.Name = "radVisita";
-			this.radVisita.Size = new System.Drawing.Size(62, 19);
-			this.radVisita.TabIndex = 45;
-			this.radVisita.TabStop = true;
-			this.radVisita.Text = "Visita";
-			this.radVisita.UseVisualStyleBackColor = true;
-			this.radVisita.CheckedChanged += new System.EventHandler(this.radVisita_CheckedChanged);
-			// 
 			// btnCadastrar
 			// 
 			this.btnCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -403,7 +349,7 @@
 			this.btnCadastrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.btnCadastrar.IconSize = 20;
 			this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnCadastrar.Location = new System.Drawing.Point(288, 479);
+			this.btnCadastrar.Location = new System.Drawing.Point(288, 509);
 			this.btnCadastrar.Name = "btnCadastrar";
 			this.btnCadastrar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
 			this.btnCadastrar.Size = new System.Drawing.Size(121, 23);
@@ -412,17 +358,75 @@
 			this.btnCadastrar.UseVisualStyleBackColor = false;
 			this.btnCadastrar.Click += new System.EventHandler(this.EfetuarEntrada);
 			// 
+			// lblNatureza
+			// 
+			this.lblNatureza.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.lblNatureza.AutoSize = true;
+			this.lblNatureza.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblNatureza.ForeColor = System.Drawing.Color.Navy;
+			this.lblNatureza.Location = new System.Drawing.Point(84, 356);
+			this.lblNatureza.Name = "lblNatureza";
+			this.lblNatureza.Size = new System.Drawing.Size(75, 17);
+			this.lblNatureza.TabIndex = 47;
+			this.lblNatureza.Text = "Natureza";
+			// 
+			// cbNatureza
+			// 
+			this.cbNatureza.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.cbNatureza.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+			this.cbNatureza.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.cbNatureza.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cbNatureza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.cbNatureza.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.cbNatureza.FormattingEnabled = true;
+			this.cbNatureza.Location = new System.Drawing.Point(253, 356);
+			this.cbNatureza.Name = "cbNatureza";
+			this.cbNatureza.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.cbNatureza.Size = new System.Drawing.Size(296, 23);
+			this.cbNatureza.TabIndex = 48;
+			// 
+			// dtHoraEntrada
+			// 
+			this.dtHoraEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.dtHoraEntrada.CalendarFont = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dtHoraEntrada.CalendarMonthBackground = System.Drawing.SystemColors.GradientActiveCaption;
+			this.dtHoraEntrada.CalendarTitleBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+			this.dtHoraEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.dtHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+			this.dtHoraEntrada.Location = new System.Drawing.Point(253, 462);
+			this.dtHoraEntrada.Name = "dtHoraEntrada";
+			this.dtHoraEntrada.ShowUpDown = true;
+			this.dtHoraEntrada.Size = new System.Drawing.Size(296, 20);
+			this.dtHoraEntrada.TabIndex = 49;
+			this.dtHoraEntrada.Value = new System.DateTime(2023, 4, 4, 10, 22, 0, 0);
+			// 
+			// label2
+			// 
+			this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.ForeColor = System.Drawing.Color.Navy;
+			this.label2.Location = new System.Drawing.Point(84, 465);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(127, 17);
+			this.label2.TabIndex = 50;
+			this.label2.Text = "Hora da entrada";
+			// 
+			// daoEntradaBindingSource
+			// 
+			this.daoEntradaBindingSource.DataSource = typeof(DAO.daoEntrada);
+			// 
 			// frmEntrada
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(660, 607);
-			this.Controls.Add(this.btnCadastrar);
-			this.Controls.Add(this.radVisita);
-			this.Controls.Add(this.radColeta);
-			this.Controls.Add(this.radEntrega);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.dtHoraEntrada);
+			this.Controls.Add(this.cbNatureza);
 			this.Controls.Add(this.lblNatureza);
+			this.Controls.Add(this.btnCadastrar);
 			this.Controls.Add(this.lblNomeVisitado);
 			this.Controls.Add(this.txtNomeVisitado);
 			this.Controls.Add(this.lblTransportadora);
@@ -455,6 +459,7 @@
 			this.panelFooter.ResumeLayout(false);
 			this.panelFooter.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.daoEntradaBindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -484,11 +489,12 @@
 		private System.Windows.Forms.TextBox txtTransportadora;
 		private System.Windows.Forms.Label lblNomeVisitado;
 		private System.Windows.Forms.TextBox txtNomeVisitado;
-		private System.Windows.Forms.Label lblNatureza;
-		private System.Windows.Forms.RadioButton radEntrega;
-		private System.Windows.Forms.RadioButton radColeta;
-		private System.Windows.Forms.RadioButton radVisita;
 		private FontAwesome.Sharp.IconButton btnCadastrar;
+		private System.Windows.Forms.Label lblNatureza;
+		private System.Windows.Forms.ComboBox cbNatureza;
+		private System.Windows.Forms.DateTimePicker dtHoraEntrada;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.BindingSource daoEntradaBindingSource;
 	}
 }
 

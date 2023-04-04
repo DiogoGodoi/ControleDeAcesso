@@ -42,7 +42,7 @@
 			// 
 			// panelNav
 			// 
-			this.panelNav.BackColor = System.Drawing.Color.Navy;
+			this.panelNav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panelNav.Controls.Add(this.lblTitulo);
 			this.panelNav.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panelNav.Location = new System.Drawing.Point(0, 0);
@@ -76,7 +76,7 @@
 			// 
 			// panel1
 			// 
-			this.panel1.BackColor = System.Drawing.Color.Navy;
+			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panel1.Controls.Add(this.lblCarregamento);
 			this.panel1.Controls.Add(this.progress);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;

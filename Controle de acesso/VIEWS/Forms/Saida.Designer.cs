@@ -372,7 +372,7 @@
 			// 
 			// nav
 			// 
-			this.nav.BackColor = System.Drawing.Color.Navy;
+			this.nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.nav.Controls.Add(this.lblTitulo);
 			this.nav.Dock = System.Windows.Forms.DockStyle.Top;
 			this.nav.Location = new System.Drawing.Point(0, 0);
@@ -394,7 +394,7 @@
 			// 
 			// panelFooter
 			// 
-			this.panelFooter.BackColor = System.Drawing.Color.Navy;
+			this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panelFooter.Controls.Add(this.lblFooter);
 			this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panelFooter.ForeColor = System.Drawing.Color.White;

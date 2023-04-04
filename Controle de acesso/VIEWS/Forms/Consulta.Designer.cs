@@ -111,18 +111,18 @@
 			// 
 			this.listEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.listEntrada.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-			this.ColRef,
-			this.colNomeVisitante,
-			this.colCpf,
-			this.colTransportadora,
-			this.colCnpj,
-			this.ColNatureza,
-			this.colVisitado,
-			this.colDataEntrada,
-			this.colHoraEntrada,
-			this.colPesoEntrada,
-			this.colPlacaVeiculo,
-			this.colIdUsuario});
+            this.ColRef,
+            this.colNomeVisitante,
+            this.colCpf,
+            this.colTransportadora,
+            this.colCnpj,
+            this.ColNatureza,
+            this.colVisitado,
+            this.colDataEntrada,
+            this.colHoraEntrada,
+            this.colPesoEntrada,
+            this.colPlacaVeiculo,
+            this.colIdUsuario});
 			this.listEntrada.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.listEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.listEntrada.ForeColor = System.Drawing.Color.Navy;
@@ -212,12 +212,12 @@
 			// 
 			this.listSaida.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.listSaida.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-			this.colSaidaRef,
-			this.colSaidaNomeVisitante,
-			this.colSaidaData,
-			this.colSaidaHora,
-			this.colSaidaPesoSaida,
-			this.colSaidaIdUsuario});
+            this.colSaidaRef,
+            this.colSaidaNomeVisitante,
+            this.colSaidaData,
+            this.colSaidaHora,
+            this.colSaidaPesoSaida,
+            this.colSaidaIdUsuario});
 			this.listSaida.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.listSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.listSaida.ForeColor = System.Drawing.Color.Navy;
@@ -270,23 +270,23 @@
 			this.listFinalizada.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.listFinalizada.CausesValidation = false;
 			this.listFinalizada.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-			this.colFinRef,
-			this.colFinNomeVisitante,
-			this.colFinCpf,
-			this.colFinTransportadora,
-			this.colFinCnpj,
-			this.colFinPlacaVeiculo,
-			this.colFinDataEntrada,
-			this.colFinDataSaida,
-			this.colFinHoraEntrada,
-			this.colFinHoraSaida,
-			this.colFinPesoEntrada,
-			this.colFinPesoSaida,
-			this.colFinPesoSaldo,
-			this.colFinNatureza,
-			this.colFinNomeVisitado,
-			this.colFinUsuarioEntrada,
-			this.colFinUsuarioSaida});
+            this.colFinRef,
+            this.colFinNomeVisitante,
+            this.colFinCpf,
+            this.colFinTransportadora,
+            this.colFinCnpj,
+            this.colFinPlacaVeiculo,
+            this.colFinDataEntrada,
+            this.colFinDataSaida,
+            this.colFinHoraEntrada,
+            this.colFinHoraSaida,
+            this.colFinPesoEntrada,
+            this.colFinPesoSaida,
+            this.colFinPesoSaldo,
+            this.colFinNatureza,
+            this.colFinNomeVisitado,
+            this.colFinUsuarioEntrada,
+            this.colFinUsuarioSaida});
 			this.listFinalizada.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.listFinalizada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.listFinalizada.ForeColor = System.Drawing.Color.Navy;
@@ -403,9 +403,9 @@
 			// 
 			// tabControle
 			// 
-			this.tabControle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+			this.tabControle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControle.Controls.Add(this.tabEntrada);
 			this.tabControle.Controls.Add(this.tabSaidas);
 			this.tabControle.Controls.Add(this.tabAcessoFinalizado);
@@ -479,7 +479,7 @@
 			// 
 			// nav
 			// 
-			this.nav.BackColor = System.Drawing.Color.Navy;
+			this.nav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.nav.Controls.Add(this.lblHistorico);
 			this.nav.Dock = System.Windows.Forms.DockStyle.Top;
 			this.nav.Location = new System.Drawing.Point(0, 0);
@@ -489,7 +489,7 @@
 			// 
 			// panelFooter
 			// 
-			this.panelFooter.BackColor = System.Drawing.Color.Navy;
+			this.panelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
 			this.panelFooter.Controls.Add(this.lblFooter);
 			this.panelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
 			this.panelFooter.ForeColor = System.Drawing.Color.White;

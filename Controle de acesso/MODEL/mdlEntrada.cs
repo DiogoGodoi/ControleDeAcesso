@@ -18,7 +18,7 @@ namespace MODEL
 		public string placaVeiculo { get; set; }
 		public string dataEntrada = DateTime.Now.ToString("dd-MM-yyyy");
 		public string dataSaida { get; set; }
-		public string horaEntrada = DateTime.Now.ToString("HH:mm");
+		public string horaEntrada { get; set; }
 		public string horaSaida { get; set; }
 		public double pesoEntrada { get; set; }
 		public double pesoSaida { get; set; }
@@ -31,6 +31,7 @@ namespace MODEL
 		//Construtores
 		public mdlEntrada() { }
 		public mdlEntrada(
+			string horaEntrada,
 			string nomeVisitante,
 			long cpf,
 			long cnpj,
@@ -41,6 +42,7 @@ namespace MODEL
 			string natureza,
 			int idUsuario)
 		{
+			this.horaEntrada = horaEntrada;
 			this.nomeVisitante = nomeVisitante;
 			this.cpf = cpf;
 			this.cnpj = cnpj;
