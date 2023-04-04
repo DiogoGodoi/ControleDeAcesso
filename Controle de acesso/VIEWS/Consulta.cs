@@ -26,7 +26,6 @@ namespace VIEWS
 		}
 		private void InicializacaoDefault(object sender, EventArgs e)
 		{
-			btnImprimir.Visible = true;
 			this.WindowState = FormWindowState.Maximized;
 			List<mdlEntrada> entradas = ctrlConsulta.ExibirEntrada();
 
@@ -148,6 +147,7 @@ namespace VIEWS
 		}
 		private void ExibirSaida(object sender, EventArgs e)
 		{
+			btnImprimir.Visible = true;
 			listSaida.Items.Clear();
 			List<mdlSaida> saidas = ctrlConsulta.ExibirSaida();
 			if (saidas != null)
@@ -406,20 +406,20 @@ namespace VIEWS
 			}
 		}
 		private void btnImprimir_Click(object sender, EventArgs e)
-		{	
-			if(tabEntrada.Focus() == true)
+		{
+			if (tabEntrada.Focus() == true)
 			{
-			btnImprimir.Visible = true;
-			Form imprimirEntrada = new frmRelEntrada(dtEntrada(dataGrid));
-			imprimirEntrada.Show();
+				Form imprimirEntrada = new frmRelEntrada(dtEntrada(dataGrid));
+				imprimirEntrada.Show();
 			}
-			else if(tabSaidas.Focus() == true)
+			else if (tabSaidas.Focus() == true)
 			{
 				Form imprimirSaida = new frmRelSaida(dtSaida(dataGrid));
 				imprimirSaida.Show();
-			}else
+			}
+			else if (tabAcessoFinalizado.Focus() == true)
 			{
-				btnImprimir.Visible = false;
+				btnImprimir.Visible = false;			
 			}
 		}
 		private DataTable dtEntrada (DataTable dados)
