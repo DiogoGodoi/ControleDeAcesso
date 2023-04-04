@@ -121,7 +121,8 @@ namespace DAO
 						var pmtSaidaPesoSaida = Convert.ToDouble(dados["pesoSaida"]);
 						var pmtTransportadora = dados["transportadora"].ToString();
 						var pmtNatureza = dados["natureza"].ToString();
-						saidas.Add(new mdlSaida(pmtSaidaRef, pmtEntradaNomeVisitante, pmtSaidaDataSaida, pmtSaidaHoraSaida, pmtSaidaPesoSaida, pmtNatureza, pmtTransportadora));
+						var pmtIdUsuario = Convert.ToInt32(dados["idUsuario"]);
+						saidas.Add(new mdlSaida(pmtSaidaRef, pmtEntradaNomeVisitante, pmtSaidaDataSaida, pmtSaidaHoraSaida, pmtSaidaPesoSaida, pmtNatureza, pmtTransportadora, pmtIdUsuario));
 					}
 
 					return saidas;

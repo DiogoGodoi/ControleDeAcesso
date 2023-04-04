@@ -38,7 +38,8 @@ namespace MODEL
 			string visitado,
 			string placaVeiculo,
 			string transportadora,
-			string natureza)
+			string natureza,
+			int idUsuario)
 		{
 			this.nomeVisitante = nomeVisitante;
 			this.cpf = cpf;
@@ -48,6 +49,7 @@ namespace MODEL
 			this.placaVeiculo = placaVeiculo;
 			this.transportadora = transportadora;
 			this.natureza = natureza;
+			this.idUsuario = idUsuario;
 		}
 		public mdlEntrada(
 			int referenci,

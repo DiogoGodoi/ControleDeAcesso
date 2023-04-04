@@ -179,7 +179,7 @@ namespace VIEWS
 						&& txtPesoEntrada.Text != String.Empty)
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada dados = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza);
+						mdlEntrada dados = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
 
 						bool retorno = ctrlEntrada.EfetuarEntrada(dados);
 
@@ -210,7 +210,7 @@ namespace VIEWS
 					&& txtPlacaVeiculo.Text != String.Empty)
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza);
+						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
 
 						bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
 
@@ -234,7 +234,7 @@ namespace VIEWS
 					else
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza);
+						mdlEntrada _mdlEntrada = new mdlEntrada(nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
 
 						bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
 

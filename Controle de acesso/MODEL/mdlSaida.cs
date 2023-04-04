@@ -21,7 +21,7 @@ namespace MODEL
         public string natureza { get; set; } 
 
         //Construtor
-        public mdlSaida (int referenci, string info, string dtSaida, string hrSaida, double pSaida, string natureza, string transportadora)
+        public mdlSaida (int referenci, string info, string dtSaida, string hrSaida, double pSaida, string natureza, string transportadora, int idUsuario)
         {
             referencia = referenci;
             dados.nomeVisitante = info;
@@ -29,11 +29,11 @@ namespace MODEL
             dataSaida = dtSaida;
             horaSaida = hrSaida;
             pesoSaida = pSaida;
-            idUsuario.ToString();
 			dados.natureza = natureza;
             this.natureza = natureza;
 			dados.transportadora = transportadora;
             this.transportadora = transportadora;
+            this.idUsuario = idUsuario;
 
 		}
 

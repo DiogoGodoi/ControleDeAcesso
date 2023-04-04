@@ -156,6 +156,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Relatorios\RelatorioDeSaida.rdlc" />
+    <EmbeddedResource Include="Relatorios\RelatorioEntrada.rdlc" />
     <EmbeddedResource Include="Saida.resx">
       <DependentUpon>Saida.cs</DependentUpon>
     </EmbeddedResource>

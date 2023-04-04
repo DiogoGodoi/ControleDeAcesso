@@ -38,7 +38,7 @@
 			// relSaida
 			// 
 			this.relSaida.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.relSaida.LocalReport.ReportEmbeddedResource = "Relatorios.Relatorios.RelatorioDeSaida.rdlc";
+			this.relSaida.LocalReport.ReportEmbeddedResource = "VIEWS.Relatorios.RelatorioDeSaida.rdlc";
 			this.relSaida.Location = new System.Drawing.Point(0, 0);
 			this.relSaida.Name = "relSaida";
 			this.relSaida.ServerReport.BearerToken = null;

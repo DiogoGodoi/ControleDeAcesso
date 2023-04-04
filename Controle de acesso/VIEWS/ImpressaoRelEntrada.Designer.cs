@@ -42,7 +42,7 @@
 			reportDataSource2.Value = null;
 			this.rpEntrada.LocalReport.DataSources.Add(reportDataSource1);
 			this.rpEntrada.LocalReport.DataSources.Add(reportDataSource2);
-			this.rpEntrada.LocalReport.ReportEmbeddedResource = "MenuInicial.Relatorio.RelatorioEntrada.rdlc";
+			this.rpEntrada.LocalReport.ReportEmbeddedResource = "VIEWS.Relatorios.RelatorioEntrada.rdlc";
 			this.rpEntrada.Location = new System.Drawing.Point(0, 0);
 			this.rpEntrada.Name = "rpEntrada";
 			this.rpEntrada.ServerReport.BearerToken = null;
