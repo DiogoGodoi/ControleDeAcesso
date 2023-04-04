@@ -409,55 +409,20 @@ namespace VIEWS
 		{
 			if (tabEntrada.Focus() == true)
 			{
-				Form imprimirEntrada = new frmRelEntrada(dtEntrada(dataGrid));
+				var relEntrada = ctrlRelatorio.relEntrada(dataGrid, dtBusca);
+				Form imprimirEntrada = new frmRelEntrada(relEntrada);
 				imprimirEntrada.Show();
 			}
 			else if (tabSaidas.Focus() == true)
 			{
-				Form imprimirSaida = new frmRelSaida(dtSaida(dataGrid));
+				var relSaida = ctrlRelatorio.relSaida(dataGrid, dtBusca);
+				Form imprimirSaida = new frmRelSaida(relSaida);
 				imprimirSaida.Show();
 			}
 			else if (tabAcessoFinalizado.Focus() == true)
 			{
 				btnImprimir.Visible = false;			
 			}
-		}
-		private DataTable dtEntrada (DataTable dados)
-		{
-			dados = new DataTable();
-			dados.Columns.Add("dataSaida", typeof(string));
-			dados.Columns.Add("nomeVisitante", typeof(string));
-			dados.Columns.Add("transportadora", typeof(string));
-			dados.Columns.Add("Visitado", typeof(string));
-			dados.Columns.Add("Natureza", typeof(string));
-
-			List<mdlEntrada> entrada = ctrlConsulta.ExibirEntrada();
-			var filtro = entrada.Where(i => i.dataEntrada == dtBusca.Value.ToString("dd-MM-yyyy"));
-			foreach (var item in filtro)
-			{
-				dados.Rows.Add(item.dataEntrada, item.nomeVisitante, item.transportadora, item.visitado, item.natureza);
-			}
-
-			return dados;
-		}
-		private DataTable dtSaida(DataTable dados)
-		{
-			dados = new DataTable();
-			dados.Columns.Add("dataSaida", typeof(string));
-			dados.Columns.Add("visitante", typeof(string));
-			dados.Columns.Add("transportadora", typeof(string));
-			dados.Columns.Add("Natureza", typeof(string));
-			dados.Columns.Add("pesoSaida", typeof(double));
-			dados.Columns.Add("horaSaida", typeof(string));
-
-			List<mdlSaida> saida = ctrlConsulta.ExibirSaida();
-			var filtro = saida.Where(i => i.dataSaida == dtBusca.Value.ToString("dd-MM-yyyy"));
-			foreach (var item in filtro)
-			{
-				dados.Rows.Add(item.dataSaida, item.dados.nomeVisitante, item.dados.transportadora, item.dados.natureza, item.pesoSaida, item.horaSaida);
-			}
-
-			return dados;
 		}
 	}
 }
