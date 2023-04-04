@@ -82,10 +82,61 @@ namespace DAO
             }
 
 		}
-		//public static bool AlterarSaida(mdlSaida saida)
-		//{
+		public static bool AlterarSaida(mdlSaida saida, int pmtReferencia)
+		{
+			var builder = new MySqlConnectionStringBuilder
+			{
+				Server = DaoConexao.getIP(),
+				Port = DaoConexao.getPort(),
+				Database = "Portaria",
+				UserID = mdlUsuario.staticNome,
+				Password = mdlUsuario.staticSenha
+			};
+			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
+			try
+			{
+				conn.Open();
+				string query = $"UPDATE Saida SET dataSaida = @dataSaida, horaSaida = @horaSaida, pesoSaida = @pesoSaida WHERE ref = {pmtReferencia}";
+				MySqlCommand cmd = new MySqlCommand(query, conn);
 
-		//}
+				var pmtDataSaida = cmd.CreateParameter();
+				pmtDataSaida.ParameterName = "@dataSaida";
+				pmtDataSaida.DbType = DbType.String;
+				pmtDataSaida.Value = saida.dataSaida;
+				cmd.Parameters.Add(pmtDataSaida);
+
+				var pmtHoraSaida = cmd.CreateParameter();
+				pmtHoraSaida.ParameterName = "@horaSaida";
+				pmtHoraSaida.DbType = DbType.String;
+				pmtHoraSaida.Value = saida.horaSaida;
+				cmd.Parameters.Add(pmtHoraSaida);
+
+				var pmtPesoSaida = cmd.CreateParameter();
+				pmtPesoSaida.ParameterName = "@pesoSaida";
+				pmtPesoSaida.DbType = DbType.String;
+				pmtPesoSaida.Value = saida.pesoSaida;
+				cmd.Parameters.Add(pmtPesoSaida);
+
+				if (cmd.ExecuteNonQuery() > 0)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+
+			}
+			catch (Exception ex)
+			{
+
+				throw new Exception("Erro interno" + ex.Message);
+			}
+			finally
+			{
+				conn.Close();
+			}
+		}
 		public static List<mdlSaida> ExibirSaida()
 		{
 			List<mdlSaida> saidas = new List<mdlSaida>();

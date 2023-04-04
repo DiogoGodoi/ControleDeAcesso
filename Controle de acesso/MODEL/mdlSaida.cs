@@ -44,6 +44,12 @@ namespace MODEL
             horaSaida = hrSaida;
             pesoSaida = pSaida;          
         }
+		public mdlSaida(string dtSaida, string hrSaida, double pSaida)
+		{
+			dataSaida = dtSaida;
+			horaSaida = hrSaida;
+			pesoSaida = pSaida;
+		}
 
-    }
+	}
 }

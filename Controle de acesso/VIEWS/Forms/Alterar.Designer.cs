@@ -529,6 +529,7 @@
 			this.btnAlterarSaida.TabIndex = 109;
 			this.btnAlterarSaida.Text = "Alterar Saida";
 			this.btnAlterarSaida.UseVisualStyleBackColor = false;
+			this.btnAlterarSaida.Click += new System.EventHandler(this.AlterarSaida);
 			// 
 			// dtHoraEntrada
 			// 

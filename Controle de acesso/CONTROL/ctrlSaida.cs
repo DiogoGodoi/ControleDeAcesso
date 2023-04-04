@@ -16,5 +16,10 @@ namespace CONTROL
         {
             return daoSaida.InserirSaida(dados);
         }
+        //Método para alterar a saida de pessoal
+        public static bool Alterar(mdlSaida dados, int referencia)
+        {
+            return daoSaida.AlterarSaida(dados, referencia);
+        }
     }
 }

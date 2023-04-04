@@ -152,7 +152,7 @@ namespace VIEWS.Forms
 
 					if (retorno == true)
 					{
-						MessageBox.Show("Dados alterados com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						MessageBox.Show("Dados de entrada alterados com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
 					else
 					{
@@ -164,6 +164,34 @@ namespace VIEWS.Forms
 			{
 				MessageBox.Show("Erro interno", "Mensagem,", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}		
+		}
+
+		private void AlterarSaida(object sender, EventArgs e)
+		{
+			try
+			{
+				mdlSaida _mdlSaida = new mdlSaida(dataSaida.Value.ToString("dd-MM-yyyy"), horaSaida.Value.ToString("HH:mm"), Convert.ToDouble(pesoSaida.Text));
+				bool retorno = ctrlSaida.Alterar(_mdlSaida, Convert.ToInt32(referencia.Text));
+
+				DialogResult resultado = MessageBox.Show("Confirma a alteração ?", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+				if(resultado == DialogResult.Yes)
+				{
+					if (retorno == true)
+					{
+						MessageBox.Show("Dados de saída alterados com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else
+					{
+						MessageBox.Show("Erro na alteração", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Erro interno", "Mensagem,", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+
 		}
 	}
 }
