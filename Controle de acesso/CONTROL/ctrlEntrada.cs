@@ -16,6 +16,11 @@ namespace CONTROL
         {
            return daoEntrada.InserirEntrada(dados);
         }
+        //Método para alterar dados
+        public static bool Alterar(mdlEntrada dados, int referencia)
+        {
+            return daoEntrada.AlterarEntrada(dados, referencia);
+        }
 		//Método para pesquisa de dados
 		public static bool Pesquisar (int referencia)
         {

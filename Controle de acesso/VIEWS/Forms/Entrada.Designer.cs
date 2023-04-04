@@ -210,6 +210,7 @@
 			// 
 			// lblFooter
 			// 
+			this.lblFooter.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblFooter.AutoSize = true;
 			this.lblFooter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblFooter.Location = new System.Drawing.Point(251, 12);
@@ -379,6 +380,12 @@
 			this.cbNatureza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.cbNatureza.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cbNatureza.FormattingEnabled = true;
+			this.cbNatureza.Items.AddRange(new object[] {
+            "Entrega",
+            "Coleta",
+            "Devolução",
+            "Visita",
+            "Entrevista"});
 			this.cbNatureza.Location = new System.Drawing.Point(253, 356);
 			this.cbNatureza.Name = "cbNatureza";
 			this.cbNatureza.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -392,11 +399,12 @@
 			this.dtHoraEntrada.CalendarMonthBackground = System.Drawing.SystemColors.GradientActiveCaption;
 			this.dtHoraEntrada.CalendarTitleBackColor = System.Drawing.SystemColors.GradientActiveCaption;
 			this.dtHoraEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.dtHoraEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dtHoraEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Time;
 			this.dtHoraEntrada.Location = new System.Drawing.Point(253, 462);
 			this.dtHoraEntrada.Name = "dtHoraEntrada";
 			this.dtHoraEntrada.ShowUpDown = true;
-			this.dtHoraEntrada.Size = new System.Drawing.Size(296, 20);
+			this.dtHoraEntrada.Size = new System.Drawing.Size(296, 23);
 			this.dtHoraEntrada.TabIndex = 49;
 			this.dtHoraEntrada.Value = new System.DateTime(2023, 4, 4, 10, 22, 0, 0);
 			// 

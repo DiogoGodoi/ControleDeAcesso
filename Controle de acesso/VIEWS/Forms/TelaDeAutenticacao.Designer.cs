@@ -168,7 +168,7 @@
 			this.pctLogo.Image = ((System.Drawing.Image)(resources.GetObject("pctLogo.Image")));
 			this.pctLogo.Location = new System.Drawing.Point(0, 0);
 			this.pctLogo.Name = "pctLogo";
-			this.pctLogo.Size = new System.Drawing.Size(115, 62);
+			this.pctLogo.Size = new System.Drawing.Size(153, 62);
 			this.pctLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.pctLogo.TabIndex = 4;
 			this.pctLogo.TabStop = false;

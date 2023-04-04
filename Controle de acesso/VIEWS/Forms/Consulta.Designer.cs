@@ -500,6 +500,7 @@
 			// 
 			// lblFooter
 			// 
+			this.lblFooter.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblFooter.AutoSize = true;
 			this.lblFooter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblFooter.Location = new System.Drawing.Point(251, 12);

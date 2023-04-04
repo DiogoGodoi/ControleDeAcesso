@@ -111,7 +111,7 @@ namespace DAO
 				var pmtNatureza = cmd.CreateParameter();
 				pmtNatureza.ParameterName = "@natureza";
 				pmtNatureza.DbType = DbType.String;
-				pmtNatureza.Value = Entrada.natureza;
+				pmtNatureza.Value = Entrada.natureza.ToUpper();
 				cmd.Parameters.Add(pmtNatureza);
 
 				if (cmd.ExecuteNonQuery() > 0)
@@ -137,9 +137,106 @@ namespace DAO
 				conn.Close();
 			}
 		}
-		//public static bool AlterarEntrada(mdlEntrada Entrada)
-		//{
-		//}
+		public static bool AlterarEntrada(mdlEntrada Entrada, int pmtReferencia)
+		{
+			var builder = new MySqlConnectionStringBuilder
+			{
+				Server = DaoConexao.getIP(),
+				Port = DaoConexao.getPort(),
+				Database = "Portaria",
+				UserID = mdlUsuario.staticNome,
+				Password = mdlUsuario.staticSenha
+			};
+			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
+			try
+			{
+				conn.Open();
+				string query = $"UPDATE ENTRADA SET nomeVisitante = @nomeVisitante, visitado = @visitado, dataEntrada = @dataEntrada, horaEntrada = @horaEntrada, cpf = @cpf, cnpj = @cnpj, pesoEntrada = @pesoEntrada, placaVeiculo = @placaVeiculo, transportadora = @transportadora, natureza = @natureza WHERE ref = {pmtReferencia}";
+				MySqlCommand cmd = new MySqlCommand(query, conn);
+
+				var pmtNomeVisitante = cmd.CreateParameter();
+				pmtNomeVisitante.ParameterName = "@nomeVisitante";
+				pmtNomeVisitante.DbType = DbType.String;
+				pmtNomeVisitante.Value = Entrada.nomeVisitante;
+				cmd.Parameters.Add(pmtNomeVisitante);
+
+				var pmtNomeVisitado = cmd.CreateParameter();
+				pmtNomeVisitado.ParameterName = "@visitado";
+				pmtNomeVisitado.DbType = DbType.String;
+				pmtNomeVisitado.Value = Entrada.visitado;
+				cmd.Parameters.Add(pmtNomeVisitado);
+
+				var pmtDataEntrada = cmd.CreateParameter();
+				pmtDataEntrada.ParameterName = "@dataEntrada";
+				pmtDataEntrada.DbType = DbType.String;
+				pmtDataEntrada.Value = Entrada.dataEntrada;
+				cmd.Parameters.Add(pmtDataEntrada);
+
+				var pmtHoraEntrada = cmd.CreateParameter();
+				pmtHoraEntrada.ParameterName = "@horaEntrada";
+				pmtHoraEntrada.DbType = DbType.String;
+				pmtHoraEntrada.Value = Entrada.horaEntrada;
+				cmd.Parameters.Add(pmtHoraEntrada);
+
+				var pmtCpf = cmd.CreateParameter();
+				pmtCpf.ParameterName = "@cpf";
+				pmtCpf.DbType = DbType.Int32;
+				pmtCpf.Value = Entrada.cpf;
+				cmd.Parameters.Add(pmtCpf);
+
+				var pmtCnpj = cmd.CreateParameter();
+				pmtCnpj.ParameterName = "@cnpj";
+				pmtCnpj.DbType = DbType.Int64;
+				pmtCnpj.Value = Entrada.cnpj;
+				cmd.Parameters.Add(pmtCnpj);
+
+				var pmtPesoEntrada = cmd.CreateParameter();
+				pmtPesoEntrada.ParameterName = "@pesoEntrada";
+				pmtPesoEntrada.DbType = DbType.Double;
+				pmtPesoEntrada.Value = Entrada.pesoEntrada;
+				cmd.Parameters.Add(pmtPesoEntrada);
+
+				var pmtPlacaVeiculo = cmd.CreateParameter();
+				pmtPlacaVeiculo.ParameterName = "@placaVeiculo";
+				pmtPlacaVeiculo.DbType = DbType.String;
+				pmtPlacaVeiculo.Value = Entrada.placaVeiculo.ToUpper();
+				cmd.Parameters.Add(pmtPlacaVeiculo);
+
+				var pmtTransportadora = cmd.CreateParameter();
+				pmtTransportadora.ParameterName = "@transportadora";
+				pmtTransportadora.DbType = DbType.String;
+				pmtTransportadora.Value = Entrada.transportadora;
+				cmd.Parameters.Add(pmtTransportadora);
+
+				var pmtNatureza = cmd.CreateParameter();
+				pmtNatureza.ParameterName = "@natureza";
+				pmtNatureza.DbType = DbType.String;
+				pmtNatureza.Value = Entrada.natureza.ToUpper();
+				cmd.Parameters.Add(pmtNatureza);
+				
+				if (cmd.ExecuteNonQuery() >= 0)
+				{
+					conn.Close();
+					return true;
+				}
+				else
+				{
+					conn.Close();
+					return false;
+				}
+
+			}
+			catch (Exception ex)
+			{
+				conn.Close();
+				return false;
+				throw new Exception("Erro interno" + ex.Message);
+			}
+			finally
+			{
+				conn.Close();
+			}
+		}
 
 		//Método para pesquisar entrada
 		public static bool PesquisarEntrada(int dados)
@@ -171,6 +268,7 @@ namespace DAO
 					dataEntrada = leitura["dataEntrada"].ToString();
 					horaEntrada = leitura["horaEntrada"].ToString();
 					pesoEntrada = Convert.ToDouble(leitura["pesoEntrada"]);
+					natureza = leitura["natureza"].ToString();
 
 					return true;
 				}
@@ -274,19 +372,17 @@ namespace DAO
 				{
 					nomeVisitante = leitura["nomeVisitante"].ToString().ToUpper();
 					cpf = Convert.ToInt64(leitura["cpf"]);
-					cnpj = Convert.ToInt64(leitura["cnpj"]);
 					transportadora = leitura["transportadora"].ToString().ToUpper();
-					visitado = leitura["visitado"].ToString().ToUpper();
-					placaVeiculo = leitura["placaVeiculo"].ToString();
+					cnpj = Convert.ToInt64(leitura["cnpj"]);
 					dataEntrada = leitura["dataEntrada"].ToString();
 					horaEntrada = leitura["horaEntrada"].ToString();
 					pesoEntrada = Convert.ToDouble(leitura["pesoEntrada"]);
+					placaVeiculo = leitura["placaVeiculo"].ToString();
+					natureza = leitura["natureza"].ToString().ToUpper();
+					visitado = leitura["visitado"].ToString().ToUpper();
 					dataSaida = leitura["dataSaida"].ToString();
 					horaSaida = leitura["horaSaida"].ToString();
 					pesoSaida = Convert.ToDouble(leitura["pesoSaida"]);
-					natureza = leitura["natureza"].ToString().ToUpper();
-
-
 					return true;
 				}
 				else{
@@ -352,6 +448,7 @@ namespace DAO
 						var pmtIdUsuarioEntrada = Convert.ToInt32(dados["idUsuario"]);
 						var pmtIdUsuarioSaida = Convert.ToInt32(dados["idUsuario"]);
 						var pmtNatureza = dados["natureza"].ToString().ToUpper();
+						
 						entradaFinalizada.Add(new mdlEntrada(
 							pmtRef,
 							pmtNomeVisitante, pmtVisitado, 
@@ -381,7 +478,6 @@ namespace DAO
 				conn.Close();
 			}
 		}
-
 		//Getters de atributo
 		public static int GetReferencia()
 		{
@@ -439,6 +535,5 @@ namespace DAO
 		{
 			return pesoSaida;
 		}
-
 	}
 }

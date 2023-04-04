@@ -45,7 +45,6 @@
 			this.lblSaida = new System.Windows.Forms.Label();
 			this.txtReferencia = new System.Windows.Forms.TextBox();
 			this.lblReferencia = new System.Windows.Forms.Label();
-			this.btnBuscar = new System.Windows.Forms.Button();
 			this.txtDataEntrada = new System.Windows.Forms.TextBox();
 			this.lblDataEntrada = new System.Windows.Forms.Label();
 			this.lblHoraEntrada = new System.Windows.Forms.Label();
@@ -68,6 +67,7 @@
 			this.txtNatureza = new System.Windows.Forms.TextBox();
 			this.lblNatureza = new System.Windows.Forms.Label();
 			this.btnCadastrar = new FontAwesome.Sharp.IconButton();
+			this.btnBuscar = new FontAwesome.Sharp.IconButton();
 			this.nav.SuspendLayout();
 			this.panelFooter.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
@@ -261,7 +261,7 @@
 			this.txtReferencia.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.txtReferencia.Location = new System.Drawing.Point(240, 251);
 			this.txtReferencia.Name = "txtReferencia";
-			this.txtReferencia.Size = new System.Drawing.Size(271, 16);
+			this.txtReferencia.Size = new System.Drawing.Size(251, 16);
 			this.txtReferencia.TabIndex = 49;
 			this.txtReferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
@@ -276,22 +276,6 @@
 			this.lblReferencia.Size = new System.Drawing.Size(172, 17);
 			this.lblReferencia.TabIndex = 48;
 			this.lblReferencia.Text = "Referência de entrada";
-			// 
-			// btnBuscar
-			// 
-			this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnBuscar.BackColor = System.Drawing.Color.Navy;
-			this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnBuscar.ForeColor = System.Drawing.Color.White;
-			this.btnBuscar.Location = new System.Drawing.Point(517, 249);
-			this.btnBuscar.Name = "btnBuscar";
-			this.btnBuscar.Size = new System.Drawing.Size(64, 23);
-			this.btnBuscar.TabIndex = 50;
-			this.btnBuscar.Text = "Buscar";
-			this.btnBuscar.UseVisualStyleBackColor = false;
-			this.btnBuscar.Click += new System.EventHandler(this.Buscar);
 			// 
 			// txtDataEntrada
 			// 
@@ -349,11 +333,11 @@
 			// 
 			this.dtSaida.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.dtSaida.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.dtSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.dtSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dtSaida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 			this.dtSaida.Location = new System.Drawing.Point(487, 313);
 			this.dtSaida.Name = "dtSaida";
-			this.dtSaida.Size = new System.Drawing.Size(94, 20);
+			this.dtSaida.Size = new System.Drawing.Size(94, 23);
 			this.dtSaida.TabIndex = 53;
 			this.dtSaida.Value = new System.DateTime(2023, 3, 20, 15, 12, 48, 0);
 			// 
@@ -363,11 +347,12 @@
 			this.hrSaida.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.hrSaida.CalendarTitleBackColor = System.Drawing.SystemColors.ActiveBorder;
 			this.hrSaida.CustomFormat = "hh:mm";
+			this.hrSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.hrSaida.Format = System.Windows.Forms.DateTimePickerFormat.Time;
 			this.hrSaida.Location = new System.Drawing.Point(487, 341);
 			this.hrSaida.Name = "hrSaida";
 			this.hrSaida.ShowUpDown = true;
-			this.hrSaida.Size = new System.Drawing.Size(94, 20);
+			this.hrSaida.Size = new System.Drawing.Size(94, 23);
 			this.hrSaida.TabIndex = 54;
 			// 
 			// nav
@@ -405,6 +390,7 @@
 			// 
 			// lblFooter
 			// 
+			this.lblFooter.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblFooter.AutoSize = true;
 			this.lblFooter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.lblFooter.Location = new System.Drawing.Point(251, 12);
@@ -565,12 +551,34 @@
 			this.btnCadastrar.UseVisualStyleBackColor = false;
 			this.btnCadastrar.Click += new System.EventHandler(this.EfetuarSaida);
 			// 
+			// btnBuscar
+			// 
+			this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.btnBuscar.BackColor = System.Drawing.Color.Navy;
+			this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnBuscar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnBuscar.ForeColor = System.Drawing.Color.White;
+			this.btnBuscar.IconChar = FontAwesome.Sharp.IconChar.SearchLocation;
+			this.btnBuscar.IconColor = System.Drawing.Color.White;
+			this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnBuscar.IconSize = 18;
+			this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnBuscar.Location = new System.Drawing.Point(500, 247);
+			this.btnBuscar.Name = "btnBuscar";
+			this.btnBuscar.Size = new System.Drawing.Size(81, 23);
+			this.btnBuscar.TabIndex = 72;
+			this.btnBuscar.Text = "Buscar";
+			this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnBuscar.UseVisualStyleBackColor = false;
+			this.btnBuscar.Click += new System.EventHandler(this.Buscar);
+			// 
 			// frmSaida
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(660, 689);
+			this.Controls.Add(this.btnBuscar);
 			this.Controls.Add(this.btnCadastrar);
 			this.Controls.Add(this.txtNatureza);
 			this.Controls.Add(this.lblNatureza);
@@ -589,7 +597,6 @@
 			this.Controls.Add(this.dtSaida);
 			this.Controls.Add(this.txtDataEntrada);
 			this.Controls.Add(this.lblDataEntrada);
-			this.Controls.Add(this.btnBuscar);
 			this.Controls.Add(this.txtReferencia);
 			this.Controls.Add(this.lblReferencia);
 			this.Controls.Add(this.txtPesoSaida);
@@ -642,7 +649,6 @@
 		private System.Windows.Forms.Label lblSaida;
 		private System.Windows.Forms.TextBox txtReferencia;
 		private System.Windows.Forms.Label lblReferencia;
-		private System.Windows.Forms.Button btnBuscar;
 		private System.Windows.Forms.TextBox txtDataEntrada;
 		private System.Windows.Forms.Label lblDataEntrada;
 		private System.Windows.Forms.Label lblHoraEntrada;
@@ -665,6 +671,7 @@
 		private System.Windows.Forms.TextBox txtNatureza;
 		private System.Windows.Forms.Label lblNatureza;
 		private FontAwesome.Sharp.IconButton btnCadastrar;
+		private FontAwesome.Sharp.IconButton btnBuscar;
 	}
 }
 

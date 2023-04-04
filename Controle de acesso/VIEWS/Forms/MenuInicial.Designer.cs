@@ -39,16 +39,16 @@
 			this.pctLogo = new System.Windows.Forms.PictureBox();
 			this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
 			this.panelConteudo = new System.Windows.Forms.Panel();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.panelLineFooter = new System.Windows.Forms.Panel();
 			this.pctLogoPrincipal = new System.Windows.Forms.PictureBox();
 			this.panelFooter = new System.Windows.Forms.Panel();
 			this.lblFooter = new System.Windows.Forms.Label();
 			this.lblMain = new System.Windows.Forms.Label();
 			this.nav = new System.Windows.Forms.Panel();
 			this.lblTitulo = new System.Windows.Forms.Label();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.panel2 = new System.Windows.Forms.Panel();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.panelLineFooter = new System.Windows.Forms.Panel();
 			this.panelSlideBar.SuspendLayout();
 			this.panelLogo.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
@@ -93,6 +93,7 @@
 			this.btnAlterar.TabIndex = 20;
 			this.btnAlterar.Text = "Alterar";
 			this.btnAlterar.UseVisualStyleBackColor = false;
+			this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
 			// 
 			// btnSair
 			// 
@@ -221,6 +222,42 @@
 			this.panelConteudo.Size = new System.Drawing.Size(660, 502);
 			this.panelConteudo.TabIndex = 14;
 			// 
+			// panel3
+			// 
+			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+			this.panel3.Location = new System.Drawing.Point(650, 72);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(10, 384);
+			this.panel3.TabIndex = 40;
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel2.Location = new System.Drawing.Point(10, 62);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(650, 10);
+			this.panel2.TabIndex = 39;
+			// 
+			// panel1
+			// 
+			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panel1.Location = new System.Drawing.Point(0, 62);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(10, 394);
+			this.panel1.TabIndex = 38;
+			// 
+			// panelLineFooter
+			// 
+			this.panelLineFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+			this.panelLineFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panelLineFooter.Location = new System.Drawing.Point(0, 456);
+			this.panelLineFooter.Name = "panelLineFooter";
+			this.panelLineFooter.Size = new System.Drawing.Size(660, 10);
+			this.panelLineFooter.TabIndex = 37;
+			// 
 			// pctLogoPrincipal
 			// 
 			this.pctLogoPrincipal.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -245,9 +282,10 @@
 			// 
 			// lblFooter
 			// 
+			this.lblFooter.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.lblFooter.AutoSize = true;
 			this.lblFooter.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblFooter.Location = new System.Drawing.Point(495, 15);
+			this.lblFooter.Location = new System.Drawing.Point(258, 15);
 			this.lblFooter.Name = "lblFooter";
 			this.lblFooter.Size = new System.Drawing.Size(158, 12);
 			this.lblFooter.TabIndex = 0;
@@ -288,42 +326,6 @@
 			this.lblTitulo.TabIndex = 5;
 			this.lblTitulo.Text = "Home";
 			this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// panel3
-			// 
-			this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-			this.panel3.Location = new System.Drawing.Point(650, 72);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(10, 384);
-			this.panel3.TabIndex = 40;
-			// 
-			// panel2
-			// 
-			this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel2.Location = new System.Drawing.Point(10, 62);
-			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(650, 10);
-			this.panel2.TabIndex = 39;
-			// 
-			// panel1
-			// 
-			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panel1.Location = new System.Drawing.Point(0, 62);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(10, 394);
-			this.panel1.TabIndex = 38;
-			// 
-			// panelLineFooter
-			// 
-			this.panelLineFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-			this.panelLineFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panelLineFooter.Location = new System.Drawing.Point(0, 456);
-			this.panelLineFooter.Name = "panelLineFooter";
-			this.panelLineFooter.Size = new System.Drawing.Size(660, 10);
-			this.panelLineFooter.TabIndex = 37;
 			// 
 			// frmMenuInicial
 			// 

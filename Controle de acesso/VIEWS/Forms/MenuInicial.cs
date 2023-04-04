@@ -12,6 +12,7 @@ using CONTROL;
 using MODEL;
 using DAO;
 using VIEWS;
+using VIEWS.Forms;
 
 namespace VIEWS
 {
@@ -61,13 +62,19 @@ namespace VIEWS
 
 		private void frmMenuInicial_Load(object sender, EventArgs e)
 		{
-			btnAlterar.Enabled = false;
+			btnAlterar.Enabled = true;
 			this.WindowState = FormWindowState.Maximized;
 		}
 
 		private void pctLogo_Click(object sender, EventArgs e)
 		{
 			panelConteudo.Controls.RemoveAt(0);
+		}
+
+		private void btnAlterar_Click(object sender, EventArgs e)
+		{
+			ctrlNavegacao.ActiveButton(btnAlterar, panelSlideBar);
+			ctrlNavegacao.Navegacao(formAtivo, new frmAlterar(), panelConteudo);
 		}
 	}
 }

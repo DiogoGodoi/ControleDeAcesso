@@ -88,6 +88,7 @@ namespace VIEWS
 			}
 		}
 		//Configuração do botão de buscar
+
 		private void Buscar(object sender, EventArgs e)
 		{
 			//Bloco try catch para a não quebra do sistema
@@ -141,7 +142,7 @@ namespace VIEWS
 					{
 						bool segundoRetorno = daoEntrada.PesquisarEntrada(referencia);
 
-						if(segundoRetorno == true)
+						if (segundoRetorno == true)
 						{
 							dados.nomeVisitante = daoEntrada.GetNomeVisitante();
 							dados.visitado = daoEntrada.GetVisitado();
@@ -170,10 +171,11 @@ namespace VIEWS
 						}
 						else
 						{
-						MessageBox.Show("Não existe entrada com a referência informada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+							MessageBox.Show("Não existe entrada com a referência informada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 						}
-					}			
-				}else
+					}
+				}
+				else
 				{
 					MessageBox.Show("Por favor digite a referência de entrada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				}
@@ -183,10 +185,10 @@ namespace VIEWS
 				MessageBox.Show("Erro interno: " + ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-
 		private void frmSaida_Load(object sender, EventArgs e)
 		{
 			this.WindowState = FormWindowState.Maximized;
 		}
+
 	}
 }

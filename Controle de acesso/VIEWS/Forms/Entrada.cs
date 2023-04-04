@@ -26,6 +26,7 @@ namespace VIEWS
 		private double pesoEntrada;
 		private string visitado;
 		private string placaVeiculo;
+		private string horaEntrada;
 
 		//Inicializador do formulário
 		public frmEntrada()
@@ -54,6 +55,8 @@ namespace VIEWS
 						cpf = 0;
 						cnpj = 0;
 						pesoEntrada = 0;
+						natureza = cbNatureza.Text;
+						horaEntrada = dtHoraEntrada.Value.ToString("HH:mm");
 					}
 					else if (txtCpf.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
 					{
@@ -64,6 +67,8 @@ namespace VIEWS
 						cpf = 0;
 						cnpj = Convert.ToInt64(txtCnpj.Text);
 						pesoEntrada = 0;
+						natureza = cbNatureza.Text;
+						horaEntrada = dtHoraEntrada.Value.ToString("HH:mm");
 					}
 					else if (txtCnpj.Text == String.Empty && txtPesoEntrada.Text == String.Empty)
 					{
@@ -74,6 +79,8 @@ namespace VIEWS
 						cpf = Convert.ToInt64(txtCpf.Text);
 						cnpj = 0;
 						pesoEntrada = 0;
+						natureza = cbNatureza.Text;
+						horaEntrada = dtHoraEntrada.Value.ToString("HH:mm");
 					}
 					else if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty)
 					{
@@ -84,6 +91,8 @@ namespace VIEWS
 						cpf = 0;
 						cnpj = 0;
 						pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
+						natureza = cbNatureza.Text;
+						horaEntrada = dtHoraEntrada.Value.ToString("HH:mm");
 					}
 					else if (txtCpf.Text == String.Empty)
 					{
@@ -94,6 +103,8 @@ namespace VIEWS
 						cpf = 0;
 						cnpj = Convert.ToInt64(txtCnpj.Text);
 						pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
+						natureza = cbNatureza.Text;
+						horaEntrada = dtHoraEntrada.Value.ToString("HH:mm");
 					}
 					else if (txtCnpj.Text == String.Empty)
 					{
@@ -104,6 +115,8 @@ namespace VIEWS
 						cpf = Convert.ToInt64(txtCpf.Text);
 						cnpj = 0;
 						pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
+						natureza = cbNatureza.Text;
+						horaEntrada = dtHoraEntrada.Value.ToString("HH:mm");
 					}
 					else
 					{
@@ -114,6 +127,8 @@ namespace VIEWS
 						cpf = Convert.ToInt64(txtCpf.Text);
 						cnpj = Convert.ToInt64(txtCnpj.Text);
 						pesoEntrada = Convert.ToInt64(txtPesoEntrada.Text);
+						natureza = cbNatureza.Text;
+						horaEntrada = dtHoraEntrada.Value.ToString("HH:mm");
 					}
 					//Segunda validação dos campos 
 					if (txtCpf.Text == String.Empty && txtCnpj.Text == String.Empty &&
@@ -138,7 +153,7 @@ namespace VIEWS
 					{
 						MessageBox.Show("Por favor insira o nome da transportadora", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
-					else if (cbNatureza.Text != String.Empty)
+					else if (cbNatureza.Text == String.Empty)
 					{
 						MessageBox.Show("Por favor insira a natureza da entrada", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					}
@@ -179,7 +194,7 @@ namespace VIEWS
 						&& txtPesoEntrada.Text != String.Empty)
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada dados = new mdlEntrada(dtHoraEntrada.Value.ToString("HH:mm"),nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
+						mdlEntrada dados = new mdlEntrada(horaEntrada, nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
 
 						bool retorno = ctrlEntrada.EfetuarEntrada(dados);
 
@@ -210,7 +225,7 @@ namespace VIEWS
 					&& txtPlacaVeiculo.Text != String.Empty)
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada _mdlEntrada = new mdlEntrada(dtHoraEntrada.Value.ToString("HH:mm"), nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
+						mdlEntrada _mdlEntrada = new mdlEntrada(horaEntrada, nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, cbNatureza.Text, daoUsuario.idUsuario);
 
 						bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
 
@@ -264,6 +279,7 @@ namespace VIEWS
 		}
 		private void frmEntrada_Load(object sender, EventArgs e)
 		{
+			dtHoraEntrada.Text = DateTime.Now.ToString("dd-MM-yyyy");
 			this.WindowState = FormWindowState.Maximized;
 		}
 	}
