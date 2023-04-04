@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAlterar));
-			this.btnAlterarEntrada = new FontAwesome.Sharp.IconButton();
 			this.txtNomeVisitado = new System.Windows.Forms.TextBox();
 			this.lblNomeVisitado = new System.Windows.Forms.Label();
 			this.txtTransportadora = new System.Windows.Forms.TextBox();
@@ -64,36 +63,15 @@
 			this.lblCpf = new System.Windows.Forms.Label();
 			this.lblHoraEntrada = new System.Windows.Forms.Label();
 			this.lblNomeVisitante = new System.Windows.Forms.Label();
-			this.btnAlterarSaida = new FontAwesome.Sharp.IconButton();
 			this.dtHoraEntrada = new System.Windows.Forms.DateTimePicker();
 			this.dtEntrada = new System.Windows.Forms.DateTimePicker();
 			this.cbNatureza = new System.Windows.Forms.ComboBox();
 			this.btnBuscar = new FontAwesome.Sharp.IconButton();
+			this.btnAlterar = new FontAwesome.Sharp.IconButton();
 			((System.ComponentModel.ISupportInitialize)(this.pctLogo)).BeginInit();
 			this.panelFooter.SuspendLayout();
 			this.nav.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// btnAlterarEntrada
-			// 
-			this.btnAlterarEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnAlterarEntrada.BackColor = System.Drawing.Color.Navy;
-			this.btnAlterarEntrada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAlterarEntrada.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAlterarEntrada.ForeColor = System.Drawing.Color.White;
-			this.btnAlterarEntrada.IconChar = FontAwesome.Sharp.IconChar.PersonWalking;
-			this.btnAlterarEntrada.IconColor = System.Drawing.Color.White;
-			this.btnAlterarEntrada.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btnAlterarEntrada.IconSize = 16;
-			this.btnAlterarEntrada.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnAlterarEntrada.Location = new System.Drawing.Point(205, 552);
-			this.btnAlterarEntrada.Name = "btnAlterarEntrada";
-			this.btnAlterarEntrada.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-			this.btnAlterarEntrada.Size = new System.Drawing.Size(191, 23);
-			this.btnAlterarEntrada.TabIndex = 108;
-			this.btnAlterarEntrada.Text = "Alterar Entrada";
-			this.btnAlterarEntrada.UseVisualStyleBackColor = false;
-			this.btnAlterarEntrada.Click += new System.EventHandler(this.AlterarEntrada);
 			// 
 			// txtNomeVisitado
 			// 
@@ -510,27 +488,6 @@
 			this.lblNomeVisitante.TabIndex = 72;
 			this.lblNomeVisitante.Text = "Nome do visitante";
 			// 
-			// btnAlterarSaida
-			// 
-			this.btnAlterarSaida.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.btnAlterarSaida.BackColor = System.Drawing.Color.Navy;
-			this.btnAlterarSaida.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAlterarSaida.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAlterarSaida.ForeColor = System.Drawing.Color.White;
-			this.btnAlterarSaida.IconChar = FontAwesome.Sharp.IconChar.PersonWalkingArrowLoopLeft;
-			this.btnAlterarSaida.IconColor = System.Drawing.Color.White;
-			this.btnAlterarSaida.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btnAlterarSaida.IconSize = 20;
-			this.btnAlterarSaida.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.btnAlterarSaida.Location = new System.Drawing.Point(449, 552);
-			this.btnAlterarSaida.Name = "btnAlterarSaida";
-			this.btnAlterarSaida.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-			this.btnAlterarSaida.Size = new System.Drawing.Size(191, 23);
-			this.btnAlterarSaida.TabIndex = 109;
-			this.btnAlterarSaida.Text = "Alterar Saida";
-			this.btnAlterarSaida.UseVisualStyleBackColor = false;
-			this.btnAlterarSaida.Click += new System.EventHandler(this.AlterarSaida);
-			// 
 			// dtHoraEntrada
 			// 
 			this.dtHoraEntrada.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -596,18 +553,38 @@
 			this.btnBuscar.UseVisualStyleBackColor = false;
 			this.btnBuscar.Click += new System.EventHandler(this.Buscar);
 			// 
+			// btnAlterar
+			// 
+			this.btnAlterar.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.btnAlterar.BackColor = System.Drawing.Color.Navy;
+			this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnAlterar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnAlterar.ForeColor = System.Drawing.Color.White;
+			this.btnAlterar.IconChar = FontAwesome.Sharp.IconChar.Spinner;
+			this.btnAlterar.IconColor = System.Drawing.Color.White;
+			this.btnAlterar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnAlterar.IconSize = 15;
+			this.btnAlterar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.btnAlterar.Location = new System.Drawing.Point(344, 556);
+			this.btnAlterar.Name = "btnAlterar";
+			this.btnAlterar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+			this.btnAlterar.Size = new System.Drawing.Size(155, 23);
+			this.btnAlterar.TabIndex = 114;
+			this.btnAlterar.Text = "Alterar dados";
+			this.btnAlterar.UseVisualStyleBackColor = false;
+			this.btnAlterar.Click += new System.EventHandler(this.Alterar);
+			// 
 			// frmAlterar
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(817, 650);
+			this.Controls.Add(this.btnAlterar);
 			this.Controls.Add(this.btnBuscar);
 			this.Controls.Add(this.cbNatureza);
 			this.Controls.Add(this.dtHoraEntrada);
 			this.Controls.Add(this.dtEntrada);
-			this.Controls.Add(this.btnAlterarSaida);
-			this.Controls.Add(this.btnAlterarEntrada);
 			this.Controls.Add(this.txtNomeVisitado);
 			this.Controls.Add(this.lblNomeVisitado);
 			this.Controls.Add(this.txtTransportadora);
@@ -656,8 +633,6 @@
 		}
 
 		#endregion
-
-		private FontAwesome.Sharp.IconButton btnAlterarEntrada;
 		private System.Windows.Forms.TextBox txtNomeVisitado;
 		private System.Windows.Forms.Label lblNomeVisitado;
 		private System.Windows.Forms.TextBox txtTransportadora;
@@ -692,10 +667,10 @@
 		private System.Windows.Forms.Label lblCpf;
 		private System.Windows.Forms.Label lblHoraEntrada;
 		private System.Windows.Forms.Label lblNomeVisitante;
-		private FontAwesome.Sharp.IconButton btnAlterarSaida;
 		private System.Windows.Forms.DateTimePicker dtHoraEntrada;
 		private System.Windows.Forms.DateTimePicker dtEntrada;
 		private System.Windows.Forms.ComboBox cbNatureza;
 		private FontAwesome.Sharp.IconButton btnBuscar;
+		private FontAwesome.Sharp.IconButton btnAlterar;
 	}
 }

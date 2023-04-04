@@ -86,7 +86,6 @@ namespace VIEWS.Forms
 				dataSaida.Enabled = true;
 				horaSaida.Enabled = true;
 				pesoSaida.Enabled = true;
-				btnAlterarSaida.Enabled = true;
 
 			}
 			else
@@ -120,7 +119,6 @@ namespace VIEWS.Forms
 					dtSaida.Enabled = false;
 					hrSaida.Enabled = false;
 					txtPesoSaida.Enabled = false;
-					btnAlterarSaida.Enabled = false;
 				}
 				else
 				{
@@ -128,7 +126,71 @@ namespace VIEWS.Forms
 				}
 			}
 		}
-		private void AlterarEntrada(object sender, EventArgs e)
+		private async void Alterar(object sender, EventArgs e)
+		{
+			DialogResult resposta = MessageBox.Show("Confirma a alteração ?", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+			if (resposta == DialogResult.Yes)
+			{
+				if (dataSaida.Enabled == false && horaSaida.Enabled == false && pesoSaida.Enabled == false)
+				{
+					bool alterarEntrada = AlterarEntrada();
+					if(alterarEntrada == true)
+					{
+						MessageBox.Show("Dados Alterados com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						nomeDoVisitante.Text = String.Empty;
+						cpf.Text = String.Empty;
+						transportadora.Text = String.Empty;
+						cnpj.Text = String.Empty;
+						dataEntrada.Text = String.Empty;
+						horaEntrada.Text = String.Empty;
+						pesoEntrada.Text = String.Empty;
+						placaVeiculo.Text = String.Empty;
+						placaVeiculo.Text = String.Empty;
+						natureza.Text = String.Empty;
+						visitado.Text = String.Empty;
+						referencia.Focus();
+					}
+					else
+					{
+						MessageBox.Show("Erro na alteração", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+						nomeDoVisitante.Text = String.Empty;
+						cpf.Text = String.Empty;
+						transportadora.Text = String.Empty;
+						cnpj.Text = String.Empty;
+						dataEntrada.Text = String.Empty;
+						horaEntrada.Text = String.Empty;
+						pesoEntrada.Text = String.Empty;
+						placaVeiculo.Text = String.Empty;
+						placaVeiculo.Text = String.Empty;
+						natureza.Text = String.Empty;
+						visitado.Text = String.Empty;
+						dataSaida.Text = String.Empty;
+						horaSaida.Text = String.Empty;
+						pesoSaida.Text = String.Empty;
+						referencia.Focus();
+					}
+				}
+				else
+				{
+					bool alterarEntrada = AlterarEntrada();
+					await Task.Delay(1500);
+					bool alterarSaida = AlterarSaida();
+
+					if(alterarEntrada == true && alterarSaida == true)
+					{
+					MessageBox.Show("Dados Alterados com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else
+					{
+					MessageBox.Show("Erro na alteração", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+				}
+				
+			}
+		}
+
+		public bool AlterarEntrada()
 		{
 			try
 			{
@@ -144,54 +206,43 @@ namespace VIEWS.Forms
 				mdlEntrada.natureza = natureza.Text;
 				mdlEntrada.visitado = visitado.Text;
 
-				DialogResult resultado = MessageBox.Show("Confirma a alteração ?", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-				if(resultado == DialogResult.Yes)
-				{
 					bool retorno = ctrlEntrada.Alterar(mdlEntrada, Convert.ToInt32(referencia.Text));
 
 					if (retorno == true)
 					{
-						MessageBox.Show("Dados de entrada alterados com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return true;
 					}
 					else
 					{
-						MessageBox.Show("Erro na alteração", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return false;
 					}
-				}
-
-			}catch(Exception ex)
+			}
+			catch (Exception ex)
 			{
-				MessageBox.Show("Erro interno", "Mensagem,", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}		
+				return false;
+			}
 		}
-
-		private void AlterarSaida(object sender, EventArgs e)
+		public bool AlterarSaida()
 		{
 			try
 			{
 				mdlSaida _mdlSaida = new mdlSaida(dataSaida.Value.ToString("dd-MM-yyyy"), horaSaida.Value.ToString("HH:mm"), Convert.ToDouble(pesoSaida.Text));
 				bool retorno = ctrlSaida.Alterar(_mdlSaida, Convert.ToInt32(referencia.Text));
 
-				DialogResult resultado = MessageBox.Show("Confirma a alteração ?", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-				if(resultado == DialogResult.Yes)
-				{
 					if (retorno == true)
 					{
-						MessageBox.Show("Dados de saída alterados com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return true;
+
 					}
 					else
 					{
-						MessageBox.Show("Erro na alteração", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					return false;
 					}
-				}
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("Erro interno", "Mensagem,", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return false;
 			}
-
 		}
 	}
 }
