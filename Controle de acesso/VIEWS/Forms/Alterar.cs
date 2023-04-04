@@ -37,7 +37,6 @@ namespace VIEWS.Forms
 		{
 			this.WindowState = FormWindowState.Maximized;	
 		}
-
 		private void Buscar(object sender, EventArgs e)
 		{
 			referencia = txtReferencia;
@@ -129,7 +128,6 @@ namespace VIEWS.Forms
 				}
 			}
 		}
-
 		private void AlterarEntrada(object sender, EventArgs e)
 		{
 			try
@@ -146,16 +144,22 @@ namespace VIEWS.Forms
 				mdlEntrada.natureza = natureza.Text;
 				mdlEntrada.visitado = visitado.Text;
 
-				bool retorno = ctrlEntrada.Alterar(mdlEntrada, Convert.ToInt32(referencia.Text));
+				DialogResult resultado = MessageBox.Show("Confirma a alteração ?", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-				if (retorno == true)
+				if(resultado == DialogResult.Yes)
 				{
-					MessageBox.Show("Dados alterados com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					bool retorno = ctrlEntrada.Alterar(mdlEntrada, Convert.ToInt32(referencia.Text));
+
+					if (retorno == true)
+					{
+						MessageBox.Show("Dados alterados com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+					else
+					{
+						MessageBox.Show("Erro na alteração", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
 				}
-				else
-				{
-					MessageBox.Show("Erro na alteração", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
+
 			}catch(Exception ex)
 			{
 				MessageBox.Show("Erro interno", "Mensagem,", MessageBoxButtons.OK, MessageBoxIcon.Error);

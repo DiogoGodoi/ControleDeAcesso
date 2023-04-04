@@ -237,7 +237,6 @@ namespace DAO
 				conn.Close();
 			}
 		}
-
 		//Método para pesquisar entrada
 		public static bool PesquisarEntrada(int dados)
 		{

@@ -564,10 +564,11 @@
 			this.cbNatureza.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cbNatureza.FormattingEnabled = true;
 			this.cbNatureza.Items.AddRange(new object[] {
-            "Entrega",
-            "Coleta",
-            "Visita",
-            "Entrevista"});
+            "ENTREGA",
+            "COLETA",
+            "DEVOLUÇÃO",
+            "VISITA",
+            "ENTREVISTA"});
 			this.cbNatureza.Location = new System.Drawing.Point(243, 478);
 			this.cbNatureza.Name = "cbNatureza";
 			this.cbNatureza.Size = new System.Drawing.Size(225, 23);
