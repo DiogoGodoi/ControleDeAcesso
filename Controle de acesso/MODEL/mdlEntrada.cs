@@ -28,8 +28,13 @@ namespace MODEL
 		public string transportadora { get; set; }
 		public string natureza { get; set; }
 
+		private mdlEntrada entrada { get; set; }
+
 		//Construtores
 		public mdlEntrada() { }
+		public mdlEntrada(mdlEntrada entrada) {
+		this.entrada = entrada;
+		}
 		public mdlEntrada(
 			string horaEntrada,
 			string nomeVisitante,

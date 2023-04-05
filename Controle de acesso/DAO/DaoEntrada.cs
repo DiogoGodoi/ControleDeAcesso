@@ -14,6 +14,7 @@ namespace DAO
 	public class daoEntrada
 	{
 		//Atributos
+		private static MySqlConnection conn = DaoConexao.GetConnection();	
 		private static int referencia { get; set; }
 		private static string nomeVisitante { get; set; }
 		private static long cpf { get; set; }
@@ -32,15 +33,6 @@ namespace DAO
 		//Método de entrada de dados no banco
 		public static bool InserirEntrada(mdlEntrada Entrada)
 		{
-			var builder = new MySqlConnectionStringBuilder
-			{
-				Server = DaoConexao.getIP(),
-				Port = DaoConexao.getPort(),
-				Database = "Portaria",
-				UserID = mdlUsuario.staticNome,
-				Password = mdlUsuario.staticSenha
-			};
-			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
 			{
 				conn.Open();
@@ -139,15 +131,6 @@ namespace DAO
 		}
 		public static bool AlterarEntrada(mdlEntrada Entrada, int pmtReferencia)
 		{
-			var builder = new MySqlConnectionStringBuilder
-			{
-				Server = DaoConexao.getIP(),
-				Port = DaoConexao.getPort(),
-				Database = "Portaria",
-				UserID = mdlUsuario.staticNome,
-				Password = mdlUsuario.staticSenha
-			};
-			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
 			{
 				conn.Open();
@@ -240,15 +223,6 @@ namespace DAO
 		//Método para pesquisar entrada
 		public static bool PesquisarEntrada(int dados)
 		{
-			var builder = new MySqlConnectionStringBuilder
-			{
-				Server = DaoConexao.getIP(),
-				Port = DaoConexao.getPort(),
-				Database = "Portaria",
-				UserID = mdlUsuario.staticNome,
-				Password = mdlUsuario.staticSenha
-			};
-			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
 			{
 				conn.Open();
@@ -292,15 +266,6 @@ namespace DAO
 		public static List<mdlEntrada> ExibirEntrada()
 		{
 			List<mdlEntrada> entradas = new List<mdlEntrada>();
-			var builder = new MySqlConnectionStringBuilder
-			{
-				Server = DaoConexao.getIP(),
-				Port = DaoConexao.getPort(),
-				Database = "Portaria",
-				UserID = mdlUsuario.staticNome,
-				Password = mdlUsuario.staticSenha
-			};
-			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
 			{
 				conn.Open();
@@ -351,15 +316,6 @@ namespace DAO
 		//Método para pesquisar entrada finalizada
 		public static bool PesquisarEntradaFinalizada(int dados)
 		{
-			var builder = new MySqlConnectionStringBuilder
-			{
-				Server = DaoConexao.getIP(),
-				Port = DaoConexao.getPort(),
-				Database = "Portaria",
-				UserID = mdlUsuario.staticNome,
-				Password = mdlUsuario.staticSenha
-			};
-			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
 			{
 				conn.Open();
@@ -401,15 +357,6 @@ namespace DAO
 		public static List<mdlEntrada> ExibirEntradaFinalizada()
 		{
 			List<mdlEntrada> entradaFinalizada = new List<mdlEntrada>();
-			var builder = new MySqlConnectionStringBuilder
-			{
-				Server = DaoConexao.getIP(),
-				Port = DaoConexao.getPort(),
-				Database = "Portaria",
-				UserID = mdlUsuario.staticNome,
-				Password = mdlUsuario.staticSenha
-			};
-			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
 			{
 				conn.Open();

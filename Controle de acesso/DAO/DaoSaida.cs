@@ -12,18 +12,11 @@ namespace DAO
 {
     public class daoSaida
     {
+		private static MySqlConnection conn = DaoConexao.GetConnection();
 		//Método para inserir saída no banco de dados
         public static bool InserirSaida(mdlSaida Saida)
         {
-            var builder = new MySqlConnectionStringBuilder
-            {
-				Server = DaoConexao.getIP(),
-				Port = DaoConexao.getPort(),
-				Database = "Portaria",
-				UserID = mdlUsuario.staticNome,
-				Password = mdlUsuario.staticSenha
-			};
-            MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
+            
             try
             {
                 conn.Open();
@@ -84,15 +77,6 @@ namespace DAO
 		}
 		public static bool AlterarSaida(mdlSaida saida, int pmtReferencia)
 		{
-			var builder = new MySqlConnectionStringBuilder
-			{
-				Server = DaoConexao.getIP(),
-				Port = DaoConexao.getPort(),
-				Database = "Portaria",
-				UserID = mdlUsuario.staticNome,
-				Password = mdlUsuario.staticSenha
-			};
-			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
 			{
 				conn.Open();
@@ -140,15 +124,6 @@ namespace DAO
 		public static List<mdlSaida> ExibirSaida()
 		{
 			List<mdlSaida> saidas = new List<mdlSaida>();
-			var builder = new MySqlConnectionStringBuilder
-			{
-				Server = DaoConexao.getIP(),
-				Port = DaoConexao.getPort(),
-				Database = "Portaria",
-				UserID = mdlUsuario.staticNome,
-				Password = mdlUsuario.staticSenha
-			};
-			MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
 			try
 			{
 				conn.Open();

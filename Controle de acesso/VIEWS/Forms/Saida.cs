@@ -33,62 +33,64 @@ namespace VIEWS
 		//Configuração do botão de cadastrar
 		private void EfetuarSaida(object sender, EventArgs e)
 		{
-			//Método de cadastro
-			//Blobo try catch para evitar quebras no sistema
 			try
 			{
 				referencia = Convert.ToInt32(txtReferencia.Text);
 				dataSaida = dtSaida.Value.ToString("dd-MM-yyyy");
 				horaSaida = hrSaida.Value.ToString("HH:mm");
 				pesoSaida = Convert.ToDouble(txtPesoSaida.Text);
-				mdlSaida dados = new mdlSaida(referencia, dataSaida, horaSaida, pesoSaida);
 
-				if (dataSaida == String.Empty && horaSaida == String.Empty)
+				if (string.IsNullOrEmpty(dataSaida) || string.IsNullOrEmpty(horaSaida))
 				{
 					MessageBox.Show("Por favor insira os dados de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return;
 				}
-				else if (dataSaida == String.Empty)
+
+				if (string.IsNullOrEmpty(dataSaida))
 				{
 					MessageBox.Show("Insira a data de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return;
 				}
-				else if (horaSaida == String.Empty)
+
+				if (string.IsNullOrEmpty(horaSaida))
 				{
 					MessageBox.Show("Insira a hora de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return;
 				}
-				else if (txtPesoSaida.Text == "0" && txtPesoEntrada.Text != String.Empty)
+
+				if (Convert.ToDouble(txtPesoSaida.Text) == 0 && !string.IsNullOrEmpty(txtPesoEntrada.Text))
 				{
 					MessageBox.Show("Insira o peso de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					return;
 				}
-				else
-				{
-					DialogResult mensagem = MessageBox.Show("Confirma a saída", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-					if (mensagem == DialogResult.Yes)
-					{
 
-						bool retorno = ctrlSaida.EfetuarSaida(dados);
-						if (retorno == true)
-						{
-							MessageBox.Show("Saida efetuada com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-							dtSaida.Text = String.Empty;
-							hrSaida.Text = String.Empty;
-							txtPesoSaida.Text = String.Empty;
-							txtReferencia.Text = String.Empty;
-							txtReferencia.Focus();
-						}
-						else
-						{
-							MessageBox.Show("Erro na operação", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
-						}
+				var dadosSaida = new mdlSaida(referencia, dataSaida, horaSaida, pesoSaida);
+
+				DialogResult mensagem = MessageBox.Show("Confirma a saída", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				if (mensagem == DialogResult.Yes)
+				{
+					var retorno = ctrlSaida.EfetuarSaida(dadosSaida);
+					if (retorno)
+					{
+						MessageBox.Show("Saida efetuada com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+						dtSaida.Text = string.Empty;
+						hrSaida.Text = string.Empty;
+						txtPesoSaida.Text = string.Empty;
+						txtReferencia.Text = string.Empty;
+						txtReferencia.Focus();
+					}
+					else
+					{
+						MessageBox.Show("Erro na operação", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
 				}
 			}
 			catch (Exception ex)
 			{
-				MessageBox.Show("Erro interno: " + ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show($"Erro interno: {ex.Message}", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 		//Configuração do botão de buscar
-
 		private void Buscar(object sender, EventArgs e)
 		{
 			//Bloco try catch para a não quebra do sistema

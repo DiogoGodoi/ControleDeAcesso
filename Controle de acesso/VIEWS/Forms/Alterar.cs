@@ -220,7 +220,7 @@ namespace VIEWS.Forms
 					return false;
 					}
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				return false;
 			}
@@ -242,7 +242,7 @@ namespace VIEWS.Forms
 					return false;
 					}
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				return false;
 			}

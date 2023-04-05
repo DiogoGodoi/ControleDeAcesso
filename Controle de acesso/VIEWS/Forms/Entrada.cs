@@ -27,6 +27,7 @@ namespace VIEWS
 		private string visitado;
 		private string placaVeiculo;
 		private string horaEntrada;
+		private static DaoCache cacheSistema = new DaoCache();
 
 		//Inicializador do formulário
 		public frmEntrada()
@@ -194,28 +195,34 @@ namespace VIEWS
 						&& txtPesoEntrada.Text != String.Empty)
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada dados = new mdlEntrada(horaEntrada, nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
+						mdlEntrada dados = new mdlEntrada(dtHoraEntrada.Value.ToString("HH:mm"), nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
 
-						bool retorno = ctrlEntrada.EfetuarEntrada(dados);
+						cacheSistema.AddCache(dados, "dados");
+						var cache = cacheSistema.GetCache("dados");
 
-						//Validação para sucesso ou falha na entrada de dados
-						if (retorno != false)
+						if (cache != null)
 						{
-							MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-							txtNomeVisitante.Text = String.Empty;
-							txtNomeVisitado.Text = String.Empty;
-							txtTransportadora.Text = String.Empty;
-							txtCpf.Text = String.Empty;
-							txtCnpj.Text = String.Empty;
-							txtPesoEntrada.Text = String.Empty;
-							txtPlacaVeiculo.Text = String.Empty;
-							txtNomeVisitante.Focus();
-						}
-						else
-						{
-							MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
-						}
+							bool retorno = ctrlEntrada.EfetuarEntrada(cache);
 
+							//Validação para sucesso ou falha na entrada de dados
+							if (retorno != false)
+							{
+								MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+								txtNomeVisitante.Text = String.Empty;
+								txtNomeVisitado.Text = String.Empty;
+								txtTransportadora.Text = String.Empty;
+								txtCpf.Text = String.Empty;
+								txtCnpj.Text = String.Empty;
+								txtPesoEntrada.Text = String.Empty;
+								txtPlacaVeiculo.Text = String.Empty;
+								txtNomeVisitante.Focus();
+								cacheSistema.RemoveCache("dados");
+							}
+							else
+							{
+								MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							}
+						}
 					}
 					else if (txtNomeVisitante.Text != String.Empty
 					&& txtNomeVisitado.Text != String.Empty
@@ -225,49 +232,64 @@ namespace VIEWS
 					&& txtPlacaVeiculo.Text != String.Empty)
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada _mdlEntrada = new mdlEntrada(horaEntrada, nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, cbNatureza.Text, daoUsuario.idUsuario);
+						mdlEntrada dados = new mdlEntrada(dtHoraEntrada.Value.ToString("HH:mm"), nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
 
-						bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
+						cacheSistema.AddCache(dados, "dados");
+						var cache = cacheSistema.GetCache("dados");
 
-						if (retorno != false)
+						if(cache != null)
 						{
-							MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-							txtNomeVisitante.Text = String.Empty;
-							txtNomeVisitado.Text = String.Empty;
-							txtTransportadora.Text = String.Empty;
-							txtCpf.Text = String.Empty;
-							txtCnpj.Text = String.Empty;
-							txtPesoEntrada.Text = String.Empty;
-							txtPlacaVeiculo.Text = String.Empty;
-							txtNomeVisitante.Focus();
-						}
-						else
-						{
-							MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+							bool retorno = ctrlEntrada.EfetuarEntrada(cache);
+
+							if (retorno != false)
+							{
+								MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+								txtNomeVisitante.Text = String.Empty;
+								txtNomeVisitado.Text = String.Empty;
+								txtTransportadora.Text = String.Empty;
+								txtCpf.Text = String.Empty;
+								txtCnpj.Text = String.Empty;
+								txtPesoEntrada.Text = String.Empty;
+								txtPlacaVeiculo.Text = String.Empty;
+								txtNomeVisitante.Focus();
+								cacheSistema.RemoveCache("dados");
+							}
+							else
+							{
+								MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							}
+
 						}
 					}
 					else
 					{
 						//Ciração de objeto e chamada de método para efetuar a entrada dos dados
-						mdlEntrada _mdlEntrada = new mdlEntrada(dtHoraEntrada.Value.ToString("HH:mm"), nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
+						mdlEntrada dados = new mdlEntrada(dtHoraEntrada.Value.ToString("HH:mm"), nomeVisitante, cpf, cnpj, pesoEntrada, visitado, placaVeiculo, transportadora, natureza, daoUsuario.idUsuario);
+						cacheSistema.AddCache(dados, "dados");
+						var cache = cacheSistema.GetCache("dados");
 
-						bool retorno = ctrlEntrada.EfetuarEntrada(_mdlEntrada);
+						if (cache != null)
+						{
+							bool retorno = ctrlEntrada.EfetuarEntrada(cache);
 
-						if (retorno != false)
-						{
-							MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
-							txtNomeVisitante.Text = String.Empty;
-							txtNomeVisitado.Text = String.Empty;
-							txtTransportadora.Text = String.Empty;
-							txtCpf.Text = String.Empty;
-							txtCnpj.Text = String.Empty;
-							txtPesoEntrada.Text = String.Empty;
-							txtPlacaVeiculo.Text = String.Empty;
-							txtNomeVisitante.Focus();
-						}
-						else
-						{
-							MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							if (retorno != false)
+							{
+								MessageBox.Show("Cadastrado com sucesso", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+								txtNomeVisitante.Text = String.Empty;
+								txtNomeVisitado.Text = String.Empty;
+								txtTransportadora.Text = String.Empty;
+								txtCpf.Text = String.Empty;
+								txtCnpj.Text = String.Empty;
+								txtPesoEntrada.Text = String.Empty;
+								txtPlacaVeiculo.Text = String.Empty;
+								txtNomeVisitante.Focus();
+								cacheSistema.RemoveCache("dados");
+							}
+							else
+							{
+								MessageBox.Show("Erro no cadastro", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+							}
 						}
 					}
 				}
@@ -281,6 +303,19 @@ namespace VIEWS
 		{
 			dtHoraEntrada.Text = DateTime.Now.ToString("dd-MM-yyyy");
 			this.WindowState = FormWindowState.Maximized;
+			var valdidarCache = cacheSistema.GetCache("dados");
+			if (valdidarCache != null)
+			{
+				var cache = cacheSistema.GetCache("dados");
+				var retorno = ctrlEntrada.EfetuarEntrada(cache);
+				cacheSistema.RemoveCache("dados");
+
+				if(retorno != false)
+				{
+					MessageBox.Show("Dados em cache incluidos na base", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+			}
+
 		}
 	}
 }
