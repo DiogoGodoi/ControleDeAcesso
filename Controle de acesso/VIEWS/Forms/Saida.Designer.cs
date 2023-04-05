@@ -85,7 +85,6 @@
 			this.txtPlacaVeiculo.Name = "txtPlacaVeiculo";
 			this.txtPlacaVeiculo.Size = new System.Drawing.Size(147, 16);
 			this.txtPlacaVeiculo.TabIndex = 37;
-			this.txtPlacaVeiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtPesoEntrada
 			// 
@@ -99,7 +98,6 @@
 			this.txtPesoEntrada.Name = "txtPesoEntrada";
 			this.txtPesoEntrada.Size = new System.Drawing.Size(147, 16);
 			this.txtPesoEntrada.TabIndex = 36;
-			this.txtPesoEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtCnpj
 			// 
@@ -113,7 +111,6 @@
 			this.txtCnpj.Name = "txtCnpj";
 			this.txtCnpj.Size = new System.Drawing.Size(147, 16);
 			this.txtCnpj.TabIndex = 35;
-			this.txtCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtCpf
 			// 
@@ -127,7 +124,6 @@
 			this.txtCpf.Name = "txtCpf";
 			this.txtCpf.Size = new System.Drawing.Size(147, 16);
 			this.txtCpf.TabIndex = 33;
-			this.txtCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtNomeVisitante
 			// 
@@ -141,7 +137,6 @@
 			this.txtNomeVisitante.Name = "txtNomeVisitante";
 			this.txtNomeVisitante.Size = new System.Drawing.Size(376, 16);
 			this.txtNomeVisitante.TabIndex = 30;
-			this.txtNomeVisitante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lblPlaca
 			// 
@@ -214,7 +209,6 @@
 			this.txtPesoSaida.Name = "txtPesoSaida";
 			this.txtPesoSaida.Size = new System.Drawing.Size(94, 16);
 			this.txtPesoSaida.TabIndex = 45;
-			this.txtPesoSaida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// label1
 			// 
@@ -263,7 +257,6 @@
 			this.txtReferencia.Name = "txtReferencia";
 			this.txtReferencia.Size = new System.Drawing.Size(251, 16);
 			this.txtReferencia.TabIndex = 49;
-			this.txtReferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lblReferencia
 			// 
@@ -289,7 +282,6 @@
 			this.txtDataEntrada.Name = "txtDataEntrada";
 			this.txtDataEntrada.Size = new System.Drawing.Size(147, 16);
 			this.txtDataEntrada.TabIndex = 52;
-			this.txtDataEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lblDataEntrada
 			// 
@@ -327,7 +319,6 @@
 			this.txtHoraEntrada.Name = "txtHoraEntrada";
 			this.txtHoraEntrada.Size = new System.Drawing.Size(147, 16);
 			this.txtHoraEntrada.TabIndex = 34;
-			this.txtHoraEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// dtSaida
 			// 
@@ -464,7 +455,6 @@
 			this.txtTransportadora.Name = "txtTransportadora";
 			this.txtTransportadora.Size = new System.Drawing.Size(147, 16);
 			this.txtTransportadora.TabIndex = 66;
-			this.txtTransportadora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lblTransportadora
 			// 
@@ -490,7 +480,6 @@
 			this.txtNomeVisitado.Name = "txtNomeVisitado";
 			this.txtNomeVisitado.Size = new System.Drawing.Size(147, 16);
 			this.txtNomeVisitado.TabIndex = 68;
-			this.txtNomeVisitado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lblNomeVisitado
 			// 
@@ -516,7 +505,6 @@
 			this.txtNatureza.Name = "txtNatureza";
 			this.txtNatureza.Size = new System.Drawing.Size(147, 16);
 			this.txtNatureza.TabIndex = 70;
-			this.txtNatureza.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lblNatureza
 			// 

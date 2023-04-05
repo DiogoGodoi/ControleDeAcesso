@@ -124,7 +124,6 @@
 			this.txtNomeVisitante.Name = "txtNomeVisitante";
 			this.txtNomeVisitante.Size = new System.Drawing.Size(296, 16);
 			this.txtNomeVisitante.TabIndex = 12;
-			this.txtNomeVisitante.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtPlacaVeiculo
 			// 
@@ -137,7 +136,6 @@
 			this.txtPlacaVeiculo.Name = "txtPlacaVeiculo";
 			this.txtPlacaVeiculo.Size = new System.Drawing.Size(296, 16);
 			this.txtPlacaVeiculo.TabIndex = 19;
-			this.txtPlacaVeiculo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtPesoEntrada
 			// 
@@ -150,7 +148,6 @@
 			this.txtPesoEntrada.Name = "txtPesoEntrada";
 			this.txtPesoEntrada.Size = new System.Drawing.Size(296, 16);
 			this.txtPesoEntrada.TabIndex = 18;
-			this.txtPesoEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// txtCnpj
 			// 
@@ -163,7 +160,6 @@
 			this.txtCnpj.Name = "txtCnpj";
 			this.txtCnpj.Size = new System.Drawing.Size(296, 16);
 			this.txtCnpj.TabIndex = 17;
-			this.txtCnpj.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// nav
 			// 
@@ -286,7 +282,6 @@
 			this.txtCpf.Name = "txtCpf";
 			this.txtCpf.Size = new System.Drawing.Size(296, 16);
 			this.txtCpf.TabIndex = 37;
-			this.txtCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lblTransportadora
 			// 
@@ -311,7 +306,6 @@
 			this.txtTransportadora.Name = "txtTransportadora";
 			this.txtTransportadora.Size = new System.Drawing.Size(296, 16);
 			this.txtTransportadora.TabIndex = 39;
-			this.txtTransportadora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// lblNomeVisitado
 			// 
@@ -336,7 +330,6 @@
 			this.txtNomeVisitado.Name = "txtNomeVisitado";
 			this.txtNomeVisitado.Size = new System.Drawing.Size(296, 16);
 			this.txtNomeVisitado.TabIndex = 41;
-			this.txtNomeVisitado.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// btnCadastrar
 			// 
