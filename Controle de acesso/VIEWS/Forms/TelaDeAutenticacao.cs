@@ -38,8 +38,8 @@ namespace VIEWS
 
 			if (radAcessoInterno.Checked == true)
 			{
-				string IP = "192.168.0.253";
-				uint port = 4550;
+				string IP = "*******";
+				uint port = 0;
 				DaoConexao acesso = new DaoConexao(IP, port);
 			}
 			else if (radAcessoExterno.Checked == true)
