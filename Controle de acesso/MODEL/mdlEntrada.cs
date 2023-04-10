@@ -10,7 +10,7 @@ namespace MODEL
 	public class mdlEntrada
 	{
 		//Atributos
-		public int referencia;
+		public int referencia { get; set; }
 		public string nomeVisitante { get; set; }
 		public string visitado { get; set; }
 		public long cpf { get; set; }

@@ -21,7 +21,7 @@ namespace VIEWS
 	{
 		//Inicializador do formulário
 		ctrlNavegacao navegar = new ctrlNavegacao();
-		Form formAtivo;
+		Form formAtivo = null;
 		public frmMenuInicial()
 		{
 			InitializeComponent();

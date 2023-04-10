@@ -19,7 +19,7 @@ namespace VIEWS
 	public partial class frmConsulta : Form
 	{
 		ListViewItem lista;
-		DataTable dataGrid;
+		DataTable dataGrid = null;
 		public frmConsulta()
 		{
 			InitializeComponent();
@@ -405,8 +405,9 @@ namespace VIEWS
 				}
 			}
 		}
-		private void btnImprimir_Click(object sender, EventArgs e)
+		private async void btnImprimir_Click(object sender, EventArgs e)
 		{
+			await Task.Delay(TimeSpan.FromSeconds(2));
 			if (tabEntrada.Focus() == true)
 			{
 				var relEntrada = ctrlRelatorio.relEntrada(dataGrid, dtBusca);

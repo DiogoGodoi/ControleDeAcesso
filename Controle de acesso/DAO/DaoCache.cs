@@ -21,11 +21,10 @@ namespace DAO
 
 			cache.Set(chave, dados, politica);
 		}
-		public  mdlEntrada GetCache(string chave)
+		public  List<mdlEntrada> GetCache(string chave)
 		{
-			return cache.Get(chave) as mdlEntrada;
+			return cache.Get(chave) as List<mdlEntrada>;
 		}
-
 		public void RemoveCache(string chave)
 		{
 			cache.Remove(chave);
