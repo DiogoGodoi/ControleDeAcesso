@@ -44,8 +44,8 @@ namespace VIEWS
 			}
 			else if (radAcessoExterno.Checked == true)
 			{
-				string IP = "177.67.158.126";
-				uint port = 4550;
+				string IP = "*******";
+				uint port = 0;
 				DaoConexao acesso = new DaoConexao(IP, port);
 			}
 			//Validação dos campos
