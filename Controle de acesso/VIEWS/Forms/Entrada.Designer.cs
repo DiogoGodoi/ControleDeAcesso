@@ -378,6 +378,7 @@
             "COLETA",
             "DEVOLUÇÃO",
             "VISITA",
+            "VISITA TÉCNICA",
             "ENTREVISTA"});
 			this.cbNatureza.Location = new System.Drawing.Point(253, 356);
 			this.cbNatureza.Name = "cbNatureza";

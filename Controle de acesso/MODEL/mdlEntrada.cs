@@ -34,6 +34,7 @@ namespace MODEL
 		public mdlEntrada() { }
 		public mdlEntrada(mdlEntrada entrada) {
 		this.entrada = entrada;
+		
 		}
 		public mdlEntrada(
 			string horaEntrada,
@@ -59,7 +60,7 @@ namespace MODEL
 			this.idUsuario = idUsuario;
 		}
 		public mdlEntrada(
-			int referenci,
+			int referencia,
 			string nomeVisitante,
 			string visitado,
 			string dataEntrada,
@@ -69,9 +70,10 @@ namespace MODEL
 			double pesoEntrada,
 			string placaVeiculo,
 			string transportadora,
-			string natureza)
+			string natureza,
+			int idUsuarioEntrada)
 		{
-			this.referencia = referenci;
+			this.referencia = referencia;
 			this.nomeVisitante = nomeVisitante;
 			this.visitado = visitado;
 			this.dataEntrada = dataEntrada;
@@ -82,9 +84,10 @@ namespace MODEL
 			this.placaVeiculo = placaVeiculo;
 			this.transportadora = transportadora;
 			this.natureza = natureza;
+			this.idUsuarioEntrada = idUsuarioEntrada;
 		}
 		public mdlEntrada(
-			int referenci,
+			int referencia,
 			string nVisitante, 
 			string visitado, 
 			long cpf, 
@@ -101,7 +104,7 @@ namespace MODEL
 			string transportadora, 
 			string natureza)
 		{
-			this.referencia = referenci;
+			this.referencia = referencia;
 			this.nomeVisitante = nVisitante;
 			this.visitado = visitado;
 			this.cpf = cpf;

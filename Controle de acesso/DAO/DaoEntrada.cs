@@ -134,7 +134,7 @@ namespace DAO
 			try
 			{
 				conn.Open();
-				string query = $"UPDATE ENTRADA SET nomeVisitante = @nomeVisitante, visitado = @visitado, dataEntrada = @dataEntrada, horaEntrada = @horaEntrada, cpf = @cpf, cnpj = @cnpj, pesoEntrada = @pesoEntrada, placaVeiculo = @placaVeiculo, transportadora = @transportadora, natureza = @natureza WHERE ref = {pmtReferencia}";
+				string query = $"UPDATE ENTRADA SET nomeVisitante = @nomeVisitante, visitado = @visitado, dataEntrada = @dataEntrada, horaEntrada = @horaEntrada, cpf = @cpf, cnpj = @cnpj, pesoEntrada = @pesoEntrada, placaVeiculo = @placaVeiculo, transportadora = @transportadora, natureza = @natureza WHERE referencia = {pmtReferencia}";
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 
 				var pmtNomeVisitante = cmd.CreateParameter();
@@ -221,12 +221,12 @@ namespace DAO
 			}
 		}
 		//Método para pesquisar entrada
-		public static bool PesquisarEntrada(int dados)
+		public static bool PesquisarEntrada(int pmtReferencia)
 		{
 			try
 			{
 				conn.Open();
-				string query = $"SELECT * FROM Entrada WHERE Entrada.ref = {dados}";
+				string query = $"SELECT * FROM Entrada WHERE Entrada.referencia = {pmtReferencia}";
 
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				var leitura = cmd.ExecuteReader();
@@ -280,7 +280,7 @@ namespace DAO
 				{
 					foreach (DataRow dados in tabela.Rows)
 					{
-						var pmtReferencia = Convert.ToInt32(dados["ref"]);
+						var pmtCodigo = Convert.ToInt32(dados["referencia"]);
 						var pmtNomeVisitante = dados["nomeVisitante"].ToString().ToUpper();
 						var pmtCpf = Convert.ToInt64(dados["cpf"]);
 						var pmtVisitado = dados["visitado"].ToString().ToUpper();
@@ -291,7 +291,8 @@ namespace DAO
 						var pmtHoraEntrada = dados["horaEntrada"].ToString();
 						var pmtPesoEntrada = Convert.ToDouble(dados["pesoEntrada"]);
 						var pmtNatureza = dados["natureza"].ToString().ToUpper();
-						entradas.Add(new mdlEntrada(pmtReferencia, pmtNomeVisitante, pmtVisitado, pmtDataEntrada, pmtHoraEntrada, pmtCpf, pmtCnpj, pmtPesoEntrada, pmtPlacaVeiculo, pmtTransportadora, pmtNatureza));
+						var pmtIdUsuario = Convert.ToInt32(dados["idUsuario"]);
+						entradas.Add(new mdlEntrada(pmtCodigo, pmtNomeVisitante, pmtVisitado, pmtDataEntrada, pmtHoraEntrada, pmtCpf, pmtCnpj, pmtPesoEntrada, pmtPlacaVeiculo, pmtTransportadora, pmtNatureza, pmtIdUsuario));
 					}
 
 					return entradas;
@@ -314,12 +315,12 @@ namespace DAO
 			}
 		}
 		//Método para pesquisar entrada finalizada
-		public static bool PesquisarEntradaFinalizada(int dados)
+		public static bool PesquisarEntradaFinalizada(int pmtReferencia)
 		{
 			try
 			{
 				conn.Open();
-				string query = $"SELECT Entrada.nomeVisitante, Entrada.cpf, Entrada.transportadora, Entrada.cnpj, Entrada.visitado, Entrada.natureza, Entrada.placaVeiculo, Entrada.dataEntrada, Saida.dataSaida, Entrada.horaEntrada, Saida.horaSaida, Entrada.pesoEntrada, Saida.pesoSaida, Entrada.idUsuario, Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.ref=Saida.ref WHERE Entrada.ref = {dados}";
+				string query = $"SELECT Entrada.nomeVisitante, Entrada.cpf, Entrada.transportadora, Entrada.cnpj, Entrada.visitado, Entrada.natureza, Entrada.placaVeiculo, Entrada.dataEntrada, Saida.dataSaida, Entrada.horaEntrada, Saida.horaSaida, Entrada.pesoEntrada, Saida.pesoSaida, Entrada.idUsuario, Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.referencia=Saida.referencia WHERE Entrada.referencia = {pmtReferencia}";
 				
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				var leitura = cmd.ExecuteReader();	
@@ -360,14 +361,14 @@ namespace DAO
 			try
 			{
 				conn.Open();
-				string query = "SELECT Entrada.Ref, Entrada.nomeVisitante, Entrada.transportadora," +
+				string query = "SELECT Entrada.referencia, Entrada.nomeVisitante, Entrada.transportadora," +
 					"Entrada.visitado, Entrada.natureza," +
 					"Entrada.cpf, Entrada.cnpj, " +
 					"Entrada.dataEntrada, Saida.dataSaida, " +
 					"Entrada.horaEntrada, Saida.horaSaida, " +
 					"Entrada.pesoEntrada, Saida.pesoSaida, " +
 					"Entrada.placaVeiculo, Entrada.idUsuario, " +
-					$"Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.ref=Saida.ref";
+					$"Saida.idUsuario FROM Entrada INNER JOIN SAIDA ON Entrada.referencia=Saida.referencia";
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				cmd.CommandType = CommandType.Text;
 				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
@@ -378,7 +379,7 @@ namespace DAO
 				if (leitura.Read() == true)
 				{
 					foreach (DataRow dados in tabela.Rows) {
-						var pmtRef = Convert.ToInt32(dados["ref"]);
+						var pmtCodigo = Convert.ToInt32(dados["referencia"]);
 						var pmtNomeVisitante = dados["nomeVisitante"].ToString().ToUpper();
 						var pmtCpf = Convert.ToInt64(dados["cpf"]);
 						var pmtTransportadora = dados["transportadora"].ToString().ToUpper();
@@ -396,7 +397,7 @@ namespace DAO
 						var pmtNatureza = dados["natureza"].ToString().ToUpper();
 						
 						entradaFinalizada.Add(new mdlEntrada(
-							pmtRef,
+							pmtCodigo,
 							pmtNomeVisitante, pmtVisitado, 
 							pmtCpf, pmtCnpj, 
 							pmtPlacaVeiculo, pmtDataEntrada, 

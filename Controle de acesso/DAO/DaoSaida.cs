@@ -20,12 +20,12 @@ namespace DAO
             try
             {
                 conn.Open();
-                string query = "INSERT INTO Saida (ref, dataSaida, horaSaida, pesoSaida, idUsuario) VALUES " +
-                    "(@ref, @dataSaida, @horaSaida, @pesoSaida, @idUsuario)";
+                string query = "INSERT INTO Saida (referencia, dataSaida, horaSaida, pesoSaida, idUsuario) VALUES " +
+                    "(@referencia, @dataSaida, @horaSaida, @pesoSaida, @idUsuario)";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
 
                 var pmtReferencia = cmd.CreateParameter();
-                pmtReferencia.ParameterName = "@ref";
+                pmtReferencia.ParameterName = "@referencia";
                 pmtReferencia.DbType = DbType.Int32;
                 pmtReferencia.Value = Saida.referencia;
                 cmd.Parameters.Add(pmtReferencia);
@@ -80,7 +80,7 @@ namespace DAO
 			try
 			{
 				conn.Open();
-				string query = $"UPDATE Saida SET dataSaida = @dataSaida, horaSaida = @horaSaida, pesoSaida = @pesoSaida WHERE ref = {pmtReferencia}";
+				string query = $"UPDATE Saida SET dataSaida = @dataSaida, horaSaida = @horaSaida, pesoSaida = @pesoSaida WHERE referencia = {pmtReferencia}";
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 
 				var pmtDataSaida = cmd.CreateParameter();
@@ -127,8 +127,7 @@ namespace DAO
 			try
 			{
 				conn.Open();
-				string query = "SELECT Saida.ref, Entrada.nomeVisitante, Entrada.transportadora, Entrada.Natureza, Saida.dataSaida, Saida.horaSaida, Saida.pesoSaida, Saida.IdUsuario " +
-					"FROM Saida INNER JOIN Entrada ON Entrada.ref=Saida.ref ORDER BY Saida.dataSaida, Saida.horaSaida ASC";
+				string query = "SELECT Saida.referencia, Entrada.nomeVisitante, Entrada.transportadora, Entrada.Natureza, Saida.dataSaida, Saida.horaSaida, Saida.pesoSaida, Saida.idUsuario FROM Saida INNER JOIN Entrada ON Entrada.referencia=Saida.referencia ORDER BY Saida.dataSaida, Saida.horaSaida ASC";
 				MySqlCommand cmd = new MySqlCommand(query, conn);
 				cmd.CommandType = CommandType.Text;
 				MySqlDataAdapter adaptador = new MySqlDataAdapter(cmd);
@@ -140,7 +139,7 @@ namespace DAO
 				{
 					foreach (DataRow dados in tabela.Rows)
 					{
-						var pmtSaidaRef = Convert.ToInt32(dados["ref"]);
+						var pmtSaidaRef = Convert.ToInt32(dados["referencia"]);
 						var pmtEntradaNomeVisitante = dados["nomeVisitante"].ToString().ToUpper();
 						var pmtSaidaDataSaida = dados["dataSaida"].ToString();
 						var pmtSaidaHoraSaida = dados["horaSaida"].ToString();
@@ -148,7 +147,7 @@ namespace DAO
 						var pmtTransportadora = dados["transportadora"].ToString();
 						var pmtNatureza = dados["natureza"].ToString();
 						var pmtIdUsuario = Convert.ToInt32(dados["idUsuario"]);
-						saidas.Add(new mdlSaida(pmtSaidaRef, pmtEntradaNomeVisitante, pmtSaidaDataSaida, pmtSaidaHoraSaida, pmtSaidaPesoSaida, pmtNatureza, pmtTransportadora, pmtIdUsuario));
+                        saidas.Add(new mdlSaida(pmtSaidaRef, pmtEntradaNomeVisitante, pmtSaidaDataSaida, pmtSaidaHoraSaida, pmtSaidaPesoSaida, pmtNatureza, pmtTransportadora, pmtIdUsuario));
 					}
 
 					return saidas;

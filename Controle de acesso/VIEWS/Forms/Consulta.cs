@@ -109,7 +109,7 @@ namespace VIEWS
 						lista.SubItems.Add(item.horaEntrada);
 						lista.SubItems.Add(item.pesoEntrada.ToString());
 						lista.SubItems.Add(item.placaVeiculo);
-						lista.SubItems.Add(item.idUsuario.ToString());
+						lista.SubItems.Add(item.idUsuarioEntrada.ToString());
 						listEntrada.Items.Add(lista);
 					}
 				}
@@ -302,7 +302,7 @@ namespace VIEWS
 						lista.SubItems.Add(item.horaEntrada);
 						lista.SubItems.Add(item.pesoEntrada.ToString());
 						lista.SubItems.Add(item.placaVeiculo);
-						lista.SubItems.Add(item.idUsuario.ToString());
+						lista.SubItems.Add(item.idUsuarioEntrada.ToString());
 						listEntrada.Items.Add(lista);
 					}
 				}

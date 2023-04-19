@@ -38,11 +38,12 @@ namespace MODEL
 		}
 
 		//Construtor
-		public mdlSaida(int referenciia, string dtSaida, string hrSaida, double pSaida) {
+		public mdlSaida(int referenciia, string dtSaida, string hrSaida, double pSaida, int idUsuario) {
             referencia = referenciia;
             dataSaida = dtSaida;
             horaSaida = hrSaida;
-            pesoSaida = pSaida;          
+            pesoSaida = pSaida;
+            this.idUsuario = idUsuario;
         }
 		public mdlSaida(string dtSaida, string hrSaida, double pSaida)
 		{

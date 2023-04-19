@@ -58,14 +58,14 @@ namespace VIEWS
 					return;
 				}
 
-				if (Convert.ToDouble(txtPesoSaida.Text) == 0 && !string.IsNullOrEmpty(txtPesoEntrada.Text))
+				if (Convert.ToDouble(txtPesoSaida.Text) != 0 && txtPesoSaida.Text == String.Empty)
 				{
 					MessageBox.Show("Insira o peso de saída", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					return;
 				}
-
-				var dadosSaida = new mdlSaida(referencia, dataSaida, horaSaida, pesoSaida);
-
+				else
+				{
+				var dadosSaida = new mdlSaida(referencia, dataSaida, horaSaida, pesoSaida, daoUsuario.idUsuario);
 				DialogResult mensagem = MessageBox.Show("Confirma a saída", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 				if (mensagem == DialogResult.Yes)
 				{
@@ -83,6 +83,7 @@ namespace VIEWS
 					{
 						MessageBox.Show("Erro na operação", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
+				}
 				}
 			}
 			catch (Exception ex)
@@ -162,7 +163,8 @@ namespace VIEWS
 							txtDataEntrada.Text = dados.dataEntrada;
 							txtHoraEntrada.Text = dados.horaEntrada;
 							txtPesoEntrada.Text = dados.pesoEntrada.ToString();
-							txtPlacaVeiculo.Text = dados.placaVeiculo;
+                            txtNatureza.Text = daoEntrada.GetNatureza();
+                            txtPlacaVeiculo.Text = dados.placaVeiculo;
 							dtSaida.Text = String.Empty;
 							hrSaida.Text = String.Empty;
 							txtPesoSaida.Text = "0";
