@@ -28,7 +28,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>\\servidor\Publico\Infra - TI\Softwares\Utilitários\Instalador - Controle de Acesso\archives\</InstallUrl>
     <UpdateUrl>\\servidor\Publico\Infra - TI\Softwares\Utilitários\Instalador - Controle de Acesso\archives\</UpdateUrl>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>4.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
